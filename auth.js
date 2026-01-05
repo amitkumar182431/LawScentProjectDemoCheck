@@ -247,4 +247,3 @@ document.querySelectorAll('.auth-form input').forEach(input => {
         }
     });
 });
-
