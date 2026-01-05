@@ -20,12 +20,19 @@ window.addEventListener('scroll', () => {
         gotop.classList.remove('active');
     }
     
-    // Close mobile menu on scroll
+    // Close mobile menu on scroll (with debounce for better performance)
     if (window.innerWidth <= 768) {
         const navbar = document.querySelector('.navbar');
         const menuBtn = document.querySelector('.menubtn');
-        if (navbar) navbar.classList.remove('active');
-        if (menuBtn) menuBtn.classList.remove('active');
+        if (navbar && navbar.classList.contains('active')) {
+            // Only close if scrolled significantly
+            if (Math.abs(currentScroll - lastScroll) > 50) {
+                navbar.classList.remove('active');
+                if (menuBtn) menuBtn.classList.remove('active');
+                document.body.style.overflow = '';
+                document.body.style.position = '';
+            }
+        }
     }
     
     lastScroll = currentScroll;
@@ -36,16 +43,42 @@ const menuBtn = document.querySelector('.menubtn');
 const navbar = document.querySelector('.navbar');
 const navLinks = document.querySelectorAll('.navbar a');
 
+// Function to close mobile menu
+function closeMobileMenu() {
+    if (navbar) navbar.classList.remove('active');
+    if (menuBtn) menuBtn.classList.remove('active');
+    document.body.style.overflow = '';
+    document.body.style.position = '';
+}
+
+// Function to open mobile menu
+function openMobileMenu() {
+    if (navbar) navbar.classList.add('active');
+    if (menuBtn) menuBtn.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    // Prevent background scroll on iOS
+    if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        document.body.style.position = 'fixed';
+        document.body.style.width = '100%';
+    }
+}
+
 if (menuBtn) {
-    menuBtn.addEventListener('click', () => {
-        navbar.classList.toggle('active');
-        menuBtn.classList.toggle('active');
-        // Prevent body scroll when menu is open
-        if (navbar.classList.contains('active')) {
-            document.body.style.overflow = 'hidden';
+    // Use touchstart for better mobile responsiveness
+    menuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isActive = navbar.classList.contains('active');
+        
+        if (isActive) {
+            closeMobileMenu();
         } else {
-            document.body.style.overflow = '';
+            openMobileMenu();
         }
+    });
+
+    // Prevent menu button from closing menu when clicked
+    menuBtn.addEventListener('touchstart', (e) => {
+        e.stopPropagation();
     });
 }
 
@@ -53,23 +86,40 @@ if (menuBtn) {
 if (navLinks.length > 0) {
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
-            navbar.classList.remove('active');
-            if (menuBtn) menuBtn.classList.remove('active');
-            document.body.style.overflow = '';
+            // Small delay for smooth transition
+            setTimeout(() => {
+                closeMobileMenu();
+            }, 100);
         });
     });
 }
 
-// Close mobile menu when clicking outside
+// Close mobile menu when clicking outside or on backdrop
 if (navbar && menuBtn) {
     document.addEventListener('click', (e) => {
-        if (!navbar.contains(e.target) && !menuBtn.contains(e.target)) {
-            navbar.classList.remove('active');
-            menuBtn.classList.remove('active');
-            document.body.style.overflow = '';
+        const isMenuOpen = navbar.classList.contains('active');
+        const isClickInsideNav = navbar.contains(e.target);
+        const isClickOnMenuBtn = menuBtn.contains(e.target);
+        
+        if (isMenuOpen && !isClickInsideNav && !isClickOnMenuBtn) {
+            closeMobileMenu();
+        }
+    });
+
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navbar.classList.contains('active')) {
+            closeMobileMenu();
         }
     });
 }
+
+// Handle window resize - close menu if switching to desktop view
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 768 && navbar && navbar.classList.contains('active')) {
+        closeMobileMenu();
+    }
+});
 
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
