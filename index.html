@@ -6,14 +6,428 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LawScent</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Enhanced Footer Styles */
+    /* Enhanced Footer Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.footer {
+    background: #e2bc79;
+    color: #000000;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    display: block;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.footer-main {
+    padding: 60px 5% 30px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto 40px;
+    box-sizing: border-box;
+}
+
+.footer-section h3 {
+    color: #000000;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.footer-section p {
+    color: rgba(0, 0, 0, 0.8);
+    line-height: 1.8;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.footer-section p strong {
+    color: #000000;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: rgba(0, 0, 0, 0.8);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+    color: #000000;
+    transform: translateX(5px);
+    font-weight: 600;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    width: 45px;
+    height: 45px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.social-links a:hover {
+    background: rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 30px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.footer-bottom-links {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.footer-bottom-links a {
+    color: rgba(0, 0, 0, 0.8);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.footer-bottom-links a:hover {
+    color: #000000;
+    font-weight: 600;
+}
+
+.copy {
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 0.95rem;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-cta {
+    background: rgba(0, 0, 0, 0.1);
+    border: 2px solid #000000;
+    padding: 15px 30px;
+    border-radius: 8px;
+    margin-top: 20px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.footer-cta a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.footer-cta:hover {
+    background: rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.footer-cta:hover a {
+    color: #000000;
+}
+
+/* Tablet Responsive - 768px */
+@media (max-width: 768px) {
+    .footer-main {
+        padding: 50px 4% 25px;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 35px;
+        margin-bottom: 35px;
+    }
+
+    .footer-section h3 {
+        font-size: 1.3rem;
+        margin-bottom: 18px;
+    }
+
+    .footer-section p {
+        font-size: 0.9rem;
+        margin-bottom: 12px;
+    }
+
+    .footer-links a {
+        font-size: 0.9rem;
+    }
+
+    .footer-links li {
+        margin-bottom: 10px;
+    }
+
+    .social-links {
+        gap: 12px;
+        margin-top: 18px;
+    }
+
+    .social-links a {
+        width: 42px;
+        height: 42px;
+        font-size: 1.1rem;
+    }
+
+    .footer-bottom {
+        padding: 25px 4%;
+        gap: 18px;
+    }
+
+    .footer-bottom-links {
+        gap: 20px;
+    }
+
+    .footer-bottom-links a {
+        font-size: 0.9rem;
+    }
+
+    .copy {
+        font-size: 0.9rem;
+    }
+
+    .footer-cta {
+        padding: 12px 25px;
+        margin-top: 18px;
+    }
+
+    .footer-cta a {
+        font-size: 0.95rem;
+    }
+}
+
+/* Mobile Responsive - 480px */
+@media (max-width: 480px) {
+    .footer-main {
+        padding: 40px 3% 20px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+
+    .footer-section {
+        text-align: left;
+    }
+
+    .footer-section h3 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
+    .footer-section p {
+        font-size: 0.85rem;
+        margin-bottom: 10px;
+        line-height: 1.6;
+    }
+
+    .footer-links a {
+        font-size: 0.85rem;
+    }
+
+    .footer-links li {
+        margin-bottom: 8px;
+    }
+
+    .social-links {
+        gap: 10px;
+        margin-top: 15px;
+        justify-content: flex-start;
+    }
+
+    .social-links a {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 3%;
+        gap: 15px;
+    }
+
+    .footer-bottom-links {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .footer-bottom-links a {
+        font-size: 0.85rem;
+    }
+
+    .copy {
+        font-size: 0.85rem;
+        order: 2;
+    }
+
+    .footer-bottom-links {
+        order: 1;
+    }
+
+    .footer-cta {
+        padding: 12px 20px;
+        margin-top: 15px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-cta a {
+        font-size: 0.9rem;
+    }
+}
+
+/* Extra Small Mobile - 360px */
+@media (max-width: 360px) {
+    .footer-main {
+        padding: 35px 2.5% 18px;
+    }
+
+    .footer-content {
+        gap: 25px;
+        margin-bottom: 25px;
+    }
+
+    .footer-section h3 {
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+    }
+
+    .footer-section p {
+        font-size: 0.8rem;
+    }
+
+    .footer-links a {
+        font-size: 0.8rem;
+    }
+
+    .social-links a {
+        width: 38px;
+        height: 38px;
+        font-size: 0.95rem;
+    }
+
+    .footer-bottom {
+        padding: 18px 2.5%;
+    }
+
+    .footer-bottom-links a {
+        font-size: 0.8rem;
+    }
+
+    .copy {
+        font-size: 0.8rem;
+    }
+}
+
+/* Landscape Mode for Mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .footer-main {
+        padding: 35px 4% 20px;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .footer-section h3 {
+        font-size: 1.1rem;
+    }
+
+    .footer-section p {
+        font-size: 0.85rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .footer {
+        background: white;
+        color: black;
+    }
+
+    .footer-cta,
+    .social-links {
+        display: none;
+    }
+}
+    </style>
 </head>
 <body>
 
     <section class="home" id="home">
         <header>
             <a href="#home" class="logo">
-                <img src="log.png" alt="LawScent Logo" class="logo-img">
-                <span class="logo-text">Law <span>Scent</span></span>
+                <img src="log.png" alt="Jones Advocates Logo" class="logo-img">
+                <span class="logo-text">Law<span>Scent</span></span>
             </a>
 
             <div class="mobile-header-right">
@@ -30,25 +444,23 @@
                 </div>
             </div>
             <nav class="navbar">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#reviews">Reviews</a>
-                <a href="#contact">Contact</a>
+                <a href="whoweare.html">Who we are</a>
+                <a href="#about">What we do</a>
+                <a href="#services">Our Thinking</a>
+                <a href="#careers">Careers</a>
+                <a href="#contactinfo">Contact</a>
             </nav>
 
             <div class="header-actions">
                 <a href="login.html" class="btn-login">Login</a>
-                <a href="#contact" class="btn">Free Consultation</a>
             </div>
         </header>
 
         <div class="wrapper">
-           <h1>Comitted to Protecting What Matters</h1>
-            <p>Your Rights | Your Business <p>
+            <h1>Legal Counsels for your business</h1>
+            <p>we help business navigate the legal landscape and grow their operations.</p>
             <div class="buttons">
-                <a href="#contact" class="btn">Contact us</a>
-                <a href="#about" class="btn2">About us</a>
+                <a href="#about" class="btn">Learn more</a>
             </div>
         </div>
 
@@ -71,114 +483,231 @@
     </section>
 
     <section class="about" id="about">
-        <div class="image">
-            <img src="lawyer.png" alt="">
-        </div>
-        <div class="content">
-            <span>More about us</span>
-            <h1>We take care of our clients</h1>
-            <p>At our LawScent, we understand that dealing with legal issues can be stressful. Thats why we are committed to taking care of our clients every step of the legal way.</p>
-            <p>Our team of experienced attorneys will work hard to ensure that your rights are protected and your best intersets are reprenested</p>
-            <div class="award">
-                <div class="box">
-                    <h3>100+</h3>
-                    <p>Happy Clients</p>
-                </div>
-                <div class="box">
-                    <h3>10+</h3>
-                    <p>Awards Attained</p>
-                </div>
-                <div class="box">
-                    <h3>50+</h3>
-                    <p>Successful issues</p>
+        <div class="about-overlay"></div>
+        <div class="about-content-wrapper">
+            <div class="content">
+                <h1>Protecting What Matters. It's What We Do.</h1>
+                <p>Since our inception, LawScent has been committed to helping individuals and businesses build resilient legal foundations. Guided by strategy, structure, and trust, we simplify complexity, resolve challenges, and safeguard what truly matters—your growth, your stability, and your peace of mind.</p>
+                <div class="about-buttons">
+                    <a href="#about" class="btn">Who we are</a>
+                    <a href="#services" class="btn2">What we do</a>
                 </div>
             </div>
-            <a href="#" class="btn">Learn more</a>
+        </div>
+    </section>
+
+    <section class="trusted-clients" id="trusted-clients">
+        <div class="heading">
+            <span>Our Partners</span>
+            <h3>Trusted by Businesses Across Industries</h3>
+        </div>
+        
+        <div class="work-info-cards">
+            <div class="info-card">
+                <div class="card-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h4>Corporate Legal Solutions</h4>
+                <p>We provide comprehensive corporate legal services including company formation, compliance management, contract drafting, and corporate governance. Our expertise helps businesses navigate complex legal frameworks with confidence.</p>
+                <a href="trust1.html" class="card-btn">Learn more</a>
+            </div>
+            
+            <div class="info-card">
+                <div class="card-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 11L12 14L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M21 12V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h4>Compliance & Regulatory</h4>
+                <p>Stay compliant with ever-changing regulations. Our team ensures your business meets all legal requirements, handles regulatory filings, and maintains proper documentation to protect your interests and avoid penalties.</p>
+                <a href="trust2.html" class="card-btn">Learn more</a>
+            </div>
+            
+            <div class="info-card">
+                <div class="card-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 8V12L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h4>Strategic Legal Advisory</h4>
+                <p>Get expert legal guidance for strategic business decisions. We help you understand legal implications, assess risks, and develop strategies that align with your business goals while ensuring legal protection.</p>
+                <a href="trust3.html" class="card-btn">Learn more</a>
+            </div>
+        </div>
+        
+        <div class="clients-slider">
+            <div class="clients-track">
+                <div class="client-item">Zostel hospitality Pvt Ltd.</div>
+                <div class="client-item">Baddi University of Emerging Sciences & Technology</div>
+                <div class="client-item">State Bank of India</div>
+                <div class="client-item">IndusInd Bank</div>
+                <div class="client-item">JEEV BUSINESS SOLUTIONS</div>
+                <div class="client-item">RPSG Solvanta Private Limited</div>
+                <div class="client-item">POSITIVE PLASTICS PVT LTD</div>
+                <div class="client-item">Taksh Hospitality Services Pvt Ltd</div>
+                <div class="client-item">Ezulix Software Pvt. Ltd</div>
+                <div class="client-item">Express Publications (Madurai) Private Limited</div>
+                <div class="client-item">Gillette India Limited</div>
+                <div class="client-item">TVS Electronics Limited</div>
+                <div class="client-item">FCC CLUTCH INDIA PRIVATE LIMITED</div>
+                <div class="client-item">JPRWEBS COMMUNICATIONS PRIVATE LIMITED</div>
+                <div class="client-item">Zydo Technologies</div>
+                <div class="client-item">Indian Institute of Management, Udaipur</div>
+                <div class="client-item">LAB SULPHONATE PVT LTD</div>
+                <div class="client-item">DRKB INFRAPROJECTS PVT LTD</div>
+                <div class="client-item">TATA CONSULTANCY SERVICES</div>
+                <div class="client-item">Easy Go Enterprises</div>
+                <div class="client-item">EasyGov</div>
+                <!-- Duplicate for seamless loop -->
+                <div class="client-item">Zostel hospitality Pvt Ltd.</div>
+                <div class="client-item">Baddi University of Emerging Sciences & Technology</div>
+                <div class="client-item">State Bank of India</div>
+                <div class="client-item">IndusInd Bank</div>
+                <div class="client-item">JEEV BUSINESS SOLUTIONS</div>
+                <div class="client-item">RPSG Solvanta Private Limited</div>
+                <div class="client-item">POSITIVE PLASTICS PVT LTD</div>
+                <div class="client-item">Taksh Hospitality Services Pvt Ltd</div>
+                <div class="client-item">Ezulix Software Pvt. Ltd</div>
+                <div class="client-item">Express Publications (Madurai) Private Limited</div>
+                <div class="client-item">Gillette India Limited</div>
+                <div class="client-item">TVS Electronics Limited</div>
+                <div class="client-item">FCC CLUTCH INDIA PRIVATE LIMITED</div>
+                <div class="client-item">JPRWEBS COMMUNICATIONS PRIVATE LIMITED</div>
+                <div class="client-item">Zydo Technologies</div>
+                <div class="client-item">Indian Institute of Management, Udaipur</div>
+                <div class="client-item">LAB SULPHONATE PVT LTD</div>
+                <div class="client-item">DRKB INFRAPROJECTS PVT LTD</div>
+                <div class="client-item">TATA CONSULTANCY SERVICES</div>
+                <div class="client-item">Easy Go Enterprises</div>
+                <div class="client-item">EasyGov</div>
+            </div>
         </div>
     </section>
 
     <section class="services" id="services">
         <div class="heading">
-            <span>What we do</span>
-            <h3>We expertixe in</h3>
+            <span>OUR</span>
+            <h3>THINKING</h3>
         </div>
 
         <div class="box-container">
             <div class="box">
-                <h1><span>C</span>orporate law</h1>
+                <h1><span>Corporate Law</span>By Senior Advocate</h1>
                 <p>Corporate law is our main expenise. We have been doing this for almost 20 years. We will help you with everything related to your corporation and business</p>
-                <a href="#">learn more <img src="arrow-right.svg" alt=""></a>
+                <a href="think1.html">learn more <img src="arrow-right.svg" alt=""></a>
             </div>
             <div class="box">
-                <h1><span>C</span>ommercial law</h1>
+                <h1><span>Criminal Justice</span>By High Court Judge</h1>
                 <p>Do you need help with the legal aspects of a trade? Do you want us to create and manage your contracts? We are here to help you in that.</p>
-                <a href="#">learn more <img src="arrow-right.svg" alt=""></a>
+                <a href="think2.html">learn more <img src="arrow-right.svg" alt=""></a>
             </div>
             <div class="box">
-                <h1><span>T</span>ax law</h1>
+                <h1><span>Judicial Independence</span>    By SupremeCourt Judge</h1>
                 <p>Taxes, it is hard to understand everything about them. Don't Worry. We are always standing by your side to ensure that everything is settled</p>
-                <a href="#">learn more <img src="arrow-right.svg" alt=""></a>
+                <a href="think3.html">learn more <img src="arrow-right.svg" alt=""></a>
             </div>
         </div>
     </section>
 
-    <section class="reviews" id="reviews">
-        <div class="heading">
-            <span>Reviews</span>
-            <h3>What our clients say about us</h3>
+    <section class="careers" id="careers">
+        <div class="careers-wrapper">
+            <div class="careers-content">
+                <div class="heading">
+                    <span>Join Us</span>
+                    <h3>Be a part of Team LawScent</h3>
+                </div>
+                <p class="careers-description">Joining LawScent means being part of a team that grows together, learns together, and makes an impact every day. Here, your ideas matter, your work creates change, and your growth defines our journey.</p>
+                <button class="btn btn-careers" id="openJobForm">Apply for Job</button>
+            </div>
         </div>
 
-        <div class="clients-reviews">
-            <div class="review">
-                <div class="info">
-                    <img src="pic-1.png" alt="">
-                    <div class="row">
-                        <h1>Mr. X</h1>
-                        <span>A&G texturies</span>
-                    </div>
+        <!-- Job Application Form Modal -->
+        <div class="job-form-modal" id="jobFormModal">
+            <div class="job-form-overlay"></div>
+            <div class="job-form-container">
+                <button class="close-form-btn" id="closeJobForm" aria-label="Close form">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="job-form-header">
+                    <h2>Job Application Form</h2>
+                    <p>Fill out the form below to apply for a position at LawScent</p>
                 </div>
-                <p>Soon be introduced feedback</p>
-            </div>
-            <div class="review">
-                <div class="info">
-                    <img src="pic-2.png" alt="">
-                    <div class="row">
-                        <h1>Mr. Y</h1>
-                        <span>DCP inc</span>
+                <form class="job-application-form" id="jobApplicationForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="job-first-name">First Name <span>*</span></label>
+                            <input type="text" id="job-first-name" name="firstName" placeholder="Enter your first name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="job-last-name">Last Name <span>*</span></label>
+                            <input type="text" id="job-last-name" name="lastName" placeholder="Enter your last name" required>
+                        </div>
                     </div>
-                </div>
-                <p>Soon be introduced feedback</p>
-            </div>
-            <div class="review">
-                <div class="info">
-                    <img src="pic-3.png" alt="">
-                    <div class="row">
-                        <h1>Mr. Z</h1>
-                        <span>Soon be introduced feedback</span>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="job-email">Email Address <span>*</span></label>
+                            <input type="email" id="job-email" name="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="job-phone">Phone Number <span>*</span></label>
+                            <input type="tel" id="job-phone" name="phone" placeholder="Enter your phone number" required>
+                        </div>
                     </div>
-                </div>
-                <p>Soon be introduced feedback</p>
+                    <div class="form-group">
+                        <label for="job-position">Position Applied For <span>*</span></label>
+                        <input type="text" id="job-position" name="position" placeholder="e.g., Legal Associate, Paralegal, etc." required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="job-experience">Years of Experience</label>
+                            <input type="number" id="job-experience" name="experience" placeholder="Years" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="job-education">Education Level</label>
+                            <select id="job-education" name="education">
+                                <option value="">Select education level</option>
+                                <option value="high-school">High School</option>
+                                <option value="bachelor">Bachelor's Degree</option>
+                                <option value="master">Master's Degree</option>
+                                <option value="law-degree">Law Degree (LLB/LLM)</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="job-resume">Upload Resume <span>*</span></label>
+                        <input type="file" id="job-resume" name="resume" accept=".pdf,.doc,.docx" required>
+                        <small>Accepted formats: PDF, DOC, DOCX (Max 5MB)</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="job-cover-letter">Cover Letter</label>
+                        <textarea id="job-cover-letter" name="coverLetter" rows="5" placeholder="Tell us why you want to join LawScent..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="job-references">References</label>
+                        <textarea id="job-references" name="references" rows="3" placeholder="Name, position, and contact information of references (optional)"></textarea>
+                    </div>
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="terms" required>
+                            <span>I confirm that all information provided is accurate and true <span>*</span></span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-submit">Submit Application</button>
+                </form>
             </div>
         </div>
     </section>
 
-    <section class="contact" id="contact">
-        <div class="heading">
-            <span>Contact</span>
-            <h3>Request a free consulation</h3>
-        </div>
-
-        <form action="#">
-            <input type="text" placeholder="Enter your name" class="box">
-            <input type="email" placeholder="Enter your email" class="box">
-            <input type="datetime-local" class="box">
-            <input type="text" placeholder="Enter your subject" class="box">
-            <textarea placeholder="Enter your message"></textarea>
-            <button type="submit" class="btn">Send Message</button>
-        </form>
-    </section>
-
-    <section class="contactinfo">
+    <section class="contactinfo" id="contactinfo">
         <div class="box">
             <img src="court.png" alt="">
             <span>Address</span>
@@ -201,24 +730,69 @@
         </div>
     </section>
 
-    <section class="footer">
-        <a href="#">LawScent</a>
-        <a href="#">Terms & Conditions</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Sitemap</a>
-    </section>
-    <div class="copy">&copy; LawScent| 2026 All rights reserved</div>
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>LawScent</h3>
+                    <p>Your trusted legal partner for over 20 years. We provide comprehensive legal solutions for businesses of all sizes, helping you navigate complex legal landscapes with confidence.</p>
+                    <div class="footer-cta">
+                        <a href="#contactinfo">Get Legal Consultation →</a>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Twitter">𝕏</a>
+                        <a href="#" aria-label="LinkedIn">in</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
 
-            <a href="#home" class="gotop" aria-label="Go to top"><img src="arrow-up.svg" alt="Go to top"></a>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Our Thinking</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#contactinfo">Contact</a></li>
+                    </ul>
+                </div>
 
-    
+                <div class="footer-section">
+                    <h3>Legal Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Corporate Law</a></li>
+                        <li><a href="#">Commercial Law</a></li>
+                        <li><a href="#">Tax Law</a></li>
+                        <li><a href="#">Criminal Justice</a></li>
+                        <li><a href="#">Compliance & Regulatory</a></li>
+                        <li><a href="#">Contract Management</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><strong>Address:</strong><br>B-431, Sushant Lok Road<br>Sushant Lok Phase I, Sector 27<br>Gurugram, Haryana 122009</p>
+                    <p><strong>Email:</strong><br>contact@lawscent.com</p>
+                    <p><strong>Phone:</strong><br>(+91) 7618151701</p>
+                    <p><strong>Hours:</strong><br>Mon - Fri (9am - 6pm)</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="copy">&copy; 2026 LawScent. All rights reserved</div>
+                <div class="footer-bottom-links">
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Sitemap</a>
+                    <a href="#">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#home" class="gotop" aria-label="Go to top"><img src="arrow-up.svg" alt="Go to top"></a>
 
     <script src="script.js"></script>
 </body>
-
 </html>
-
-
-
-
-
