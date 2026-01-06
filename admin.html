@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LawScent Admin Panel</title>
+<style>
+:root{
+    --gold:#e2bc79;
+    --dark:#111;
+    --bg:#f4f4f4;
+    --white:#fff;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif;}
+body{background:var(--bg);}
+
+/* LOGIN */
+.login{
+    height:100vh;display:flex;justify-content:center;align-items:center;
+}
+.login-box{
+    background:#fff;padding:40px;width:360px;border-radius:10px;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+    transition:all .3s;
+}
+.login-box h2{text-align:center;margin-bottom:20px;}
+.login-box input{
+    width:100%;padding:12px;margin-bottom:12px;border:1px solid #ccc;border-radius:6px;
+    transition:all .3s;
+}
+.login-box input:focus{border-color:var(--gold);outline:none;}
+.login-box button{
+    width:100%;padding:12px;background:var(--gold);border:none;font-weight:600;
+    border-radius:6px;cursor:pointer;transition:all .3s;
+}
+.login-box button:hover{background:#d1a85c;}
+
+/* DASHBOARD */
+.dashboard{display:none;}
+.sidebar{
+    width:250px;background:var(--dark);color:#fff;position:fixed;height:100%;
+    padding:25px;overflow-y:auto;
+}
+.sidebar h2{color:var(--gold);margin-bottom:30px;}
+.sidebar a{
+    display:block;color:#ccc;text-decoration:none;padding:12px;
+    border-radius:6px;margin-bottom:10px;cursor:pointer;transition:0.3s;
+}
+.sidebar a:hover,.sidebar a.active{
+    background:var(--gold);color:#000;
+}
+
+.main{margin-left:250px;padding:30px;}
+.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px;flex-wrap:wrap;}
+.logout{background:#111;color:#fff;padding:10px 16px;border:none;border-radius:6px;cursor:pointer;transition:0.3s;}
+.logout:hover{background:#333;}
+
+.cards{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;
+}
+.card{
+    background:#fff;padding:25px;border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);transition:0.3s;
+}
+.card:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,.2);}
+.card h3{margin-bottom:10px;}
+
+.section{
+    background:#fff;padding:25px;border-radius:10px;margin-top:30px;overflow-x:auto;
+}
+.section h3{margin-bottom:15px;}
+
+table{
+    width:100%;border-collapse:collapse;margin-top:10px;
+}
+th,td{
+    padding:10px;border-bottom:1px solid #ddd;text-align:left;
+}
+th{background:#f2f2f2;}
+tr:hover{background:#f9f9f9;}
+
+.status{
+    padding:4px 10px;border-radius:4px;font-size:12px;
+}
+.pending{background:#ffe08a;}
+.approved{background:#9fff9f;}
+.rejected{background:#ff9f9f;}
+.blocked{background:#ccc;color:#333;}
+
+/* Buttons in table */
+.btn-action{
+    padding:5px 8px;border:none;border-radius:4px;color:#fff;cursor:pointer;margin-right:5px;
+    transition:0.3s;font-size:12px;
+}
+.btn-approve{background:green;}
+.btn-approve:hover{background:#006400;}
+.btn-decline{background:red;}
+.btn-decline:hover{background:#8b0000;}
+.btn-block{background:#555;}
+.btn-block:hover{background:#333;}
+.btn-delete{background:#000;}
+.btn-delete:hover{background:#333;}
+
+/* Editable cells */
+td[contenteditable]:focus, p[contenteditable]:focus{
+    outline:2px solid var(--gold);
+    background:#fff7e6;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .sidebar{position:relative;width:100%;height:auto;}
+    .main{margin-left:0;}
+}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div class="login" id="login">
+    <div class="login-box">
+        <h2>LawScent Admin</h2>
+        <input type="text" id="user" placeholder="Username">
+        <input type="password" id="pass" placeholder="Password">
+        <button onclick="login()">Login</button>
+    </div>
+</div>
+
+<!-- DASHBOARD -->
+<div class="dashboard" id="dashboard">
+    <div class="sidebar">
+        <h2>LawScent</h2>
+        <a class="active" onclick="show('dash')">Dashboard</a>
+        <a onclick="show('users')">User Details</a>
+        <a onclick="show('bookings')">Bookings</a>
+        <a onclick="show('jobs')">Job Applications</a>
+        <a onclick="show('contacts')">Contact Queries</a>
+    </div>
+
+    <div class="main">
+        <div class="header">
+            <h2>Admin Dashboard</h2>
+            <button class="logout" onclick="logout()">Logout</button>
+        </div>
+
+        <!-- DASHBOARD CARDS -->
+        <div id="dash" class="content">
+            <div class="cards">
+                <div class="card"><h3>Users</h3><p id="total-users">0</p></div>
+                <div class="card"><h3>Bookings</h3><p id="total-bookings">0</p></div>
+                <div class="card"><h3>Applications</h3><p id="total-apps">0</p></div>
+            </div>
+        </div>
+
+        <!-- USER DETAILS -->
+        <div id="users" class="content section" style="display:none;">
+            <h3>User Details</h3>
+            <table id="user-table">
+                <tr>
+                    <th>Name</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Mobile No</th>
+                    <th>Visits</th>
+                    <th>Last Visit</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </table>
+        </div>
+
+        <!-- BOOKINGS -->
+        <div id="bookings" class="content section" style="display:none;">
+            <h3>Consultation Bookings</h3>
+            <table id="booking-table">
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Mobile No</th>
+                    <th>Service</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </table>
+        </div>
+
+        <!-- JOBS -->
+        <div id="jobs" class="content section" style="display:none;">
+            <h3>Job Applications</h3>
+            <table>
+                <tr><th>Name</th><th>Position</th><th>Experience</th><th>Status</th><th>Action</th></tr>
+                <tr>
+                    <td contenteditable>Rahul Mehta</td>
+                    <td contenteditable>Legal Associate</td>
+                    <td contenteditable>3 Years</td>
+                    <td><span class="status pending">Review</span></td>
+                    <td>
+                        <button class="btn-action btn-approve" onclick="updateStatus(this,'approved')">Approve</button>
+                        <button class="btn-action btn-decline" onclick="updateStatus(this,'rejected')">Decline</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- CONTACT -->
+        <div id="contacts" class="content section" style="display:none;">
+            <h3>Contact Queries</h3>
+            <table>
+                <tr><th>Name</th><th>Email</th><th>Message</th></tr>
+                <tr>
+                    <td contenteditable>Rohit</td>
+                    <td contenteditable>rohit@mail.com</td>
+                    <td contenteditable>Need legal consultation</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+<script>
+const loginDiv = document.getElementById('login');
+const dashboardDiv = document.getElementById('dashboard');
+const userInput = document.getElementById('user');
+const passInput = document.getElementById('pass');
+
+// Mock user and booking data
+let users = [
+    {name:"Amit Sharma", username:"amit123", email:"amit@email.com", mobile:"+91 9876543210", visits:5, last:"Today", status:"pending"},
+    {name:"Rohit Kumar", username:"rohit456", email:"rohit@mail.com", mobile:"+91 9871122334", visits:3, last:"Yesterday", status:"pending"}
+];
+
+let bookings = [
+    {name:"Amit Sharma", email:"amit@email.com", mobile:"+91 9876543210", service:"Corporate Law", date:"12 Jan 2026", status:"pending"},
+    {name:"Rohit Kumar", email:"rohit@mail.com", mobile:"+91 9871122334", service:"Dispute Resolution", date:"15 Jan 2026", status:"pending"}
+];
+
+// Login
+function login() {
+    if(userInput.value === "admin" && passInput.value === "admin123") {
+        loginDiv.style.display = "none";
+        dashboardDiv.style.display = "block";
+        loadUsers();
+        loadBookings();
+    } else {
+        alert("Invalid login!\nUsername: admin\nPassword: admin123");
+    }
+}
+
+function logout(){ location.reload(); }
+
+function show(id){
+    document.querySelectorAll('.content').forEach(c => c.style.display = "none");
+    document.getElementById(id).style.display = "block";
+    document.querySelectorAll('.sidebar a').forEach(a => a.classList.remove("active"));
+    event.target.classList.add("active");
+}
+
+function updateStatus(btn, status){
+    const row = btn.closest("tr");
+    const statusCell = row.querySelector(".status");
+    if(status === "approved"){
+        statusCell.textContent = "Active";
+        statusCell.className = "status approved";
+    } else if(status === "rejected"){
+        statusCell.textContent = "Declined";
+        statusCell.className = "status rejected";
+    } else if(status === "blocked"){
+        statusCell.textContent = "Blocked";
+        statusCell.className = "status blocked";
+    }
+    row.querySelectorAll("button").forEach(b => b.disabled = true);
+}
+
+// Load Users
+function loadUsers(){
+    const table = document.getElementById("user-table");
+    table.innerHTML = `<tr>
+        <th>Name</th><th>Username</th><th>Email</th><th>Mobile No</th>
+        <th>Visits</th><th>Last Visit</th><th>Status</th><th>Action</th>
+    </tr>`;
+    users.forEach((u,i)=>{
+        const row = table.insertRow();
+        row.innerHTML = `
+            <td contenteditable>${u.name}</td>
+            <td contenteditable>${u.username}</td>
+            <td contenteditable>${u.email}</td>
+            <td contenteditable>${u.mobile}</td>
+            <td contenteditable>${u.visits}</td>
+            <td contenteditable>${u.last}</td>
+            <td><span class="status ${u.status}">${capitalize(u.status)}</span></td>
+            <td>
+                <button class="btn-action btn-block" onclick="updateStatus(this,'blocked')">Block</button>
+                <button class="btn-action btn-delete" onclick="deleteUser(${i})">Delete</button>
+            </td>
+        `;
+    });
+    document.getElementById("total-users").textContent = users.length;
+}
+
+// Delete user
+function deleteUser(index){
+    if(confirm("Are you sure you want to delete this user?")){
+        users.splice(index,1);
+        loadUsers();
+    }
+}
+
+// Load Bookings
+function loadBookings(){
+    const table = document.getElementById("booking-table");
+    table.innerHTML = `<tr>
+        <th>Name</th><th>Email</th><th>Mobile No</th><th>Service</th><th>Date</th><th>Status</th><th>Action</th>
+    </tr>`;
+    bookings.forEach((b,i)=>{
+        const row = table.insertRow();
+        row.innerHTML = `
+            <td contenteditable>${b.name}</td>
+            <td contenteditable>${b.email}</td>
+            <td contenteditable>${b.mobile}</td>
+            <td contenteditable>${b.service}</td>
+            <td contenteditable>${b.date}</td>
+            <td><span class="status ${b.status}">${capitalize(b.status)}</span></td>
+            <td>
+                <button class="btn-action btn-approve" onclick="updateStatus(this,'approved')">Approve</button>
+                <button class="btn-action btn-decline" onclick="updateStatus(this,'rejected')">Decline</button>
+            </td>
+        `;
+    });
+    document.getElementById("total-bookings").textContent = bookings.length;
+}
+
+function capitalize(str){ return str.charAt(0).toUpperCase() + str.slice(1); }
+</script>
+</body>
+</html>

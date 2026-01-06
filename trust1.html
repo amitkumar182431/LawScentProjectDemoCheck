@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corporate Legal Solutions</title>
+
+<style>
+/* ---------- GLOBAL ---------- */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+body{
+  background:#f4f6fa;
+  color:#222;
+  line-height:1.6;
+}
+
+/* ---------- HEADER ---------- */
+header{
+  background:linear-gradient(135deg,#D6AE6A,#D6AE6A,#D6AE6A);
+  color:#000000;
+  padding:60px 20px;
+  text-align:center;
+  position:relative;
+}
+
+.home-icon {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.home-icon:hover {
+  transform: scale(1.1);
+  background: rgba(255,255,255,0.2);
+}
+
+header h1{
+  font-size:2.6rem;
+  margin-bottom:15px;
+  animation:fadeDown 1s ease;
+}
+header p{
+  max-width:900px;
+  margin:auto;
+  opacity:0.9;
+  font-size:1.1rem;
+}
+
+/* ---------- CONTAINER ---------- */
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:50px 20px;
+}
+
+/* ---------- INDEX ---------- */
+.index{
+  background:#fff;
+  padding:30px;
+  border-radius:14px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  margin-bottom:50px;
+}
+.index h2{
+  margin-bottom:20px;
+  font-size:1.5rem;
+}
+.index ul{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:12px;
+}
+.index li{
+  list-style:none;
+}
+.index a{
+  text-decoration:none;
+  background:#eef3f8;
+  padding:12px 16px;
+  border-radius:10px;
+  display:block;
+  color:#203a43;
+  font-weight:600;
+  transition:0.3s;
+}
+.index a:hover{
+  background:#D6AE6A;
+  color:#fff;
+  transform:translateX(5px);
+}
+
+/* ---------- SECTIONS ---------- */
+.section{
+  background:#fff;
+  padding:40px;
+  border-radius:16px;
+  margin-bottom:40px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.07);
+  animation:fadeUp 1s ease;
+}
+.section h2{
+  color:#203a43;
+  margin-bottom:15px;
+}
+.section ul{
+  margin-top:10px;
+}
+.section li{
+  margin-bottom:8px;
+}
+
+/* ---------- TRUSTED BY ---------- */
+.trusted{
+  background:linear-gradient(135deg,#D6AE6A,#D6AE6A);
+  color:#060505;
+  padding:60px 20px;
+  overflow:hidden;
+}
+.trusted h2{
+  text-align:center;
+  margin-bottom:40px;
+  font-size:2rem;
+}
+.trusted-wrapper{
+  position:relative;
+  width:100%;
+  overflow:hidden;
+}
+.trusted-track{
+  display:flex;
+  gap:30px;
+  animation:scroll 40s linear infinite;
+}
+.trusted-item{
+  background:#ffffff;
+  padding:25px 35px;
+  border-radius:12px;
+  text-align:center;
+  white-space:nowrap;
+  font-weight:600;
+  font-size:0.95rem;
+  box-shadow:0 4px 15px rgba(0,0,0,0.1);
+  flex-shrink:0;
+  transition:0.3s;
+}
+.trusted-item:hover{
+  transform:translateY(-6px);
+  box-shadow:0 6px 20px rgba(0,0,0,0.15);
+}
+
+@keyframes scroll{
+  0%{transform:translateX(0);}
+  100%{transform:translateX(-50%);}
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+  background: #000000;
+  color: #ffffff;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.footer-main {
+  padding: 60px 5% 30px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+}
+
+.footer-section h3 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.footer-section p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.8;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+}
+
+.footer-section p strong {
+  color: #ffffff;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: #D6AE6A;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+  transform: translateX(5px);
+  font-weight: 600;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background: rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 30px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.footer-bottom-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.footer-bottom-links a:hover {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.copy {
+  color: rgba(249, 249, 249, 0.8);
+  font-size: 0.95rem;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-cta {
+  background: rgba(0, 0, 0, 0.1);
+  border: 2px solid #000000;
+  padding: 15px 30px;
+  border-radius: 8px;
+  margin-top: 20px;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.footer-cta a {
+  color: #fbf3f3;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.footer-cta:hover {
+  background: rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(30px);}
+  to{opacity:1; transform:translateY(0);}
+}
+@keyframes fadeDown{
+  from{opacity:0; transform:translateY(-30px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:768px){
+  header h1{font-size:2rem;}
+  .section{padding:25px;}
+  
+  .home-icon {
+    top: 20px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+  }
+  
+  .footer-main {
+    padding: 50px 4% 25px;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px 4%;
+  }
+  
+  .footer-bottom-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="/" class="home-icon" title="Back to Home">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+      <polyline points="9 22 9 12 15 12 15 22"></polyline>
+    </svg>
+  </a>
+  <h1>Corporate Legal Solutions</h1>
+  <p>
+    Comprehensive corporate legal services covering company formation,
+    compliance management, contract drafting, corporate governance,
+    and strategic advisory—helping businesses navigate complex legal
+    frameworks with confidence and clarity.
+  </p>
+</header>
+
+<div class="container">
+
+  <!-- INDEX -->
+  <div class="index">
+    <h2>Service Index</h2>
+    <ul>
+      <li><a href="#formation">Company Formation & Structuring</a></li>
+      <li><a href="#compliance">Corporate Compliance</a></li>
+      <li><a href="#contracts">Contract Drafting & Negotiation</a></li>
+      <li><a href="#governance">Corporate Governance</a></li>
+      <li><a href="#banking">Banking & Finance Advisory</a></li>
+      <li><a href="#employment">Employment & Labour Laws</a></li>
+      <li><a href="#ma">Mergers & Acquisitions</a></li>
+      <li><a href="#risk">Risk Management & Due Diligence</a></li>
+      <li><a href="#support">Ongoing Corporate Support</a></li>
+    </ul>
+  </div>
+
+  <!-- SECTIONS -->
+  <div id="formation" class="section">
+    <h2>Company Formation & Structuring</h2>
+    <ul>
+      <li>Incorporation of Private, Public, LLP & OPC entities</li>
+      <li>Business structure and shareholding advisory</li>
+      <li>MOA, AOA, shareholder & partnership agreements</li>
+      <li>Licenses, registrations & statutory approvals</li>
+    </ul>
+  </div>
+
+  <div id="compliance" class="section">
+    <h2>Corporate Compliance & Regulatory Advisory</h2>
+    <ul>
+      <li>Companies Act, 2013 compliances</li>
+      <li>ROC filings and compliance audits</li>
+      <li>SEBI, RBI, FEMA advisory</li>
+      <li>Sector-specific regulatory guidance</li>
+    </ul>
+  </div>
+
+  <div id="contracts" class="section">
+    <h2>Contract Drafting, Review & Negotiation</h2>
+    <ul>
+      <li>Commercial, vendor, service & employment contracts</li>
+      <li>NDAs, MOUs, SLAs & policy drafting</li>
+      <li>Risk analysis and clause optimization</li>
+    </ul>
+  </div>
+
+  <div id="governance" class="section">
+    <h2>Corporate Governance & Board Advisory</h2>
+    <ul>
+      <li>Board structuring and governance frameworks</li>
+      <li>Policies, codes of conduct & ethics</li>
+      <li>Board meetings and statutory records</li>
+    </ul>
+  </div>
+
+  <div id="banking" class="section">
+    <h2>Banking, Finance & Institutional Advisory</h2>
+    <ul>
+      <li>Loan, security & financing documentation</li>
+      <li>Advisory for banks and financial institutions</li>
+      <li>Corporate finance compliance</li>
+    </ul>
+  </div>
+
+  <div id="employment" class="section">
+    <h2>Employment & Labour Law Compliance</h2>
+    <ul>
+      <li>Employment agreements and HR policies</li>
+      <li>Labour law compliance & advisory</li>
+      <li>Dispute risk mitigation</li>
+    </ul>
+  </div>
+
+  <div id="ma" class="section">
+    <h2>Mergers, Acquisitions & Restructuring</h2>
+    <ul>
+      <li>Legal due diligence</li>
+      <li>Transaction structuring & documentation</li>
+      <li>Regulatory approvals & post-merger compliance</li>
+    </ul>
+  </div>
+
+  <div id="risk" class="section">
+    <h2>Risk Management & Legal Due Diligence</h2>
+    <ul>
+      <li>Legal risk identification</li>
+      <li>Compliance gap analysis</li>
+      <li>Preventive legal strategies</li>
+    </ul>
+  </div>
+
+  <div id="support" class="section">
+    <h2>Ongoing Corporate Legal Support</h2>
+    <ul>
+      <li>Retainer-based legal services</li>
+      <li>Day-to-day corporate advisory</li>
+      <li>Strategic legal support aligned with business goals</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- TRUSTED BY -->
+<section class="trusted">
+  <h2>Trusted By</h2>
+  <div class="trusted-wrapper">
+    <div class="trusted-track">
+      <div class="trusted-item">Zostel Hospitality Pvt. Ltd.</div>
+      <div class="trusted-item">Baddi University</div>
+      <div class="trusted-item">State Bank of India</div>
+      <div class="trusted-item">IndusInd Bank</div>
+      <div class="trusted-item">JEEV Business Solutions</div>
+      <div class="trusted-item">RPSG Solvanta</div>
+      <div class="trusted-item">Positive Plastics</div>
+      <div class="trusted-item">Taksh Hospitality</div>
+      <div class="trusted-item">Ezulix Software</div>
+      <div class="trusted-item">Express Publications</div>
+      <div class="trusted-item">Gillette India Limited</div>
+      <div class="trusted-item">TVS Electronics</div>
+      <div class="trusted-item">FCC Clutch India</div>
+      <div class="trusted-item">JPRWebs Communications</div>
+      <div class="trusted-item">Zydo Technologies</div>
+      <div class="trusted-item">IIM Udaipur</div>
+      <div class="trusted-item">LAB Sulphonate</div>
+      <div class="trusted-item">DRKB Infraprojects</div>
+      <div class="trusted-item">Tata Consultancy Services</div>
+      <div class="trusted-item">Easy Go Enterprises</div>
+      <div class="trusted-item">EasyGov</div>
+      <!-- Duplicate for seamless loop -->
+      <div class="trusted-item">Zostel Hospitality Pvt. Ltd.</div>
+      <div class="trusted-item">Baddi University</div>
+      <div class="trusted-item">State Bank of India</div>
+      <div class="trusted-item">IndusInd Bank</div>
+      <div class="trusted-item">JEEV Business Solutions</div>
+      <div class="trusted-item">RPSG Solvanta</div>
+      <div class="trusted-item">Positive Plastics</div>
+      <div class="trusted-item">Taksh Hospitality</div>
+      <div class="trusted-item">Ezulix Software</div>
+      <div class="trusted-item">Express Publications</div>
+      <div class="trusted-item">Gillette India Limited</div>
+      <div class="trusted-item">TVS Electronics</div>
+      <div class="trusted-item">FCC Clutch India</div>
+      <div class="trusted-item">JPRWebs Communications</div>
+      <div class="trusted-item">Zydo Technologies</div>
+      <div class="trusted-item">IIM Udaipur</div>
+      <div class="trusted-item">LAB Sulphonate</div>
+      <div class="trusted-item">DRKB Infraprojects</div>
+      <div class="trusted-item">Tata Consultancy Services</div>
+      <div class="trusted-item">Easy Go Enterprises</div>
+      <div class="trusted-item">EasyGov</div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-main">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>LawScent</h3>
+        <p>Your trusted legal partner for over 20 years. We provide comprehensive legal solutions for businesses of all sizes, helping you navigate complex legal landscapes with confidence.</p>
+        <div class="footer-cta">
+          <a href="#contact">Get Legal Consultation →</a>
+        </div>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Instagram">📷</a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Our Thinking</a></li>
+          <li><a href="#careers">Careers</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Legal Services</h3>
+        <ul class="footer-links">
+          <li><a href="#">Corporate Law</a></li>
+          <li><a href="#">Commercial Law</a></li>
+          <li><a href="#">Tax Law</a></li>
+          <li><a href="#">Criminal Justice</a></li>
+          <li><a href="#">Compliance & Regulatory</a></li>
+          <li><a href="#">Contract Management</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Contact Info</h3>
+        <p><strong>Address:</strong><br>B-431, Sushant Lok Road<br>Sushant Lok Phase I, Sector 27<br>Gurugram, Haryana 122009</p>
+        <p><strong>Email:</strong><br>contact@lawscent.com</p>
+        <p><strong>Phone:</strong><br>(+91) 7618151701</p>
+        <p><strong>Hours:</strong><br>Mon - Fri (9am - 6pm)</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="copy">&copy; 2026 LawScent. All rights reserved</div>
+      <div class="footer-bottom-links">
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Sitemap</a>
+        <a href="#">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Smooth Scroll */
+document.querySelectorAll('.index a').forEach(link=>{
+  link.addEventListener('click',e=>{
+    e.preventDefault();
+    document.querySelector(link.getAttribute('href'))
+      .scrollIntoView({behavior:'smooth'});
+  });
+});
+</script>
+
+</body>
+</html>

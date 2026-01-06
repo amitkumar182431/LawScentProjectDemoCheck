@@ -43,12 +43,54 @@ const menuBtn = document.querySelector('.menubtn');
 const navbar = document.querySelector('.navbar');
 const navLinks = document.querySelectorAll('.navbar a');
 
+// Create backdrop element for mobile menu
+let backdrop = null;
+
+function createBackdrop() {
+    if (!backdrop) {
+        backdrop = document.createElement('div');
+        backdrop.className = 'mobile-menu-backdrop';
+        backdrop.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(8px);
+            z-index: 998;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        `;
+        document.body.appendChild(backdrop);
+        
+        backdrop.addEventListener('click', () => {
+            closeMobileMenu();
+        });
+    }
+    return backdrop;
+}
+
 // Function to close mobile menu
 function closeMobileMenu() {
-    if (navbar) navbar.classList.remove('active');
+    if (navbar) {
+        navbar.classList.remove('active');
+        // Reset menu items animation state
+        const menuItems = navbar.querySelectorAll('a');
+        menuItems.forEach(item => {
+            item.style.animation = 'none';
+            // Force reflow to reset animation
+            void item.offsetWidth;
+        });
+    }
     if (menuBtn) menuBtn.classList.remove('active');
     document.body.style.overflow = '';
     document.body.style.position = '';
+    if (backdrop) {
+        backdrop.style.opacity = '0';
+        backdrop.style.pointerEvents = 'none';
+    }
 }
 
 // Function to open mobile menu
@@ -61,6 +103,12 @@ function openMobileMenu() {
         document.body.style.position = 'fixed';
         document.body.style.width = '100%';
     }
+    // Show backdrop
+    const backdropEl = createBackdrop();
+    backdropEl.style.pointerEvents = 'all';
+    requestAnimationFrame(() => {
+        backdropEl.style.opacity = '1';
+    });
 }
 
 if (menuBtn) {
@@ -100,8 +148,9 @@ if (navbar && menuBtn) {
         const isMenuOpen = navbar.classList.contains('active');
         const isClickInsideNav = navbar.contains(e.target);
         const isClickOnMenuBtn = menuBtn.contains(e.target);
+        const isClickOnBackdrop = backdrop && backdrop.contains(e.target);
         
-        if (isMenuOpen && !isClickInsideNav && !isClickOnMenuBtn) {
+        if (isMenuOpen && !isClickInsideNav && !isClickOnMenuBtn && !isClickOnBackdrop) {
             closeMobileMenu();
         }
     });
@@ -210,3 +259,68 @@ document.querySelectorAll('img').forEach(img => {
         img.style.transition = 'opacity 0.3s ease-in';
     }
 });
+
+// Job Application Form Modal
+const openJobFormBtn = document.getElementById('openJobForm');
+const closeJobFormBtn = document.getElementById('closeJobForm');
+const jobFormModal = document.getElementById('jobFormModal');
+const jobApplicationForm = document.getElementById('jobApplicationForm');
+
+if (openJobFormBtn && jobFormModal) {
+    openJobFormBtn.addEventListener('click', () => {
+        jobFormModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+}
+
+if (closeJobFormBtn && jobFormModal) {
+    closeJobFormBtn.addEventListener('click', () => {
+        jobFormModal.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+}
+
+// Close modal when clicking on overlay
+if (jobFormModal) {
+    const overlay = jobFormModal.querySelector('.job-form-overlay');
+    if (overlay) {
+        overlay.addEventListener('click', () => {
+            jobFormModal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
+}
+
+// Close modal on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && jobFormModal && jobFormModal.classList.contains('active')) {
+        jobFormModal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+});
+
+// Handle job application form submission
+if (jobApplicationForm) {
+    jobApplicationForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(jobApplicationForm);
+        const firstName = formData.get('firstName');
+        const lastName = formData.get('lastName');
+        const email = formData.get('email');
+        const phone = formData.get('phone');
+        const position = formData.get('position');
+        
+        // Basic validation
+        if (firstName && lastName && email && phone && position) {
+            // Here you would normally send the form data to a server
+            alert('Thank you for your application! We will review your submission and get back to you soon.');
+            jobApplicationForm.reset();
+            jobFormModal.classList.remove('active');
+            document.body.style.overflow = '';
+        } else {
+            alert('Please fill in all required fields.');
+        }
+    });
+}
