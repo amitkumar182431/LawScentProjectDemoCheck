@@ -8,23 +8,23 @@ const SERVICES = [
     { id: 5, cat: 'Corporate', title: 'Real Estate & Infrastructure', desc: 'Legal frameworks for urban and industrial development.', img: 'rei.png' },
     { id: 6, cat: 'Corporate', title: 'Taxation & Advisory', desc: 'Strategic planning for domestic and international fiscal matters.', img: 'tax.png' },
     { id: 7, cat: 'Corporate', title: 'Labour & Employment Law', desc: 'Workplace compliance and human capital management.', img: 'lel.png' },
-    { id: 8, cat: 'Corporate', title: 'Insolvency & Bankruptcy', desc: 'Corporate restructuring and liquidation proceedings.', img: 'cat.png' },
-    { id: 9, cat: 'Corporate', title: 'Contract Drafting & Vetting', desc: 'Meticulous engineering of high-stakes commercial agreements.', img: 'cat.png' },
-    { id: 10, cat: 'Corporate', title: 'Regulatory & Licensing', desc: 'Guidance on government permits and operating licenses.', img: 'cat.png' },
-    { id: 11, cat: 'Corporate', title: 'Unclaimed Assets Recovery', desc: 'Retrieval of forgotten corporate and individual financial assets.', img: 'cat.png' },
-    { id: 12, cat: 'Corporate', title: 'Banking & Finance', desc: 'Counsel on securities, lending, and capital markets.', img: 'cat.png' },
+    { id: 8, cat: 'Corporate', title: 'Insolvency & Bankruptcy', desc: 'Corporate restructuring and liquidation proceedings.', img: 'ib.png' },
+    { id: 9, cat: 'Corporate', title: 'Contract Drafting & Vetting', desc: 'Meticulous engineering of high-stakes commercial agreements.', img: 'cdv.png' },
+    { id: 10, cat: 'Corporate', title: 'Regulatory & Licensing', desc: 'Guidance on government permits and operating licenses.', img: 'rl.png' },
+    { id: 11, cat: 'Corporate', title: 'Unclaimed Assets Recovery', desc: 'Retrieval of forgotten corporate and individual financial assets.', img: 'uar.png' },
+    { id: 12, cat: 'Corporate', title: 'Banking & Finance', desc: 'Counsel on securities, lending, and capital markets.', img: 'bf.png' },
 
-    { id: 13, cat: 'Dispute', title: 'Litigation Services', desc: 'Representation across all levels of civil and commercial courts.', img: 'cat.png' },
-    { id: 14, cat: 'Dispute', title: 'Arbitration & ADR', desc: 'Private mediation and international arbitration mechanisms.', img: 'cat.png' },
+    { id: 13, cat: 'Dispute', title: 'Litigation Services', desc: 'Representation across all levels of civil and commercial courts.', img: 'ls.png' },
+    { id: 14, cat: 'Dispute', title: 'Arbitration & ADR', desc: 'Private mediation and international arbitration mechanisms.', img: 'aa.png' },
 
-    { id: 15, cat: 'Personal', title: 'Family & Matrimonial', desc: 'Counsel for settlements, guardianship, and family disputes.', img: 'cat.png' },
-    { id: 16, cat: 'Personal', title: 'Recovery Suits & Debt', desc: 'Financial restitution and individual debt recovery matters.', img: 'cat.png' },
-    { id: 17, cat: 'Personal', title: 'Court Marriage & Registration', desc: 'Legal validation and registration of matrimonial unions.', img: 'cat.png' },
-    { id: 18, cat: 'Personal', title: 'Property & Title Issues', desc: 'Resolving land title disputes and succession conflicts.', img: 'cat.png' },
-    { id: 19, cat: 'Personal', title: 'Employment & Salary Disputes', desc: 'Advocacy for workplace rights and compensation recovery.', img: 'cat.png' },
-    { id: 20, cat: 'Personal', title: 'Divorce & Maintenance', desc: 'Sensitive representation in separation and alimony cases.', img: 'cat.png' },
-    { id: 21, cat: 'Personal', title: 'Civil Litigation', desc: 'Defense and prosecution of individual civil claims.', img: 'cat.png' },
-    { id: 22, cat: 'Personal', title: 'Criminal Law Services', desc: 'Protecting personal liberties and white-collar defense.', img: 'cat.png' }
+    { id: 15, cat: 'Personal', title: 'Family & Matrimonial', desc: 'Counsel for settlements, guardianship, and family disputes.', img: 'fm.png' },
+    { id: 16, cat: 'Personal', title: 'Recovery Suits & Debt', desc: 'Financial restitution and individual debt recovery matters.', img: 'rsd.png' },
+    { id: 17, cat: 'Personal', title: 'Court Marriage & Registration', desc: 'Legal validation and registration of matrimonial unions.', img: 'cmr.png' },
+    { id: 18, cat: 'Personal', title: 'Property & Title Issues', desc: 'Resolving land title disputes and succession conflicts.', img: 'pti.png' },
+    { id: 19, cat: 'Personal', title: 'Employment & Salary Disputes', desc: 'Advocacy for workplace rights and compensation recovery.', img: 'esd.png' },
+    { id: 20, cat: 'Personal', title: 'Divorce & Maintenance', desc: 'Sensitive representation in separation and alimony cases.', img: 'dm.png' },
+    { id: 21, cat: 'Personal', title: 'Civil Litigation', desc: 'Defense and prosecution of individual civil claims.', img: 'cl.png' },
+    { id: 22, cat: 'Personal', title: 'Criminal Law Services', desc: 'Protecting personal liberties and white-collar defense.', img: 'cls.png' }
 ];
 
 const grid = document.getElementById('services-grid');
