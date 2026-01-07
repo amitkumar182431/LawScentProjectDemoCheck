@@ -168,61 +168,60 @@ header .logo .logo-text span {
     transform: scale(0.95);
 }
 
-header .menubtn {
-    cursor: pointer;
-    margin-right: 0;
+/* Hamburger Menu Button - New Implementation */
+.hamburger-menu {
     display: none;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 32px;
-    height: 28px;
-    padding: 0.5rem;
-    border-radius: 6px;
-    transition: var(--transition);
+    cursor: pointer;
     background: transparent;
     border: none;
-    z-index: 1001;
+    padding: 0.5rem;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: all 0.3s ease;
     position: relative;
+    z-index: 1001;
     -webkit-tap-highlight-color: transparent;
 }
 
-header .menubtn:hover {
-    background: rgba(255, 255, 255, 0.15);
-    transform: scale(1.05);
+.hamburger-menu:hover {
+    background: rgba(255, 255, 255, 0.1);
 }
 
-header .menubtn:active {
+.hamburger-menu:active {
     transform: scale(0.95);
 }
 
-header .menubtn .menu-line {
-    width: 100%;
-    height: 3px;
-    background: var(--white);
-    border-radius: 3px;
-    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+.hamburger-menu svg {
+    width: 28px;
+    height: 28px;
+    color: var(--white);
+    transition: transform 0.3s ease;
+}
+
+.hamburger-menu .line {
+    transition: all 0.3s ease;
     transform-origin: center;
-    display: block;
 }
 
-header .menubtn.active {
-    background: rgba(255, 255, 255, 0.2);
+/* Active state - X icon */
+.hamburger-menu.active .line-top {
+    transform: translateY(6px) rotate(45deg);
 }
 
-header .menubtn.active .menu-line:nth-child(1) {
-    transform: rotate(45deg) translate(7px, 7px);
-    background: var(--white);
-}
-
-header .menubtn.active .menu-line:nth-child(2) {
+.hamburger-menu.active .line-middle {
     opacity: 0;
-    transform: translateX(-10px);
-    width: 0;
+    transform: scaleX(0);
 }
 
-header .menubtn.active .menu-line:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -7px);
-    background: var(--white);
+.hamburger-menu.active .line-bottom {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+.hamburger-menu.active {
+    background: rgba(255, 255, 255, 0.15);
 }
 
 header .navbar {
@@ -1537,12 +1536,8 @@ header .navbar a:nth-child(5) { animation-delay: 0.5s; }
         display: flex;
     }
 
-    header .menubtn {
+    .hamburger-menu {
         display: flex;
-        width: 36px;
-        height: 32px;
-        min-width: 36px;
-        min-height: 32px;
     }
 
     header .navbar {
@@ -1552,12 +1547,11 @@ header .navbar a:nth-child(5) { animation-delay: 0.5s; }
         width: 85%;
         max-width: 400px;
         height: 100vh;
-        background: linear-gradient(135deg, rgba(0, 0, 0, 0.98) 0%, rgba(20, 20, 30, 0.98) 100%);
-        backdrop-filter: blur(20px);
+        background: rgba(0, 0, 0, 0.95);
         padding: 5rem 2rem 2rem;
-        transform: translateX(-100%);
+        transform: translate3d(-100%, 0, 0);
         transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        box-shadow: 4px 0 30px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(236, 159, 104, 0.1) inset;
+        box-shadow: 4px 0 30px rgba(0, 0, 0, 0.6);
         z-index: 999;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
@@ -1565,19 +1559,22 @@ header .navbar a:nth-child(5) { animation-delay: 0.5s; }
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
-        border-right: 2px solid rgba(236, 159, 104, 0.2);
+        border-right: 2px solid rgba(236, 159, 104, 0.3);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
     }
 
     header .navbar.active {
-        transform: translateX(0);
+        transform: translate3d(0, 0, 0);
     }
 
     header .navbar a {
         display: flex;
         width: 100%;
-        color: var(--white);
+        color: #202022;
+        background: #ec9f68;
         font-size: 1.2rem;
-        font-weight: 600;
+        font-weight: 700;
         margin: 0.75rem 0;
         padding: 1.25rem 1.5rem;
         border-left: 4px solid transparent;
@@ -1588,10 +1585,18 @@ header .navbar a:nth-child(5) { animation-delay: 0.5s; }
         align-items: center;
         justify-content: flex-start;
         flex-direction: row;
-        opacity: 0;
-        transform: translateX(-30px);
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
         position: relative;
-        overflow: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        filter: none;
+    }
+
+    header .navbar:not(.active) a {
+        opacity: 0;
+        transform: translate3d(-30px, 0, 0);
     }
 
     header .navbar.active a {
@@ -1607,55 +1612,21 @@ header .navbar a:nth-child(5) { animation-delay: 0.5s; }
     @keyframes slideInFromLeft {
         from {
             opacity: 0;
-            transform: translateX(-30px);
+            transform: translate3d(-30px, 0, 0);
         }
         to {
             opacity: 1;
-            transform: translateX(0);
+            transform: translate3d(0, 0, 0);
         }
-    }
-
-    header .navbar a::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        height: 100%;
-        width: 4px;
-        background: var(--primary-color);
-        transform: scaleY(0);
-        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        transform-origin: top;
-    }
-
-    header .navbar a::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 0;
-        height: 100%;
-        background: rgba(236, 159, 104, 0.1);
-        transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: -1;
     }
 
     header .navbar a:hover,
     header .navbar a:active {
-        background: rgba(236, 159, 104, 0.15);
-        color: var(--primary-color);
-        transform: translateX(8px);
-        border-left-color: var(--primary-color);
-    }
-
-    header .navbar a:hover::before,
-    header .navbar a:active::before {
-        transform: scaleY(1);
-    }
-
-    header .navbar a:hover::after,
-    header .navbar a:active::after {
-        width: 100%;
+        background: #d88a52;
+        color: #202022;
+        transform: translate3d(8px, 0, 0);
+        border-left-color: #202022;
+        box-shadow: 0 4px 12px rgba(236, 159, 104, 0.4);
     }
 
     /* Ensure menu items stack vertically */
@@ -1934,14 +1905,15 @@ header .navbar a:nth-child(5) { animation-delay: 0.5s; }
         height: 18px;
     }
 
-    header .menubtn {
-        width: 32px;
-        height: 28px;
+    .hamburger-menu {
+        width: 40px;
+        height: 40px;
         padding: 0.4rem;
     }
 
-    header .menubtn .menu-line {
-        height: 2.5px;
+    .hamburger-menu svg {
+        width: 24px;
+        height: 24px;
     }
 
     header .navbar {
@@ -2193,11 +2165,11 @@ textarea:focus-visible {
 @media (max-width: 768px) {
     header .navbar::before {
         content: '';
-        position: fixed;
+        /* position: fixed;
         top: 0;
         left: 0;
         right: 0;
-        bottom: 0;
+        bottom: 0; */
         background: rgba(0, 0, 0, 0.75);
         opacity: 0;
         pointer-events: none;
