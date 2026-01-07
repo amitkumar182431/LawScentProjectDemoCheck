@@ -3,8 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Who We Are - LawScent Associates</title>
     <style>
+        /* Hero Section with Background Image */
+        .hero-section {
+            position: relative;
+            background: linear-gradient(135deg, rgba(26, 32, 44, 0.95) 0%, rgba(45, 55, 72, 0.9) 100%), url('wwa1.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 140px 20px;
+            margin: 0 0 60px 0;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(214, 174, 106, 0.15) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-section h2 {
+            font-size: 3.8rem;
+            font-weight: 900;
+            margin-bottom: 25px;
+            text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.6);
+            letter-spacing: -1px;
+            line-height: 1.2;
+            color: #ffffff;
+            animation: slideInLeft 1s ease-out 0.2s both;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-section p {
+            font-size: 1.4rem;
+            max-width: 900px;
+            margin: 0 auto 35px;
+            line-height: 1.9;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            color: #ffffff;
+            animation: slideInRight 1s ease-out 0.4s both;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+            animation: fadeIn 1.5s ease-out 0.8s both;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .stat-item {
+            text-align: center;
+            transition: transform 0.3s ease;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 25px 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            min-width: 160px;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(214, 174, 106, 0.5);
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #ffffff;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            display: block;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.95);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .hero-divider {
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #D6AE6A, transparent);
+            margin: 35px auto;
+            border-radius: 2px;
+            animation: expand 1s ease-out 0.6s both;
+        }
+
+        @keyframes expand {
+            from {
+                width: 0;
+                opacity: 0;
+            }
+            to {
+                width: 120px;
+                opacity: 1;
+            }
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,11 +173,33 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            background: #f5f7fa;
             min-height: 100vh;
-            padding: 20px;
+            padding: 0;
             display: flex;
             flex-direction: column;
+        }
+
+        /* Professional Header Bar */
+        .header-bar {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         .container {
@@ -25,41 +207,70 @@
             margin: 0 auto;
             width: 100%;
             flex: 1;
+            padding: 0 20px;
         }
 
         .header {
             display: flex;
             align-items: center;
-            margin-bottom: 50px;
+            justify-content: space-between;
+            margin-bottom: 0;
             gap: 20px;
-            padding: 30px 0;
+            padding: 25px 40px;
             position: relative;
+            background: transparent;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            animation: fadeInLeft 0.8s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .header-right {
+            animation: fadeInRight 0.8s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         .header::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 120px;
-            height: 4px;
-            background: linear-gradient(90deg, #D6AE6A, transparent);
-            border-radius: 2px;
+            display: none;
         }
 
         .back-btn {
             background: linear-gradient(135deg, #D6AE6A 0%, #c49d5a 100%);
             border: none;
             color: white;
-            width: 55px;
-            height: 55px;
-            border-radius: 14px;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 5px 15px rgba(214, 174, 106, 0.3);
+            box-shadow: 0 4px 12px rgba(214, 174, 106, 0.25);
             position: relative;
             overflow: hidden;
         }
@@ -83,25 +294,108 @@
         }
 
         .back-btn:hover {
-            transform: translateX(-8px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(214, 174, 106, 0.5);
+            transform: translateX(-5px) scale(1.05);
+            box-shadow: 0 6px 20px rgba(214, 174, 106, 0.4);
+        }
+
+        .back-btn:active {
+            transform: translateX(-5px) scale(0.98);
         }
 
         .back-btn svg {
-            width: 26px;
-            height: 26px;
+            width: 22px;
+            height: 22px;
             position: relative;
             z-index: 1;
+            transition: transform 0.3s ease;
+        }
+
+        .back-btn:hover svg {
+            transform: translateX(-2px);
         }
 
         h1 {
-            color: #2c3e50;
-            font-size: 3rem;
+            color: #1a202c;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 0;
+            letter-spacing: -1px;
+            position: relative;
+            display: inline-block;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #D6AE6A, transparent);
+            border-radius: 2px;
+            animation: expandLine 1s ease-out 0.5s forwards;
+        }
+
+        @keyframes expandLine {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100px;
+            }
+        }
+
+        .page-subtitle {
+            color: #718096;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 6px 0 0 0;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out 0.6s forwards;
+        }
+
+        .header-cta-btn {
+            background: linear-gradient(135deg, #D6AE6A 0%, #c49d5a 100%);
+            color: #ffffff;
+            padding: 12px 28px;
+            border-radius: 10px;
+            text-decoration: none;
             font-weight: 700;
-            background: linear-gradient(135deg, #000000 0%, #000000 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 12px rgba(214, 174, 106, 0.25);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .header-cta-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .header-cta-btn:hover::before {
+            left: 100%;
+        }
+
+        .header-cta-btn:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 6px 20px rgba(214, 174, 106, 0.4);
+        }
+
+        .header-cta-btn:active {
+            transform: translateY(0) scale(0.98);
         }
 
         .dashboard {
@@ -125,14 +419,25 @@
 
         .card {
             background: #ffffff;
-            border: 1px solid #e8e8e8;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
             position: relative;
             overflow: hidden;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card:hover .card-image {
+            transform: scale(1.1);
         }
 
         .card::before {
@@ -168,8 +473,8 @@
         }
 
         .card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 15px 40px rgba(214, 174, 106, 0.2);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
             border-color: #D6AE6A;
         }
 
@@ -180,6 +485,7 @@
         .card-content {
             position: relative;
             z-index: 1;
+            padding: 40px;
         }
 
         .card-icon {
@@ -207,10 +513,10 @@
         }
 
         .card h2 {
-            color: #2c3e50;
+            color: #1a202c;
             font-size: 1.75rem;
             margin-bottom: 14px;
-            font-weight: 700;
+            font-weight: 800;
             transition: color 0.3s ease;
         }
 
@@ -219,7 +525,7 @@
         }
 
         .card p {
-            color: #6c757d;
+            color: #4a5568;
             line-height: 1.7;
             font-size: 1rem;
             margin-bottom: 24px;
@@ -262,19 +568,23 @@
 
         footer {
             margin-top: 80px;
-            padding: 40px 20px;
+            padding: 60px 20px;
             text-align: center;
-            background: linear-gradient(135deg, #fbfbfb 0%, #ffffff 100%);
-            border-radius: 20px;
-            box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.1);
+            background: #1a202c;
+            border-radius: 0;
+            box-shadow: none;
         }
 
         .footer-content h3 {
-            color: #000000;
+            color: #ffffff;
             font-size: 2rem;
-            font-weight: 700;
+            font-weight: 800;
             margin-bottom: 20px;
-            letter-spacing: 1px;
+            letter-spacing: -0.5px;
+        }
+
+        .footer-content p {
+            color: #cbd5e0;
         }
 
         .social-links {
@@ -288,8 +598,8 @@
         .social-link {
             width: 50px;
             height: 50px;
-            background: rgba(214, 174, 106, 0.1);
-            border: 2px solid #D6AE6A;
+            background: rgba(214, 174, 106, 0.15);
+            border: 2px solid rgba(214, 174, 106, 0.3);
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -302,6 +612,7 @@
 
         .social-link:hover {
             background: #D6AE6A;
+            border-color: #D6AE6A;
             color: white;
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(214, 174, 106, 0.4);
@@ -313,6 +624,70 @@
         }
 
         @media (max-width: 768px) {
+            .header {
+                padding: 20px 20px;
+                flex-wrap: wrap;
+            }
+
+            .header-left {
+                gap: 15px;
+            }
+
+            .header-right {
+                width: 100%;
+                margin-top: 15px;
+            }
+
+            .header-cta-btn {
+                width: 100%;
+                justify-content: center;
+                padding: 14px 20px;
+                font-size: 0.9rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .page-subtitle {
+                font-size: 0.8rem;
+                letter-spacing: 1.5px;
+            }
+
+            .hero-section {
+                padding: 100px 20px;
+                background-attachment: scroll;
+            }
+
+            .hero-section h2 {
+                font-size: 2.8rem;
+                letter-spacing: -0.5px;
+            }
+
+            .hero-section p {
+                font-size: 1.15rem;
+                margin-bottom: 30px;
+            }
+
+            .hero-stats {
+                gap: 40px;
+                margin-top: 40px;
+            }
+
+            .stat-number {
+                font-size: 2.8rem;
+            }
+
+            .stat-label {
+                font-size: 0.85rem;
+                letter-spacing: 1.5px;
+            }
+
+            .hero-divider {
+                width: 80px;
+                margin: 25px auto;
+            }
+
             h1 {
                 font-size: 2rem;
             }
@@ -337,8 +712,70 @@
         }
 
         @media (max-width: 480px) {
+            .header {
+                padding: 18px 15px;
+            }
+
+            .header-left {
+                gap: 12px;
+            }
+
+            .back-btn {
+                width: 45px;
+                height: 45px;
+            }
+
+            .back-btn svg {
+                width: 20px;
+                height: 20px;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            .page-subtitle {
+                font-size: 0.7rem;
+                letter-spacing: 1px;
+            }
+
+            .header-cta-btn {
+                padding: 12px 18px;
+                font-size: 0.85rem;
+            }
+
             body {
-                padding: 15px;
+                padding: 0;
+            }
+
+            .hero-section {
+                padding: 80px 15px;
+            }
+
+            .hero-section h2 {
+                font-size: 2.2rem;
+            }
+
+            .hero-section p {
+                font-size: 1rem;
+            }
+
+            .hero-stats {
+                gap: 30px;
+                margin-top: 35px;
+            }
+
+            .stat-number {
+                font-size: 2.3rem;
+            }
+
+            .stat-label {
+                font-size: 0.75rem;
+                letter-spacing: 1px;
+            }
+
+            .hero-divider {
+                width: 60px;
             }
 
             h1 {
@@ -371,26 +808,68 @@
     </style>
 </head>
 <body>
+    <div class="header-bar">
+        <div class="container">
+            <div class="header">
+                <div class="header-left">
+                    <button class="back-btn" onclick="goHome()" aria-label="Back to Home">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                        </svg>
+                    </button>
+                    <div>
+                        <h1>Who We Are</h1>
+                        <p class="page-subtitle">Our Story & Values</p>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <a href="booking.html" class="header-cta-btn">Book Consultation</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
-        <div class="header">
-            <button class="back-btn" onclick="goHome()" aria-label="Back to Home">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
-                </svg>
-            </button>
-            <h1>Dashboard</h1>
+
+        <div class="hero-section">
+            <div class="hero-content">
+                <h2>Excellence in Legal Practice Since 2004</h2>
+                <div class="hero-divider"></div>
+                <p>LawScent Associates is a full-service law firm committed to delivering exceptional legal solutions. We combine deep expertise, innovative thinking, and unwavering dedication to protect what matters most to our clients.</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Cases Won</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Success Rate</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Expert Lawyers</span>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="dashboard">
             <div class="card" onclick="navigateTo('overview')">
+                <img src="t5.webp" alt="Our Vision" class="card-image">
                 <div class="card-content">
                     <div class="card-icon">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
                         </svg>
                     </div>
-                    <h2>Overview</h2>
-                    <p>Get a comprehensive view of all activities, metrics, and key performance indicators at a glance.</p>
+                    <h2>Our Vision</h2>
+                    <p>To be the most trusted legal partner, setting new standards in client service, ethical practice, and innovative legal solutions that transform challenges into opportunities.</p>
                     <a href="#" class="learn-more" onclick="event.stopPropagation(); navigateTo('overview')">
                         Learn More
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -401,14 +880,15 @@
             </div>
 
             <div class="card" onclick="navigateTo('governance')">
+                <img src="t2.jpg" alt="Our Mission" class="card-image">
                 <div class="card-content">
                     <div class="card-icon">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                         </svg>
                     </div>
-                    <h2>Governance</h2>
-                    <p>Manage policies, compliance requirements, and organizational structure with full transparency.</p>
+                    <h2>Our Mission</h2>
+                    <p>Empowering clients through exceptional legal counsel, strategic guidance, and unwavering commitment to justice. We strive to make legal excellence accessible and impactful.</p>
                     <a href="#" class="learn-more" onclick="event.stopPropagation(); navigateTo('governance')">
                         Learn More
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -419,14 +899,15 @@
             </div>
 
             <div class="card" onclick="navigateTo('recognition')">
+                <img src="t3.avif" alt="Core Values" class="card-image">
                 <div class="card-content">
                     <div class="card-icon">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
                     </div>
-                    <h2>Recognition</h2>
-                    <p>Celebrate achievements, awards, and milestones with our recognition and rewards system.</p>
+                    <h2>Core Values</h2>
+                    <p>Integrity, Excellence, Innovation, and Client Focus. These principles guide every decision we make and every relationship we build with our valued clients.</p>
                     <a href="#" class="learn-more" onclick="event.stopPropagation(); navigateTo('recognition')">
                         Learn More
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -437,16 +918,17 @@
             </div>
 
             <div class="card" onclick="navigateTo('newsroom')">
+                <img src="t4.jpg" alt="Our Team" class="card-image">
                 <div class="card-content">
                     <div class="card-icon">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
                         </svg>
                     </div>
-                    <h2>Newsroom</h2>
-                    <p>Stay updated with the latest announcements, press releases, and company news.</p>
+                    <h2>Expert Team</h2>
+                    <p>Our diverse team of seasoned attorneys brings decades of combined experience across corporate law, litigation, and specialized legal domains to serve you better.</p>
                     <a href="#" class="learn-more" onclick="event.stopPropagation(); navigateTo('newsroom')">
-                        Learn More
+                        Meet Our Team
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                         </svg>
@@ -454,17 +936,18 @@
                 </div>
             </div>
 
-            <div class="card" onclick="navigateTo('contact')">
+            <div class="card" onclick="window.location.href='booking.html'">
+                <img src="bg-1.jpg" alt="Book Consultation" class="card-image">
                 <div class="card-content">
                     <div class="card-icon">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                         </svg>
                     </div>
-                    <h2>Contact Us</h2>
-                    <p>Get in touch with our team for support, inquiries, or feedback. We're here to help!</p>
-                    <a href="#" class="learn-more" onclick="event.stopPropagation(); navigateTo('contact')">
-                        Learn More
+                    <h2>Book a Consultation</h2>
+                    <p>Ready to discuss your legal needs? Schedule a consultation with our expert attorneys. We're here to provide personalized guidance and strategic solutions.</p>
+                    <a href="booking.html" class="learn-more" onclick="event.stopPropagation(); window.location.href='booking.html'">
+                        Book Now
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                         </svg>
@@ -476,7 +959,8 @@
 
     <footer>
         <div class="footer-content">
-            <h3>Let's Connect</h3>
+            <h3>LawScent Associates</h3>
+            <p style="color: #666; max-width: 600px; margin: 0 auto 20px;">Connect with us for legal consultation, partnership opportunities, or to learn more about our comprehensive legal services.</p>
             <div class="social-links">
                 <a href="#" class="social-link" aria-label="LinkedIn">
                     <svg fill="currentColor" viewBox="0 0 24 24">
