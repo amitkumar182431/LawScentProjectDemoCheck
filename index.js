@@ -46,7 +46,7 @@ function render(filter = 'All') {
             <p class="text-slate-500 text-xs mb-2 uppercase tracking-widest font-bold">${s.cat}</p>
             <h4 class="text-xl font-bold mb-3">${s.title}</h4>
             <p class="text-slate-600 text-sm font-light leading-relaxed mb-6">${s.desc}</p>
-            <a href="#contact" class="inline-block bg-gold text-midnight px-6 py-3 text-xs font-bold uppercase tracking-widest hover:brightness-110 transition-all" style="border: 1px solid var(--legacy-gold);">Book Now</a>
+            <a href="booking.html" class="inline-block bg-gold text-midnight px-6 py-3 text-xs font-bold uppercase tracking-widest hover:brightness-110 transition-all" style="border: 1px solid var(--legacy-gold);">Book Now</a>
         `;
 
         grid.appendChild(card);
