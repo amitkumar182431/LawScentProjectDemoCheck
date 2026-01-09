@@ -12,14 +12,6 @@ window.addEventListener('scroll', () => {
         header.classList.remove('scrolled');
     }
     
-    // Show/hide go to top button
-    const gotop = document.querySelector('.gotop');
-    if (currentScroll > 250) {
-        gotop.classList.add('active');
-    } else {
-        gotop.classList.remove('active');
-    }
-    
     // Close mobile menu on scroll (with debounce for better performance)
     if (window.innerWidth <= 768) {
         const navbar = document.querySelector('.navbar');
@@ -191,15 +183,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 behavior: 'smooth'
             });
         }
-    });
-});
-
-// Go to top button functionality
-const gotop = document.querySelector('.gotop');
-gotop.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
     });
 });
 
