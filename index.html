@@ -22,7 +22,7 @@ html, body {
 
 .footer {
     background: #e2bc79;
-    color: #000000;
+    color: #fffefe;
     padding: 0;
     margin: 0;
     width: 100vw;
@@ -53,7 +53,7 @@ html, body {
 }
 
 .footer-section h3 {
-    color: #000000;
+    color: #ffd059;
     font-size: 1.5rem;
     margin-bottom: 20px;
     font-weight: 700;
@@ -425,74 +425,78 @@ html, body {
 
     <section class="home" id="home">
         <header>
-            <a href="#home" class="logo">
-                <img src="log.png" alt="Jones Advocates Logo" class="logo-img">
-                <span class="logo-text">Law<span>Scent</span></span>
-            </a>
-
-            <div class="mobile-header-right">
-                <a href="login.html" class="mobile-login-avatar" aria-label="Login">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" fill="currentColor"/>
-                        <path d="M12.0002 14.5C6.99016 14.5 2.91016 17.86 2.91016 22C2.91016 22.28 3.13016 22.5 3.41016 22.5H20.5902C20.8702 22.5 21.0902 22.28 21.0902 22C21.0902 17.86 17.0102 14.5 12.0002 14.5Z" fill="currentColor"/>
-                    </svg>
+            <div class="logo-container">
+                <a href="#home" class="logo-circle">
+                    <img src="log.png" alt="LawScent Logo">
                 </a>
-                <button class="hamburger-menu" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path class="line line-top" d="M4 6H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        <path class="line line-middle" d="M4 12H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        <path class="line line-bottom" d="M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </button>
+                <a href="#home" class="logo-rectangle">
+                    <img src="log.png" alt="LawScent Logo">
+                </a>
             </div>
-            <nav class="navbar">
+            
+            <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+
+            <nav class="navbar" id="navbar">
                 <a href="whoweare.html">Who we are</a>
                 <a href="whatwedo.html">What we do</a>
                 <a href="#services">Our Thinking</a>
                 <a href="#careers">Careers</a>
-                <a href="#contactinfo">Contact</a>
+                <a href="#">Legal Aid</a>
             </nav>
-
-            <div class="header-actions">
-                <a href="login.html" class="btn-login">Login</a>
-            </div>
         </header>
 
         <div class="wrapper">
-            <h1>Legal Counsels for your business</h1>
-            <p>we help business navigate the legal landscape and grow their operations.</p>
+            <h1><b>Committed to Protecting What Matters  </b></h1>
+            <p>Your Rights | Your Business </p>
             <div class="buttons">
-                <a href="#about" class="btn">Learn more</a>
+                <a href="#about" class="btn-explore">Explore LawScent</a>
             </div>
         </div>
 
-        <div class="status">
-            <div class="box-container">
-                <div class="box">
-                    <h2>20+</h2>
-                    <p>years in this field</p>
-                </div>
-                <div class="box">
-                    <h2>100+</h2>
-                    <p>Legal issues for both small and large businesses</p>
-                </div>
-                <div class="box">
-                    <h2>98%</h2>
-                    <p>success rate in resolving favourable settlement for clients</p>
-                </div>
-            </div>
-        </div>
+        
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburgerBtn');
+            const navbar = document.getElementById('navbar');
+            
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navbar.classList.toggle('active');
+                
+                // Toggle aria-expanded attribute
+                const isExpanded = hamburger.classList.contains('active');
+                hamburger.setAttribute('aria-expanded', isExpanded);
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                const isClickInside = hamburger.contains(event.target) || navbar.contains(event.target);
+                
+                if (!isClickInside && navbar.classList.contains('active')) {
+                    hamburger.classList.remove('active');
+                    navbar.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+    </script>
 
     <section class="about" id="about">
         <div class="about-overlay"></div>
         <div class="about-content-wrapper">
             <div class="content">
-                <h1>Protecting What Matters. It's What We Do.</h1>
-                <p>Since our inception, LawScent has been committed to helping individuals and businesses build resilient legal foundations. Guided by strategy, structure, and trust, we simplify complexity, resolve challenges, and safeguard what truly matters—your growth, your stability, and your peace of mind.</p>
+                <h1>Protecting What Matters.
+                    <br> It's What We Do.</h1>
+                <p>Since our inception,<BR> LawScent has been committed <BR>to helping individuals and businesses<BR> build resilient legal foundations.<BR> Guided by strategy, structure, and trust,<BR> we simplify complexity, resolve challenges,<BR> and safeguard what truly matters—your growth, <BR>your stability, and your peace of mind.</p>
                 <div class="about-buttons">
-                    <a href="whoweare.html" class="btn">Who we are</a>
-                    <a href="whatwedo.html" class="btn2">What we do</a>
+                    <a href="#about" class="btn">Who we are</a>
+                    <a href="#services" class="btn2">What we do</a>
                 </div>
             </div>
         </div>
@@ -500,7 +504,7 @@ html, body {
 
     <section class="trusted-clients" id="trusted-clients">
         <div class="heading">
-            <span>Our Partners</span>
+            
             <h3>Trusted by Businesses Across Industries</h3>
         </div>
         
@@ -543,59 +547,77 @@ html, body {
             </div>
         </div>
         
-        <div class="clients-slider">
-            <div class="clients-track">
-                <div class="client-item">Zostel hospitality Pvt Ltd.</div>
-                <div class="client-item">Baddi University of Emerging Sciences & Technology</div>
-                <div class="client-item">State Bank of India</div>
-                <div class="client-item">IndusInd Bank</div>
-                <div class="client-item">JEEV BUSINESS SOLUTIONS</div>
-                <div class="client-item">RPSG Solvanta Private Limited</div>
-                <div class="client-item">POSITIVE PLASTICS PVT LTD</div>
-                <div class="client-item">Taksh Hospitality Services Pvt Ltd</div>
-                <div class="client-item">Ezulix Software Pvt. Ltd</div>
-                <div class="client-item">Express Publications (Madurai) Private Limited</div>
-                <div class="client-item">Gillette India Limited</div>
-                <div class="client-item">TVS Electronics Limited</div>
-                <div class="client-item">FCC CLUTCH INDIA PRIVATE LIMITED</div>
-                <div class="client-item">JPRWEBS COMMUNICATIONS PRIVATE LIMITED</div>
-                <div class="client-item">Zydo Technologies</div>
-                <div class="client-item">Indian Institute of Management, Udaipur</div>
-                <div class="client-item">LAB SULPHONATE PVT LTD</div>
-                <div class="client-item">DRKB INFRAPROJECTS PVT LTD</div>
-                <div class="client-item">TATA CONSULTANCY SERVICES</div>
-                <div class="client-item">Easy Go Enterprises</div>
-                <div class="client-item">EasyGov</div>
-                <!-- Duplicate for seamless loop -->
-                <div class="client-item">Zostel hospitality Pvt Ltd.</div>
-                <div class="client-item">Baddi University of Emerging Sciences & Technology</div>
-                <div class="client-item">State Bank of India</div>
-                <div class="client-item">IndusInd Bank</div>
-                <div class="client-item">JEEV BUSINESS SOLUTIONS</div>
-                <div class="client-item">RPSG Solvanta Private Limited</div>
-                <div class="client-item">POSITIVE PLASTICS PVT LTD</div>
-                <div class="client-item">Taksh Hospitality Services Pvt Ltd</div>
-                <div class="client-item">Ezulix Software Pvt. Ltd</div>
-                <div class="client-item">Express Publications (Madurai) Private Limited</div>
-                <div class="client-item">Gillette India Limited</div>
-                <div class="client-item">TVS Electronics Limited</div>
-                <div class="client-item">FCC CLUTCH INDIA PRIVATE LIMITED</div>
-                <div class="client-item">JPRWEBS COMMUNICATIONS PRIVATE LIMITED</div>
-                <div class="client-item">Zydo Technologies</div>
-                <div class="client-item">Indian Institute of Management, Udaipur</div>
-                <div class="client-item">LAB SULPHONATE PVT LTD</div>
-                <div class="client-item">DRKB INFRAPROJECTS PVT LTD</div>
-                <div class="client-item">TATA CONSULTANCY SERVICES</div>
-                <div class="client-item">Easy Go Enterprises</div>
-                <div class="client-item">EasyGov</div>
+        <div class="client-logos-grid">
+              <div class="client-logo-item" title="Zostel hospitality">
+                <img src="lg1.png" alt="Zostel hospitality" class="client-logo">
+            </div>
+            <div class="client-logo-item" title="Baddi University">
+                <img src="lg2.png" alt="Baddi University" class="client-logo">
+            </div>
+            <div class="client-logo-item" title="State Bank of India">
+                <img src="l3.png" alt="State Bank of India" class="client-logo">
+            </div>
+            <div class="client-logo-item" title="IndusInd Bank">
+                <img src="lg4.webp" alt="IndusInd Bank" class="client-logo">
+            </div>
+            <div class="client-logo-item" title="JEEV BUSINESS SOLUTIONS">
+                <img src="lg5.png" alt="JEEV BUSINESS SOLUTIONS" class="client-logo">
+            </div>
+            <div class="client-logo-item" title="RPSG Solvanta">
+                <img src="lg6.webp" alt="RPSG Solvanta" class="client-logo">
+            </div>
+            <div class="client-logo-item" title="POSITIVE PLASTICS">
+                <img src="lg7.jpg" alt="POSITIVE PLASTICS" class="client-logo">
+            </div>
+            <div class="client-logo-item" title="Taksh Hospitality">
+                <img src="lg8.png" alt="Taksh Hospitality" class="client-logo">
+            </div>
+            <div class="client-logo-item" title="Ezulix Software">
+                <img src="lg9.avif  " alt="Ezulix Software" class="client-logo">
+            </div>
+            <div class="client-logo-item" title="Express Publications">
+                <img src="lg10.png" alt="Express Publications" class="client-logo">
+            </div>
+            <div class="client-logo-item" title="Gillette India">
+                <img src="lg11.png" alt="Gillette India" class="client-logo">
+            </div>
+            <div class="client-logo-item" title="TVS Electronics">
+                <img src="lg12.png" alt="TVS Electronics" class="client-logo">
+            </div>
+            <div class="client-logo-item" title="FCC CLUTCH INDIA">
+                <img src="lg13.png" alt="FCC CLUTCH INDIA" class="client-logo">
+            </div>
+            <div class="client-logo-item" title="JPRWEBS COMMUNICATIONS">
+                <img src="lg14.png" alt="JPRWEBS COMMUNICATIONS" class="client-logo">
+            </div>
+            <div class="client-logo-item" title="Zydo Technologies">
+                <img src="lg15.png" alt="Zydo Technologies" class="client-logo">
+            </div>
+            <div class="client-logo-item" title="IIM Udaipur">
+                <img src="lg16.jpg" alt="IIM Udaipur" class="client-logo">
+            </div>
+            <div class="client-logo-item" title="LAB SULPHONATE">
+                <img src="lg17.webp" alt="LAB SULPHONATE" class="client-logo">
+            </div>
+            <div class="client-logo-item" title="DRKB INFRAPROJECTS">
+                <img src="lg18.png" alt="DRKB INFRAPROJECTS" class="client-logo">
+            </div>
+            <div class="client-logo-item" title="TCS">
+                <img src="lg19.jpg" alt="TCS" class="client-logo">
+            </div>
+            <div class="client-logo-item" title="Easy Go Enterprises">
+                <img src="lg20.png" alt="Easy Go Enterprises" class="client-logo">
+            </div>
+            <div class="client-logo-item" title="EasyGov">
+                <img src="lg21.jpg" alt="EasyGov" class="client-logo">
             </div>
         </div>
     </section>
 
     <section class="services" id="services">
         <div class="heading">
-            <span>OUR</span>
-            <h3>THINKING</h3>
+            
+            <h3>OUR THINKING</h3>
         </div>
 
         <div class="box-container">
@@ -621,8 +643,8 @@ html, body {
         <div class="careers-wrapper">
             <div class="careers-content">
                 <div class="heading">
-                    <span>Join Us</span>
-                    <h3>Be a part of Team LawScent</h3>
+                    <span>Be a part of Team LawScent</span>
+                    <h3>Search And Apply</h3>
                 </div>
                 <p class="careers-description">Joining LawScent means being part of a team that grows together, learns together, and makes an impact every day. Here, your ideas matter, your work creates change, and your growth defines our journey.</p>
                 <button class="btn btn-careers" id="openJobForm">Apply for Job</button>
@@ -709,93 +731,48 @@ html, body {
         </div>
     </section>
 
-    <section class="contactinfo" id="contactinfo">
-        <div class="box">
-            <img src="court.png" alt="">
-            <span>Address</span>
-            <p>B-431, Sushant Lok Rd, Sushant Lok Phase I, Sector 27, Gurugram, Haryana 122009</p>
-        </div>
-        <div class="box">
-            <img src="email.png" alt="">
-            <span>Email</span>
-            <p>contact@lawscent.com</p>
-        </div>
-        <div class="box">
-            <img src="telephone.png" alt="">
-            <span>Phone number</span>
-            <p>(+91) 7618151701</p>
-        </div>
-        <div class="box">
-            <img src="clock.png" alt="">
-            <span>Working Hours</span>
-            <p>Mon - Fri (9am - 6pm)</p>
-        </div>
-    </section>
 
-    <footer class="footer">
-        <div class="footer-main">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>LawScent</h3>
-                    <p>Your trusted legal partner for over 20 years. We provide comprehensive legal solutions for businesses of all sizes, helping you navigate complex legal landscapes with confidence.</p>
-                    <div class="footer-cta">
-                        <a href="#contactinfo">Get Legal Consultation →</a>
-                    </div>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook">f</a>
-                        <a href="#" aria-label="Twitter">𝕏</a>
-                        <a href="#" aria-label="LinkedIn">in</a>
-                        <a href="#" aria-label="Instagram">📷</a>
-                    </div>
-                </div>
-
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Our Thinking</a></li>
-                        <li><a href="#careers">Careers</a></li>
-                        <li><a href="#contactinfo">Contact</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h3>Legal Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Corporate Law</a></li>
-                        <li><a href="#">Commercial Law</a></li>
-                        <li><a href="#">Tax Law</a></li>
-                        <li><a href="#">Criminal Justice</a></li>
-                        <li><a href="#">Compliance & Regulatory</a></li>
-                        <li><a href="#">Contract Management</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h3>Contact Info</h3>
-                    <p><strong>Address:</strong><br>B-431, Sushant Lok Road<br>Sushant Lok Phase I, Sector 27<br>Gurugram, Haryana 122009</p>
-                    <p><strong>Email:</strong><br>contact@lawscent.com</p>
-                    <p><strong>Phone:</strong><br>(+91) 7618151701</p>
-                    <p><strong>Hours:</strong><br>Mon - Fri (9am - 6pm)</p>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <div class="copy">&copy; 2026 LawScent. All rights reserved</div>
-                <div class="footer-bottom-links">
-                    <a href="#">Terms & Conditions</a>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Sitemap</a>
-                    <a href="#">Disclaimer</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <a href="#home" class="gotop" aria-label="Go to top"><img src="arrow-up.svg" alt="Go to top"></a>
-
-    <script src="script.js"></script>
+   <footer class="new-footer">
+       <div class="footer-content">
+           <div class="footer-section">
+               <h3>LawScent</h3>
+               <p>Your trusted legal partner. Providing comprehensive legal solutions for businesses and individuals.</p>
+               <div class="social-links">
+                   <a href="#" aria-label="Facebook">f</a>
+                   <a href="#" aria-label="Twitter">𝕏</a>
+                   <a href="#" aria-label="LinkedIn">in</a>
+                   <a href="#" aria-label="Instagram">📷</a>
+               </div>
+           </div>
+               
+           <div class="footer-section">
+               <h4>Quick Links</h4>
+               <ul>
+                   <li><a href="#home">Home</a></li>
+                   <li><a href="#about">About Us</a></li>
+                   <li><a href="#services">Services</a></li>
+                   
+               </ul>
+           </div>
+               
+           <div class="footer-section">
+               <h4>Contact</h4>
+               <p>Email: contact@lawscent.com</p>
+               <p>Phone: (+91) 7618151701</p>
+               <p>Address: Gurugram, Haryana 122009</p>
+           </div>
+       </div>
+           
+       <div class="footer-bottom">
+           <p>&copy; 2026 LawScent. All rights reserved.</p>
+           <div class="footer-links">
+               <a href="#">Privacy Policy</a>
+               <a href="#">Terms of Service</a>
+               <a href="#">Disclaimer</a>
+           </div>
+       </div>
+   </footer>
+   
+   <script src="script.js"></script>
 </body>
 </html>
-
