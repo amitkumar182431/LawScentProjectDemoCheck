@@ -78,7 +78,7 @@ header {
 }
 
 .logo-rectangle img {
-    height: 100%;
+    height: 80%;
     width: auto;
     object-fit: contain;
 }
@@ -91,7 +91,7 @@ header {
     
     .logo-rectangle {
         display: block;
-        height: 30px; /* Smaller size for mobile */
+        height: 20px; /* Smaller size for mobile */
     }
 }
 
