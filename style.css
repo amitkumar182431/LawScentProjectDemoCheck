@@ -31,7 +31,7 @@ html {
 body {
     position: relative;
     overflow-x: hidden;
-    line-height: 1.6;
+    line-height: 2.6;
     color: var(--text-color);
 }
 
