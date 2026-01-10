@@ -384,11 +384,18 @@ header .navbar a:nth-child(5) { animation-delay: 0.5s; }
     position: relative;
     height: 100vh;
     width: 100%;
-    background: url(logooo.png) no-repeat center center/cover;
+    background: url(log2.png) no-repeat center center/cover;
     display: flex;
     align-items: flex-end; /* Pin text to bottom-left */
     padding: 0 8% 100px; 
     overflow: hidden;
+}
+
+/* Mobile home background - different image for mobile devices */
+@media (max-width: 768px) {
+    .home {
+        background: url(logooo.png) no-repeat center center/cover;
+    }
 }
 
 /* INTENSIFIED GOLD BLUR LAYERS */
@@ -400,10 +407,10 @@ header .navbar a:nth-child(5) { animation-delay: 0.5s; }
     width: 100%;
     height: 100%;
     /* Black to Gold Gradient */
-    background: linear-gradient(45deg, 
+    /* background: linear-gradient(45deg, 
         rgba(0, 0, 0, 0.95) 0%, 
         rgba(184, 134, 11, 0.4) 45%, 
-        transparent 100%);
+        transparent 100%); */
     z-index: 1;
 }
 
@@ -2444,4 +2451,3 @@ textarea:focus-visible {
     .wrapper h1 { font-size: 2.5rem; }
 }
 
-s
