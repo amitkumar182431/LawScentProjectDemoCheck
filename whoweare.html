@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Who We Are - LawScent Associates</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         /* Hero Section with Background Image */
         .hero-section {
             position: relative;
-            background: linear-gradient(135deg, rgba(26, 32, 44, 0.95) 0%, rgba(45, 55, 72, 0.9) 100%), url('wwa1.png');
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             padding: 140px 20px;
             margin: 0 0 60px 0;
             text-align: center;
-            color: white;
+            color: #2d3748;
             overflow: hidden;
         }
 
@@ -51,10 +52,9 @@
             font-size: 3.8rem;
             font-weight: 900;
             margin-bottom: 25px;
-            text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.6);
             letter-spacing: -1px;
             line-height: 1.2;
-            color: #ffffff;
+            color: #2d3748;
             animation: slideInLeft 1s ease-out 0.2s both;
         }
 
@@ -74,10 +74,9 @@
             max-width: 900px;
             margin: 0 auto 35px;
             line-height: 1.9;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
             font-weight: 300;
             letter-spacing: 0.5px;
-            color: #ffffff;
+            color: #4a5568;
             animation: slideInRight 1s ease-out 0.4s both;
         }
 
@@ -148,10 +147,189 @@
         .hero-divider {
             width: 120px;
             height: 4px;
-            background: linear-gradient(90deg, transparent, #D6AE6A, transparent);
+            background: linear-gradient(90deg, transparent, #4a5568, transparent);
             margin: 35px auto;
             border-radius: 2px;
             animation: expand 1s ease-out 0.6s both;
+        }
+
+        /* Roadmap Styles */
+        .roadmap-container {
+            margin-top: 50px;
+            width: 100%;
+            max-width: 800px;
+            margin: 50px auto 0 auto;
+            position: relative;
+        }
+
+        .roadmap {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        /* Vertical timeline */
+        .roadmap::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, #D6AE6A, #e2bc79);
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+            z-index: 1;
+        }
+
+        .roadmap-item {
+            position: relative;
+            margin: 40px 0;
+            display: flex;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .roadmap-item:nth-child(odd) {
+            justify-content: flex-start;
+        }
+
+        .roadmap-item:nth-child(even) {
+            justify-content: flex-end;
+        }
+
+        .roadmap-step {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #D6AE6A 0%, #c49d5a 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1rem;
+            box-shadow: 0 4px 12px rgba(214, 174, 106, 0.4);
+            position: relative;
+            z-index: 3;
+        }
+
+        .roadmap-content {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 25px;
+            margin: 0 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 40%; /* For even items on the right */
+        }
+
+        .roadmap-content h3 {
+            color: #1a202c;
+            margin: 0 0 12px 0;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .roadmap-content p {
+            color: #4a5568;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .roadmap-item:nth-child(odd) .roadmap-content {
+            margin-right: 30px;
+            text-align: right;
+        }
+
+        .roadmap-item:nth-child(even) .roadmap-content {
+            margin-left: 30px;
+            text-align: left;
+        }
+
+        /* Stats Container Styles */
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .stat-box {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 30px 20px;
+            min-width: 140px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-box:hover {
+            transform: translateY(-10px);
+            background: #4a5568;
+            color: white;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #2d3748;
+            margin-bottom: 8px;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        
+        .stat-box:hover .stat-value {
+            color: white;
+        }
+        
+        .stat-box:hover .stat-label {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Responsive stats */
+        @media (max-width: 768px) {
+            .stats-container {
+                gap: 15px;
+            }
+            
+            .stat-box {
+                min-width: 120px;
+                padding: 20px 15px;
+            }
+            
+            .stat-value {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .stats-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .stat-box {
+                width: 80%;
+                max-width: 200px;
+            }
+        }
+        
+        /* Keep the roadmap styles for potential future use */
+        /* Hide roadmap if it somehow appears */
+        .roadmap-container {
+            display: none;
         }
 
         @keyframes expand {
@@ -808,134 +986,109 @@
     </style>
 </head>
 <body>
-    <div class="header-bar">
-        <div class="container">
-            <div class="header">
-                <div class="header-left">
-                    <button class="back-btn" onclick="goHome()" aria-label="Back to Home">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
-                        </svg>
-                    </button>
-                    <div>
-                        <h1>Who We Are</h1>
-                        <p class="page-subtitle">Our Story & Values</p>
-                    </div>
-                </div>
-                <div class="header-right">
-                    <a href="booking.html" class="header-cta-btn">Book Consultation</a>
-                </div>
-            </div>
+    <header>
+        <div class="logo-container">
+            <a href="#home" class="logo-circle">
+                <img src="log.png" alt="LawScent Logo">
+            </a>
+            <a href="#home" class="logo-rectangle">
+                <img src="log.png" alt="LawScent Logo">
+            </a>
         </div>
-    </div>
+        
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
+
+        <nav class="navbar" id="navbar">
+            <a href="index.html">Home</a>
+            <a href="whoweare.html">Who we are</a>
+            <a href="whatwedo.html">What we do</a>
+            <a href="#services">Our Thinking</a>
+            <a href="#careers">Careers</a>
+            <a href="#">Legal Aid</a>
+        </nav>
+    </header>
 
     <div class="container">
 
         <div class="hero-section">
             <div class="hero-content">
-                <h2>Excellence in Legal Practice Since 2004</h2>
+                <h2>Our Commitment to Excellence</h2>
                 <div class="hero-divider"></div>
-                <p>LawScent Associates is a full-service law firm committed to delivering exceptional legal solutions. We combine deep expertise, innovative thinking, and unwavering dedication to protect what matters most to our clients.</p>
+                <p>With decades of experience, we remain dedicated to delivering unparalleled legal services and building lasting partnerships with our clients.</p>
                 
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">20+</span>
-                        <span class="stat-label">Years Experience</span>
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <div class="stat-value">20+</div>
+                        <div class="stat-label">Years Experience</div>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">500+</span>
-                        <span class="stat-label">Cases Won</span>
+                    <div class="stat-box">
+                        <div class="stat-value">500+</div>
+                        <div class="stat-label">Cases Won</div>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">98%</span>
-                        <span class="stat-label">Success Rate</span>
+                    <div class="stat-box">
+                        <div class="stat-value">98%</div>
+                        <div class="stat-label">Success Rate</div>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">50+</span>
-                        <span class="stat-label">Expert Lawyers</span>
+                    <div class="stat-box">
+                        <div class="stat-value">50+</div>
+                        <div class="stat-label">Expert Lawyers</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="dashboard">
-            <div class="card" onclick="navigateTo('overview')">
-                <img src="t5.webp" alt="Our Vision" class="card-image">
-                <div class="card-content">
-                    <div class="card-icon">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
-                        </svg>
-                    </div>
-                    <h2>Our Vision</h2>
-                    <p>To be the most trusted legal partner, setting new standards in client service, ethical practice, and innovative legal solutions that transform challenges into opportunities.</p>
-                    <a href="#" class="learn-more" onclick="event.stopPropagation(); navigateTo('overview')">
-                        Learn More
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                        </svg>
-                    </a>
+        <div class="work-info-cards">
+            <div class="info-card">
+                <div class="card-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
                 </div>
+                <h4>Our Vision</h4>
+                <p>To be the most trusted legal partner, setting new standards in client service, ethical practice, and innovative legal solutions that transform challenges into opportunities.</p>
+                <a href="overvision.html" class="card-btn">Learn more</a>
             </div>
-
-            <div class="card" onclick="navigateTo('governance')">
-                <img src="t2.jpg" alt="Our Mission" class="card-image">
-                <div class="card-content">
-                    <div class="card-icon">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                        </svg>
-                    </div>
-                    <h2>Our Mission</h2>
-                    <p>Empowering clients through exceptional legal counsel, strategic guidance, and unwavering commitment to justice. We strive to make legal excellence accessible and impactful.</p>
-                    <a href="#" class="learn-more" onclick="event.stopPropagation(); navigateTo('governance')">
-                        Learn More
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                        </svg>
-                    </a>
+            
+            <div class="info-card">
+                <div class="card-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 11L12 14L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M21 12V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
                 </div>
+                <h4>Our Mission</h4>
+                <p>Empowering clients through exceptional legal counsel, strategic guidance, and unwavering commitment to justice. We strive to make legal excellence accessible and impactful.</p>
+                <a href="mission.html" class="card-btn">Learn more</a>
             </div>
-
-            <div class="card" onclick="navigateTo('recognition')">
-                <img src="t3.avif" alt="Core Values" class="card-image">
-                <div class="card-content">
-                    <div class="card-icon">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
-                    </div>
-                    <h2>Core Values</h2>
-                    <p>Integrity, Excellence, Innovation, and Client Focus. These principles guide every decision we make and every relationship we build with our valued clients.</p>
-                    <a href="#" class="learn-more" onclick="event.stopPropagation(); navigateTo('recognition')">
-                        Learn More
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                        </svg>
-                    </a>
+            
+            <div class="info-card">
+                <div class="card-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 8V12L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
                 </div>
+                <h4>Core Values</h4>
+                <p>Integrity, Excellence, Innovation, and Client Focus. These principles guide every decision we make and every relationship we build with our valued clients.</p>
+                <a href="corevalues.html" class="card-btn">Learn more</a>
             </div>
-
-        
-
-            <div class="card" onclick="window.location.href='booking.html'">
-                <img src="bg-1.jpg" alt="Book Consultation" class="card-image">
-                <div class="card-content">
-                    <div class="card-icon">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                        </svg>
-                    </div>
-                    <h2>Book a Consultation</h2>
-                    <p>Ready to discuss your legal needs? Schedule a consultation with our expert attorneys. We're here to provide personalized guidance and strategic solutions.</p>
-                    <a href="booking.html" class="learn-more" onclick="event.stopPropagation(); window.location.href='booking.html'">
-                        Book Now
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                        </svg>
-                    </a>
+            
+            <div class="info-card">
+                <div class="card-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M16 8V6C16 4.89543 15.1046 4 14 4H10C8.89543 4 8 4.89543 8 6V8M12 12V16M4 8H20C20.5523 8 21 8.44772 21 9V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V9C3 8.44772 3.44772 8 4 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
                 </div>
+                <h4>Book a Consultation</h4>
+                <p>Ready to discuss your legal needs? Schedule a consultation with our expert attorneys. We're here to provide personalized guidance and strategic solutions.</p>
+                <a href="booking.html" class="card-btn">Book Now</a>
             </div>
         </div>
     </div>
@@ -975,14 +1128,30 @@
     </footer>
 
     <script>
-        function goHome() {
-            window.location.href = 'index.html';
-        }
-
-        function navigateTo(section) {
-            alert(`Navigating to ${section.charAt(0).toUpperCase() + section.slice(1)}...`);
-            // window.location.href = `/${section}.html`;
-        }
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburgerBtn');
+            const navbar = document.getElementById('navbar');
+            
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navbar.classList.toggle('active');
+                
+                // Toggle aria-expanded attribute
+                const isExpanded = hamburger.classList.contains('active');
+                hamburger.setAttribute('aria-expanded', isExpanded);
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                const isClickInside = hamburger.contains(event.target) || navbar.contains(event.target);
+                
+                if (!isClickInside && navbar.classList.contains('active')) {
+                    hamburger.classList.remove('active');
+                    navbar.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
 
         // Add smooth interactions
         document.querySelectorAll('.card').forEach(card => {
@@ -1014,7 +1183,52 @@
             card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(card);
         });
+        
+        // Counter animation for stats
+        const statItems = document.querySelectorAll('.stat-item');
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const statObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target.querySelector('.stat-number'));
+                    statObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        statItems.forEach(item => {
+            statObserver.observe(item);
+        });
+        
+        function animateCounter(element) {
+            if (!element) return;
+            
+            const target = parseInt(element.getAttribute('data-target'));
+            const isPlus = element.textContent.includes('+');
+            const isPercent = element.textContent.includes('%');
+            
+            let current = 0;
+            const increment = target / 50; // Animation duration
+            
+            const updateCounter = () => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    element.textContent = isPlus ? `${target}+` : (isPercent ? `${target}%` : target);
+                } else {
+                    element.textContent = Math.floor(current);
+                    if (isPlus) element.textContent += '+';
+                    else if (isPercent) element.textContent += '%';
+                    setTimeout(updateCounter, 30);
+                }
+            };
+            
+            updateCounter();
+        }
     </script>
 </body>
 </html>
-
