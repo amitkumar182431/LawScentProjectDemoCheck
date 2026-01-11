@@ -480,7 +480,7 @@ header .navbar a:nth-child(5) { animation-delay: 0.5s; }
 .btn-explore {
     display: inline-block;
     padding: 16px 45px;
-    background-color: #0076a8;
+    background-color: #D6AE6A;
     color: #fff;
     text-decoration: none;
     border-radius: 50px;
@@ -2450,4 +2450,5 @@ textarea:focus-visible {
     
     .wrapper h1 { font-size: 2.5rem; }
 }
+
 
