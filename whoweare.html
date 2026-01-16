@@ -1,1234 +1,710 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Who We Are - LawScent Associates</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* Hero Section with Background Image */
-        .hero-section {
-            position: relative;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            padding: 140px 20px;
-            margin: 0 0 60px 0;
-            text-align: center;
-            color: #2d3748;
-            overflow: hidden;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(214, 174, 106, 0.15) 0%, transparent 50%);
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            animation: fadeInUp 1.2s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero-section h2 {
-            font-size: 3.8rem;
-            font-weight: 900;
-            margin-bottom: 25px;
-            letter-spacing: -1px;
-            line-height: 1.2;
-            color: #2d3748;
-            animation: slideInLeft 1s ease-out 0.2s both;
-        }
-
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .hero-section p {
-            font-size: 1.4rem;
-            max-width: 900px;
-            margin: 0 auto 35px;
-            line-height: 1.9;
-            font-weight: 300;
-            letter-spacing: 0.5px;
-            color: #4a5568;
-            animation: slideInRight 1s ease-out 0.4s both;
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 60px;
-            margin-top: 50px;
-            flex-wrap: wrap;
-            animation: fadeIn 1.5s ease-out 0.8s both;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        .stat-item {
-            text-align: center;
-            transition: transform 0.3s ease;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            padding: 25px 30px;
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            min-width: 160px;
-        }
-
-        .stat-item:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.2);
-            border-color: rgba(214, 174, 106, 0.5);
-        }
-
-        .stat-number {
-            font-size: 3.5rem;
-            font-weight: 900;
-            color: #ffffff;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-            display: block;
-            line-height: 1;
-            margin-bottom: 10px;
-        }
-
-        .stat-label {
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.95);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 600;
-        }
-
-        .hero-divider {
-            width: 120px;
-            height: 4px;
-            background: linear-gradient(90deg, transparent, #4a5568, transparent);
-            margin: 35px auto;
-            border-radius: 2px;
-            animation: expand 1s ease-out 0.6s both;
-        }
-
-        /* Roadmap Styles */
-        .roadmap-container {
-            margin-top: 50px;
-            width: 100%;
-            max-width: 800px;
-            margin: 50px auto 0 auto;
-            position: relative;
-        }
-
-        .roadmap {
-            position: relative;
-            padding: 20px 0;
-        }
-
-        /* Vertical timeline */
-        .roadmap::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: linear-gradient(to bottom, #D6AE6A, #e2bc79);
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 2px;
-            z-index: 1;
-        }
-
-        .roadmap-item {
-            position: relative;
-            margin: 40px 0;
-            display: flex;
-            align-items: center;
-            z-index: 2;
-        }
-
-        .roadmap-item:nth-child(odd) {
-            justify-content: flex-start;
-        }
-
-        .roadmap-item:nth-child(even) {
-            justify-content: flex-end;
-        }
-
-        .roadmap-step {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #D6AE6A 0%, #c49d5a 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 1rem;
-            box-shadow: 0 4px 12px rgba(214, 174, 106, 0.4);
-            position: relative;
-            z-index: 3;
-        }
-
-        .roadmap-content {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 25px;
-            margin: 0 30px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            max-width: 40%; /* For even items on the right */
-        }
-
-        .roadmap-content h3 {
-            color: #1a202c;
-            margin: 0 0 12px 0;
-            font-size: 1.4rem;
-            font-weight: 700;
-        }
-
-        .roadmap-content p {
-            color: #4a5568;
-            margin: 0;
-            line-height: 1.6;
-        }
-
-        .roadmap-item:nth-child(odd) .roadmap-content {
-            margin-right: 30px;
-            text-align: right;
-        }
-
-        .roadmap-item:nth-child(even) .roadmap-content {
-            margin-left: 30px;
-            text-align: left;
-        }
-
-        /* Stats Container Styles */
-        .stats-container {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
-
-        .stat-box {
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 30px 20px;
-            min-width: 140px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        }
-
-        .stat-box:hover {
-            transform: translateY(-10px);
-            background: #4a5568;
-            color: white;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .stat-value {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #2d3748;
-            margin-bottom: 8px;
-            line-height: 1;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: #718096;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-        }
-        
-        .stat-box:hover .stat-value {
-            color: white;
-        }
-        
-        .stat-box:hover .stat-label {
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        /* Responsive stats */
-        @media (max-width: 768px) {
-            .stats-container {
-                gap: 15px;
-            }
-            
-            .stat-box {
-                min-width: 120px;
-                padding: 20px 15px;
-            }
-            
-            .stat-value {
-                font-size: 2rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .stats-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .stat-box {
-                width: 80%;
-                max-width: 200px;
-            }
-        }
-        
-        /* Keep the roadmap styles for potential future use */
-        /* Hide roadmap if it somehow appears */
-        .roadmap-container {
-            display: none;
-        }
-
-        @keyframes expand {
-            from {
-                width: 0;
-                opacity: 0;
-            }
-            to {
-                width: 120px;
-                opacity: 1;
-            }
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f5f7fa;
-            min-height: 100vh;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Professional Header Bar */
-        .header-bar {
-            background: #ffffff;
-            border-bottom: 1px solid #e5e7eb;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            animation: slideDown 0.6s ease-out;
-        }
-
-        @keyframes slideDown {
-            from {
-                transform: translateY(-100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            width: 100%;
-            flex: 1;
-            padding: 0 20px;
-        }
-
-        .header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 0;
-            gap: 20px;
-            padding: 25px 40px;
-            position: relative;
-            background: transparent;
-        }
-
-        .header-left {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            animation: fadeInLeft 0.8s ease-out 0.2s both;
-        }
-
-        @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .header-right {
-            animation: fadeInRight 0.8s ease-out 0.2s both;
-        }
-
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .header::after {
-            display: none;
-        }
-
-        .back-btn {
-            background: linear-gradient(135deg, #D6AE6A 0%, #c49d5a 100%);
-            border: none;
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 12px rgba(214, 174, 106, 0.25);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .back-btn::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-
-        .back-btn:hover::before {
-            width: 100px;
-            height: 100px;
-        }
-
-        .back-btn:hover {
-            transform: translateX(-5px) scale(1.05);
-            box-shadow: 0 6px 20px rgba(214, 174, 106, 0.4);
-        }
-
-        .back-btn:active {
-            transform: translateX(-5px) scale(0.98);
-        }
-
-        .back-btn svg {
-            width: 22px;
-            height: 22px;
-            position: relative;
-            z-index: 1;
-            transition: transform 0.3s ease;
-        }
-
-        .back-btn:hover svg {
-            transform: translateX(-2px);
-        }
-
-        h1 {
-            color: #1a202c;
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin: 0;
-            letter-spacing: -1px;
-            position: relative;
-            display: inline-block;
-        }
-
-        h1::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #D6AE6A, transparent);
-            border-radius: 2px;
-            animation: expandLine 1s ease-out 0.5s forwards;
-        }
-
-        @keyframes expandLine {
-            from {
-                width: 0;
-            }
-            to {
-                width: 100px;
-            }
-        }
-
-        .page-subtitle {
-            color: #718096;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin: 6px 0 0 0;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            opacity: 0;
-            animation: fadeIn 0.8s ease-out 0.6s forwards;
-        }
-
-        .header-cta-btn {
-            background: linear-gradient(135deg, #D6AE6A 0%, #c49d5a 100%);
-            color: #ffffff;
-            padding: 12px 28px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.95rem;
-            box-shadow: 0 4px 12px rgba(214, 174, 106, 0.25);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            letter-spacing: 0.5px;
-        }
-
-        .header-cta-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.6s ease;
-        }
-
-        .header-cta-btn:hover::before {
-            left: 100%;
-        }
-
-        .header-cta-btn:hover {
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 6px 20px rgba(214, 174, 106, 0.4);
-        }
-
-        .header-cta-btn:active {
-            transform: translateY(0) scale(0.98);
-        }
-
-        .dashboard {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 35px;
-            margin-top: 30px;
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .card {
-            background: #ffffff;
-            border: 1px solid #e5e7eb;
-            border-radius: 16px;
-            padding: 0;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card-image {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .card:hover .card-image {
-            transform: scale(1.1);
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, #D6AE6A, #f4d79b);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .card::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(214, 174, 106, 0.1), transparent);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-            z-index: 0;
-        }
-
-        .card:hover::after {
-            width: 500px;
-            height: 500px;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-            border-color: #D6AE6A;
-        }
-
-        .card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .card-content {
-            position: relative;
-            z-index: 1;
-            padding: 40px;
-        }
-
-        .card-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #D6AE6A 0%, #f4d79b 100%);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 24px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 5px 15px rgba(214, 174, 106, 0.3);
-        }
-
-        .card:hover .card-icon {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 8px 25px rgba(214, 174, 106, 0.5);
-        }
-
-        .card-icon svg {
-            width: 34px;
-            height: 34px;
-            color: white;
-        }
-
-        .card h2 {
-            color: #1a202c;
-            font-size: 1.75rem;
-            margin-bottom: 14px;
-            font-weight: 800;
-            transition: color 0.3s ease;
-        }
-
-        .card:hover h2 {
-            color: #D6AE6A;
-        }
-
-        .card p {
-            color: #4a5568;
-            line-height: 1.7;
-            font-size: 1rem;
-            margin-bottom: 24px;
-        }
-
-        .learn-more {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: #D6AE6A;
-            font-weight: 700;
-            font-size: 1rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            margin-top: 12px;
-            padding: 8px 0;
-        }
-
-        .learn-more::after {
-            content: '';
-            width: 0;
-            height: 2px;
-            background: #D6AE6A;
-            transition: width 0.3s ease;
-        }
-
-        .learn-more svg {
-            width: 20px;
-            height: 20px;
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .card:hover .learn-more {
-            gap: 15px;
-        }
-
-        .card:hover .learn-more svg {
-            transform: translateX(8px);
-        }
-
-        footer {
-            margin-top: 80px;
-            padding: 60px 20px;
-            text-align: center;
-            background: #1a202c;
-            border-radius: 0;
-            box-shadow: none;
-        }
-
-        .footer-content h3 {
-            color: #ffffff;
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            letter-spacing: -0.5px;
-        }
-
-        .footer-content p {
-            color: #cbd5e0;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-            margin-top: 25px;
-        }
-
-        .social-link {
-            width: 50px;
-            height: 50px;
-            background: rgba(214, 174, 106, 0.15);
-            border: 2px solid rgba(214, 174, 106, 0.3);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #D6AE6A;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        .social-link:hover {
-            background: #D6AE6A;
-            border-color: #D6AE6A;
-            color: white;
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(214, 174, 106, 0.4);
-        }
-
-        .social-link svg {
-            width: 24px;
-            height: 24px;
-        }
-
-        @media (max-width: 768px) {
-            .header {
-                padding: 20px 20px;
-                flex-wrap: wrap;
-            }
-
-            .header-left {
-                gap: 15px;
-            }
-
-            .header-right {
-                width: 100%;
-                margin-top: 15px;
-            }
-
-            .header-cta-btn {
-                width: 100%;
-                justify-content: center;
-                padding: 14px 20px;
-                font-size: 0.9rem;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            .page-subtitle {
-                font-size: 0.8rem;
-                letter-spacing: 1.5px;
-            }
-
-            .hero-section {
-                padding: 100px 20px;
-                background-attachment: scroll;
-            }
-
-            .hero-section h2 {
-                font-size: 2.8rem;
-                letter-spacing: -0.5px;
-            }
-
-            .hero-section p {
-                font-size: 1.15rem;
-                margin-bottom: 30px;
-            }
-
-            .hero-stats {
-                gap: 40px;
-                margin-top: 40px;
-            }
-
-            .stat-number {
-                font-size: 2.8rem;
-            }
-
-            .stat-label {
-                font-size: 0.85rem;
-                letter-spacing: 1.5px;
-            }
-
-            .hero-divider {
-                width: 80px;
-                margin: 25px auto;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            .dashboard {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-
-            .card {
-                padding: 30px;
-            }
-
-            footer {
-                margin-top: 50px;
-                padding: 30px 15px;
-            }
-
-            .footer-content h3 {
-                font-size: 1.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .header {
-                padding: 18px 15px;
-            }
-
-            .header-left {
-                gap: 12px;
-            }
-
-            .back-btn {
-                width: 45px;
-                height: 45px;
-            }
-
-            .back-btn svg {
-                width: 20px;
-                height: 20px;
-            }
-
-            h1 {
-                font-size: 1.6rem;
-            }
-
-            .page-subtitle {
-                font-size: 0.7rem;
-                letter-spacing: 1px;
-            }
-
-            .header-cta-btn {
-                padding: 12px 18px;
-                font-size: 0.85rem;
-            }
-
-            body {
-                padding: 0;
-            }
-
-            .hero-section {
-                padding: 80px 15px;
-            }
-
-            .hero-section h2 {
-                font-size: 2.2rem;
-            }
-
-            .hero-section p {
-                font-size: 1rem;
-            }
-
-            .hero-stats {
-                gap: 30px;
-                margin-top: 35px;
-            }
-
-            .stat-number {
-                font-size: 2.3rem;
-            }
-
-            .stat-label {
-                font-size: 0.75rem;
-                letter-spacing: 1px;
-            }
-
-            .hero-divider {
-                width: 60px;
-            }
-
-            h1 {
-                font-size: 1.6rem;
-            }
-
-            .back-btn {
-                width: 50px;
-                height: 50px;
-            }
-
-            .card-icon {
-                width: 60px;
-                height: 60px;
-            }
-
-            .card h2 {
-                font-size: 1.4rem;
-            }
-
-            .social-links {
-                gap: 15px;
-            }
-
-            .social-link {
-                width: 45px;
-                height: 45px;
-            }
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Who We Are | LawScent</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style1.css">
+
+<style>
+:root{
+    --gold:#e2bc79;
+    --dark:#111;
+    --light:#f8f8f8;
+    --text:#333;
+}
+
+/* HERO */
+.hero{
+    height:60vh;
+    background:url('https://images.unsplash.com/photo-1526304640581-d334cdbbf45e') center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+.hero::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.45);
+}
+.hero h1{
+    position:relative;
+    color:#fff;
+    font-size:42px;
+    letter-spacing:1px;
+}
+
+/* INTRO */
+.section{
+    padding:80px 10%;
+}
+.center{
+    text-align:center;
+}
+.section h2{
+    font-size:32px;
+    margin-bottom:20px;
+}
+.section p{
+    font-size:15px;
+    line-height:1.8;
+    color:#555;
+    max-width:850px;
+    margin:auto;
+}
+
+/* IMAGE CARDS */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:30px;
+    margin-top:60px;
+}
+.card{
+    height:300px;
+    background:var(--gold);
+    border-radius:6px;
+}
+
+/* PURPOSE */
+.purpose{
+    background:var(--light);
+}
+.purpose-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+.purpose h3{
+    font-size:28px;
+    margin-bottom:15px;
+}
+.purpose p{
+    margin:0;
+}
+
+/* HIGHLIGHT */
+.highlight{
+    height:55vh;
+    background:url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa') center/cover no-repeat;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.highlight::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.6);
+}
+.highlight-content{
+    position:relative;
+    text-align:center;
+    color:#fff;
+    max-width:900px;
+    padding:20px;
+}
+.highlight h2{
+    font-size:34px;
+    margin-bottom:20px;
+}
+.highlight p{
+    font-size:15px;
+    line-height:1.9;
+    margin-bottom:25px;
+}
+.highlight button{
+    padding:14px 40px;
+    background:var(--gold);
+    border:none;
+    font-weight:600;
+    cursor:pointer;
+    border-radius:4px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .purpose-grid{
+        grid-template-columns:1fr;
+    }
+    .hero h1{
+        font-size:32px;
+    }
+    
+    /* Mobile home section */
+    .home .wrapper h1 {
+        font-size: 2rem;
+    }
+    
+    .home .wrapper p {
+        font-size: 1rem;
+    }
+    
+    .buttons {
+        margin-top: 20px;
+    }
+    
+    .btn-explore {
+        padding: 14px 30px;
+        font-size: 0.9rem;
+    }
+    
+    /* Center intro section on mobile */
+    .intro-section {
+        padding: 40px 5%;
+        text-align: center;
+    }
+    
+    .cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .card {
+        max-width: 100%;
+        width: 100%;
+        min-width: auto;
+        max-width: 400px;
+    }
+    
+    .intro-content {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    .intro-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .intro-content p {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+    
+    .know-more-btn {
+        margin: 20px auto 0;
+    }
+    
+    .highlight::before {
+        background: rgba(0, 0, 0, 0.7);
+    }
+    
+    .highlight-content {
+        padding: 60px 15px 50px;
+    }
+    
+    .desktop-heading {
+        display: none !important;
+    }
+    
+    .mobile-heading {
+        display: block !important;
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+    
+    .desktop-text {
+        display: none !important;
+    }
+    
+    .mobile-text {
+        display: block !important;
+        font-size: 13px;
+        line-height: 1.7;
+        margin-bottom: 20px;
+    }
+    
+    .highlight button {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Enhanced Intro section styling */
+.intro-section {
+    padding: 60px 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #f9f7f0 0%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.intro-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #e2bc79, #d4a76a, #e2bc79);
+}
+
+.intro-content {
+    max-width: 800px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.intro-content h2 {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    font-weight: 600;
+}
+
+.intro-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--gold);
+    border-radius: 3px;
+}
+
+.intro-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #34495e;
+    margin: 25px 0;
+    max-width: 700px;
+}
+
+/* Additional Who We Are Specific CSS */
+/* Hero section adjustments */
+.hero {
+    background-image: url('https://images.unsplash.com/photo-1526304640581-d334cdbbf45e');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Card styling */
+.cards {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+
+.card {
+    background: var(--gold);
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    flex: 1;
+    min-width: 250px;
+    max-width: calc(33.333% - 20px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h3 {
+    padding: 15px 15px 5px 15px;
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+}
+
+.card p {
+    padding: 0 15px 15px 15px;
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+}
+
+/* Purpose section styling */
+.purpose {
+    background: var(--light);
+}
+
+/* Highlight section styling */
+.highlight {
+    background-image: url(wwwe.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    background-attachment: scroll;
+}
+
+.highlight::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.highlight-content {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    max-width: 900px;
+    padding: 100px 20px 80px;
+    margin: 0 auto;
+    z-index: 2;
+}
+
+.highlight h2 {
+    font-size: 34px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.desktop-heading {
+    display: block;
+}
+
+.mobile-heading {
+    display: none;
+}
+
+.highlight p {
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+.desktop-text {
+    display: block;
+}
+
+.mobile-text {
+    display: none;
+}
+
+/* Button styling */
+.highlight button {
+    background: var(--gold);
+    border: none;
+    padding: 16px 45px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(226, 188, 121, 0.4);
+}
+
+.highlight button:hover {
+    background: #d4a76a;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(226, 188, 121, 0.6);
+}
+
+/* Button styles for home section */
+.buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.btn-explore {
+    display: inline-block;
+    padding: 16px 45px;
+    background-color: #e2bc79;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-explore:hover {
+    background-color: #d4a76a;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+
+
+/* Home section text sizing */
+.home .wrapper h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
+
+.home .wrapper p {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+}
+</style>
 </head>
+
 <body>
-    <header>
-        <div class="logo-container">
-            <a href="#home" class="logo-circle">
-                <img src="log.png" alt="LawScent Logo">
-            </a>
-            <a href="#home" class="logo-rectangle">
-                <img src="log.png" alt="LawScent Logo">
-            </a>
-        </div>
-        
-        <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
-        </button>
 
-        <nav class="navbar" id="navbar">
-            <a href="index.html">Home</a>
-            <a href="whoweare.html">Who we are</a>
-            <a href="whatwedo.html">What we do</a>
-            <a href="#services">Our Thinking</a>
-            <a href="#careers">Careers</a>
-            <a href="#">Legal Aid</a>
-        </nav>
-    </header>
+    <section class="home" id="home">
+        <header>
+            <div class="logo-container">
+                <a href="index.html" class="logo-circle">
+                    <img src="log.png" alt="LawScent Logo">
+                </a>
+                <a href="index.html" class="logo-rectangle">
+                    <img src="log.png" alt="LawScent Logo">
+                </a>
+            </div>
+            
+            <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
 
-    <div class="container">
-
-        <div class="hero-section">
-            <div class="hero-content">
-                <h2>Our Commitment to Excellence</h2>
-                <div class="hero-divider"></div>
-                <p>With decades of experience, we remain dedicated to delivering unparalleled legal services and building lasting partnerships with our clients.</p>
+            <nav class="navbar" id="navbar">
+                <a href="whoweare.html">Who we are</a>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle">What we do</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-content">
+                            <div class="dropdown-card">
+                                <h4>Corporate Services</h4>
+                                <a href="booking.html">Business Formation & Incorporation</a>
+                                <a href="booking.html">Contract Drafting & Review</a>
+                                <a href="booking.html">Corporate Compliance</a>
+                                <a href="booking.html">Mergers & Acquisitions</a>
+                                <a href="booking.html">Intellectual Property</a>
+                                <a href="booking.html">Board Advisory Services</a>
+                                <a href="booking.html">Corporate Governance</a>
+                            </div>
+                            <div class="dropdown-card">
+                                <h4>Legal Advisory</h4>
+                                <a href="booking.html">Regulatory Consultation</a>
+                                <a href="booking.html">Risk Assessment</a>
+                                <a href="booking.html">Litigation Support</a>
+                                <a href="booking.html">Dispute Resolution</a>
+                                <a href="booking.html">Employment Law</a>
+                                <a href="booking.html">Data Protection</a>
+                                <a href="booking.html">Contract Negotiations</a>
+                            </div>
+                            <div class="dropdown-card">
+                                <h4>Specialized Areas</h4>
+                                <a href="booking.html">Tax Planning & Strategy</a>
+                                <a href="booking.html">Real Estate Transactions</a>
+                                <a href="booking.html">International Trade Law</a>
+                                <a href="booking.html">Cybersecurity & Privacy</a>
+                                <a href="booking.html">Environmental Compliance</a>
+                                <a href="booking.html">Family Business Planning</a>
+                                <a href="booking.html">Succession Planning</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
-                <div class="stats-container">
-                    <div class="stat-box">
-                        <div class="stat-value">20+</div>
-                        <div class="stat-label">Years Experience</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-value">500+</div>
-                        <div class="stat-label">Cases Won</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-value">98%</div>
-                        <div class="stat-label">Success Rate</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-value">50+</div>
-                        <div class="stat-label">Expert Lawyers</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                <a href="career.html">Careers</a>
+                <a href="#">Legal Aid</a>
+            </nav>
+        </header>
 
-        <div class="work-info-cards">
-            <div class="info-card">
-                <div class="card-icon">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <h4>Our Vision</h4>
-                <p>To be the most trusted legal partner, setting new standards in client service, ethical practice, and innovative legal solutions that transform challenges into opportunities.</p>
-                <a href="overvision.html" class="card-btn">Learn more</a>
-            </div>
-            
-            <div class="info-card">
-                <div class="card-icon">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9 11L12 14L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M21 12V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <h4>Our Mission</h4>
-                <p>Empowering clients through exceptional legal counsel, strategic guidance, and unwavering commitment to justice. We strive to make legal excellence accessible and impactful.</p>
-                <a href="mission.html" class="card-btn">Learn more</a>
-            </div>
-            
-            <div class="info-card">
-                <div class="card-icon">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M12 8V12L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <h4>Core Values</h4>
-                <p>Integrity, Excellence, Innovation, and Client Focus. These principles guide every decision we make and every relationship we build with our valued clients.</p>
-                <a href="corevalues.html" class="card-btn">Learn more</a>
-            </div>
-            
-            <div class="info-card">
-                <div class="card-icon">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M16 8V6C16 4.89543 15.1046 4 14 4H10C8.89543 4 8 4.89543 8 6V8M12 12V16M4 8H20C20.5523 8 21 8.44772 21 9V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V9C3 8.44772 3.44772 8 4 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <h4>Book a Consultation</h4>
-                <p>Ready to discuss your legal needs? Schedule a consultation with our expert attorneys. We're here to provide personalized guidance and strategic solutions.</p>
-                <a href="booking.html" class="card-btn">Book Now</a>
-            </div>
+        <div class="wrapper">
+            <h1><b>Who We Are</b></h1>
+            <p>Your Trusted Legal Partner</p>
+        </div>
+    </section>
+
+<!-- HERO
+<div class="hero">
+    <h1>WHO WE ARE</h1>
+</div> -->
+
+<!-- INTRO -->
+<section class="intro-section">
+    <div class="intro-content">
+        <h2>At LawScent, we protect what matters.</h2>
+        <p>
+            We exist to make law simple, strategic, and accessible for everyone—from individuals
+            to large organizations. Our goal is to bring clarity where complexity exists and
+            create legal systems that support growth, trust, and long-term success.
+            <br><br>
+            We believe law is more than protection; it is the foundation of progress.
+            Every solution we deliver empowers our clients to move forward with confidence.
+        </p>
+       
+    </div>
+    
+    <div class="cards">
+        <div class="card">
+            <img src="corporate-law.jpg" alt="Corporate Law Services">
+            <h3>Corporate Law</h3>
+            <p>Expert guidance on business formation, compliance, and governance.</p>
+        </div>
+        <div class="card">
+            <img src="contract-law.jpg" alt="Contract Law Services">
+            <h3>Contract Law</h3>
+            <p>Drafting, reviewing, and negotiating business contracts and agreements.</p>
+        </div>
+        <div class="card">
+            <img src="mergers-acquisition.jpg" alt="Mergers & Acquisition Services">
+            <h3>Mergers & Acquisitions</h3>
+            <p>Legal support for business transactions and corporate restructuring.</p>
         </div>
     </div>
+</section>
 
-    <footer>
-        <div class="footer-content">
-            <h3>LawScent Associates</h3>
-            <p style="color: #666; max-width: 600px; margin: 0 auto 20px;">Connect with us for legal consultation, partnership opportunities, or to learn more about our comprehensive legal services.</p>
-            <div class="social-links">
-                <a href="#" class="social-link" aria-label="LinkedIn">
-                    <svg fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                    </svg>
-                </a>
-                <a href="#" class="social-link" aria-label="Twitter">
-                    <svg fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                    </svg>
-                </a>
-                <a href="#" class="social-link" aria-label="Facebook">
-                    <svg fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                    </svg>
-                </a>
-                <a href="#" class="social-link" aria-label="Instagram">
-                    <svg fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
-                    </svg>
-                </a>
-                <a href="#" class="social-link" aria-label="Email">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                    </svg>
-                </a>
-            </div>
+<!-- PURPOSE -->
+<section class="section purpose">
+    <div class="purpose-grid">
+        <div>
+            <h3>Our Purpose</h3>
+            <strong>Building trust through law, every single day.</strong>
         </div>
-    </footer>
+        <div>
+            <p>
+                We believe legal support is more than documents and compliance.
+                It is partnership, accountability, and guidance that lasts beyond
+                a single case and strengthens relationships for the future.
+            </p>
+        </div>
+    </div>
+</section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const hamburger = document.getElementById('hamburgerBtn');
-            const navbar = document.getElementById('navbar');
-            
-            hamburger.addEventListener('click', function() {
-                hamburger.classList.toggle('active');
-                navbar.classList.toggle('active');
-                
-                // Toggle aria-expanded attribute
-                const isExpanded = hamburger.classList.contains('active');
-                hamburger.setAttribute('aria-expanded', isExpanded);
-            });
-            
-            // Close menu when clicking outside
-            document.addEventListener('click', function(event) {
-                const isClickInside = hamburger.contains(event.target) || navbar.contains(event.target);
-                
-                if (!isClickInside && navbar.classList.contains('active')) {
-                    hamburger.classList.remove('active');
-                    navbar.classList.remove('active');
-                    hamburger.setAttribute('aria-expanded', 'false');
-                }
-            });
-        });
+<!-- HIGHLIGHT -->
+<section class="highlight">
+    <div class="highlight-content">
+        <h2 class="desktop-heading">What makes LawScent, LawScent?</h2>
+        <h2 class="mobile-heading">LawScent Difference</h2>
+        <p class="desktop-text">
+            Wherever you are, whatever challenge you face, LawScent stands beside you.
+            We help individuals and companies find clarity in complexity and resolve
+            legal challenges with confidence.
+            <br><br>
+            At the heart of everything we do is one purpose — <strong>#ProtectingWhatMatters</strong>.
+            We deliver solutions built on integrity, trust, and impact that protect,
+            empower, and last.
+        </p>
+        <p class="mobile-text">
+            LawScent stands beside you. We help find clarity in complexity and resolve
+            legal challenges with confidence. Our purpose is #ProtectingWhatMatters.
+        </p>
+        <button>Know More</button>
+    </div>
+</section>
 
-        // Add smooth interactions
-        document.querySelectorAll('.card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
-            });
-        });
+   <footer class="new-footer">
+       <div class="footer-content">
+           <div class="footer-section">
+               <h3>LawScent</h3>
+               <p>Your trusted legal partner. Providing comprehensive legal solutions for businesses and individuals.</p>
+               <div class="social-links">
+                   <a href="#" aria-label="Facebook">f</a>
+                   <a href="#" aria-label="Twitter">𝕏</a>
+                   <a href="#" aria-label="LinkedIn">in</a>
+                   <a href="#" aria-label="Instagram">📷</a>
+               </div>
+           </div>
+           
+           <div class="footer-section">
+               <h4>Quick Links</h4>
+               <ul>
+                   <li><a href="#home">Home</a></li>
+                   <li><a href="#about">About Us</a></li>
+                   <li><a href="#services">Services</a></li>
+                   
+               </ul>
+           </div>
+           
+           <div class="footer-section">
+               <h4>Contact</h4>
+               <p>Email: contact@lawscent.com</p>
+               <p>Phone: (+91) 7618151701</p>
+               <p>Address: Gurugram, Haryana 122009</p>
+           </div>
+       </div>
+       
+       <div class="footer-bottom">
+           <p>&copy; 2026 LawScent. All rights reserved.</p>
+           <div class="footer-links">
+               <a href="#">Privacy Policy</a>
+               <a href="#">Terms of Service</a>
+               <a href="#">Disclaimer</a>
+           </div>
+       </div>
+   </footer>
+   
+   <script src="script.js"></script>
+<script>
+document.querySelector("button").addEventListener("click",()=>{
+    alert("Redirect to About / Services page");
+});
 
-        // Prevent default on learn more links
-        document.querySelectorAll('.learn-more').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-            });
-        });
-
-        // Add intersection observer for scroll animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
-        });
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.getElementById('hamburgerBtn');
+    const navbar = document.getElementById('navbar');
+    
+    hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        navbar.classList.toggle('active');
         
-        // Counter animation for stats
-        const statItems = document.querySelectorAll('.stat-item');
-        const observerOptions = {
-            threshold: 0.5,
-            rootMargin: '0px 0px -50px 0px'
-        };
+        // Toggle aria-expanded attribute
+        const isExpanded = hamburger.classList.contains('active');
+        hamburger.setAttribute('aria-expanded', isExpanded);
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const isClickInside = hamburger.contains(event.target) || navbar.contains(event.target);
         
-        const statObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounter(entry.target.querySelector('.stat-number'));
-                    statObserver.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-        
-        statItems.forEach(item => {
-            statObserver.observe(item);
-        });
-        
-        function animateCounter(element) {
-            if (!element) return;
-            
-            const target = parseInt(element.getAttribute('data-target'));
-            const isPlus = element.textContent.includes('+');
-            const isPercent = element.textContent.includes('%');
-            
-            let current = 0;
-            const increment = target / 50; // Animation duration
-            
-            const updateCounter = () => {
-                current += increment;
-                if (current >= target) {
-                    current = target;
-                    element.textContent = isPlus ? `${target}+` : (isPercent ? `${target}%` : target);
-                } else {
-                    element.textContent = Math.floor(current);
-                    if (isPlus) element.textContent += '+';
-                    else if (isPercent) element.textContent += '%';
-                    setTimeout(updateCounter, 30);
-                }
-            };
-            
-            updateCounter();
+        if (!isClickInside && navbar.classList.contains('active')) {
+            hamburger.classList.remove('active');
+            navbar.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
         }
-    </script>
+    });
+    
+    // Handle dropdown clicks on mobile
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    if (dropdownToggle) {
+        dropdownToggle.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                navbar.classList.add('active');
+                hamburger.classList.add('active');
+                hamburger.setAttribute('aria-expanded', 'true');
+            }
+        });
+    }
+});
+</script>
+
 </body>
 </html>
