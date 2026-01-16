@@ -419,6 +419,22 @@ html, body {
         display: none;
     }
 }
+        /* About Overlay Paragraph Styling */
+        .about-paragraphs {
+            margin: 25px 0;
+        }
+        
+        .about-paragraphs p {
+            margin: 0 0 15px 0;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #333;
+            text-align: left;
+        }
+        
+        .about-paragraphs p:last-child {
+            margin-bottom: 0;
+        }
     </style>
 </head>
 <body>
@@ -442,10 +458,46 @@ html, body {
 
             <nav class="navbar" id="navbar">
                 <a href="whoweare.html">Who we are</a>
-                <a href="whatwedo.html">What we do</a>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle">What we do</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-content">
+                            <div class="dropdown-card">
+                                <h4>Corporate Services</h4>
+                                <a href="booking.html">Business Formation & Incorporation</a>
+                                <a href="booking.html">Contract Drafting & Review</a>
+                                <a href="booking.html">Corporate Compliance</a>
+                                <a href="booking.html#">Mergers & Acquisitions</a>
+                                <a href="booking.html">Intellectual Property</a>
+                                <a href="booking.html">Board Advisory Services</a>
+                                <a href="booking.html">Corporate Governance</a>
+                            </div>
+                            <div class="dropdown-card">
+                                <h4>Legal Advisory</h4>
+                                <a href="booking.html">Regulatory Consultation</a>
+                                <a href="booking.html">Risk Assessment</a>
+                                <a href="booking.html">Litigation Support</a>
+                                <a href="booking.html">Dispute Resolution</a>
+                                <a href="booking.html">Employment Law</a>
+                                <a href="booking.html">Data Protection</a>
+                                <a href="booking.html">Contract Negotiations</a>
+                            </div>
+                            <div class="dropdown-card">
+                                <h4>Specialized Areas</h4>
+                                <a href="booking.html">Tax Planning & Strategy</a>
+                                <a href="booking.html">Real Estate Transactions</a>
+                                <a href="booking.html">International Trade Law</a>
+                                <a href="booking.html">Cybersecurity & Privacy</a>
+                                <a href="booking.html">Environmental Compliance</a>
+                                <a href="booking.html">Family Business Planning</a>
+                                <a href="booking.html">Succession Planning</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <a href="#services">Our Thinking</a>
-                <a href="#careers">Careers</a>
-                <a href="#">Legal Aid</a>
+                <a href="career.html">Careers</a>
+                <a href="legailaid.html">Legal Aid</a>
             </nav>
         </header>
 
@@ -453,7 +505,7 @@ html, body {
             <h1><b>Committed to Protecting 
                 <br>What Matters  </b></h1>
             <p>Your Rights | Your Business </p>
-            <div class="buttons">
+            <div class="buttons buttons-left">
                 <a href="#about" class="btn-explore">Explore LawScent</a>
             </div>
         </div>
@@ -485,6 +537,19 @@ html, body {
                     hamburger.setAttribute('aria-expanded', 'false');
                 }
             });
+            
+            // Handle dropdown clicks on mobile
+            const dropdownToggle = document.querySelector('.dropdown-toggle');
+            if (dropdownToggle) {
+                dropdownToggle.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        navbar.classList.add('active');
+                        hamburger.classList.add('active');
+                        hamburger.setAttribute('aria-expanded', 'true');
+                    }
+                });
+            }
         });
     </script>
 
@@ -492,11 +557,13 @@ html, body {
         <div class="about-overlay"></div>
         <div class="about-content-wrapper">
             <div class="content">
-                <h1>Protecting What Matters.
-                    <br> It's What We Do.</h1>
-                <p>Since our inception,<BR> LawScent has been committed <BR>to helping individuals and businesses<BR> build resilient legal foundations.<BR> Guided by strategy, structure, and trust,<BR> we simplify complexity, resolve challenges,<BR> and safeguard what truly matters—your growth, <BR>your stability, and your peace of mind.</p>
+                <h1>Protecting What Matters.<br> It's What We Do.</h1>
+                <div class="about-paragraphs">
+                    <p>Since our inception, LawScent has been committed to helping individuals and businesses build resilient legal foundations.</p>
+                    <p>Guided by strategy, structure, and trust, we simplify complexity, resolve challenges, and safeguard what truly matters—your growth, your stability, and your peace of mind.</p>
+                </div>
                 <div class="about-buttons">
-                    <a href="#about" class="btn">Who we are</a>
+                    <a href="whoweare.html" class="btn">Who we are</a>
                     <a href="#services" class="btn2">What we do</a>
                 </div>
             </div>
@@ -510,44 +577,7 @@ html, body {
                 Trusted by Businesses Across Industries</h3>
         </div>
         
-        <div class="work-info-cards">
-            <div class="info-card">
-                <div class="card-icon">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <h4>Corporate Legal Solutions</h4>
-                <p>We provide comprehensive corporate legal services including company formation, compliance management, contract drafting, and corporate governance. Our expertise helps businesses navigate complex legal frameworks with confidence.</p>
-                <a href="trust1.html" class="card-btn">Learn more</a>
-            </div>
-            
-            <div class="info-card">
-                <div class="card-icon">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9 11L12 14L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M21 12V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <h4>Compliance & Regulatory</h4>
-                <p>Stay compliant with ever-changing regulations. Our team ensures your business meets all legal requirements, handles regulatory filings, and maintains proper documentation to protect your interests and avoid penalties.</p>
-                <a href="trust2.html" class="card-btn">Learn more</a>
-            </div>
-            
-            <div class="info-card">
-                <div class="card-icon">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M12 8V12L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <h4>Strategic Legal Advisory</h4>
-                <p>Get expert legal guidance for strategic business decisions. We help you understand legal implications, assess risks, and develop strategies that align with your business goals while ensuring legal protection.</p>
-                <a href="trust3.html" class="card-btn">Learn more</a>
-            </div>
-        </div>
+
         
         <div class="client-logos-grid">
               <div class="client-logo-item" title="Zostel hospitality">
