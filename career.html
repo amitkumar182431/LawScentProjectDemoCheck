@@ -97,96 +97,158 @@ body{
 
 /* Contact Section Styles */
 .contact-section {
-    padding: 80px 20px;
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    padding: 100px 40px;
+    background: linear-gradient(135deg, #fff8e1 0%, #fff3e0 50%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--gold), #d4a76a, var(--gold));
+    box-shadow: 0 2px 10px rgba(226, 188, 121, 0.3);
 }
 
 .contact-wrapper {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .contact-content {
     text-align: center;
+    animation: slideInUp 1s ease-out;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .contact-content h2 {
-    font-size: 2.5rem;
-    color: #2c3e50;
-    margin-bottom: 20px;
+    font-size: 2.8rem;
+    color: #1a202c;
+    margin-bottom: 25px;
     position: relative;
     display: inline-block;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .contact-content h2::after {
     content: "";
     position: absolute;
-    bottom: -10px;
+    bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background: var(--gold);
-    border-radius: 3px;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold), #d4a76a);
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(226, 188, 121, 0.2);
 }
 
 .contact-content p {
-    font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 50px;
-    max-width: 600px;
+    font-size: 1.2rem;
+    color: #4a5568;
+    margin-bottom: 60px;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
+    font-weight: 400;
 }
 
 .contact-info {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
 }
 
 .contact-item {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
+    background: linear-gradient(145deg, #ffffff 0%, #fefefe 100%);
+    padding: 40px 35px;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     align-items: flex-start;
-    gap: 20px;
+    gap: 25px;
+    border: 1px solid rgba(226, 188, 121, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--gold), #d4a76a);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s ease;
 }
 
 .contact-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12), 0 10px 25px rgba(226, 188, 121, 0.1);
+    border-color: rgba(226, 188, 121, 0.3);
+}
+
+.contact-item:hover::before {
+    transform: scaleY(1);
 }
 
 .contact-icon {
-    font-size: 2.5rem;
-    min-width: 50px;
+    font-size: 2.8rem;
+    min-width: 60px;
+    text-shadow: 0 2px 8px rgba(226, 188, 121, 0.3);
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover .contact-icon {
+    transform: scale(1.1) rotate(5deg);
 }
 
 .contact-item h4 {
-    color: #2c3e50;
-    margin-bottom: 10px;
-    font-size: 1.3rem;
+    color: #1a202c;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    font-weight: 600;
 }
 
 .contact-item p {
-    margin: 5px 0;
-    color: #555;
+    margin: 8px 0;
+    color: #4a5568;
+    font-size: 1.05rem;
 }
 
 .contact-item a {
     color: var(--gold);
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    font-weight: 500;
 }
 
 .contact-item a:hover {
     color: #d4a76a;
     text-decoration: underline;
+    letter-spacing: 0.5px;
 }
 
 /* Wrapper Styles */
@@ -434,14 +496,20 @@ body{
 
 /* ---------- HERO ---------- */
 .hero{
-    height: 500px;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('team.avif') center/cover no-repeat;
+    height: 600px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%), url('team.avif') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     border-bottom: none;
     overflow: hidden;
+    animation: heroPulse 20s infinite alternate;
+}
+
+@keyframes heroPulse {
+    0% { background-position: center 0%; }
+    100% { background-position: center 100%; }
 }
 
 .hero::before {
@@ -451,7 +519,7 @@ body{
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.6) 100%);
+    background: radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
     z-index: 1;
 }
 
@@ -462,76 +530,150 @@ body{
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(226, 188, 121, 0.1), transparent);
-    animation: shine 3s infinite;
+    background: linear-gradient(90deg, transparent, rgba(226, 188, 121, 0.2), transparent);
+    animation: shine 4s infinite;
     z-index: 2;
 }
 
 @keyframes shine {
-    0% { left: -100%; }
-    100% { left: 100%; }
+    0% { left: -100%; opacity: 0; }
+    50% { opacity: 1; }
+    100% { left: 100%; opacity: 0; }
+}
+
+/* Floating particles effect */
+.hero-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(226, 188, 121, 0.6);
+    border-radius: 50%;
+    animation: float 15s infinite linear;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) translateX(100px);
+        opacity: 0;
+    }
 }
 
 /* ---------- CONTENT ---------- */
 .content{
-    max-width: 1000px;
-    margin: 80px auto;
-    padding: 0 30px;
+    max-width: 1100px;
+    margin: 100px auto;
+    padding: 0 40px;
     text-align: center;
     position: relative;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .content::before {
     content: "";
     position: absolute;
-    top: -40px;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 5px;
+    background: linear-gradient(90deg, var(--gold), #d4a76a, var(--gold));
+    border-radius: 3px;
+    box-shadow: 0 2px 10px rgba(226, 188, 121, 0.3);
+}
+
+.content h2{
+    font-size: 42px;
+    margin-bottom: 40px;
+    color: #1a202c;
+    position: relative;
+    display: inline-block;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.content h2::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
     left: 50%;
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
     background: linear-gradient(90deg, var(--gold), #d4a76a);
     border-radius: 2px;
-}
-
-.content h2{
-    font-size: 36px;
-    margin-bottom: 30px;
-    color: #2c3e50;
-    position: relative;
-    display: inline-block;
-}
-
-.content h2::after {
-    content: "";
-    position: absolute;
-    bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background: var(--gold);
-    border-radius: 3px;
+    box-shadow: 0 2px 8px rgba(226, 188, 121, 0.2);
 }
 
 .content p{
-    font-size: 18px;
-    line-height: 1.9;
-    margin-bottom: 25px;
-    color: #34495e;
-    max-width: 800px;
+    font-size: 20px;
+    line-height: 2.0;
+    margin-bottom: 30px;
+    color: #2d3748;
+    max-width: 850px;
     margin-left: auto;
     margin-right: auto;
+    font-weight: 400;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.05);
 }
 
 .content .email{
-    margin-top: 35px;
+    margin-top: 45px;
     font-weight: 600;
-    font-size: 18px;
-    color: #2c3e50;
-    padding: 20px;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    border-radius: 10px;
-    border-left: 4px solid var(--gold);
+    font-size: 20px;
+    color: #1a202c;
+    padding: 25px 30px;
+    background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+    border-radius: 15px;
+    border-left: 5px solid var(--gold);
+    box-shadow: 0 8px 25px rgba(226, 188, 121, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.content .email::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s;
+}
+
+.content .email:hover::before {
+    left: 100%;
 }
 
 .btn-careers {
@@ -570,28 +712,35 @@ body{
     left: 100%;
 }
 
-/* Career Cards Section */
+/* Career Highlights Section */
 .career-highlights {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin: 60px 0;
-    padding: 0 20px;
-    max-width: 1200px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin: 80px 0;
+    padding: 0 40px;
+    max-width: 1300px;
     margin-left: auto;
     margin-right: auto;
+    animation: fadeIn 1.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .career-card {
-    background: white;
-    border-radius: 15px;
-    padding: 30px;
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 20px;
+    padding: 40px 35px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid #eee;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08), 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(226, 188, 121, 0.1);
     position: relative;
     overflow: hidden;
+    backdrop-filter: blur(10px);
 }
 
 .career-card::before {
@@ -600,33 +749,66 @@ body{
     top: 0;
     left: 0;
     width: 100%;
-    height: 5px;
-    background: linear-gradient(90deg, var(--gold), #d4a76a);
+    height: 6px;
+    background: linear-gradient(90deg, var(--gold), #d4a76a, var(--gold));
+    box-shadow: 0 2px 10px rgba(226, 188, 121, 0.3);
+}
+
+.career-card::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(226, 188, 121, 0.05) 0%, transparent 70%);
+    transform: scale(0);
+    transition: transform 0.6s ease;
+    z-index: 0;
 }
 
 .career-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15), 0 10px 25px rgba(226, 188, 121, 0.1);
+    border-color: rgba(226, 188, 121, 0.3);
 }
 
-.career-card i {
-    font-size: 48px;
+.career-card:hover::after {
+    transform: scale(1);
+}
+
+.career-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.career-card i, .career-card .emoji {
+    font-size: 56px;
     color: var(--gold);
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     display: block;
+    text-shadow: 0 2px 8px rgba(226, 188, 121, 0.3);
+    transition: all 0.3s ease;
+}
+
+.career-card:hover .emoji {
+    transform: scale(1.1) rotate(5deg);
 }
 
 .career-card h3 {
-    font-size: 22px;
-    margin-bottom: 15px;
-    color: #2c3e50;
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #1a202c;
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
 .career-card p {
-    color: #555;
-    line-height: 1.7;
-    font-size: 16px;
+    color: #4a5568;
+    line-height: 1.8;
+    font-size: 18px;
     margin: 0;
+    font-weight: 400;
 }
 
 /* ---------- FOOTER ---------- */
@@ -880,10 +1062,10 @@ footer{
 <section class="home" id="home">
     <header>
         <div class="logo-container">
-            <a href="index.html" class="logo-circle">
+            <a href="#home" class="logo-circle">
                 <img src="log.png" alt="LawScent Logo">
             </a>
-            <a href="index.html" class="logo-rectangle">
+            <a href="#home" class="logo-rectangle">
                 <img src="log.png" alt="LawScent Logo">
             </a>
         </div>
@@ -908,6 +1090,17 @@ footer{
 </section>
 
 <section class="hero">
+    <div class="hero-particles">
+        <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 20%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 30%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 40%; animation-delay: 3s;"></div>
+        <div class="particle" style="left: 50%; animation-delay: 4s;"></div>
+        <div class="particle" style="left: 60%; animation-delay: 5s;"></div>
+        <div class="particle" style="left: 70%; animation-delay: 6s;"></div>
+        <div class="particle" style="left: 80%; animation-delay: 7s;"></div>
+        <div class="particle" style="left: 90%; animation-delay: 8s;"></div>
+    </div>
 </section>
 
 <section class="content">
@@ -951,19 +1144,19 @@ footer{
 
 <section class="career-highlights">
     <div class="career-card">
-        <div style="font-size: 48px; color: var(--gold); margin-bottom: 20px;">💼</div>
+        <div class="emoji">💼</div>
         <h3>Professional Growth</h3>
         <p>Accelerate your career with continuous learning opportunities, mentorship programs, and skill development initiatives designed to help you reach your full potential.</p>
     </div>
     
     <div class="career-card">
-        <div style="font-size: 48px; color: var(--gold); margin-bottom: 20px;">👥</div>
+        <div class="emoji">👥</div>
         <h3>Inclusive Culture</h3>
         <p>Join a diverse and inclusive workplace where every voice matters. We celebrate different perspectives and foster an environment of mutual respect and collaboration.</p>
     </div>
     
     <div class="career-card">
-        <div style="font-size: 48px; color: var(--gold); margin-bottom: 20px;">🏆</div>
+        <div class="emoji">🏆</div>
         <h3>Impactful Work</h3>
         <p>Make a meaningful difference in people's lives through challenging projects that shape legal landscapes and create lasting positive change in society.</p>
     </div>
@@ -1229,4 +1422,3 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </body>
 </html>
-
