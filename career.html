@@ -7,10 +7,10 @@
 
     <style>
         :root {
-            --primary: #2c3e50;
-            --secondary: #34495e;
-            --accent: #3498db;
-            --accent-hover: #2980b9;
+            --primary: #e2bc79;
+            --secondary: #e2bc79;
+            --accent: #e2bc79;
+            --accent-hover: #e2bc79;
             --gold: #e2bc79;
             --gold-dark: #d4a76a;
             --dark: #2c3e50;
@@ -664,8 +664,8 @@
 
         /* ---------- FOOTER ---------- */
         footer {
-            background: var(--primary);
-            color: var(--white);
+            background: var(--gold);
+            color: black;
             padding: 60px 5% 30px;
             margin-top: 80px;
             font-family: "Segoe UI", Arial, sans-serif;
@@ -680,17 +680,33 @@
         }
 
         .footer-logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--gold);
             margin-bottom: 15px;
+        }
+        
+        .footer-logo .logo-circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            /* background-color: #e2bc79; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            /* border: 2px solid white; */
+            /* box-shadow: 0 2px 8px rgba(0,0,0,0.2); */
+        }
+
+        .footer-logo .logo-circle img {
+            width: 70%;
+            height: 70%;
+            object-fit: contain;
         }
 
         .footer p {
             margin-top: 15px;
             font-size: 0.9rem;
             line-height: 1.7;
-            color: #ccc;
+            color: #000000;
         }
 
         .socials {
@@ -729,7 +745,7 @@
         .footer a {
             display: block;
             text-decoration: none;
-            color: #bdc3c7;
+            color: #252d32;
             font-size: 0.9rem;
             margin-bottom: 12px;
             transition: var(--transition);
@@ -746,13 +762,31 @@
             border-top: 1px solid rgba(255,255,255,0.1);
             display: flex;
             justify-content: space-between;
+            align-items: center;
             font-size: 0.85rem;
-            color: #bdc3c7;
+            color: #0a0d0e;
             max-width: 1200px;
             margin-left: auto;
             margin-right: auto;
             padding-left: 5%;
             padding-right: 5%;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #191e21;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.85rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
         }
 
         /* ---------- RESPONSIVE ---------- */
@@ -932,10 +966,15 @@
             }
             .footer-bottom {
                 flex-direction: column;
-                gap: 10px;
+                gap: 15px;
                 text-align: center;
-                padding-left: 15px; /* Ensure padding when stacked */
+                padding-left: 15px;
                 padding-right: 15px;
+            }
+            
+            .footer-links {
+                justify-content: center;
+                gap: 15px;
             }
             .footer-bottom div {
                 margin-bottom: 10px;
@@ -1183,7 +1222,11 @@
     <footer class="footer">
         <div class="footer-grid">
             <div>
-                <div class="footer-logo">LawScent</div>
+                <div class="footer-logo">
+                    <a href="index.html" class="logo-circle">
+                        <img src="logcirc.png" alt="LawScent Logo">
+                    </a>
+                </div>
                 <p>Your trusted legal partner. Providing comprehensive legal solutions for businesses and individuals.</p>
                 <div class="socials">
                     <span aria-label="Facebook">f</span>
@@ -1211,9 +1254,9 @@
 
         <div class="footer-bottom">
             <div>© 2026 LawScent. All rights reserved.</div>
-            <div>
-                <a href="#">Privacy Policy</a> &nbsp;&nbsp;
-                <a href="#">Terms of Service</a> &nbsp;&nbsp;
+            <div class="footer-links">
+                <a href="privacypolicy.html">Privacy Policy</a>
+                <a href="termsofuse.html">Terms of Service</a>
                 <a href="#">Disclaimer</a>
             </div>
         </div>
