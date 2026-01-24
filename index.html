@@ -958,25 +958,38 @@ html, body {
             const hamburger = document.getElementById('hamburgerBtn');
             const navbar = document.getElementById('navbar');
             
-            hamburger.addEventListener('click', function() {
-                hamburger.classList.toggle('active');
-                navbar.classList.toggle('active');
-                
-                // Toggle aria-expanded attribute
-                const isExpanded = hamburger.classList.contains('active');
-                hamburger.setAttribute('aria-expanded', isExpanded);
-            });
-            
-            // Close menu when clicking outside
-            document.addEventListener('click', function(event) {
-                const isClickInside = hamburger.contains(event.target) || navbar.contains(event.target);
-                
-                if (!isClickInside && navbar.classList.contains('active')) {
-                    hamburger.classList.remove('active');
-                    navbar.classList.remove('active');
-                    hamburger.setAttribute('aria-expanded', 'false');
-                }
-            });
+            // Mobile Navigation Toggle
+            if (hamburger && navbar) {
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('active');
+                    navbar.classList.toggle('active');
+                    const isExpanded = hamburger.classList.contains('active');
+                    hamburger.setAttribute('aria-expanded', isExpanded);
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    const isClickInsideNav = navbar.contains(event.target);
+                    const isClickOnHamburger = hamburger.contains(event.target);
+
+                    if (!isClickOnHamburger && !isClickInsideNav && navbar.classList.contains('active')) {
+                        hamburger.classList.remove('active');
+                        navbar.classList.remove('active');
+                        hamburger.setAttribute('aria-expanded', 'false');
+                    }
+                });
+
+                // Close menu when a link is clicked (for single-page navigation)
+                navbar.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', function() {
+                        if (window.innerWidth <= 768) { // Only close on mobile
+                            hamburger.classList.remove('active');
+                            navbar.classList.remove('active');
+                            hamburger.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                });
+            }
             
             // Handle desktop mega dropdown click interactions
             const desktopMegaDropdown = document.querySelector('.desktop-mega-dropdown');
