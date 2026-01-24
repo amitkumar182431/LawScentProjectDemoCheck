@@ -840,7 +840,7 @@ body{
 form{
     max-width:600px;
     margin-top:30px;
-    background:var(--white);
+    background:var(--gold);
     padding:40px;
     border-radius:12px;
     box-shadow:var(--shadow);
@@ -884,9 +884,9 @@ button:hover{
 
 /* FOOTER */
 footer{
-    background:var(--dark);
+    background:var(--gold);
     padding:60px 8% 30px;
-    color:var(--white);
+    color:var(--dark);
 }
 .footer-grid{
     display:grid;
@@ -896,33 +896,111 @@ footer{
 }
 footer h4{
     margin-bottom:20px;
-    color:var(--gold);
+    color:var(--dark);
     font-size:1.2rem;
 }
 footer p{
-    color:rgba(255,255,255,0.7);
+    color:var(--dark);
     margin-bottom:10px;
     line-height:1.6;
 }
 footer a{
     display:block;
-    color:rgba(255,255,255,0.7);
+    color:var(--dark);
     text-decoration:none;
     font-size:1rem;
     margin-bottom:10px;
     transition:var(--transition);
 }
 footer a:hover{
-    color:var(--gold);
+    color:var(--gold-dark);
     transform:translateX(5px);
 }
 .copy{
     text-align:center;
     margin-top:30px;
     font-size:0.9rem;
-    color:rgba(255,255,255,0.5);
+    color:var(--dark);
     padding-top:20px;
-    border-top:1px solid rgba(255,255,255,0.1);
+    border-top:1px solid rgba(0,0,0,0.1);
+}
+
+.footer-logo {
+    margin-bottom: 15px;
+}
+
+.footer-logo .logo-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 2px solid white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.footer-logo .logo-circle img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
+
+/* REQUEST SECTION - WHITE BACKGROUND */
+.form-section {
+    background: var(--white);
+    color: var(--dark);
+    padding: 60px 5%;
+    margin: 80px 0 0;
+}
+
+.form-section h2,
+.form-section p {
+    color: var(--dark);
+    text-align: center;
+}
+
+.form-section form {
+    max-width: 600px;
+    margin: 40px auto 0;
+    display: grid;
+    gap: 20px;
+}
+
+.form-section input,
+.form-section textarea {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: var(--white);
+    color: var(--dark);
+    font-size: 1rem;
+}
+
+.form-section input:focus,
+.form-section textarea:focus {
+    outline: 2px solid var(--gold);
+    border-color: var(--gold);
+}
+
+.form-section button {
+    background: var(--dark);
+    color: var(--white);
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 10px;
+}
+
+.form-section button:hover {
+    background: var(--gold);
+    color: var(--dark);
+    transform: translateY(-2px);
 }
 
 @media(max-width:900px){
@@ -1298,7 +1376,11 @@ footer a:hover{
 <footer>
     <div class="footer-grid">
         <div>
-            <h4>LawScent</h4>
+            <div class="footer-logo">
+                <a href="index.html" class="logo-circle">
+                    <img src="log.png" alt="LawScent Logo">
+                </a>
+            </div>
             <p>Your trusted legal partner, committed to justice, integrity, and access to law.</p>
         </div>
         <div>
