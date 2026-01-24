@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | LawScent</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Back to Home Arrow Button */
+        .back-to-home {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: linear-gradient(135deg, #e2bc79 0%, #d4a76a 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(226, 188, 121, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .back-to-home:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 6px 20px rgba(226, 188, 121, 0.4);
+        }
+        
+        .back-to-home svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        header {
+            background: linear-gradient(135deg, #e2bc79 0%, #d4a76a 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            position: relative;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .content {
+            background: white;
+            margin: -100px auto 40px;
+            padding: 80px 60px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section h2 {
+            color: #e2bc79;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #e2bc79;
+        }
+
+        .section h3 {
+            color: #333;
+            font-size: 1.5rem;
+            margin: 30px 0 15px 0;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .section ul {
+            margin: 20px 0;
+            padding-left: 30px;
+        }
+
+        .section li {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .highlight {
+            background: #f9f9f9;
+            border-left: 4px solid #e2bc79;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .last-updated {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin: 30px 0;
+            font-size: 1rem;
+        }
+
+        footer {
+            background: #1a202c;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        .back-to-top {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #e2bc79 0%, #d4a76a 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(226, 188, 121, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 40px 0;
+            }
+            
+            header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .content {
+                padding: 40px 20px;
+                margin: -60px auto 20px;
+            }
+            
+            .section h2 {
+                font-size: 1.6rem;
+            }
+            
+            .section h3 {
+                font-size: 1.3rem;
+            }
+            
+            /* Mobile-specific back-to-home button adjustment */
+            .back-to-home {
+                top: 15px;
+                left: 15px;
+                width: 45px;
+                height: 45px;
+            }
+            
+            .back-to-home svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Back to Home Button -->
+    <a href="index.html" class="back-to-home" aria-label="Back to Home">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+        </svg>
+    </a>
+    <header>
+        <div class="container">
+            <h1>PRIVACY POLICY FOR LAWSCENT</h1>
+            <p>LawScent recognizes the importance of maintaining your privacy</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <div class="last-updated">Effective Date: [Current Date]</div>
+            
+            <div class="section">
+                <p>LawScent recognizes the importance of maintaining your privacy. This Privacy Policy is a legally binding document between you and LawScent wherein "You" shall mean any Vendor or User or Visitor visiting, using or registering with us and "LawScent" and/or "We" shall mean all websites including https://www.lawScent.com, ("Website") or any other medium in which we may provide services and is owned and managed by LawScent, an Indian proprietorship Firm registered under The Sole proprietorship act, 2013, having its registered office at C-271 Sangam Vihar New Delhi 110062 Delhi , India.</p>
+                
+                <p>This privacy policy is subject to the Terms of Use (User agreement) of LawScent Platforms. This policy is effective from the date and time a User registers with or visits LawScent Platforms and/or by filling up the Registration form.</p>
+            </div>
+
+            <div class="section">
+                <h2>1. Collection of Information</h2>
+                
+                <h3>Personal Identifiable Information</h3>
+                <p>We collect and store Personal Information that you provide to us when accessing or using our Services. "Personal Information" means information relating to a person who is or can be identified directly from that information. This includes your name, gender, address, telephone number or email address.</p>
+                
+                <p>Examples of Personal Information we collect include information that you provide when you (a) create or update your LawScent account, (b) communicate with us, (c) purchase services/products from us, (d) contact, review or recommend a lawyer, (e) submit client ratings or peer endorsements. If you are a lawyer and want to your profile ("Profile") on the website, we may also collect verification information. We may collect demographic information about you, including events you like, events you intend to participate in, or any other information provided by you during the use of our website. We might collect this as a part of a survey also.</p>
+                
+                <p>We do not knowingly contact or collect personal information from children under 13. If you believe we have inadvertently collected such information, please contact us so we can promptly obtain parental consent or remove the information.</p>
+
+                <h3>Usage/log-in Information</h3>
+                <p>We collect usage information such as IP address, the web browser type, Operating system, Address of the reference website or the website to which you exit to, date and time you access our website or services, Items you click on, pages you visit and time spent on each page.</p>
+
+                <h3>Cookies, other tracking technologies and online Advertising</h3>
+                <p>We also collect certain information (automatically) through the use of cookies, web beacons, analytics/ webmaster tools and/ or similar tracking technologies. We may also use third parties to display and target ads, provide certain functionality (such as maps) or to place their own cookies and other tracking technologies to collect, track and analyse usage and statistical information from users. We are not responsible for the information collection practices of any third parties.</p>
+
+                <h3>Publicly Posted Information</h3>
+                <p>Personal Information that you post in public areas of our Services or via your Profile may become publicly available and is not considered Personal Information. For example, information you post in your Profile, peer endorsements, Q&A, or any other interactive areas may be made publicly available and can potentially be viewed by anyone. Your posting to such public areas of the Services constitutes consent to share such information publicly, and you should assume that such information will be widely disseminated, including via search engines and other tools to locate information online (e.g., internet archive).</p>
+
+                <h3>Payment Information</h3>
+                <p>We might collect your billing name, billing address and payment method when you subscribe to LawScent Platforms. We may also collect your credit card number or debit card number or their expiry date or bank account details or other details pertaining to your payment method accepted by you on our payment gateway at LawScent Platforms.</p>
+
+                <h3>Posted Information</h3>
+                <p>We may collect information you post in a public space or through registration form available on LawScent Platforms. You can choose not to provide certain information but then you might not be able to take advantage of many of our features. We use the information that you provide for such purposes as responding to your requests, customizing future services for you, improving our platform, and communicating with you.</p>
+
+                <h3>Automatic Information</h3>
+                <p>We may collect information about your IP address and the browser you're using. We might look at what site you came from, duration of time spent on our website, pages accessed or what site you visit when you leave us. We might also collect the type of mobile device you are using, or the version of the operating system your computer or device is running.</p>
+            </div>
+
+            <div class="section">
+                <h2>2. Controllers of Personal Information</h2>
+                <p>Any personal information provided to or gathered by LawScent Platforms under this Privacy Policy will be stored and controlled by LawScent (the data controller) on servers taken on rent.</p>
+            </div>
+
+            <div class="section">
+                <h2>3. Use of your Information</h2>
+                
+                <h3>Non-personal Information</h3>
+                <p>We may use information other than Personal Information, including aggregated or anonymous information, for ad targeting, to analyze trends, administer our Services, improve customer service, diagnose problems with our servers, track user movement, and gather demographic information for aggregate use. We may publish, disclose and use information other than Personal Information, including aggregated or anonymous Personal Information, to or with third parties.</p>
+
+                <h3>Personal Information</h3>
+                <p>We use Personal Information to facilitate your use of the Services, to process your requests or transactions, to provide you with information, products and services you request, to administer and assist us with the operation of our business, and for the purpose for which the information was provided. We may use the information we collect to send you news relevant to you or in accordance with your preferences. These might be our own offers or products, or third-party offers or products we think you might find interesting. We may also send you advertisements from third parties. We will not disclose, rent, sell or otherwise make available your Personal Information to third parties for direct marketing purposes.</p>
+
+                <h3>Third Party Service Providers</h3>
+                <p>In the event that we engage with third party service providers in connection with our Services, we may share Personal Information with such service providers who need access to such information to carry out their work for us. For example, we may use credit card processing or verification companies to verify credit card information or to verify your identity. Other than such service providers, we do not share Personal Information with third parties unless (1) you otherwise give us your consent to do so; or (2) in response to a request for information or a subpoena.</p>
+
+                <h3>Text Messaging</h3>
+                <p>We do not ordinarily send text messages for marketing purposes, unless you give your consent to receive such messages on your registered mobile number. You may, however, contact us and opt out of receiving such texts.</p>
+
+                <h3>General</h3>
+                <p>We may use information to protect our company, our customers, or our websites. We may share information with any successor to all or part of our business. For example, if part of our business is sold, we may give our customer list as part of that transaction. We may disclose Personal Information when we are required to or we believe it is appropriate to comply with the law (e.g., a lawful subpoena, warrant or court order); to enforce or apply this Policy or our other policies or agreements; to initiate, render, bill, and collect for amounts owed to us; to protect our or our users' rights, property or safety; to protect our users from fraudulent, abusive, or unlawful use of the Services; or if we believe that an emergency involving the danger of death or serious physical injury to any person requires or justifies disclosure of Personal Information or We may also share it if a Government Agency or Investigatory body wants us to do so, or anytime when we are investigating potential fraud.</p>
+
+                <p>We use information as otherwise permitted by law. We may share your information for reasons not described in this policy. We will inform you before we do this</p>
+
+                <div class="highlight">
+                    <p>Lawyers and their employees should be particularly aware of their obligations of client / user confidentiality, both in communicating with LawScent.com and in consulting users via the site. LawScent.com does not have, and will not accept, any obligations of confidentiality with respect to any communications</p>
+                </div>
+
+                <h3>Transactional Communications</h3>
+                <p>The information provided by you will be used to contact you for confirmation of a subscription of our services. We might send you emails or SMS about your account balance and referrals made by you in case of Registered User.</p>
+
+                <h3>Responding to requests or questions</h3>
+                <p>The information may be used to confirm any queries, complaints, suggestions or demands made by you on our platform.</p>
+
+                <h3>Security purposes</h3>
+                <p>The information may be used to protect our company, our users, or LawScent Platforms.</p>
+
+                <h3>Marketing purposes</h3>
+                <p>We might send you information about special promotions or offers or referral policies. We might also tell you about new features or services. These might be our own offers or services, or third-party offers or services we think you might find interesting.</p>
+
+                <h3>Legal Use</h3>
+                <p>The information shall be used as otherwise permitted by law.</p>
+
+                <h3>Deleting Data</h3>
+                <p>If your data is no longer required for the purposes mentioned or if their storage is inadmissible for other legal reasons, we will delete them. However, the exception to this would be any lawfully collected data which we are obliged to keep for legal reasons.</p>
+
+                <p>Also please note that for every deletion the data are initially only blocked and finally deleted with a time delay in order to prevent accidental deletions or possibly intentional damage. For technical reasons, data may be duplicated in backup files and mirroring services. Copies of the data will also be deleted, although there might be a technical delay.</p>
+            </div>
+
+            <div class="section">
+                <h2>4. Lawyers</h2>
+                <p>Lawyers and their staff ought to be notably responsive to their obligations of client/user confidentiality, each in human activity with LawScent.com and in consulting users via the positioning. LawScent.com doesn't have, and cannot settle for, any obligations of confidentiality with reference to any communications apart from those expressly expressed during this Privacy Policy and LawScent.com's Terms of Use.</p>
+            </div>
+
+            <div class="section">
+                <h2>5. Sharing of information with third-parties</h2>
+                
+                <h3>Service vendors</h3>
+                <p>The information may be shared with the vendors who help us in managing our online registration process or payment processors or transactional message processors. Some vendors may be located outside of India.</p>
+
+                <p>Also, we share your information with the third party and to improve the application and for the benefits of the Registered Users and Visitors only to the extent permitted by law.</p>
+
+                <h3>Business Partners and/or Successors</h3>
+                <p>The information may be shared with the sponsors of our website/app or business associates. The information shall be used by our business partners we give them as described in their privacy policies.</p>
+
+                <p>The information may also be shared with any legal successors of the business. For example, if our business is reconstructed in any manner, we may give our Mapper list as part of that transaction.</p>
+
+                <h3>Comply with law</h3>
+                <p>The information may be shared to respond to a court order or subpoena. We may also share it if a government agency or investigatory body requests or we might also share information when we are investigating potential fraud.</p>
+
+                <h3>Reasons not described</h3>
+                <p>The personal information provided by the Visitors/ Registered Users to LawScent Platforms will not be provided to third parties without previous consent of the concerned party. Information of a general nature may however be revealed to external parties.</p>
+            </div>
+
+            <div class="section">
+                <h2>6. Protection of Information</h2>
+                <p>Every effort will be made to keep the information provided by users in a safe manner, the information displayed on the website/app will be done so only after obtaining consent from the registered user and/or visitors. Any person browsing the site generally is not required to disclose his identity or provide any information about him/her, it is only at the time of registration you will be required to furnish the details in the registration form.</p>
+            </div>
+
+            <div class="section">
+                <h2>7. Third-party sites</h2>
+                <p>If you click on one of the links to third party websites, you may be taken to websites we do not control. This policy does not apply to the privacy practices of those websites. Read the privacy policy of other websites carefully. We are not responsible for these third-party sites.</p>
+            </div>
+
+            <div class="section">
+                <h2>8. Grievance Redressal Mechanism</h2>
+                <p>In accordance with Information Technology Act 2000 and rules made there under, the name and contact details of the Grievance Officer are provided below:</p>
+                
+                <div class="highlight">
+                    <p>Designation: Grievance officer</p>
+                    <p>Email: info@lawScent.com</p>
+                    <p>Working Days: Monday to Saturday</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>9. Disclaimer</h2>
+                <p>Registered users are solely responsible for maintaining the confidentiality of the passcode and user identification and all activities and transmission performed by the Registered users through his user identification and shall be solely responsible for carrying out any online or off-line transaction with the Company. LawScent. assumes no responsibility or liability for their improper use of information relating to such usage of credit cards / debit cards used by the mapper online / off-line. All the disclaimer mentioned in Terms of Use of LawScent Platforms shall be applicable.</p>
+            </div>
+
+            <div class="section">
+                <h2>10. Updates to this policy</h2>
+                <p>This Privacy Policy was last updated on 1 November 2019. From time to time we may change our privacy practices and update the policy as per applicable laws and requirements. We will also post an updated copy on our website/app. Please check periodically for updates.</p>
+            </div>
+
+            <div class="section">
+                <h2>11. Jurisdiction</h2>
+                <p>If you choose to visit LawScent Website and/or application, your visit and any dispute over privacy is subject to this Policy and the Terms of use. In addition to the foregoing, any disputes arising under this Policy shall be governed by the laws of India.</p>
+            </div>
+
+            <div class="section">
+                <h2>12. Applicable Law</h2>
+                <p>This Privacy Policy is an electronic contract formed under The Information Technology Act, 2000 and the rules made thereunder and the amended provisions pertaining to electronic documents / records in various statutes as amended by The Information Technology Act, 2000. This Privacy Policy does not require any physical, electronic or digital signature.</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="index.html" class="back-to-top">Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 LawScent. All rights reserved.</p>
+            <p>Protecting your privacy is our priority</p>
+        </div>
+    </footer>
+</body>
+</html>

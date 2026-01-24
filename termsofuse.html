@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Use | LawScent</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Back to Home Arrow Button */
+        .back-to-home {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: linear-gradient(135deg, #e2bc79 0%, #d4a76a 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(226, 188, 121, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .back-to-home:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 6px 20px rgba(226, 188, 121, 0.4);
+        }
+        
+        .back-to-home svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        header {
+            background: linear-gradient(135deg, #e2bc79 0%, #d4a76a 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            position: relative;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .content {
+            background: white;
+            margin: -100px auto 40px;
+            padding: 80px 60px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section h2 {
+            color: #e2bc79;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #e2bc79;
+        }
+
+        .section h3 {
+            color: #333;
+            font-size: 1.5rem;
+            margin: 30px 0 15px 0;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .section ul {
+            margin: 20px 0;
+            padding-left: 30px;
+        }
+
+        .section li {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .highlight {
+            background: #f9f9f9;
+            border-left: 4px solid #e2bc79;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .last-updated {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin: 30px 0;
+            font-size: 1rem;
+        }
+
+        footer {
+            background: #1a202c;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        .back-to-top {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #e2bc79 0%, #d4a76a 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(226, 188, 121, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 40px 0;
+            }
+            
+            header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .content {
+                padding: 40px 20px;
+                margin: -60px auto 20px;
+            }
+            
+            .section h2 {
+                font-size: 1.6rem;
+            }
+            
+            .section h3 {
+                font-size: 1.3rem;
+            }
+            
+            /* Mobile-specific back-to-home button adjustment */
+            .back-to-home {
+                top: 15px;
+                left: 15px;
+                width: 45px;
+                height: 45px;
+            }
+            
+            .back-to-home svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Back to Home Button -->
+    <a href="index.html" class="back-to-home" aria-label="Back to Home">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+        </svg>
+    </a>
+    <header>
+        <div class="container">
+            <h1>TERMS OF USE</h1>
+            <p>For LawScent Platform and Services</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <div class="last-updated">Last Updated: [Current Date]</div>
+            
+            <div class="section">
+                <p>The following terms and conditions represent an agreement ("LawScent.com," "we," or "us"), the operator LawScent.com (the "Site"). BY utilization the Site, AND/OR BY REGISTERING WITH US, YOU SIGNIFY that you simply comply with THESE TERMS OF USE, including that you simply consent to the data practices disclosed in our Privacy Policy, that is incorporated herein by reference, which you're agreeing to accommodates applicable laws, ruled and taken by the country (hereinafter referred to as "India"). Please note that we provide the Site "AS IS" and without warranties. If you're registering An account or utilizing the Site on behalf of a person or entity apart from yourself, you represent that you simply area unit authorized by such individual or entity to simply accept these Terms of Use on such individual or entity's behalf.</p>
+                
+                <p>In addition, you recognize that the precise technique, features, and services offered on LawScent.com could also be altered, improved, removed or custom-made at any time by LawScent.com in its sole discretion and without notice. If you are doing not accept agree with any of these terms, don't use this website.</p>
+            </div>
+
+            <div class="section">
+                <h2>General Terms:</h2>
+                
+                <p>LawScent.com isn't any means, directly or indirectly liable for the recommendation and help provided by the Lawyers. we tend to area unit freelance third party enablers who have designed a platform where the customers will communicate with, and if the requirement is, meet the Lawyers. LawScent.com has no management over the Services provided by the professional. LawScent.com won't be accountable just in case of any issues/discrepancies with the Services provided by the professional.</p>
+
+                <p>LawScent.com has full rights to publish the free recommendation provided to their customers on their portal and in any external communication for knowledge sharing. However, in none of the revealed content, the user details are going to be displayed. just in case you want any of your queries and their individual answers 'not' to be revealed, please use any of the alternative services' choices i.e. Paid Email Support, telecommunication help, Meet professional and/or Video decision Consultation.</p>
+
+                <p>LawScent.com has multiple Lawyers for a similar service vertical / sub-vertical classes and there can be instances whereby an analogous question has been answered in 2 alternative ways by the Lawyer(s). LawScent.com takes no liability towards these completely different opinions and answers of the professionals and encourages you to require another opinion from 'your' Lawyer / alternatively decide that opinion to travel ahead with supported deserves and logical conclusions.</p>
+
+                <p>All of the materials and data on the Site area unit provided for informational functions solely, and should not mirror current legal developments or variances within the law of various jurisdictions. The materials and data on the Site don't essentially mirror the opinions of the Lawyers of the Law corporations, their partners, customers or affiliates. the data on the Site isn't certain to be correct, complete or up to date. The mere receipt of An e-mail from or a "post" on the Site doesn't produce a Lawyer-client relationship. The applicable professional / house is only liable for providing its services to you, and you agree that LawScent.com shall not be liable for any damages or costs of any sort arising out of or in any means connected along with your use of such services (including, without limitation, claims based on malpractice). You agree that any claim arising out of your relationship with a house or professional shall be brought only against such house or professional, and, as LawScent.com is doing nothing over helping the Law corporations to modify their individual practices, neither LawScent.com nor any of its licensors or affiliates shall be enclosed inside any such claim.</p>
+
+                <p>Whenever we tend to use the words "your Lawyer" or "your Professional" or "service provider" or similar words on LawScent.com, including in these Terms of Use, we tend to mean your personal professional/skilled with whom you've got of An actual, mutually acknowledged, Lawyer-client relationship (or a similar quite formal, real-world relationship between you and your personal skilled service provider). LawScent.com Lawyers don't seem to be "your"Lawyers/professionals or service supplier.</p>
+
+                <p>LawScent.com, Lawyers / Professionals utilizing LawScent.com to supply on-line consultations (collectively "Lawyers"), Affiliates and Third-party suppliers (collectively "Affiliates") would serve you to the best our ability beneath the subsequent terms and conditions:</p>
+            </div>
+
+            <div class="section">
+                <h2>1. Using the LawScent.com website</h2>
+                
+                <p>All users should be eighteen years or older. within the case of minor customers (under eighteen (18) years), a parent or guardian should accept this Agreement and guide all consultations beneath the services offered.</p>
+
+                <p>The User takes full responsibility for ensuring that the data submitted is correct. LawScent.com shall create no effort to validate any info provided by the customer to be used in Services with reference to content, correctness or usability. we tend to with An intention to supply the best service achievable might raise you to share additional info as and once required.</p>
+
+                <p>Use of LawScent.com Services needs basic familiarity with the net, connected payment services, and general security practices. the customer is expected to possess the mandatory internet-usage skills and data to avail LawScent.com Services.</p>
+            </div>
+
+            <div class="section">
+                <h2>2. How does it work?</h2>
+                
+                <p>If you decide on to submit a Free Question on LawScent.com, you may not be charged any fees; but, Free queries could also be delayed before the process. Also, any answers you receive from Lawyers to Free queries won't involve any Lawyer-client relationship and can be publicly displayed and visible by all Users. you can not select the professional that'll answer the Free Question submitted by you – this can be set by the system mechanically. The professional could select to not answer your question with or without assign a reason for a similar. you may be intimated in such cases via email and/or phone. Our Lawyers can be unavailable from time to time due to existing queries lined up with them, and that we won't be accepting free queries throughout such times. we tend to apologize for the inconvenience this would possibly cause and request you to do submitting an issue after a minute or prefer a Paid Service, whereby you'll even select the professional who answers your Question.</p>
+
+                <p>If you decide on to choose a Paid Service at LawScent.com, you may be charged a fee. The fee paid by you is paid to the professional and may be a payment by that you compensate the professional for the time spent in providing you with services in a restricted-scope Lawyer-client relationship. The fee is additionally meant partially to cowl LawScent.com costs in the process your on-line booking, maintaining, administering and operating the web site. This restricted Lawyer-client relationship is mentioned additional totally beneath purpose no. 29. The fee paid towards paid consultation is barely towards the scope outlined beneath the services offered for that individual booking and post the consultation, you'll or might not interact the professional directly towards to any extent further services you want to avail from the individual professional. LawScent.com isn't any means, directly or indirectly liable for the recommendation and help provided by the Lawyers.</p>
+
+                <p>Though listing on LawScent.com could increase the exposure and accessibility of a professional, we tend to don't seem to be An advertising portal wherever businesses area unit listed on a priority driven by the fees paid. Our search and sort functionality is only driven by the user entered info and therefore the inbuilt algorithm.</p>
+
+                <p>WE don't IN ANY means ENDORSE a person described HEREIN. IN NO EVENT shall BE liable to YOU OR ANYONE ELSE FOR ANY call created OR ACTION TAKEN BY YOU IN RELIANCE ON SUCH info.</p>
+            </div>
+
+            <div class="section">
+                <h2>3. Independence of Lawyers</h2>
+                
+                <p>The opinions, statements, answers (collectively "consultation") provided by the Lawyers via LawScent.com area unit only the individual and freelance opinions and statements of such people and don't mirror the opinions of LawScent.com, its affiliates or the other organizations or establishments to that such professional or such specialist or skilled is connected or provides services. LawScent.com doesn't advocate or endorse any specific tests, Lawyers, products, procedures, opinions, or alternative info that will be mentioned on LawScent.com or by a vendor of LawScent.com</p>
+
+                <p>The inclusion of pros and specialists on LawScent.com or in any skilled directory on LawScent.com doesn't imply recommendation or endorsement of such skilled neither is such info meant as a tool for verifying the credentials, qualifications, or skills of any skilled contained in this. Such info is provided on An "as-is" basis and LawScent.com disclaims all warranties, either specific or implied, including however not restricted to the implied warranties of state and fitness for explicit purpose.</p>
+
+                <p>You agree that you simply perceive that the Lawyers United Nations agency participate within the LawScent.com don't seem to be employed by or agents of LawScent.com. though LawScent.com will need Lawyers to supply basic info concerning themselves to LawScent.com (for example, info concerning the jurisdictions during which they're authorized, info concerning areas during which they apply and consider themselves competent and knowledgeable), and though LawScent.com will depend on and expire this info to Users for his or her use, LawScent.com doesn't individually verify this info and makes no representations on the qualifications of any Lawyers. No listing of any professional on this web site and no info of any kind or answers provided by any professional represent an endorsement, recommendation or referral of any professional. Lawyers don't give any compensation or create any payment to LawScent.com so as to become professional of LawScent.com or so as to answer any queries by Users on LawScent.com</p>
+
+                <p>In reference to their participation on LawScent.com, Lawyers do confirm representations and warranties concerning the data they provide concerning the jurisdictions during which they're authorized to apply their profession and license standing. all the same, you're encouraged to research or perform your own due diligence regarding the Lawyers and their qualifications.</p>
+
+                <p>No representation is formed that the standard of the skilled services to be performed is larger than the standard of skilled services performed by alternative Lawyers. we tend to encourage all potential customers to form their own freelance investigation and analysis of any professional being considered.</p>
+            </div>
+
+            <div class="section">
+                <h2>4. Terms of Membership</h2>
+                
+                <p>You represent and warrant that you simply area unit a minimum of eighteen years mature which you possess the right and therefore the ability to enter into agreements touching on Terms of Use, to register on the LawScent.com Services beneath your own name and to use the LawScent.com Services in accordance with the Terms of Use and abide by the obligations hereinafter.</p>
+
+                <p>You are only liable for maintaining the confidentiality of your secret and for all activities conducted beneath your LawScent.com account. You comply with prohibit anyone else from utilizing your secret and immediately notify LawScent.com of any unauthorized use of your secret or alternative security issues.</p>
+
+                <p>No party has the ability or authority as agent, employee or in the other capacity to bind LawScent.com to any liability or obligation.</p>
+            </div>
+
+            <div class="section">
+                <p>on behalf of the opposite party for any purpose whatever.</p>
+                
+                <p>International members acknowledge and agree that LawScent.com could collect and use your info and disclose it to alternative entities outside your resident jurisdiction. additionally, such info could also be hold on on servers situated outside your resident jurisdiction. By providing us along with your info, you acknowledge that you simply consent to the transfer of such info outside your resident jurisdiction as elaborate in our Privacy Policy. If you are doing not consent to such transfer, you'll not use our Content or Services.</p>
+
+                <p>Your affirmative act of utilizing this web site and/or registering for the positioning or the Services constitutes your electronic signature to those Terms of Use and your consent to enter into agreements with US electronically.</p>
+
+                <p>The Site could solely be utilized in honesty and should not be wont to transmit or otherwise create offered any info that's false or that you simply don't have a right to form offered underneath any law or underneath written agreement relationships (such as info, proprietary and tip learned or disclosed as a part of employment relationships or underneath nondisclosure agreements), to threaten, abuse, harass, or invade the rights of any individual or entity, to infringe on any individual or entity's material possession rights, or in the other means that would moderately be deemed unethical, illegal, or offensive.</p>
+
+                <p>You may not identify yourself or impersonate any individual or entity, or incorrectly state or otherwise misrepresent your affiliation with someone or entity (e.g., fake to be a special person or from a special company or organization).</p>
+
+                <p>Unless you've got our previous written consent, you may not post advertisements or promotional materials, solicit participants and/or guests of the positioning, reproduce, duplicate, copy, sell, sell or exploit for any business functions, any portion of the positioning or its Services, use of the positioning or its Services, or access to the positioning or its Services.</p>
+
+                <p>You are prohibited from utilizing any sort of pc 'worm,' 'virus' or the other device that's meant or is probably going to disrupt, overload, or otherwise impair the workings of any a part of the positioning. If you are doing interact in such conduct, the ensuing harm is going to be exhausting to quantify as a set quantity and so you herewith comply with paying us liquidated damages within the quantity of Rs. 1,00,000 for every day that the positioning is broken till the positioning is totally repaired and more unquantified damages which are able to occur thanks to your actions are going to be accessed and you shall be susceptible to pay a similar. This quantity comes by estimating the worth of (1) the loss of goodwill caused by Associate in a Nursing inoperable web site, (2) the time and cash it'll go for repair the positioning and to handle the issues of tourists. we tend to area unit needed to use affordable efforts to repair the positioning as quickly as attainable. This clause won't command us from seeking further compensation if your conduct injures us in an exceedingly means not expressly contemplated herein.</p>
+
+                <p>You are not permissible to gather or store personal information concerning alternative users.</p>
+
+                <p>You are not permissible to access the positioning for the aim of information mining or extracting content from the positioning on the far side your personal finish use.</p>
+
+                <p>You are permissible to use the positioning to seek out a professional to perform services for you associated with your drawback and to get general info concerning similar cases (each, a "Permissible Use"). you're not permissible to use the positioning for the other reason apart from a Permissible Use as delineating higher than. Impermissible Uses shall embody, however don't seem to be restricted to, utilizing the positioning to order to solicit, hire, interact or otherwise work with the staff or affiliates of LawScent.com or the Lawyers, to interfere or commit to interfere within the relationship between LawScent.com and such workers, affiliates, Lawyers, or for the other purpose apart from delineate herein (each, Associate in a Nursing "Impermissible Use"). If you are doing interact in such conduct, the ensuing harm is going to be exhausting to quantify as a set quantity and so you herewith comply with pay US liquidated damages within the quantity of Rs.2,50,000 for every Impermissible Use, and more unquantified damages which is able to occur thanks to your actions are going to be accessed and you shall be susceptible to pay a similar. you additional agree that this liquidated damages provision moderately approximates actual prices, losses, and expenses which might be incurred by LawScent.com thanks to any such Impermissible Use. you furthermore may agree that nothing in this section is meant to limit LawScent.com right to get injunctive and alternative relief as could also be acceptable.</p>
+
+                <p>You may not forge headers or otherwise manipulate identifiers in order to disguise the origin of any Content transmitted through the Site.</p>
+
+                <p>You comply with not damage minors in any ways.</p>
+
+                <p>In the event you submit info through the positioning, you comply with give true, accurate, current and complete info and comply with promptly update the data to stay it true, accurate, current and complete. If you give any info that's untrue, inaccurate, not current or incomplete, and/or we've affordable grounds to suspect that such info is untrue, inaccurate, not current or incomplete, we have the correct to suspend or terminate your participation within the web site and/or refuse any and every one current or future use of the positioning or its services (or any portion thereof).</p>
+
+                <p>You perceive and agree that every one info, applied math information, text, software, music, sound, images, graphics, video, messages or alternative materials (Content), whether or not publically denote or in private transmitted by you and alternative users of our service, area unit the only real responsibility of the person from that such Content originated. this suggests that you simply, and not us, area unit entirely answerable for all Content that you simply transfer, post, email or otherwise transmit via the positioning. we tend to don't manage all of the Content denote via the positioning and, as such, don't guarantee the accuracy, integrity or quality of such Content. You perceive that by utilizing the positioning, you'll be exposed to Content that's offensive, indecent or objectionable. underneath no circumstances can we tend to be liable in any way for any Content, including, however not restricted to, for any errors or omissions in any Content, or for any loss or harm of any kind incurred as a results of the employment of any Content denote, emailed or otherwise transmitted via the positioning.</p>
+
+                <p>You acknowledge that we tend to could or might not pre-screen Content, however that our designers and that we shall have the correct (but not the obligation) in our sole discretion to pre-screen, refuse, or move any Content that's offered via the positioning. while not limiting the preceding, our designers and that we shall have the correct (but not the obligation) to get rid of any Content that violates this agreement or is otherwise objectionable.</p>
+
+                <p>The decision to create professional-client relationship is a vital one and is between you and therefore the Lawyer. you'll would like to hunt and retain the recommendation of alternative Lawyers thus on meet all applicable deadlines that govern your query/problem. You herewith agree that, by taking any of the actions delineate higher than, you're soliciting and requesting a contact by phone and in and of itself, you'll be contacted by phonephone or e-mail as set forth during this Agreement and in our Privacy Policy, however the listing of your number and/or e-mail address in any applicable do-not-call registries.</p>
+            </div>
+
+            <div class="section">
+                <h2>5. Scope of Services</h2>
+                
+                <p>LawScent.com (the homeowners and therefore the worker employees of the positioning) and third-party professionals United Nations agency supply services through the web site settle for no responsibility for any medical, legal or money events or outcomes associated with services achieved through the employment of the positioning.</p>
+
+                <p>LawScent.com doesn't guarantee that a web-based consultation, over-phone consultation or in-person / video consultation is that the acceptable course of treatment/solution for your explicit drawback.</p>
+            </div>
+
+            <div class="section">
+                <h2>6. User's Profile at LawScent.com</h2>
+                
+                <p>Your LawScent.com Profile is made to store a record of your consultations and your personal query/problem info on-line, together with history, etc.</p>
+
+                <p>Any info provided as a part of an online, over-phone or Associate in a Nursing in-person / video consultation becomes a part of your LawScent.com Record. You comply with give correct info to assist US serve you best to our data, to sporadically review such info and to update such info as and once necessary.</p>
+
+                <p>LawScent.com reserves the correct to keep up, delete or destroy all communications and materials denote or uploaded to the LawScent.com Service in keeping with its internal record retention and/or destruction policies.</p>
+
+                <p>You might be contacted via email to review the data provided by you for LawScent.com Record or for on-line Consultations. Please certify you give a sound email-id and you update it as and once required.</p>
+
+                <p>For additional info concerning the employment of knowledge concerning you, please sit down with our Privacy Policy.</p>
+            </div>
+
+            <div class="section">
+                <h2>7. Supplementary Communication</h2>
+                
+                <p>LawScent.com could send you newsletters and alternative info concerning commonly connected topics or preventive care messages containing specific services' connected info, links to alternative connected websites and specific queries associated with your LawScent.com Record. in addition, LawScent.com makes offered self-care informational services that give general, and specific services' info.</p>
+
+                <p>These communications and resources don't seem to be comprehensive and don't embody complete potential info touching on the topic matter. These area unit only meant for general, instructional and informational functions and may not be relied upon as a substitute for user-specific query/problem analysis or construed, directly or indirectly because the application of that individual service or dispensing of that individual service by LawScent.com</p>
+
+                <p>The information contained in these communications and resources is compiled from a spread of sources and should or might not be authored by LawScent.com. LawScent.com makes no guarantee with reference to the content of those materials or the data contained in this.</p>
+
+                <p>We don't seem to be answerable for something outside of LawScent.com. currently or within the future, the Content and Services could link you to alternative websites or info, software, data, or alternative contents, on or off the net. These alternative sites or and contents don't seem to be LawScent.com, and therefore the info there's outside of our control. we tend to don't control, endorse, or review the content of those sites, and that we don't seem to be answerable for such content.</p>
+            </div>
+
+            <div class="section">
+                <h2>8. Protection of Proprietary Information</h2>
+                
+                <p>You agree that the Services, that embody all computer code and data, each electronic and written media, contain trade secrets and alternative proprietary material possession and area unit the proprietary property of LawScent.com. they're protected by trademark laws and alternative proprietary rights and laws, and that they could solely be used or accessed as specifically provided for, during this Agreement.</p>
+
+                <p>You agree that you simply won't store, copy, modify, rent, lease, loan, sell, distribute, transfer, transmit, display, reverse-engineer, reverse-assemble, or otherwise commit to discover any programming code or any ASCII text file utilized in or with the Services. you may not otherwise commit to transfer any right within the Services (which includes its computer code, style and content), produce by-product works supported it or in any manner commercially exploit the Services in whole or partially. You agree that violations by you, the other person or entity, of those trade secrets and / or alternative material possession protections or the terms of this Agreement are going to because prosecution underneath the Indian Laws and Bylaws. the ultimate alternative of whether or not the buyer is in violation of any of those policies is at the only real discretion of LawScent.com
+
+Only for the period of being logged into the Consumers' valid LawScent.com account, the buyer is herewith granted a revocable , non-exclusive, non-transferable license to use the services for private, non-commercial purposes; subject to terms and qualifications of Agreements of LawScent.com
+
+With the exception of your case records, LawScent.com retains all rights, titles and interests touching on LawScent.com, the LawScent.com Services and any content, products, documentation, computer code or alternative materials on the LawScent.com site beside any secret, trademark, service mark or alternative material possession or proprietary right in any of the preceding.
+
+LawScent.com welcomes comments, suggestions and submissions by its shoppers together with however not restricted to messages, notes, feedback, artwork, communications, code or inventive materials provided to LawScent.com The act of commenting, suggesting or submitting shall act as a full assignment of all rights whatever (Intellectual property) to LawScent.com. LawScent.com shall have the correct to use a similar as its own for all legal functions together with however not restricted to copy, disclosure, publishing, distribution and therefore the like with none compensation to the customers.
+
+Except as expressly provided herein, no alternative right or license with reference to any trademark rights or alternative proprietary rights area unit granted underneath this agreement. All rights not expressly granted hereinafter by LawScent.com area unit expressly reserved to LawScent.com and its licensors and data and content suppliers.
+
+Contact us if you think info on our web site infringes your copyright. If you think any materials accessible on or from LawScent.com infringe your copyright, you'll request removal of these materials.
+
+No a part of the materials together with graphics or logos, offered during this web site could also be derived, photocopied, reproduced, translated or reduced to any electronic medium or machine-readable type, in whole or partially, while not specific permission.
+
+Your license to access and use the positioning and its services area unit subject to the subsequent further restrictions and prohibitions on use. you'll not (1) copy, print (except for the specific restricted purpose permissible by paragraph eight, above), republish, display, transmit, distribute, sell, rent, lease, loan or otherwise create offered in any type or by any means that all or any portion of the positioning, or any info or materials retrieved therefrom; (2) use the positioning or the other materials from the positioning to develop, or as a element of, Associate in Nursing info storage and retrieval system, database, infobase, or similar info resource (in any media currently existing or hereafter developed), that's offered for business distribution of any kind, together with through sale, license, lease, rental, subscription, or the other business distribution mechanism; (3) produce compilations or by-product works of the positioning or the other materials from the positioning; (4) use the positioning or the other materials from the web site in any manner that will infringe any material possession right, or proprietary right of LawScent.com or any third parties; (5) take away, change, or obscure any proprietary notice or terms of use contained within the Site; (6) create any portion of the positioning offered through any timesharing system, service firm, the net, or the other technology currently existing or developed within the future, while not our specific written consent; (7) take away, disable, defeat or modification any functionality or look of the Site; (8) decompile, destroy or reverse engineer any web site computer code or use any network observance or discovery computer code to determine the positioning architecture; (9) use any automatic or manual method to reap info from the positioning; (10) use the web site for the aim of gathering info for or transmittal (a) uninvited business email; (b) email that produces use of our name or logos, together with in reference to invalid or solid headers, invalid or nonexistent domain names, or alternative means that of deceptive addressing; and (c) uninvited phonephone calls or facsimile transmissions; (11) use the positioning in an exceedingly manner that violates any state or federal law regulation business email, facsimile transmissions or phonephone solicitations; and (12) export or re-export the positioning or any portion therefrom, or any computer code offered on or through the positioning, in violation of the export control laws and rules of the us.</p>
+            </div>
+
+            <div class="section">
+                <h2>9. Etiquette and Privacy</h2>
+                
+                <p>The resources of LawScent.com shouldn't be wont to impersonate another person or misrepresent authorization to act on behalf of others or LawScent.com. All messages transmitted via LawScent.com ought to properly determine the sender. the buyer ought to ne'er alter the attribution of origin in email correspondence messages or whereas posting any info.</p>
+
+                <p>LawScent.com has zero-tolerance for uninvited bulk email, uninvited posting to newsgroups, promoting gimmicks/spam/scams in community resources, or alternative bootleg activities. the buyer shall not infringe upon the rights of others, spam, propagate pc worms or viruses, use a false identity, commit to gain unauthorized entry to any web site or network, infringe logos, or alternative material possession rights. the buyer more agrees to accommodates Indian export laws regarding the transmission of technical information and alternative regulated materials via the planet Wide net.</p>
+
+                <p>The Consumer agrees to indemnify and hold LawScent.com harmless for any and everyone acts found or suspected to be in violation hereof. The Consumer's account are going to be terminated for any of the higher than infractions.</p>
+
+                <p>The Consumer shall not commit to undermine the protection or integrity of computing systems or networks of LawScent.com, its partners, or those accessed through or with their product, and should not commit to gain unauthorized access.</p>
+
+                <p>LawScent.com reserves the correct to terminate any account that doesn't follow our Terms and Conditions.</p>
+            </div>
+
+            <div class="section">
+                <h2>10. Electronic Payment</h2>
+                
+                <p>LawScent.com could from time to time contract with third party payment service suppliers together with banks to open nodal checking account underneath applicable Indian laws, to facilitate the payment between users i.e. patrons and sellers and for assortment of Platform Fees and alternative charges. These third-party payment service suppliers could embody third party banking or mastercard payment gateways, payment aggregators, money on delivery or demand draft / pay order on delivery service suppliers, mobile payment service suppliers or through any facility as could also be approved by the banking company of Asian nation for assortment, refund and payment, because the case could also be of payment or supporting a similar in any manner.</p>
+
+                <p>You agree, perceive and ensure that the bank / debit / mastercard details provided by you for availing services of LawScent.com are going to be correct and correct. These details area unit entered by you directly at the third party payment service supplier webpage and LawScent.com doesn't have any access whatever to your payment details.</p>
+
+                <p>Your use of those Third Party Payment service suppliers is subject to their terms of use. You perceive that LawScent.com isn't accountable or to blame for the behavior, features, or content of any Third Party Payment service supplier.</p>
+
+                <p>LawScent.com cannot assist with a order request for any payment regular employing a Payment Account credit/debit card. In any such case, you need to like a shot and directly contact your credit/debit card company/bank.</p>
+            </div>
+
+            <div class="section">
+                <h2>11. Payment, Cancellation & Refund Policy</h2>
+                
+                <h3>Payment Policy</h3>
+                <p>All fee must be paid direct before availing any paid service at LawScent.com</p>
+
+                <h3>Cancellation Policy</h3>
+                <p>In the event of cancellation of any paid consultation that payment has been with success created and a confirmation range has been generated, and therefore the consultation has not been finished thanks to Associate in Nursing avertable / inescapable reason(s) we tend to should be notified of a similar in writing – by an email at contact@LawScent.com</p>
+
+                <p>Cancellation charges are going to be effective from the date we tend to receive your email. Cancellation are often requested no later than twenty four hours before final delivery time / Appointment time.</p>
+
+                <p>Our Client Service team can contact you inside seven business days and in cases wherever the professional has not delivered the engaged consultation, we'll come back your cash inside fifteen business days from the day the request for Cancellation was received.</p>
+
+                <p>Please note that there'll be a nominal deduction (20%) within the quantity refunded, due towards online payment process. The refund are going to be processed directly in your Bank / MasterCard account that was wont to create the payment.</p>
+
+                <h3>Refund Policy</h3>
+                <p>In the event your request for consultation is accepted however post-payment thanks to surprising and exculpatory circumstances, your request for consultation is rejected or canceled; you may lean Associate in Nursing choice of choosing another request for consultation OR are going to be offered a whole refund, if you thus want. The refund are going to be attributable to your account inside fifteen operating days.</p>
+
+                <p>In case your credit card/debit card/payment account has been accidentally over-charged, please send word LawScent.com of a similar at the earliest. LawScent.com can refund the outstanding quantity to your Payment Account inside fifteen operating days. within the reverse state of affairs, if the dealing quantity throughout payment of the fee happens to be but the particular fee quantity, LawScent.com can debit the outstanding quantity from your Payment Account and send word you of a similar.</p>
+
+                <p>It is necessary for the users to keep up distinctive dealing ID numbers, which might be provided at the time of putting a call for invitation. This range would be needed to handle any issues, if any.</p>
+
+                <p>In the majority of cases, there's NO alternative state of affairs underneath that LawScent.com can give a refund, apart from the condition expressly mentioned higher than underneath Refund Policy. In exceptional circumstances, the LawScent.com team can work with you to achieve a reciprocally acceptable answer. LawScent.com intends to be objective, honest and affordable in partitioning such things so as to keep up a positive and harmonious relationship with shoppers. the most refund quantity claimable from LawScent.com cannot exceed the quantity paid by the user at LawScent.com for availing the Lawyer's service(s).</p>
+
+                <p>No refund in any case whatever are often claimed from LawScent.com for the quantity paid to the professional directly by the user.</p>
+
+                <p>Please note that there'll be a nominal deduction (20%) of the quantity refunded, due towards on-line payment process. The refund is going to be processed directly in your Bank / mastercard account that was wont to create the payment.</p>
+            </div>
+
+            <div class="section">
+                <h2>12. Suspension due to non-compliance with Agreement</h2>
+                
+                <p>LawScent.com can create all attainable efforts to produce you the simplest services for your payment. However, LawScent.com shall not incur any liability and shall declare any service guarantee void in event of 1 or additional of the subsequent circumstances:</p>
+
+                <p>If you've got not provided correct details together with contact info (user's email and/or phone number), username and Payment account info.</p>
+
+                <p>If the dealing for payment doesn't bear along with your bank thanks to (including however not limited) deficient funds, dishonest access, failure of process the request by our Affiliate merchants or your bank.</p>
+
+                <p>If circumstances on the far side the management of LawScent.com (such as, however not restricted to, fire, flood, or interference from external forces) forestall the correct execution of the dealing.</p>
+
+                <p>If you don't reply to requests of additional info (if needed) by the Lawyers to form a consultation. we'd intimate you the needed via email and/or phone and/or as a message in your LawScent.com account.</p>
+
+                <p>If the user is in breach of any of the Terms and Conditions of this Agreement and/or the Terms and Conditions of the usage of LawScent.com</p>
+            </div>
+
+            <div class="section">
+                <h2>13. Disclaimers</h2>
+                
+                <p>You acknowledge that your use of the LawScent.com Services is only at your own risk, which you assume full responsibility for all risks associated with that. To the extent that any of the Content enclosed on LawScent.com is provided by third party content suppliers or alternative users, we've no editorial management or responsibility for such content showing on LawScent.com. All info, product or services contained on or provided through this web site area unit provided "as is", with none guarantee of any kind, specific or tacit, to the fullest extent permissible underneath the applicable law. LawScent.com and its Affiliates herewith disclaim all representations and warranties, specific or tacit, statutory or otherwise, together with however not restricted to warranties of state, appropriateness, title, non-infringement, and freedom from virus strains.</p>
+
+                <p>Third-party content could seem on this web site or could also be accessible via links from this web site. we tend to shall not be answerable for and assume no liability for any mistakes, misstatements of law, defamation, omissions, falsehood, obscenity, creation or vocalization within the statements, opinions, representations or the other style of content contained in any third-party content showing on the positioning. You perceive that the data and opinions within the third-party content represent only the thoughts of the author and are neither supported by US nor will it mirror our beliefs.</p>
+
+                <p>The Site could contain 'hyperlinks' to websites neither owned nor controlled by US and that we don't seem to be answerable for, and, unless otherwise noted specifically, create no representations or endorsements with reference to these sites or with reference to any service or product related to these sites. By together with these hyperlinks, we tend to don't mean to state or imply that we tend to sponsor, area unit connected with, or area unit wrongfully approved to use any name, registered trademark, service mark, logo, legal or official seal, or proprietary image that will be mirrored within the hyperlinks.</p>
+
+                <p>Your correspondence or business dealings with, or participation in promotions of, advertisers found on or through the positioning, together with payment and delivery of connected merchandise or services, and the any terms, conditions, warranties or representations related to such dealings, area unit only between you and such publicist. You agree that we tend to shall not be accountable or to blame for any loss or harm of any kind incurred because the results of any such dealings or because the results of the presence of such advertisers on the positioning.</p>
+
+                <p>Without limiting the preceding, LawScent.com and its affiliates create no guarantee on the responsibleness, accuracy, timeliness, usefulness, adequacy, completeness or suitableness of the LawScent.com product and services provided hereinafter. LawScent.com makes no representations or warranties concerning the satisfaction of state rules.</p>
+
+                <p>LawScent.com can take all necessary precautions to safeguard itself against the failure of our hardware and our computer code. the buyer acknowledges and agrees that temporary interruptions in commission could occur, which LawScent.com shall haven't any liability for any claim, cost, charge, loss or expense arising from or about the employment of the Services. LawScent.com makes no guarantee that the Services can meet your necessities, or that the Service(s) are going to be uninterrupted, timely, secure, or error-free. the buyer acknowledges and agrees that within the event of failure, restoration of service could take many days.</p>
+
+                <p>We reserve the correct at any time and from time to time to change or discontinue, briefly or for good, the positioning (or any a part of it) with or hastily. within the event of a modification or discontinuation, all info submitted by you et al. could also be lost. You comply with keep a permanent record of all info provided to US, and you agree that every one info submitted to the US is at your sole risk. You agree that we've no responsibility or liability for the deletion or failure to store any Content maintained or transmitted by the positioning together with while not limitation messages and alternative communications. You agree that we tend to shall not be susceptible to you or to any third party for any modification, suspension or discontinuation of the Service.</p>
+
+                <p>We don't represent or warrant that the positioning is going to be error-free, free of viruses or alternative harmful parts, or that defects are going to be corrected. we tend to don't warrant or represent that the data offered on or through the positioning are going to be correct, accurate, timely, or otherwise reliable. we tend to could (but don't seem to be responsible to) create enhancements and/or changes to its features, practicality or content of the positioning at any time. In no event, let's are to blame for any such errors or defects.</p>
+            </div>
+
+            <div class="section">
+                <h2>14. Disclaimer of Warranties</h2>
+                
+                <p>YOU EXPRESSLY perceive AND AGREE THAT: YOUR USE OF the positioning IS AT YOUR SOLE RISK. ALL CONTENT Associate in NursingD SERVICES ON the positioning IS PROVIDED only ON AN 'AS-IS/AS-AVAILABLE' BASIS. TO THE EXTENT permissible BY APPLICABLE LAW, we tend to EXPRESSLY DISCLAIM ALL WARRANTIES OF ANY KIND, whether or not specific OR tacit, INCLUDING, however NOT restricted TO THE tacit WARRANTIES AND CONDITIONS OF state, SATISFACTORY QUALITY, FITNESS FOR a selected PURPOSE OR USE, on THE RESULTS you'll bring home the bacon ON ACCOUNT YOUR USE OF the positioning, on THE RESULTS you'll bring home the bacon ON ACCOUNT OF ANY RELATIONSHIP you choose to form WITH professional/skilled, AND NON-INFRINGEMENT. NEITHER LawScent.com NOR ANY OF ITS LICENSORS OR AFFILIATES MAKES ANY REPRESENTATIONS OR WARRANTIES concerning ANY professional/skilled, INCLUDING, while not LIMITATION, ANY professional / PROFESSIONAL's ABILITY TO get a positive RESULT FOR YOU.</p>
+
+                <p>We don't warranty THE ACCURACY OR COMPLETENESS OF ANY CONTENT OR SERVICES and that we don't warranty IN ANY SERVICES OR merchandise related to the positioning are going to be ERROR-FREE OR UNINTERRUPTED, OR THAT ANY SERVICE OR GOODWILL still BE offered.</p>
+
+                <p>ANY MATERIAL transfered OR OTHERWISE OBTAINED THROUGH the employment OF THE SERVICE is finished AT YOUR OWN DISCRETION AND RISK which you may BE only answerable for ANY harm TO YOUR ADPS OR LOSS of information THAT RESULTS FROM THE DOWNLOAD OF ANY SUCH MATERIAL.</p>
+
+                <p>NO info, whether or not ORAL OR WRITTEN, OBTAINED BY YOU FROM US OR THROUGH OR FROM the positioning SHALL produce ANY guarantee NOT EXPRESSLY declared during this AGREEMENT.</p>
+            </div>
+
+            <div class="section">
+                <h2>15. Limitation of Liability</h2>
+                
+                <p>YOU EXPRESSLY perceive AND AGREE THAT we tend to SHALL NOT BE to blame for ANY, INDIRECT, INCIDENTAL, SPECIAL, eventful OR indemnity, together with however NOT restricted TO, DAMAGES FOR LOSS OF REVENUES, PROFITS, GOODWILL, USE, DATA, FAILURE to ascertain EXPECTED SAVINGS, OR alternative INTANGIBLE LOSSES (EVEN IF we've BEEN suggested OF the chance OF SUCH DAMAGES), ensuing FROM: (i) the employment OR the shortcoming TO USE THE SITE; (ii) the price OF procurance OF SUBSTITUTE merchandise AND SERVICES ensuing FROM ANY merchandise, DATA, info OR SERVICES PURCHASED OR OBTAINED OR MESSAGES RECEIVED OR TRANSACTIONS ENTERED INTO THROUGH OR FROM THE SITE; (iii) INVALID DESTINATIONS, TRANSMISSION ERRORS, OR UNAUTHORIZED ACCESS TO OR ALTERATION OF YOUR TRANSMISSIONS OR DATA; (iv) STATEMENTS OR CONDUCT OF ANY THIRD PARTY ON the positioning; (v) YOUR FAILURE TO RECEIVE ANY THIRD PARTY SERVICES OR product requested THROUGH the positioning OR (vi) the other MATTER about THE web site. IN NO EVENT area unit we tend to susceptible to YOU FOR Associate in Nursing quantity IN more than the quantity PAID BY YOU TO US FOR THE SERVICES IN QUESTION, IF ANY.</p>
+            </div>
+
+            <div class="section">
+                <h2>16. Exclusions And Limitations</h2>
+                
+                <p>SOME JURISDICTIONS don't permit THE EXCLUSION OF bound WARRANTIES OR THE LIMITATION OR EXCLUSION OF LIABILITY FOR INCIDENTAL OR eventful DAMAGES. consequently, a number of THE higher than LIMITATIONS OF THE SECTIONS higher than might not APPLY TO YOU.</p>
+            </div>
+
+            <div class="section">
+                <h2>17. Indemnification</h2>
+                
+                <p>You shall defend, indemnify, save and hold LawScent.com, its affiliates harmless from all demands, liabilities, claims and expenses, together with Lawyer's fees, fees of third parties about or arising underneath this Agreement, the Services provided hereinafter or your use of the Services, together with while not limitation, infringement by you or some other person victimisation the service along with your pc, of any material possession or alternative proprietary right of any individual or entity, or from the violation of any of our operative rules or policy about the Service(s) provided.</p>
+
+                <p>When we area unit vulnerable with suit by a 3rd party, we tend to could look for written assurances from you regarding your promise to indemnify US; your failure to produce those assurances could also be thought-about by us to be a breach of your agreement and should end in deactivation of your service(s) with immediate result.</p>
+
+                <p>Under no circumstances, together with negligence, shall LawScent.com together with (it's Affiliates) or anyone else concerned in making, manufacturing or distributing LawScent.com Services be to blame for any direct, indirect, incidental, special or eventful damages that result from the employment of or inability to use LawScent.com Services, or that results from mistakes, omissions, interruptions, deletion of files, errors, defects, delays operational, or transmission or any failure of performance, whether or not or not restricted to acts of God, communication failure, theft, destruction or unauthorized access to LawScent.com records, programs or services. This paragraph shall apply to any or all content and practicality of LawScent.com Services.</p>
+
+                <p>Notwithstanding the higher than, the Consumer's exclusive remedies for all damages, losses, and causes of actions whether or not in a contract, together with negligence or otherwise, shall not exceed the combination quantity, that the buyer paid on to LawScent.com for the service in question. Such limitations shall apply to LawScent.com total liability, together with while not limitation any liability for damages caused or allegedly caused by any failure of performance, error, omission, interruption, deletion, defect, delay operational of transmission, communications failure, stealing or destruction of or unauthorized access to, alteration of, or use of records, whether or not for breach of contract, tortuous behavior, negligence, or underneath the any reason for action.</p>
+
+                <p>In no event shall LawScent.com nor any of its affiliates be to blame for any direct damages in more than the acquisition worth of the merchandise. additionally, to the most extent permissible by law, in no event shall LawScent.com nor any of its affiliates be to blame for any special, punitive, indirect, incidental or eventful damages, together with however not restricted to private injury, death, loss of use, loss of profits, interruption of service or loss of information, whether or not in any action in guarantee, contract, wrongdoing (including, however not restricted to negligence or basic breach), or otherwise arising out of or in any means connected with the employment of, or the shortcoming to use, this web site or any service offered through this web site or any material or info contained in, accessed through, or product purchased on this web site, even though a certified representative of LawScent.com is suggested of the probability or chance of a similar. To the extent bound jurisdictions prohibit any of the higher than limitations of liability; such limitations shall not apply in such jurisdictions to the extent of such restrictions.</p>
+            </div>
+
+            <div class="section">
+                <h2>18. Third Party Protection</h2>
+                
+                <p>The indemnification and disclaimers provisions set forth higher than area unit for the good thing about LawScent.com and its affiliates. every one of those people or entities shall have the correct to say and enforce those provisions directly against you, the buyer on its own behalf.</p>
+            </div>
+
+            <div class="section">
+                <h2>19. Jurisdiction</h2>
+                
+                <p>This Agreement constitutes the whole understanding of the parties, and is in agreement to being entered into inside the jurisdiction of recent city, {india|India|Republic of Asian nation|Bharat|Asian country|Asian nation} and shall be ruled by and shall be construed in accordance with the laws of the Republic of India, while not giving result to any alternative of law rules or principles.</p>
+
+                <p>Any dispute with LawScent.com shall completely be subject to the jurisdiction of the acceptable Courts settled at the capital of India, India. No party shall object to removal or prosecution of any proceedings to a court inside the jurisdiction of a recent city, India.</p>
+
+                <p>Any reason for action or claim you'll have with reference to LawScent.com should be commenced inside one (1) year when it arises, except to the extent such proceedings isn't enforceable.</p>
+
+                <p>To the fullest extent permissible by law, every party to the present Terms of Use waives its or his or her right to a jury trial with reference to any dispute or alternative argument arising from hereinafter or your use of or access to the LawScent.com Services or website.</p>
+
+                <p>Failure to exercise or delay in effort any right hereinafter, or failure to insist upon or enforce strict performance of any provision of this Terms of Use, shall not be thought-about discharge therefrom, which may solely be created by signed writing. No single discharge shall be thought-about a seamless or permanent discharge.</p>
+            </div>
+
+            <div class="section">
+                <h2>20. Right to Operational Functionality</h2>
+                
+                <p>LawScent.com reserves complete and sole discretion with reference to the operation of our Services. We may, among alternative things withdraw, suspend or discontinue any practicality or feature of our Services.</p>
+
+                <p>By victimization the positioning, you are doing not acquire any rights to the positioning apart from the restricted license to use the positioning that may be terminated in accordance with this section. You agree that we tend to, in our sole discretion, could terminate your arcanum, account (or any half thereof) or use of the positioning, and take away and discard any Content inside the positioning, for any reason, including, while not limitation, non-payment, for lack of use, or if we tend to believe that you simply have profaned or acted inconsistently with the letter or spirit of this agreement. we tend to can also in our sole discretion and at any time discontinue providing the positioning, or any half therefrom, with or hastily. You agree that any termination of your access to the positioning underneath any provision of this agreement could also be established while not previous notice, and acknowledge and agree that we tend to could like a shot deactivate or delete your account and everyone connected Content info and files in your account and/or bar to any extent further access to such files or the positioning. Further, you agree that we tend to shall not be susceptible to you or any third-party for any termination of your access to the positioning.</p>
+            </div>
+
+            <div class="section">
+                <h2>21. Right to Modify Terms of Service</h2>
+                
+                <p>You agree and ensure that the Terms of Service could also be amended from time to time hastily and take responsibility to update yourself sporadically with the most recent version offered on LawScent.com website. Any such revision or modification are going to be binding and effective like a shot on unleashing of the revised Agreement or modification to the Service(s) on our website. Unless we tend to send word otherwise, these terms incorporate and supervene upon the any terms related to the Services.</p>
+
+                <p>LawScent.com has the correct to discontinue service, or deny access to anyone United Nations agency violates our policies or the terms and conditions declared herein, while not previous notice or warning.</p>
+
+                <p>LawScent.com could freely transfer, assign or delegate all or any a part of this Terms of Use, and any rights and duties hereinafter. This Terms of Use are going to be binding upon and habituate to the good thing about the heirs, successors and permissible assignees of the parties.</p>
+            </div>
+
+            <div class="section">
+                <h2>22. Notice</h2>
+                
+                <p>LawScent.com could give notice to you- the buyer, by e-mail to the e-mail address provided by you throughout registration, by a general notice on the LawScent.com site. you'll provide notice to LawScent.com at any time via email to contact@LawScent.com</p>
+            </div>
+
+            <div class="section">
+                <h2>23. Assignment</h2>
+                
+                <p>We could assign this contract at any time to any parent, subsidiary, or any connected company, or as a part of the sale to, merger with, or alternative transfer of our company to a different entity. we'll post a notice on the positioning concerning any modification of possession in order that you've got the chance to discontinue your use of the positioning or cancel your registration if you are doing not would like to still use the positioning and therefore the Services underneath the new possession. you'll not assign, transfer or sublicense these Terms of Use to anyone else and any commitment to doing thus in violation of this section shall be null and void.</p>
+            </div>
+
+            <div class="section">
+                <h2>24. Waiver and Severability of Terms</h2>
+                
+                <p>Our failure to exercise or enforce any right or provision of this agreement shall not represent a discharge of such right or provision. If any provision of the agreement is found by a court of competent jurisdiction to be invalid, the parties all the same agreement that the court ought to endeavor to relinquish result to the parties' intentions as mirrored within the provision, and therefore the alternative provisions of the agreement shall stay fully force and result.</p>
+            </div>
+
+            <div class="section">
+                <h2>25. Lawyer / Professional Ethics Notice</h2>
+                
+                <p>If you're professional/skilled, collaborating in any facet of this web site, you acknowledge that rules of skilled conduct apply to any or all aspects of your participation which you may abide by such rules. the foundations embody, however, don't seem to be restricted to, the foundations for advertising, solicitation of purchasers, unauthorized apply to your individual profession and misrepresentations of the truth. we tend to disclaim all responsibility for your compliance with these rules.</p>
+
+                <p>The section titles during this agreement area unit for convenience solely and haven't any legal or written agreement result.</p>
+            </div>
+
+            <div class="section">
+                <h2>26. Privacy</h2>
+                
+                <p>LawScent.com will its best to safeguard your privacy with reference to info not otherwise disclosed by you in queries submitted to LawScent.com</p>
+
+                <p>In reference to the submission of Free queries and Paid Consultations, we tend to sorely need, and that we encourage you to solely give, the minimum quantity of non-public distinguishing info necessary to the method an issue. All of your personal info provided to LawScent.com, together with email addresses, is hid from all alternative Users of LawScent.com and isn't revealed as a part of the LawScent.com public information. solely the LawScent.com directors have access, for functions of website administration solely, to the present info. LawScent.com won't disclose this info to 3rd parties while not your permission, except within the following circumstances: (i) to safeguard ourselves from liability, or (ii) to retort to a legal process or to otherwise accommodates the law. With reference to bound info provided by you, as explained more below, there'll be a requirement for revealing to Lawyers / Professionals once you have engaged a paid consultation.</p>
+
+                <p>Whether alternative info submitted to LawScent.com by you, like the contents of the Question itself, is going to be publically disclosed can vary as between Free queries and Paid Consultations:</p>
+
+                <p>Free queries & Answers. when a Free Question is answered, the Free Question and its answer area unit mechanically denote the LawScent.com public information. The contents of those Free queries and their answers area unit visible to any or all Users of LawScent.com and to Lawyers / Professionals. Thus, Free queries and answers to them area unit neither confidential nor privileged by any means. although the contents of the Free queries and their Answers area unit visible, the names and distinguishing info of the User United Nations agency submitted the Free Question won't be visible to any or all Users of LawScent.com and Lawyers / Professionals. Of course, you need to perceive that, as a result of the LawScent.com Answers public information is public, you'll lose some privacy by posting Free queries and their corresponding answers. Your read of the facts, or the means you frame an issue, would reveal one thing concerning your brooding about a tangle that you simply might not wish others to understand. it is your alternative.</p>
+
+                <p>Paid Consultations. in contrast to a Free Question, once a Paid Consultation is engaged, the contents of the main points shared by you whereas booking the Paid Consultation area unit unbroken personal and don't seem to be visible to any or all Users of LawScent.com or to non-concerned Lawyers / Professionals.</p>
+
+                <p>Because Users booking Paid Consultations are going to be getting into a limited-scope professional / skilled-client illustration with professional / Professional, before professional/skilled will enter into this relationship, the professional/skilled should 1st confirm that there aren't any conflicts of interest (for example, conflicts of interest between the User and another consumer or former consumer of the professional / Professional). so as to accomplish this, the professional/skilled should be equipped the complete name and, if provided, the contact details of the User. Similarly, LawScent.com directors can have access to the present info so as to confirm that it's properly transmitted to Lawyers / Professionals and for the aim of obtaining your question answered.</p>
+
+                <p>In booking a Paid Consultation, you're giving permission to LawScent.com to transmit this info to Lawyers / Professionals and to produce access to the present info to LawScent.com directors for this purpose. You perceive that if LawScent.com has reason to believe that non-compliance of its Terms and Conditions has occurred, its directors could review the communications between a User and therefore the professional/skilled to substantiate whether or not such parties area unit in compliance. LawScent.com expressly agrees with reference to Paid Consultations to respect and defend the confidentiality of any confidential consumer info or professional / skilled-client privileged info contained within the info you share whereas booking your Paid Consultation and within the opinion/answer provided by professional / Professional. apart from as indicated higher than, we'll not disclose this info to 3rd parties while not your permission except to retort to a legal method or accommodates the law.</p>
+            </div>
+
+            <div class="section">
+                <h2>27. No Responsibility for Posts</h2>
+                
+                <p>LawScent.com doesn't review or approve the queries or answers submitted to LawScent.com. The views expressed in this area unit those of the posting Users and Lawyers / Professionals and don't essentially mirror those of LawScent.com</p>
+
+                <p>LawScent.com assumes no responsibility for the posts or the data contained in this, nor will it create any claims, guarantees or guarantees concerning the accuracy, suitableness, ability or completeness of any of the data or recommendation within the posts. Use the recommendation and data provided at your own risk.</p>
+            </div>
+
+            <div class="section">
+                <h2>28. Ownership of Content</h2>
+                
+                <p>By submitting a Free Question to LawScent.com, you perceive and agree that your question and any answer provided by professional / skilled can become a part of the LawScent.com public information and therefore the sole property of LawScent.com</p>
+
+                <p>Thus, on all Free queries and any answers, you agree that, with none compensation to you, LawScent.com can own all rights to the submitted queries and answers (including any material possession and ethical rights) and can have the only real unrestricted right to use, reproduce, edit, modify, sell, adapt, publish, translate, produce by-product works from, distribute, communicate to the general public, perform and show the submitted content (in whole or in part) worldwide and/or to include it in alternative works in any form, media, or technology currently familiar or later developed, for the complete term of any rights that will exist within the content.</p>
+            </div>
+
+            <div class="section">
+                <h2>29. Use of LawScent.com – No Lawyer-Client Relationship Other than for Paid Consultations</h2>
+                
+                <p>Unless you enter into Associate in Nursing agreement to book a Paid Consultation and into a particular limited-scope professional-client relationship with a Lawyer Member, you perceive and agree that the any use of LawScent.com doesn't in any means produce or establish a professional-client relationship between you and any Lawyer Member.</p>
+
+                <p>You should acknowledge that the free parts of LawScent.com (including past queries and answers like the LawScent.com Free queries and answers information, and articles denote on the site) area unit provided for your info to assist you to perceive a number of your legal rights. These materials shouldn't be relied on as legal recommendation and reading and reviewing them isn't a substitute for direct consultation with a professional a couple of specific legal drawback.</p>
+
+                <h3>Free queries – No Lawyer-Client Relationship</h3>
+                <p>You perceive and agree that submitting a Free Question to LawScent.com or receiving a solution to a Free Question denote on LawScent.com doesn't in any means produce or establish a professional-client relationship between you and any Lawyer Member or between you and LawScent.com. {the info|the knowledge|the data} and answers provided in response to Free queries is meant to be general legal information, not the legal recommendation, and relies upon the terribly restricted info provided you in an exceedingly Free Question. The specific legal recommendation will solely lean with full data of all of the facts and circumstances of your state of affairs. If you're diagrammatic by a professional, that professional is that the best person to relinquish your recommendation a couple of case or legal matter. underneath no circumstances ought to the data obtained on this website be wont to create choices concerning the standard of illustration by a professional or concerning the correct course of a legal matter.</p>
+
+                <h3>Paid Consultations – restricted Lawyer-Client Relationship</h3>
+                <p>If you've got any apprehension or concern concerning getting into the illustration Agreement or recommendation Agreement, you must not book a Paid Consultation.</p>
+
+                <h4>Limited professional – consumer Relationship:</h4>
+                <p>Users United Nations agency book a Paid Consultation can enter into a restricted professional-Client illustration Agreement (the "Representation Agreement") with the responding Lawyer.</p>
+
+                <p>This illustration Agreement establishes a professional-client relationship between the User and therefore the Lawyer that's restricted in each scope and period. The scope of the Lawyer-client relationship underneath the illustration Agreement extends solely to addressing the difficulty that the actual Paid Consultation is engaged, relieving the professional of any duty to more investigating, follow-up, take the any action or represent the User into any extent further means. the solution by the professional shall be questioned central supported restricted data of facts provided by you in your question. The period of the Lawyer-client relationship underneath the illustration Agreement is additionally restricted, and therefore the illustration ends as shortly because the professional provides the consultation.</p>
+
+                <p>You must perceive that their area unit, of course, some problems that area unit too difficult for a professional to handle suitably and fully through a limited-scope illustration of the kind provided by LawScent.com for Paid Consultations. If professional determines, within the Lawyer's sole discretion, that a Paid Consultation merely can't be self-addressed within the context of a restricted scope illustration, then you may be notified and your full quantity bought that consultation is going to be refunded.</p>
+            </div>
+
+            <div class="section">
+                <h2>30. Entire Agreement</h2>
+                
+                <p>These Terms of Use, alongside the privacy policy, that shall be deemed to be a vicinity hereof and incorporated herein by reference represent the whole agreement between you and LawScent.com regarding the topic matter hereof, and it replaces all previous oral or written communications (if any) regarding such material.</p>
+
+                <p>The Terms of Use shall start upon the date you utilize the positioning in any form. This Terms of Use and therefore the licenses granted hereinafter shall be terminated hastily within the event you (or any approved person victimizing your account) fail to accommodate the Terms and Conditions of this Terms of Use or the foundations to be used of the LawScent.com service publicised by LawScent.com from time to time. we tend to can also cancel or suspend your registration for the any reason, together with inactivity for Associate in Nursing extended amount, however, can commit to sending word you ahead of such cancellation or suspension. Upon any termination, you may destroy all copies of LawScent.com materials in your possession and stop any access to or use of the practice Services. Upon this suspension or termination, we tend to could delete info, files, and alternative antecedently offered content to you together with however not restricted to info provided by you. LawScent.com shall not be susceptible to you or any third party for any termination of your access to the positioning and/or the Services.</p>
+
+                <p>The provisions of this Terms of Use area unit divisible, and within the event any provision hereof is set to be invalid or unenforceable, such illogic or unenforceability shall not have an effect on the validity or enforceability of the remaining provisions, however such a provision shall be reformed, if moderately attainable, solely to the extent necessary to form it enforceable.</p>
+
+                <p>The failure of LawScent.com to exercise or enforce any right or provision of these Terms of Use shall not represent a discharge of such right or provision. The failure of either party to exercise in any respect any right provided for herein shall not be deemed a discharge or to any extent further rights hereinafter.</p>
+
+                <p>Your affirmative act of victimization this web site and/or registering for the positioning or the Services constitutes your electronic signature to these Terms of Use, Privacy Policy that shall be deemed to be a vicinity hereof and incorporated herein by reference and your consent to enter into agreements with the US electronically.</p>
+
+                <div class="highlight">
+                    <h3>I, the User or client</h3>
+                    <p>Understand the risks and advantages of the net consultation</p>
+                    <p>Acknowledge and comply with assume the chance of the above-named limitations consistent with the employment of LawScent.com. I more perceive and agree that no guarantee or guarantee has been created to American state regarding any consultation on explicit drawback, result, an answer to my query/problem.</p>
+                    <p>I perceive that the laws that defend privacy additionally the} confidentiality of non-public and/or skilled Services' info also apply to LawScent.com which my info is going to be solely used as outlined by the LawScent.com's Terms of Use and Privacy Statement.</p>
+                    <p>I perceive that the consultation through LawScent.com could involve the transmission of my personal info to alternative Lawyers United Nations agency could also be situated in alternative areas, together with out of state.</p>
+                </div>
+
+                <p>If you are doing not comply with our Terms of Use or our Privacy Policy we tend to kindly request you do not use this website. Last Updated on July 31st, 2023</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="index.html" class="back-to-top">Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 LawScent. All rights reserved.</p>
+            <p>Terms of use for our platform and services</p>
+        </div>
+    </footer>
+</body>
+</html>

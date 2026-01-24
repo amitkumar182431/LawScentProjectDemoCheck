@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refund Policy | LawScent</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Back to Home Arrow Button */
+        .back-to-home {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: linear-gradient(135deg, #e2bc79 0%, #d4a76a 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(226, 188, 121, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .back-to-home:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 6px 20px rgba(226, 188, 121, 0.4);
+        }
+        
+        .back-to-home svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        header {
+            background: linear-gradient(135deg, #e2bc79 0%, #d4a76a 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            position: relative;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .content {
+            background: white;
+            margin: -100px auto 40px;
+            padding: 80px 60px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section h2 {
+            color: #e2bc79;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #e2bc79;
+        }
+
+        .section h3 {
+            color: #333;
+            font-size: 1.5rem;
+            margin: 30px 0 15px 0;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .section ul {
+            margin: 20px 0;
+            padding-left: 30px;
+        }
+
+        .section li {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .highlight {
+            background: #f9f9f9;
+            border-left: 4px solid #e2bc79;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .important-note {
+            background: #fff8e1;
+            border: 1px solid #ffd54f;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .last-updated {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin: 30px 0;
+            font-size: 1rem;
+        }
+
+        footer {
+            background: #1a202c;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        .back-to-top {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #e2bc79 0%, #d4a76a 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(226, 188, 121, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 40px 0;
+            }
+            
+            header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .content {
+                padding: 40px 20px;
+                margin: -60px auto 20px;
+            }
+            
+            .section h2 {
+                font-size: 1.6rem;
+            }
+            
+            .section h3 {
+                font-size: 1.3rem;
+            }
+            
+            /* Mobile-specific back-to-home button adjustment */
+            .back-to-home {
+                top: 15px;
+                left: 15px;
+                width: 45px;
+                height: 45px;
+            }
+            
+            .back-to-home svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Back to Home Button -->
+    <a href="index.html" class="back-to-home" aria-label="Back to Home">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+        </svg>
+    </a>
+    <header>
+        <div class="container">
+            <h1>REFUND POLICY</h1>
+            <p>LawScent values your trust and hard-earned money</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <div class="last-updated">Last Updated: July 31st, 2023</div>
+            
+            <div class="section">
+                <p>We know the importance of money and we value your hard-earned money and appreciate your trust in us. We provide an upfront policy of payment for the Orders placed for Legal Services and/or other.</p>
+                
+                <p>After placing an order, if the Customer wishes to cancel the order, the Customer shall send an email to <strong>contact@lawscent.com</strong> along with the details of the order that needs to be canceled and can ask for the cancellation of the order by stating a valid reason.</p>
+            </div>
+
+            <div class="section">
+                <h2>Non-Cancelable Categories</h2>
+                
+                <p>Notwithstanding anything stated above, nothing in this Cancellation Policy shall be applicable to the following categories of document:</p>
+                
+                <ul>
+                    <li>If the draft of the document has been shared with the Customer at their registered email address for review.</li>
+                    <li>If the Stamp paper has been procured/generated.</li>
+                    <li>If the Government servers of stamping are down.</li>
+                    <li>If the Order has been shipped through the Carrier partner.</li>
+                </ul>
+                
+                <div class="highlight">
+                    <p><strong>NOTE:</strong> The Request for cancellation in the aforesaid circumstances shall not be entertained.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Service Denial Refunds</h2>
+                
+                <div class="important-note">
+                    <p>We accept refund requests if the service has been denied at our end; in that case, we issue the complete refund as per the Order receipt.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Installment Payments</h2>
+                
+                <p>Please note that in case the Payment has been made by way of installments, with respect to Name Change Packages or other products, once the first installment is paid, there cannot be any cancellation request or Refund of any Installment Paid.</p>
+            </div>
+
+            <div class="section">
+                <h2>REFUND POLICY DETAILS</h2>
+                
+                <h3>Processing Time</h3>
+                <p>We will process your request within <strong>5 to 10 business days</strong> of receiving all the information required for processing the refund like a reason for refund, details for processing the request, etc.</p>
+                
+                <h3>Situational Changes</h3>
+                <p>We would be unable to process any refund request owing to changes in your situation or your state of mind. However, depending on the circumstances, we would be able to credit your account, with an amount equivalent to the Order you wish to cancel, and you can use the same to avail of any of our other services.</p>
+                
+                <h3>Service Holding</h3>
+                <p>In case you require us to hold the processing of a service, we will hold the fee paid on your account until you are ready to commence the service.</p>
+                
+                <h3>Best Effort Completion</h3>
+                <p>Before processing any refund, we reserve the right to make the best effort to complete the service.</p>
+            </div>
+
+            <div class="section">
+                <h2>Non-Refundable Fees</h2>
+                
+                <div class="highlight">
+                    <p>Please note that in no event shall any fees paid as Government Fees, Stamp Duty, Advocate/Notary Public Fees, and/or other charges paid to third-party vendors be refunded.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Third-Party Service Providers</h2>
+                
+                <p>While we take all reasonable steps, to ensure that the order is delivered in a timely manner, there might be some delays when we use the services of Third Party Service Providers. Please note that we are not responsible for the handling of the document by the said Service Providers, or in case of delay in receipt of the document, owing to the delay or deficiency of service attributable to the Service Providers.</p>
+            </div>
+
+            <div class="section">
+                <h2>Policy Precedence</h2>
+                
+                <div class="important-note">
+                    <p>In case of any conflict between this policy and our Terms of Service, the latter shall prevail.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="index.html" class="back-to-top">Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 LawScent. All rights reserved.</p>
+            <p>Protecting your interests is our priority</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | LawScent</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --gold: #e2bc79;
+            --gold-dark: #d4a76a;
+            --dark: #111;
+            --light: #f8f8f8;
+            --text: #333;
+            --white: #ffffff;
+            --shadow: 0 5px 15px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            min-height: 100vh;
+        }
+
+        /* Header Styles */
+        .services-header {
+            height: 50vh;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%), url('te.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .services-header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .services-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color: var(--gold);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .services-header p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        /* Container Styles */
+        .services-container {
+            max-width: 1200px;
+            margin: -50px auto 50px;
+            padding: 20px;
+            position: relative;
+            z-index: 3;
+        }
+
+        /* Back Button */
+        .back-button {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--dark);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .back-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s;
+            z-index: -1;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(226, 188, 121, 0.3);
+        }
+
+        .back-button:hover::before {
+            left: 100%;
+        }
+
+        /* Service Categories */
+        .service-category {
+            background: var(--white);
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+            animation: slideInUp 0.6s ease-out;
+        }
+
+        .service-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .category-header {
+            background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+            color: var(--gold);
+            padding: 25px 30px;
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+        }
+
+        .category-services {
+            padding: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        /* Service Items */
+        .service-item {
+            padding: 20px 25px;
+            border-left: 4px solid transparent;
+            border-radius: 8px;
+            transition: var(--transition);
+            text-decoration: none;
+            color: var(--text);
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 500;
+            background: linear-gradient(135deg, var(--white) 0%, #f8f9fa 100%);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .service-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(226, 188, 121, 0.1), transparent);
+            transition: left 0.6s;
+            z-index: -1;
+        }
+
+        .service-item:hover {
+            background: linear-gradient(135deg, rgba(226, 188, 121, 0.1) 0%, rgba(212, 167, 106, 0.1) 100%);
+            color: var(--gold-dark);
+            border-left-color: var(--gold);
+            transform: translateX(10px);
+            box-shadow: 0 8px 20px rgba(226, 188, 121, 0.2);
+        }
+
+        .service-item:hover::before {
+            left: 100%;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .services-header {
+                height: 40vh;
+            }
+
+            .services-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .services-header p {
+                font-size: 1.1rem;
+            }
+
+            .services-container {
+                margin: -30px auto 30px;
+                padding: 15px;
+            }
+
+            .category-header {
+                font-size: 1.5rem;
+                padding: 20px;
+            }
+
+            .category-services {
+                grid-template-columns: 1fr;
+                padding: 20px;
+                gap: 15px;
+            }
+
+            .service-item {
+                padding: 15px 20px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .services-header h1 {
+                font-size: 2rem;
+            }
+
+            .category-header {
+                font-size: 1.3rem;
+            }
+
+            .service-item {
+                padding: 12px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="services-header">
+        <div class="services-header-content">
+            <h1>Our Services</h1>
+            <p>Comprehensive Legal Solutions for Your Needs</p>
+        </div>
+    </div>
+    
+    <div class="services-container">
+        <a href="index.html" class="back-button">← Back to Home</a>
+        
+        <div class="service-category">
+            <div class="category-header">Corporate & Business Law</div>
+            <div class="category-services">
+                <a href="service1.html" class="service-item">Competition & Anti-Trust Laws </a>
+                                        <a href="service2.html" class="service-item">Consumer Protec on & Consumer Care </a>
+                                        <a href="service3.html" class="service-item">Corporate Governance & Compliance</a>
+                                        <a href="service4.html" class="service-item">Intellectual Property Rights (IPR)</a>
+                                        <a href="service5.html" class="service-item">Real Estate & Infrastructure Laws</a>
+                                        <a href="service6.html" class="service-item">Taxation & Advisory Services</a>
+                                        <a href="service7.html" class="service-item">Labour, Employment & Management Laws</a>
+                                        <a href="service8.html" class="service-item">Insolvency & Bankruptcy</a>
+                                        <a href="service9.html" class="service-item">Contract Drafting & Vetting</a>
+                                         <a href="service10.html" class="service-item">Unclaimed Assets Recovery</a>
+                                        <a href="service11.html" class="service-item">Banking & Finance</a>                                    
+                                        <a href="service12.html" class="service-item">Regulatory & Licensing Advisory</a>
+            </div>
+        </div>
+        
+        <div class="service-category">
+            <div class="category-header">Dispute Resolution</div>
+            <div class="category-services">
+                <a href="service13.html" class="service-item">Litigation Services</a>
+                <a href="service15.html" class="service-item">Arbitration & Alternative Dispute Resolution (ADR)</a>
+            </div>
+        </div>
+        
+        <div class="service-category">
+            <div class="category-header">People Law</div>
+            <div class="category-services">
+                 <a href="service14.html" class="service-item">Family & Matrimonial Disputes</a>
+                                        <a href="service16.html" class="service-item">Recovery Suits & Debt Matters </a>
+                                        <a href="service17.html" class="service-item">Court Marriage & Marriage Registration </a>
+                                        <a href="service18.html" class="service-item">Property Disputes & Title Issues</a>
+                                        <a href="service19.html" class="service-item">Employment & Salary Disputes </a>
+                                        <a href="service20.html" class="service-item">Divorce & Maintenance Cases</a>
+                                        <a href="service21.html" class="service-item">Civil Litigation  </a>
+                                        <a href="service22.html" class="service-item">Criminal Law Services</a>
+            </div>
+        </div>
+        <div class="service-category">
+            <div class="category-header">Media & Entertainment</div>
+            <div class="category-services">
+                <a href="service23.html" class="service-item">Media & Entertainment Law</a>
+                <a href="service24.html" class="service-item">Media & Telecommunications</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

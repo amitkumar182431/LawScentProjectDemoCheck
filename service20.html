@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divorce & Maintenance Cases | LawScent</title>
+    <style>
+        :root {
+            --gold: #e2bc79;
+            --gold-dark: #d4a76a;
+            --dark: #111;
+            --light: #f8f8f8;
+            --text: #333;
+            --white: #ffffff;
+            --shadow: 0 5px 15px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        }
+
+        /* Header Styles */
+        header {
+            background: var(--white);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-rectangle img {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s;
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(226, 188, 121, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--dark);
+            border: 2px solid var(--dark);
+        }
+
+        .btn-secondary:hover {
+            background: var(--dark);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 60vh;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%), url('te.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color: var(--gold);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Content Section */
+        .content-section {
+            padding: 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-intro {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .service-intro h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .service-intro h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gold);
+            border-radius: 2px;
+        }
+
+        .service-intro p {
+            font-size: 1.2rem;
+            color: var(--text);
+            max-width: 800px;
+            margin: 20px auto 0;
+            line-height: 1.8;
+        }
+
+        .content-block {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+            border-left: 5px solid var(--gold);
+        }
+
+        .content-block h3 {
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+            color: var(--gold);
+        }
+
+        .content-block p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 15px;
+        }
+
+        .key-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .point-card {
+            background: linear-gradient(135deg, var(--white) 0%, #f8f9fa 100%);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(226, 188, 121, 0.1);
+        }
+
+        .point-card h4 {
+            color: var(--gold);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .point-card p {
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--white);
+            margin: 60px 0;
+            border-radius: 15px;
+        }
+
+        .cta-section h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-light {
+            background: var(--white);
+            color: var(--dark);
+        }
+
+        .btn-light:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 60px 5% 30px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            text-align: center;
+            color: #aaa;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .logo-rectangle img {
+                height: 30px;
+            }
+
+            .nav-buttons {
+                flex-direction: column;
+                width: 100%;
+                align-items: flex-end;
+                padding-right: 10px;
+            }
+
+            .btn {
+                /* width: 100%; */
+                max-width: 200px;
+                margin-bottom: 1px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .content-block {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <div class="logo-container">
+            <a href="index.html" class="logo-rectangle">
+                <img src="log.png" alt="LawScent Logo">
+            </a>
+        </div>
+        
+        <div class="nav-buttons">
+            <a href="booking.html" class="btn btn-primary">Book Now</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Divorce & Maintenance Cases</h1>
+            <p>Navigating Life Transitions with Dignity and Legal Expertise</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="content-section">
+        <div class="service-intro">
+            <h2>Expertise in Divorce & Maintenance Law</h2>
+            <p>Our specialized practice handles the legal dissolution of marriage with sensitivity and procedural expertise.</p>
+        </div>
+
+        <div class="content-block">
+            <h3>About Divorce & Maintenance Cases</h3>
+            <p>Divorce law represents one of the most personal intersections of human emotion and judicial reasoning. The Divorce & Maintenance practice at LawScent deals with the legal dissolution of marriage, governed by statutes such as the Hindu Marriage Act, 1955, Special Marriage Act, 1954, Indian Divorce Act, 1869, and respective personal laws.</p>
+        </div>
+
+        <div class="key-points">
+            <div class="point-card">
+                <h4>Divorce Proceedings</h4>
+                <p>Expert handling of contested and mutual divorce proceedings under various personal laws.</p>
+            </div>
+            
+            <div class="point-card">
+                <h4>Maintenance Claims</h4>
+                <p>Comprehensive assistance with alimony, child maintenance, and spousal support claims.</p>
+            </div>
+            
+            <div class="point-card">
+                <h4>Custody & Settlement</h4>
+                <p>Guidance on child custody matters and matrimonial settlement drafting.</p>
+            </div>
+        </div>
+
+        <div class="content-block">
+            <h3>Comprehensive Divorce Services</h3>
+            <p>This practice includes contested and mutual divorce proceedings, alimony and maintenance claims, child custody, and enforcement of matrimonial decrees. It also extends to advisory on property division, settlement drafting, and recognition of foreign divorce decrees.</p>
+            
+            <p>Divorce cases require not just procedural expertise but sensitivity. Each matter involves emotional, social, and financial consequences. Our approach focuses on dignity — ensuring that legal remedies are pursued with empathy, confidentiality, and clarity.</p>
+        </div>
+
+        <div class="content-block">
+            <h3>Legal Philosophy</h3>
+            <p>Maintenance, in particular, represents the law's commitment to equity — ensuring financial stability for dependents after separation.</p>
+            
+            <p>At its core, this practice restores balance where relationships end — upholding fairness without judgment, and closure without conflict.</p>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Divorce Legal Support?</h3>
+            <p>Partner with our compassionate team to navigate divorce proceedings with dignity and professional guidance.</p>
+            <div class="cta-buttons">
+                <a href="booking.html" class="btn btn-primary">Book Now</a>
+                <a href="booking.html" class="btn btn-light">Book Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>LawScent</h4>
+                <p>Your trusted legal partner, committed to excellence, integrity, and access to law.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="whoweare.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="career.html">Careers</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: contact@lawscent.com</p>
+                <p>Phone: (+91) 98151 70191</p>
+                <p>Gurugram, Haryana</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 LawScent. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Choose LawScent | LawScent</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Back to Home Arrow Button */
+        .back-to-home {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: linear-gradient(135deg, #e2bc79 0%, #d4a76a 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(226, 188, 121, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .back-to-home:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 6px 20px rgba(226, 188, 121, 0.4);
+        }
+        
+        .back-to-home svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        header {
+            background: linear-gradient(135deg, #e2bc79 0%, #d4a76a 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            position: relative;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .content {
+            background: white;
+            margin: -100px auto 40px;
+            padding: 80px 60px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section h2 {
+            color: #e2bc79;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #e2bc79;
+        }
+
+        .section h3 {
+            color: #333;
+            font-size: 1.5rem;
+            margin: 30px 0 15px 0;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .benefit-card {
+            background: #fafafa;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-left: 4px solid #e2bc79;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #e2bc79;
+        }
+
+        .benefit-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, #e2bc79 0%, #d4a76a 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .comparison-table td {
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+            text-align: center;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .check-mark {
+            color: #4CAF50;
+            font-size: 1.5rem;
+        }
+
+        .cross-mark {
+            color: #f44336;
+            font-size: 1.5rem;
+        }
+
+        .stats-section {
+            background: linear-gradient(135deg, #e2bc79 0%, #d4a76a 100%);
+            color: white;
+            padding: 50px;
+            border-radius: 15px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .stat-item {
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+        }
+
+        .testimonial {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border-left: 4px solid #e2bc79;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #e2bc79;
+            margin-top: 15px;
+            text-align: right;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(226, 188, 121, 0.1) 0%, rgba(212, 167, 106, 0.1) 100%);
+            border-left: 4px solid #e2bc79;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+            box-shadow: 0 4px 12px rgba(226, 188, 121, 0.1);
+        }
+        
+        .highlight-box p {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #5a4a3a;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 40px;
+            background: #f0f8ff;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #e2bc79 0%, #d4a76a 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(226, 188, 121, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(226, 188, 121, 0.5);
+        }
+
+        footer {
+            background: #1a202c;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        .back-to-top {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #e2bc79 0%, #d4a76a 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(226, 188, 121, 0.4);
+        }
+
+        /* Tablet Responsiveness */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .content {
+                padding: 60px 40px;
+                margin: -80px auto 30px;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            header {
+                padding: 30px 0;
+            }
+            
+            header h1 {
+                font-size: 1.8rem;
+            }
+            
+            header p {
+                font-size: 1rem;
+                padding: 0 15px;
+            }
+            
+            .content {
+                padding: 30px 15px;
+                margin: -50px auto 20px;
+                border-radius: 10px;
+            }
+            
+            .section {
+                margin-bottom: 30px;
+            }
+            
+            .section h2 {
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+            }
+            
+            .section h3 {
+                font-size: 1.3rem;
+                margin: 25px 0 12px 0;
+            }
+            
+            .section p {
+                font-size: 1rem;
+                line-height: 1.7;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .benefit-card {
+                padding: 20px;
+            }
+            
+            .benefit-icon {
+                font-size: 2rem;
+                margin-bottom: 12px;
+            }
+            
+            .benefit-title {
+                font-size: 1.2rem;
+                margin-bottom: 12px;
+            }
+            
+            .stats-section {
+                padding: 30px 20px;
+                margin: 30px 0;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .stat-item {
+                padding: 20px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .stat-label {
+                font-size: 1rem;
+            }
+            
+            .testimonial {
+                padding: 20px;
+                margin: 20px 0;
+            }
+            
+            .cta-section {
+                padding: 30px 20px;
+                margin: 30px 0;
+            }
+            
+            .cta-button {
+                padding: 12px 30px;
+                font-size: 1.1rem;
+            }
+            
+            .highlight-box {
+                padding: 20px;
+                margin: 20px 0;
+            }
+            
+            .highlight-box p {
+                font-size: 1rem;
+            }
+            
+            .comparison-table {
+                font-size: 0.8rem;
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 12px 15px;
+                white-space: nowrap;
+            }
+            
+            footer {
+                padding: 30px 0;
+                margin-top: 40px;
+            }
+        }
+        
+        /* Mobile-specific back-to-home button adjustment */
+        @media (max-width: 768px) {
+            .back-to-home {
+                top: 15px;
+                left: 15px;
+                width: 45px;
+                height: 45px;
+            }
+            
+            .back-to-home svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+        
+        /* Small Mobile Devices */
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+            
+            header p {
+                font-size: 0.9rem;
+            }
+            
+            .content {
+                padding: 25px 10px;
+                margin: -40px auto 15px;
+            }
+            
+            .section h2 {
+                font-size: 1.3rem;
+            }
+            
+            .section h3 {
+                font-size: 1.1rem;
+            }
+            
+            .benefit-card {
+                padding: 15px;
+            }
+            
+            .benefit-icon {
+                font-size: 1.8rem;
+            }
+            
+            .benefit-title {
+                font-size: 1.1rem;
+            }
+            
+            .stats-section {
+                padding: 25px 15px;
+            }
+            
+            .stat-number {
+                font-size: 1.8rem;
+            }
+            
+            .cta-button {
+                padding: 10px 25px;
+                font-size: 1rem;
+            }
+            
+            .comparison-table {
+                font-size: 0.7rem;
+            }
+            
+            .highlight-box {
+                padding: 15px;
+                margin: 15px 0;
+            }
+            
+            .highlight-box p {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Back to Home Button -->
+    <a href="index.html" class="back-to-home" aria-label="Back to Home">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+        </svg>
+    </a>
+    <header>
+        <div class="container">
+            <h1>WHY CHOOSE LAWSCENT?</h1>
+            <p>Your Gateway to Quality Legal Services Across India</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <div class="section">
+                <h2>LawScent: Revolutionizing Legal Services in India</h2>
+                <p>LawScent is an intuitive online platform that makes it speedier and simpler to discover and contact the finest Attorneys in any city/court in India.</p>
+                
+                <p>We aim to simply help you find the right lawyer for you and your organization. We are helping individuals, corporates, Start-ups get legal services at exceptionally affordable prices and associating them with the "right lawyers" as per their requirements. With our ever-growing 4000+ lawyer networks with a meticulous background which is thoroughly checked, Case Managers to follow on the case till the end and highly assisted legal content contributed by experts. We can assure you to have a pleasant experience with us. We are committed to having our clients satisfied with the legal terms and issues to let them make an informed decision.</p>
+            </div>
+
+            <div class="section">
+                <h2>How Will The Platform Work For Different Clients?</h2>
+                
+                <h3>For Individual Clients</h3>
+                <p>Lawyers on our website will help you in meeting all your personal requirements (divorce, family, cybercrime etc.) The lawyers will abide by the professionality by keeping the communication simple and confidential. The lawyers on board will perform his duties zealously in preparing a feasible defense. We will also work as a medium of support in your times of need and will even accompany you to the court if required. There will be a designated case manager for your matter who will handle your matter until the end of the case and share with you a daily status.</p>
+                
+                <h3>For Lawyers</h3>
+                <p>This platform helps lawyers in getting more clients to the table, select among them and respond to the ones that interest them. It also works behind connecting lawyers across cities and helps them in seeking advice related to any legal matters. One can also pitch other lawyers from the same local area of authority to deal one's case in case of unavailability. Lawyers can also perform research related to any legal affairs and explore possibilities with the expert in-house seniors.</p>
+                
+                <h3>For Corporate Clients</h3>
+                <p>Our specialized corporate law lawyers ensure the legal corporate transactions, advice the management of their duties and rights, including specific services like drafting, reviewing legal documents, handling business contracts, mergers, acquisitions, drafting term sheets for seeking investments, disinvestments, administrative compliance, registration etc. The consigned lawyers also assist in your startup by providing services such as C-Corps, S-Corps, LLCs and Limited Partnership, dividing shares among founders, standard forms, standard contract, employee contracts etc. We have a list of lawyers available within the vicinity of rural areas so that you get to select among the best ones.</p>
+            </div>
+
+            <div class="section">
+                <h2>Why Was This Required?</h2>
+                
+                <p>Legal Services in India is a tedious and very convoluted process which if goes into the wrong hands can damage you for all your life. Therefore, we decided to build this product where you can find lawyers near you, interact and then decide on the best fit. Our website also lets you get free advice which otherwise is payable offline. The fees of the lawyers are according to the market standards and are affordable for everyone.</p>
+                
+                <p>Not only the individuals but we promise to deliver convenient legal backing to corporates as well.</p>
+                
+                <div class="highlight-box">
+                    <p>We also believe that legal assistance is a right of every citizen irrespective of their financial conditions. We are here to commence special programs for people who reach out to us for legal advice and are financially not strong enough to finance the procedure.</p>
+                </div>
+                
+                <p>In short, We Will work as a personal assistant so that you can concentrate on other important things of life. Our endeavor is to become the number one choice for any sort of legal assistance individuals and corporates and a professional community for the lawyers. We are growing enough to help individuals find their right lawyer by sitting in the comfort in their homes.</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔍</div>
+                    <div class="benefit-title">Find the Right Lawyer</div>
+                    <p>Connect with verified attorneys across India who match your specific legal needs and requirements.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <div class="benefit-title">Affordable Pricing</div>
+                    <p>Exceptionally affordable legal services with transparent pricing according to market standards.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🛡️</div>
+                    <div class="benefit-title">Thoroughly Verified</div>
+                    <p>4000+ lawyer network with meticulous background checks and verified credentials.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">📋</div>
+                    <div class="benefit-title">Case Management</div>
+                    <p>Dedicated case managers who follow your case till completion with daily status updates.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏛️</div>
+                    <div class="benefit-title">Court Support</div>
+                    <p>Accompany you to court when required and provide comprehensive legal assistance.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">💡</div>
+                    <div class="benefit-title">Expert Content</div>
+                    <p>Highly assisted legal content contributed by experts for informed decision making.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Our Unique Value Proposition</h2>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Service Aspect</th>
+                            <th>Traditional Approach</th>
+                            <th><span style="color: #e2bc79;">LawScent Advantage</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Lawyer Discovery</td>
+                            <td><span class="cross-mark">✗</span> Time-consuming research</td>
+                            <td><span class="check-mark">✓</span> Instant access to verified lawyers</td>
+                        </tr>
+                        <tr>
+                            <td>Price Transparency</td>
+                            <td><span class="cross-mark">✗</span> Hidden costs and negotiations</td>
+                            <td><span class="check-mark">✓</span> Clear, market-standard pricing</td>
+                        </tr>
+                        <tr>
+                            <td>Case Management</td>
+                            <td><span class="cross-mark">✗</span> Self-coordination required</td>
+                            <td><span class="check-mark">✓</span> Dedicated case managers</td>
+                        </tr>
+                        <tr>
+                            <td>Geographic Reach</td>
+                            <td><span class="cross-mark">✗</span> Local lawyer limitations</td>
+                            <td><span class="check-mark">✓</span> Pan-India lawyer network</td>
+                        </tr>
+                        <tr>
+                            <td>Specialized Services</td>
+                            <td><span class="cross-mark">✗</span> Limited expertise areas</td>
+                            <td><span class="check-mark">✓</span> Experts in all legal domains</td>
+                        </tr>
+                        <tr>
+                            <td>Support Services</td>
+                            <td><span class="cross-mark">✗</span> Basic legal representation</td>
+                            <td><span class="check-mark">✓</span> Comprehensive assistance including court accompaniment</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="index.html" class="back-to-top">Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 LawScent. All rights reserved.</p>
+            <p>Why settle for less when you can have the best?</p>
+        </div>
+    </footer>
+</body>
+</html>
