@@ -185,23 +185,426 @@ body{
 
 /* HERO */
 .hero{
-    height:60vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f') center/cover no-repeat;
+    height:85vh;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
     position:relative;
     display:flex;
     align-items:center;
     justify-content:center;
-    text-align:center;
+    text-align:left;
+    padding: 0 8%;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, var(--gold), #d4a76a, var(--gold));
+}
+
+.hero-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(226, 188, 121, 0.6);
+    border-radius: 50%;
+    animation: floatParticle 15s infinite linear;
+}
+
+.particle:nth-child(1) {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+    width: 8px;
+    height: 8px;
+}
+
+.particle:nth-child(2) {
+    top: 60%;
+    left: 20%;
+    animation-delay: 2s;
+    width: 6px;
+    height: 6px;
+}
+
+.particle:nth-child(3) {
+    top: 40%;
+    right: 15%;
+    animation-delay: 4s;
+    width: 10px;
+    height: 10px;
+}
+
+.particle:nth-child(4) {
+    bottom: 30%;
+    left: 25%;
+    animation-delay: 6s;
+    width: 7px;
+    height: 7px;
+}
+
+.particle:nth-child(5) {
+    bottom: 50%;
+    right: 20%;
+    animation-delay: 8s;
+    width: 9px;
+    height: 9px;
+}
+
+@keyframes floatParticle {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) translateX(100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(226, 188, 121, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+    }
+    50% {
+        transform: translateY(-20px) translateX(10px);
+    }
+}
+
+.hero-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    gap: 50px;
+}
+
+.hero-text-content {
+    flex: 1;
+    max-width: 600px;
+    padding-right: 20px;
+}
+
+.hero-text-content h1 {
+    color: var(--dark);
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-align: left;
+    line-height: 1.1;
+    position: relative;
+    display: inline-block;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(226, 188, 121, 0.3);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(226, 188, 121, 0.3);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(226, 188, 121, 0.4);
+    }
+}
+
+.hero-text-content h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: var(--gold);
+    border-radius: 2px;
+}
+
+.hero-subtitle {
+    font-size: 1.4rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    text-align: left;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    color: var(--text);
+    margin-bottom: 30px;
+    text-align: left;
+    line-height: 1.7;
+    max-width: 500px;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 500px;
+    position: relative;
+}
+
+.content-card {
+    background: linear-gradient(135deg, var(--white) 0%, #f8f9fa 100%);
+    border-radius: 16px;
+    padding: 35px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(226, 188, 121, 0.15);
+    transition: all 0.3s ease;
+}
+
+.content-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.card-icon {
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    color: var(--dark);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.card-description {
+    color: var(--text-light);
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.card-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.card-features li {
+    padding: 8px 0;
+    position: relative;
+    padding-left: 25px;
+    color: var(--text);
+    font-size: 0.95rem;
+}
+
+.card-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    color: var(--gold);
+    font-weight: bold;
+}
+
+.btn {
+    padding: 16px 32px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.6s;
+    z-index: -1;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    color: white;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(226, 188, 121, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--dark);
+    border: 2px solid var(--dark);
+}
+
+.btn-secondary:hover {
+    background: var(--dark);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.hero-image-section {
+    flex: 1;
+    max-width: 500px;
+    position: relative;
+    border-radius: 20px;
+    overflow: visible;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid rgba(226, 188, 121, 0.1);
+    perspective: 1000px;
+}
+
+.hero-image-section:hover {
+    transform: translateY(-10px) rotateY(5deg);
+    box-shadow: 0 40px 70px -15px rgba(0, 0, 0, 0.15);
+    border-color: rgba(226, 188, 121, 0.3);
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    padding: 30px 20px 20px;
+    color: white;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+}
+
+.hero-image-section:hover .image-overlay {
+    transform: translateY(0);
+}
+
+.overlay-content h4 {
+    margin: 0 0 5px 0;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.overlay-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.8);
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.image-placeholder::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(226, 188, 121, 0.1) 0%, transparent 70%);
+    opacity: 0.3;
+}
+
+.image-placeholder img {
+    width: 80%;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+    z-index: 2;
+    filter: drop-shadow(0 10px 15px rgba(226, 188, 121, 0.2));
+}
+
+.hero-image-section:hover .image-placeholder img {
+    transform: scale(1.1);
 }
 .hero h1{
     position:relative;
-    color:var(--white);
+    color:var(--dark);
     font-size:3.5rem;
     letter-spacing:1px;
     text-transform:uppercase;
     font-weight:700;
     margin:0;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    text-shadow: none;
 }
 
 @media(max-width:768px){
@@ -254,8 +657,11 @@ body{
     box-shadow:var(--shadow);
     transition:var(--transition);
     position:relative;
-    overflow:hidden;
+    overflow:visible;
+    max-height: none;
 }
+
+
 .service-card:hover{
     transform:translateY(-10px);
     box-shadow:0 15px 30px rgba(0,0,0,0.15);
@@ -278,6 +684,144 @@ body{
     font-size:1rem;
     color:var(--text-light);
     margin:0;
+}
+
+/* ROADMAP */
+.roadmap {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding: 20px 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(226, 188, 121, 0.03) 100%);
+    border-radius: 20px;
+    padding: 40px;
+}
+
+.roadmap::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 40px;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, var(--gold), var(--gold-dark));
+    border-radius: 50%;
+    z-index: 1;
+    margin-top: 40px;
+}
+
+.roadmap-item {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.roadmap-item:nth-child(1) { animation-delay: 0.1s; }
+.roadmap-item:nth-child(2) { animation-delay: 0.2s; }
+.roadmap-item:nth-child(3) { animation-delay: 0.3s; }
+.roadmap-item:nth-child(4) { animation-delay: 0.4s; }
+.roadmap-item:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.roadmap-step {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+    min-width: 200px;
+}
+
+.step-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    flex-shrink: 0;
+    box-shadow: 0 5px 15px rgba(226, 188, 121, 0.3);
+    position: relative;
+    z-index: 3;
+}
+
+.step-number {
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: white;
+}
+
+.step-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.step-content h3 {
+    font-size: 1.2rem;
+    color: var(--dark);
+    margin: 0 0 5px 0;
+    font-weight: 600;
+}
+
+.step-badge {
+    display: inline-block;
+    background: rgba(226, 188, 121, 0.1);
+    color: var(--gold-dark);
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    align-self: flex-start;
+    margin-top: 5px;
+}
+
+.roadmap-content {
+    flex: 1;
+    background: var(--white);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid var(--gold);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.roadmap-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(to right, var(--gold), var(--gold-dark));
+}
+
+.roadmap-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.roadmap-content p {
+    margin: 0;
+    color: var(--text-light);
+    line-height: 1.7;
+    font-size: 1rem;
 }
 
 /* FORM */
@@ -388,6 +932,51 @@ footer a:hover{
     .section h2{
         font-size:2rem;
     }
+    .hero{
+        height: auto;
+        min-height: 60vh;
+        padding: 50px 5% 80px;
+    }
+    
+    .hero-layout {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .hero-text-content {
+        max-width: 100%;
+        text-align: center;
+        padding-right: 0;
+    }
+    
+    .hero-text-content h1 {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    
+    .hero-cta {
+        justify-content: center;
+    }
+    
+    .btn {
+        padding: 14px 24px;
+        font-size: 0.9rem;
+    }
+    
+    .hero-image-section {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .image-container {
+        height: 250px;
+    }
+    
     .hero h1{
         font-size:2.5rem;
     }
@@ -414,6 +1003,48 @@ footer a:hover{
     }
     .footer-grid > div{
         text-align:center;
+    }
+    
+    /* Responsive Roadmap */
+    .roadmap {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+    
+    .roadmap::before {
+        left: 25px;
+    }
+    
+    .roadmap-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    
+    .roadmap-step {
+        flex-direction: row;
+        min-width: 100%;
+        margin-right: 0;
+        margin-bottom: 0;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    
+    .step-circle {
+        margin-right: 15px;
+    }
+    
+    .step-content {
+        flex: 1;
+    }
+    
+    .roadmap-content {
+        margin-left: 65px;
+        padding: 20px;
+    }
+    
+    .step-badge {
+        align-self: flex-start;
     }
 }
 
@@ -498,7 +1129,42 @@ footer a:hover{
 
 <!-- HERO -->
 <section class="hero">
-    <h1>LEGAL AID</h1>
+    <div class="hero-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+    <div class="hero-layout">
+        <div class="hero-text-content">
+            
+            <h1>LEGAL AID</h1>
+            <p class="hero-subtitle"><br>Accessible legal support for everyone</p>
+            <p class="hero-description">We provide free and subsidized legal services to those who need it most, ensuring equal access to justice regardless of economic status.</p>
+            <div class="hero-cta">
+                <a href="#request-aid" class="btn btn-primary">Request Legal Aid</a>
+                <a href="#consultation" class="btn btn-secondary">Free Consultation</a>
+            </div>
+        </div>
+        <div class="hero-content">
+            <div class="content-card">
+                <div class="card-icon">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="var(--gold)"/>
+                        <path d="M13 9.5c0 .83-.67 1.5-1.5 1.5S10 10.33 10 9.5 10.67 8 11.5 8s1.5.67 1.5 1.5zm-1.5 4c.83 0 1.5.67 1.5 1.5v1.5h-3v-1.5c0-.83.67-1.5 1.5-1.5z" fill="var(--gold)"/>
+                    </svg>
+                </div>
+                <h3 class="card-title">Professional Legal Support</h3>
+                <p class="card-description">Our experienced legal professionals are dedicated to providing quality assistance and guidance in your legal matters.</p>
+                <ul class="card-features">
+                    <li>Expert Legal Counsel</li>
+                    <li>Confidential Consultations</li>
+                    <li>Affordable Solutions</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </section>
 
 <!-- INTRO -->
@@ -510,6 +1176,87 @@ footer a:hover{
         and communities who require guidance, protection, and clarity
         in legal matters—regardless of background or circumstance.
     </p>
+
+    <!-- ROADMAP SECTION -->
+    <h2 style="margin-top: 60px; margin-bottom: 40px; text-align: center;">Legal Aid Process Roadmap</h2>
+    <p style="text-align: center; margin-bottom: 50px; color: var(--text-light); font-size: 1.1rem; max-width: 700px; margin-left: auto; margin-right: auto;">We guide you through every step of the legal process with transparency and care</p>
+    
+    <div class="roadmap">
+        <div class="roadmap-item">
+            <div class="roadmap-step">
+                <div class="step-circle">
+                    <span class="step-number">1</span>
+                </div>
+                <div class="step-content">
+                    <h3>Initial Consultation</h3>
+                    <div class="step-badge">FREE</div>
+                </div>
+            </div>
+            <div class="roadmap-content">
+                <p>Free initial consultation to understand your case and assess eligibility for legal aid services.</p>
+            </div>
+        </div>
+        
+        <div class="roadmap-item">
+            <div class="roadmap-step">
+                <div class="step-circle">
+                    <span class="step-number">2</span>
+                </div>
+                <div class="step-content">
+                    <h3>Case Evaluation</h3>
+                    <div class="step-badge">EXPERT</div>
+                </div>
+            </div>
+            <div class="roadmap-content">
+                <p>Detailed evaluation of your situation by our legal experts to determine the best course of action.</p>
+            </div>
+        </div>
+        
+        <div class="roadmap-item">
+            <div class="roadmap-step">
+                <div class="step-circle">
+                    <span class="step-number">3</span>
+                </div>
+                <div class="step-content">
+                    <h3>Documentation</h3>
+                    <div class="step-badge">ORGANIZED</div>
+                </div>
+            </div>
+            <div class="roadmap-content">
+                <p>Assistance in gathering and organizing necessary documents and evidence for your case.</p>
+            </div>
+        </div>
+        
+        <div class="roadmap-item">
+            <div class="roadmap-step">
+                <div class="step-circle">
+                    <span class="step-number">4</span>
+                </div>
+                <div class="step-content">
+                    <h3>Legal Representation</h3>
+                    <div class="step-badge">PROFESSIONAL</div>
+                </div>
+            </div>
+            <div class="roadmap-content">
+                <p>Professional legal representation in courts, tribunals, or negotiations as required.</p>
+            </div>
+        </div>
+        
+        <div class="roadmap-item">
+            <div class="roadmap-step">
+                <div class="step-circle">
+                    <span class="step-number">5</span>
+                </div>
+                <div class="step-content">
+                    <h3>Ongoing Support</h3>
+                    <div class="step-badge">CONTINUOUS</div>
+                </div>
+            </div>
+            <div class="roadmap-content">
+                <p>Continuous support throughout the legal process and post-resolution assistance.</p>
+            </div>
+        </div>
+    </div>
 
     <div class="services">
         <div class="service-card">
