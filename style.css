@@ -56,6 +56,53 @@ header {
     display: inline-block;
 }
 
+/* Desktop mega dropdown white text - separated from header */
+@media (min-width: 769px) {
+    .mega-dropdown-menu {
+        background: linear-gradient(to bottom, #1a1a1a, #0d0d0d);
+    }
+    
+    .mega-category {
+        color: #c9a24d;
+    }
+    
+    .mega-category:hover {
+        color: #c9a24d;
+    }
+    
+    .service-item {
+        color: #fff;
+    }
+    
+    .service-item:hover {
+        color: #c9a24d;
+    }
+}
+
+/* Header text color - separate from mega dropdown */
+header .navbar a {
+    color: #000000;
+}
+
+@media (min-width: 769px) {
+    .desktop-mega-dropdown .mega-dropdown-toggle {
+        color: #000000;
+    }
+    
+    .desktop-mega-dropdown .mega-dropdown-toggle:hover {
+        color: #e2bc79;
+    }
+}
+
+/* Specific styles for mega dropdown service items - separate from header */
+.mega-dropdown-menu .service-item {
+    color: #fff;
+}
+
+.mega-dropdown-menu .service-item:hover {
+    color: #c9a24d;
+}
+
 /* Desktop positioning adjustment for What we do */
 @media (min-width: 1025px) {
     .dropdown {
@@ -457,7 +504,7 @@ header .navbar {
 }
 
 header .navbar a {
-    color: #000;
+    color: #000000;
     text-decoration: none;
     font-size: 0.9rem;
     text-transform: uppercase;
@@ -2705,7 +2752,7 @@ textarea:focus-visible {
         /* Gradient flips to bottom-up for mobile */
         background: linear-gradient(to top, 
             rgba(0, 0, 0, 1) 0%, 
-            rgba(184, 134, 11, 0.5) 40%, 
+            rgba(0, 0, 0, 0.538) 40%, 
             transparent 100%);
     }
     
