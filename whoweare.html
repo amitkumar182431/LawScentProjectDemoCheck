@@ -133,6 +133,43 @@
     inset:0;
     background:linear-gradient(135deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.4) 100%);
 }
+.highlight::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 100%);
+    z-index: 1;
+}
+
+.btn-know-more {
+    display: inline-block;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #D6AE6A 0%, #c49a58 100%);
+    color: #202022;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.btn-know-more:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(214, 174, 106, 0.4);
+    background: linear-gradient(135deg, #c49a58 0%, #D6AE6A 100%);
+}
+
 .highlight-content{
     position:relative;
     text-align:center;
@@ -821,7 +858,7 @@
             <nav class="navbar" id="navbar">
                 <!-- Desktop Menu -->
                 <div class="desktop-menu">
-                    <a href="whoweare.html">Who we are</a>
+                    
                   
                     <a href="#services">Our Thinking</a>
                     <a href="career.html">Careers</a>
@@ -830,7 +867,7 @@
                 
                 <!-- Mobile Menu -->
                 <div class="mobile-menu">
-                    <a href="whoweare.html">Who we are</a>
+                   
                    
                     <a href="#services">Our Thinking</a>
                     <a href="career.html">Careers</a>
@@ -863,25 +900,7 @@
             We believe law is more than protection; it is the foundation of progress.
             Every solution we deliver empowers our clients to move forward with confidence.
         </p>
-       
-    </div>
-    
-    <div class="cards">
-        <div class="card">
-            <img src="corporate-law.jpg" alt="Corporate Law Services">
-            <h3>Corporate Law</h3>
-            <p>Expert guidance on business formation, compliance, and governance.</p>
-        </div>
-        <div class="card">
-            <img src="contract-law.jpg" alt="Contract Law Services">
-            <h3>Contract Law</h3>
-            <p>Drafting, reviewing, and negotiating business contracts and agreements.</p>
-        </div>
-        <div class="card">
-            <img src="mergers-acquisition.jpg" alt="Mergers & Acquisition Services">
-            <h3>Mergers & Acquisitions</h3>
-            <p>Legal support for business transactions and corporate restructuring.</p>
-        </div>
+        <a href="knowmore.html" class="btn-know-more">Know More</a>
     </div>
 </section>
 
@@ -923,7 +942,7 @@
             LawScent stands beside you. We help find clarity in complexity and resolve
             legal challenges with confidence. Our purpose is #ProtectingWhatMatters.
         </p>
-        <button>Know More</button>
+        <a href="knowmore.html" class="btn-know-more">Know More</a>
     </div>
 </section>
 
@@ -935,21 +954,19 @@
            </div>
                <p>Your trusted legal partner. Providing comprehensive legal solutions for businesses and individuals.</p>
                <div class="social-links">
-                     <a href="https://www.facebook.com/law.scent/" aria-label="Facebook" title="Facebook">f</a>
-                   <a href="https://x.com/lawscent" aria-label="Twitter" title="Twitter">𝕏</a>
-                   <a href="https://www.linkedin.com/company/lawscent/" aria-label="LinkedIn" title="LinkedIn">in</a>
-                   <a href="https://www.instagram.com/law.scent/" aria-label="Instagram" title="Instagram">📷</a>
-                   <a href="https://www.youtube.com/@LawScent" aria-label="YouTube" title="YouTube">▶</a>
-              
+                   <a href="#" aria-label="Facebook">f</a>
+                   <a href="#" aria-label="Twitter">𝕏</a>
+                   <a href="#" aria-label="LinkedIn">in</a>
+                   <a href="#" aria-label="Instagram">📷</a>
                </div>
            </div>
            
            <div class="footer-section">
                <h4>Quick Links</h4>
                <ul>
-                  <li><a href="#home">Home</a></li>
+                   <li><a href="#home">Home</a></li>
                    <li><a href="#about">About Us</a></li>
-              <li><a href="whyus.html">Why Us</a></li> 
+                   <li><a href="#services">Services</a></li>
                    
                </ul>
            </div>
@@ -1045,5 +1062,3 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </body>
 </html>
-
-
