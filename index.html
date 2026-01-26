@@ -1197,6 +1197,8 @@ html, body {
         </div>
     </section>
 
+
+
     <section class="careers" id="careers">
         <div class="careers-wrapper">
             <div class="careers-content">
@@ -1205,88 +1207,11 @@ html, body {
                     <h3>Apply For Job</h3>
                 </div>
                 <p class="careers-description">Joining LawScent means being part of a team that grows together, learns together, and makes an impact every day. Here, your ideas matter, your work creates change, and your growth defines our journey.</p>
-                <button class="btn btn-careers" id="openJobForm">Search And Apply</button>
+                <a href="job.html" class="btn btn-careers">Search And Apply</a>
             </div>
         </div>
 
-        <!-- Job Application Form Modal -->
-        <div class="job-form-modal" id="jobFormModal">
-            <div class="job-form-overlay"></div>
-            <div class="job-form-container">
-                <button class="close-form-btn" id="closeJobForm" aria-label="Close form">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
-                <div class="job-form-header">
-                    <h2>Job Application Form</h2>
-                    <p>Fill out the form below to apply for a position at LawScent</p>
-                </div>
-                <form class="job-application-form" id="jobApplicationForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="job-first-name">First Name <span>*</span></label>
-                            <input type="text" id="job-first-name" name="firstName" placeholder="Enter your first name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="job-last-name">Last Name <span>*</span></label>
-                            <input type="text" id="job-last-name" name="lastName" placeholder="Enter your last name" required>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="job-email">Email Address <span>*</span></label>
-                            <input type="email" id="job-email" name="email" placeholder="Enter your email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="job-phone">Phone Number <span>*</span></label>
-                            <input type="tel" id="job-phone" name="phone" placeholder="Enter your phone number" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="job-position">Position Applied For <span>*</span></label>
-                        <input type="text" id="job-position" name="position" placeholder="e.g., Legal Associate, Paralegal, etc." required>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="job-experience">Years of Experience</label>
-                            <input type="number" id="job-experience" name="experience" placeholder="Years" min="0">
-                        </div>
-                        <div class="form-group">
-                            <label for="job-education">Education Level</label>
-                            <select id="job-education" name="education">
-                                <option value="">Select education level</option>
-                                <option value="high-school">High School</option>
-                                <option value="bachelor">Bachelor's Degree</option>
-                                <option value="master">Master's Degree</option>
-                                <option value="law-degree">Law Degree (LLB/LLM)</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="job-resume">Upload Resume <span>*</span></label>
-                        <input type="file" id="job-resume" name="resume" accept=".pdf,.doc,.docx" required>
-                        <small>Accepted formats: PDF, DOC, DOCX (Max 5MB)</small>
-                    </div>
-                    <div class="form-group">
-                        <label for="job-cover-letter">Cover Letter</label>
-                        <textarea id="job-cover-letter" name="coverLetter" rows="5" placeholder="Tell us why you want to join LawScent..."></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="job-references">References</label>
-                        <textarea id="job-references" name="references" rows="3" placeholder="Name, position, and contact information of references (optional)"></textarea>
-                    </div>
-                    <div class="form-options">
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="terms" required>
-                            <span>I confirm that all information provided is accurate and true <span>*</span></span>
-                        </label>
-                    </div>
-                    <button type="submit" class="btn btn-submit">Submit Application</button>
-                </form>
-            </div>
-        </div>
+
     </section>
 
 
@@ -1336,6 +1261,30 @@ html, body {
        </div>
    </footer>
    
-   <script src="script.js"></script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
+        import { getFirestore, serverTimestamp, addDoc, collection } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-firestore.js";
+        import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-storage.js";
+        import { getAuth } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCYhXXbGFO_Y_Mymf-hD0Tl5TmyXT9GSWk",
+            authDomain: "in-lawscent.firebaseapp.com",
+            databaseURL: "https://in-lawscent-default-rtdb.firebaseio.com",
+            projectId: "in-lawscent",
+            storageBucket: "in-lawscent.firebasestorage.app",
+            messagingSenderId: "940614564452",
+            appId: "1:940614564452:web:f62017a45289133115bd71"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const storage = getStorage(app);
+        const auth = getAuth(app);
+    </script>
+    <script src="script.js"></script>
 </body>
 </html>
