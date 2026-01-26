@@ -115,7 +115,7 @@ body{
     width: 70%;
     height: 70%;
     object-fit: contain;
-    filter: brightness(0) saturate(100%) invert(67%) sepia(59%) saturate(1021%) hue-rotate(337deg) brightness(94%) contrast(89%);
+    /* filter: brightness(0) saturate(100%) invert(67%) sepia(59%) saturate(1021%) hue-rotate(337deg) brightness(94%) contrast(89%); */
 }
 
 /* Show rectangular logo on mobile */
@@ -1360,17 +1360,17 @@ footer a:hover{
 <section class="section form-section">
     <h2>Request Legal Aid</h2>
     <p>
-        Fill out the form below and our legal team will contact you within 24 hours.
+        Click the button below to request legal aid services. Our legal team will review your request and contact you within 24 hours.
     </p>
-
-    <form id="aidForm">
-        <input type="text" placeholder="Full Name" required>
-        <input type="email" placeholder="Email Address" required>
-        <input type="tel" placeholder="Phone Number" required>
-        <textarea rows="5" placeholder="Briefly describe your legal issue" required></textarea>
-        <button type="submit">Submit Request</button>
-    </form>
+    
+    <div style="text-align: center; margin: 2rem 0;">
+        <a href="legalbook.html" class="btn btn-primary" style="display: inline-block; padding: 1rem 2rem; background: linear-gradient(135deg, #D6AE6A 0%, #c49a58 100%); color: #202022; text-decoration: none; border-radius: 12px; font-weight: 700; font-size: 1.1rem; transition: all 0.3s ease;">
+            Request Legal Aid
+        </a>
+    </div>
 </section>
+
+
 
 <!-- FOOTER -->
 <footer>
@@ -1378,7 +1378,7 @@ footer a:hover{
         <div>
             <div class="footer-logo">
                 <a href="index.html" class="logo-circle">
-                    <img src="log.png" alt="LawScent Logo">
+                    <img src="logcirc.png" alt="LawScent Logo">
                 </a>
             </div>
             <p>Your trusted legal partner, committed to justice, integrity, and access to law.</p>
@@ -1386,8 +1386,8 @@ footer a:hover{
         <div>
             <h4>Quick Links</h4>
             <a href="index.html">Home</a>
-            <a href="who-we-are.html">About Us</a>
-            <a href="services.html">Services</a>
+            <a href="whoweare.html">About Us</a>
+            <a href="whyus.html">Why Us</a>
         </div>
         <div>
             <h4>Contact</h4>
@@ -1423,11 +1423,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-document.getElementById("aidForm").addEventListener("submit", function(e){
-    e.preventDefault();
-    alert("Thank you! We will contact you within 24 hours.");
-    this.reset();
-});
+
 </script>
 
 </body>
