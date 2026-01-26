@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Legal Aid - LawScent</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --gold: #D6AE6A;
+            --dark-gold: #c49a58;
+            --white: #ffffff;
+            --black: #202022;
+            --light-gray: #f8f9fa;
+            --border: #e0e0e0;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
+            color: var(--black);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
+            color: var(--black);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 2rem;
+        }
+
+        .pricing-card {
+            background: var(--light-gray);
+            border: 3px solid var(--gold);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .pricing-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin: 1rem 0;
+        }
+
+        .price-note {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .form-section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--black);
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .google-form-container {
+            width: 100%;
+            height: 800px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .instructions {
+            background: #e8f4f8;
+            border-left: 4px solid var(--gold);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .instructions h3 {
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .instructions ul {
+            padding-left: 1.5rem;
+            color: #555;
+        }
+
+        .instructions li {
+            margin-bottom: 0.5rem;
+        }
+
+        .btn-return {
+            display: block;
+            width: 100%;
+            padding: 1.25rem;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
+            color: var(--black);
+            border: none;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 2rem;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn-return:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(236, 159, 104, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .price {
+                font-size: 2.5rem;
+            }
+
+            .google-form-container {
+                height: 900px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Request Legal Aid</h1>
+            <p>Professional Legal Support - LawScent Associates</p>
+        </div>
+
+        <div class="content">
+            <div class="pricing-card">
+                <h2>Legal Aid Service</h2>
+                <div class="price">FREE</div>
+                <p class="price-note">Professional legal assistance for eligible cases</p>
+            </div>
+
+            <div class="instructions">
+                <h3>How It Works</h3>
+                <ul>
+                    <li>Fill out the form with your legal issue details</li>
+                    <li>Our team will review your request within 24-48 hours</li>
+                    <li>If eligible, we'll schedule a consultation with our legal experts</li>
+                    <li>Receive guidance on next steps and legal options available</li>
+                    <li>Our support continues throughout your legal journey</li>
+                </ul>
+            </div>
+
+            <div class="form-section">
+                <h3 class="section-title">Legal Aid Request Form</h3>
+                <p style="margin-bottom: 1.5rem; text-align: center; color: #666;">
+                    Complete the form below to request legal aid services. 
+                    Please provide accurate information for proper evaluation of your case.
+                </p>
+                
+                <!-- Embedded Google Form -->
+                <div style="position: relative;">
+                    <iframe 
+                        class="google-form-container" 
+                        src="https://forms.gle/6NXFYgsVkpWMQjwe8"
+                        frameborder="0" 
+                        marginheight="0" 
+                        marginwidth="0"
+                        sandbox="allow-scripts allow-same-origin allow-popups allow-forms">
+                        Loading…
+                    </iframe>
+                    <div id="form-error" style="display: none; text-align: center; padding: 2rem; color: #666; background: #f8f9fa; border-radius: 10px; margin-top: 1rem;">
+                        <p>If the form doesn't load, please visit the form directly:</p>
+                        <a href="https://forms.gle/6NXFYgsVkpWMQjwe8" target="_blank" style="color: #D6AE6A; font-weight: bold; text-decoration: none;">
+                            Click here to access the legal aid request form
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <p style="text-align: center; color: #666; margin: 1.5rem 0;">
+                <strong>Important:</strong> After submitting your request, you will receive an email confirmation. 
+                Our legal team will review your case and contact you if additional information is needed.
+            </p>
+
+            <a href="index.html" class="btn-return">Return to Home</a>
+        </div>
+    </div>
+
+    <script>
+        // Check if iframe loads properly
+        window.addEventListener('load', function() {
+            const iframe = document.querySelector('.google-form-container');
+            const errorDiv = document.getElementById('form-error');
+            
+            // Set a timeout to show error message if iframe doesn't load
+            setTimeout(function() {
+                if (iframe && iframe.contentDocument && iframe.contentDocument.body) {
+                    // Form loaded successfully
+                    errorDiv.style.display = 'none';
+                } else {
+                    // Show fallback option
+                    errorDiv.style.display = 'block';
+                }
+            }, 5000); // 5 second timeout
+        });
+    </script>
+</body>
+</html>
