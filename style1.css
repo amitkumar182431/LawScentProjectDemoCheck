@@ -579,7 +579,7 @@ header .navbar a:nth-child(5) { animation-delay: 0.5s; }
 /* Mobile home background - different image for mobile devices */
 @media (max-width: 768px) {
     .home {
-        background: url(mwwe.png) no-repeat center center/cover;
+        background: url(mobileww.png) no-repeat center center/cover;
     }
 }
 
@@ -2703,13 +2703,12 @@ textarea:focus-visible {
     
     .home::before {
         /* Gradient flips to bottom-up for mobile */
-        background: linear-gradient(to top, 
+        /* background: linear-gradient(to top, 
             rgba(0, 0, 0, 1) 0%, 
             rgba(184, 134, 11, 0.5) 40%, 
-            transparent 100%);
+            transparent 100%); */
     }
     
     .wrapper h1 { font-size: 2.5rem; }
 }
-
 
