@@ -657,23 +657,30 @@
 
         .socials {
             margin-top: 20px;
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
-        .socials span {
-            display: inline-block;
+        .socials a {
+            display: inline-flex;
             width: 36px;
             height: 36px;
             border-radius: 50%;
             background: rgba(255,255,255,0.1);
             text-align: center;
             line-height: 36px;
-            margin-right: 12px;
+            align-items: center;
+            justify-content: center;
             font-weight: bold;
             transition: var(--transition);
-            cursor: pointer;
+            text-decoration: none;
+            color: var(--dark);
+            min-width: 36px;
         }
 
-        .socials span:hover {
+        .socials a:hover {
             background: var(--gold);
             transform: translateY(-3px);
             color: var(--dark);
@@ -1094,10 +1101,10 @@
                 </div>
                 <p>Your trusted legal partner. Providing comprehensive legal solutions for businesses and individuals.</p>
                 <div class="socials">
-                    <a href="https://www.facebook.com/law.scent/" aria-label="Facebook" title="Facebook">f</a>
+                     <a href="https://www.facebook.com/law.scent/" aria-label="Facebook" title="Facebook">f</a>
                    <a href="https://x.com/lawscent" aria-label="Twitter" title="Twitter">𝕏</a>
                    <a href="https://www.linkedin.com/company/lawscent/" aria-label="LinkedIn" title="LinkedIn">in</a>
-                 
+                   <a href="https://www.instagram.com/law.scent/" aria-label="Instagram" title="Instagram">📷</a>
                    <a href="https://www.youtube.com/@LawScent" aria-label="YouTube" title="YouTube">▶</a>
                
                 </div>
@@ -1266,5 +1273,3 @@
 
 </body>
 </html>
-
-
