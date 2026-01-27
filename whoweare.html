@@ -448,6 +448,194 @@
     box-shadow: 0 12px 20px rgba(0,0,0,0.15);
 }
 
+/* Image Cards Section Styling */
+.image-cards-section {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.cards-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 0 20px;
+}
+
+/* Desktop responsiveness */
+@media (min-width: 1200px) {
+    .cards-container {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1300px;
+    }
+    
+    .card {
+        min-width: 350px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .cards-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 991px) {
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    .card-content {
+        padding: 20px;
+    }
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    border: 1px solid #eee;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    border-color: var(--gold);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 25px 15px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    position: relative;
+}
+
+.card-content h3 {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    margin: 0;
+    font-weight: 600;
+    position: relative;
+    line-height: 1.4;
+}
+
+.card-content h3::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: var(--gold);
+}
+
+.card-content p {
+    color: #555;
+    line-height: 1.5;
+    font-size: 0.9rem;
+    margin: 10px 0 0 0;
+}
+
+/* Show descriptions only on mobile */
+@media (min-width: 769px) {
+    .card-desc {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-desc {
+        display: block;
+        margin-top: 10px;
+    }
+}
+
+/* Responsive styles for image cards */
+@media (max-width: 992px) {
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        padding: 0 15px;
+    }
+    
+    .card-content {
+        padding: 20px;
+    }
+    
+    .card-content h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .image-cards-section {
+        padding: 60px 15px;
+    }
+    
+    .cards-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 10px;
+    }
+    
+    .card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .card img {
+        height: 180px;
+    }
+    
+    .card-content {
+        padding: 20px 15px;
+    }
+    
+    .card-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .card-content p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-cards-section {
+        padding: 50px 10px;
+    }
+    
+    .card img {
+        height: 160px;
+    }
+    
+    .card-content {
+        padding: 15px;
+    }
+    
+    .card-content h3 {
+        font-size: 1.1rem;
+    }
+}
+
 /* Purpose section styling */
 .purpose {
     background: var(--light);
@@ -858,7 +1046,7 @@
             <nav class="navbar" id="navbar">
                 <!-- Desktop Menu -->
                 <div class="desktop-menu">
-                    
+                    <a href="whoweare.html">Who we are</a>
                   
                     <a href="#services">Our Thinking</a>
                     <a href="career.html">Careers</a>
@@ -867,7 +1055,7 @@
                 
                 <!-- Mobile Menu -->
                 <div class="mobile-menu">
-                   
+                    <a href="whoweare.html">Who we are</a>
                    
                     <a href="#services">Our Thinking</a>
                     <a href="career.html">Careers</a>
@@ -900,7 +1088,33 @@
             We believe law is more than protection; it is the foundation of progress.
             Every solution we deliver empowers our clients to move forward with confidence.
         </p>
-        <a href="knowmore.html" class="btn-know-more">Know More</a>
+    </div>
+</section>
+
+<!-- IMAGE CARDS SECTION -->
+<section class="image-cards-section">
+    <div class="cards-container">
+        <div class="card">
+            <img src="corporate-law.jpg" alt="Corporate Law Services">
+            <div class="card-content">
+                <h3>Corporate Law</h3>
+                <p class="card-desc">Expert guidance on business formation, compliance, and governance.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="contract-law.jpg" alt="Contract Law Services">
+            <div class="card-content">
+                <h3>Contract Law</h3>
+                <p class="card-desc">Drafting, reviewing, and negotiating business contracts and agreements.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="mergers-acquisition.jpg" alt="Mergers & Acquisition Services">
+            <div class="card-content">
+                <h3>Mergers & Acquisitions</h3>
+                <p class="card-desc">Legal support for business transactions and corporate restructuring.</p>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -954,10 +1168,12 @@
            </div>
                <p>Your trusted legal partner. Providing comprehensive legal solutions for businesses and individuals.</p>
                <div class="social-links">
-                   <a href="#" aria-label="Facebook">f</a>
-                   <a href="#" aria-label="Twitter">𝕏</a>
-                   <a href="#" aria-label="LinkedIn">in</a>
-                   <a href="#" aria-label="Instagram">📷</a>
+                                     <a href="https://www.facebook.com/law.scent/" aria-label="Facebook" title="Facebook">f</a>
+                   <a href="https://x.com/lawscent" aria-label="Twitter" title="Twitter">𝕏</a>
+                   <a href="https://www.linkedin.com/company/lawscent/" aria-label="LinkedIn" title="LinkedIn">in</a>
+                   <a href="https://www.instagram.com/law.scent/" aria-label="Instagram" title="Instagram">📷</a>
+                   <a href="https://www.youtube.com/@LawScent" aria-label="YouTube" title="YouTube">▶</a>
+              
                </div>
            </div>
            
@@ -965,8 +1181,8 @@
                <h4>Quick Links</h4>
                <ul>
                    <li><a href="#home">Home</a></li>
-                   <li><a href="#about">About Us</a></li>
-                   <li><a href="#services">Services</a></li>
+                   <li><a href="services.html">Services</a></li>
+                   <li><a href="whyus.html">Why Us</a></li>
                    
                </ul>
            </div>
