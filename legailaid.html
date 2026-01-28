@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1126,6 +1127,159 @@ footer a:hover{
     }
 }
 
+/* MEGA DROPDOWN MENU */
+.desktop-mega-dropdown {
+    position: static;
+}
+
+.mega-dropdown-menu {
+    position: fixed;
+    top: 100px;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    min-width: 100vw;
+    max-width: 100vw;
+    background: linear-gradient(to bottom, #1a1a1a, #0d0d0d);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    padding: 40px 5%;
+    display: none;
+    z-index: 1000;
+    height: auto;
+    max-height: 70vh;
+    overflow-y: auto;
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeInSlideDown 0.3s ease forwards;
+}
+
+@keyframes fadeInSlideDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.desktop-mega-dropdown:hover .mega-dropdown-menu,
+.desktop-mega-dropdown.active .mega-dropdown-menu {
+    display: block;
+}
+
+.mega-dropdown-content {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Left Column: Category List */
+.mega-dropdown-categories {
+    flex: 0 0 28%;
+    background: rgba(40, 40, 40, 0.8);
+    border-radius: 8px;
+    padding: 25px 0;
+    min-width: 250px;
+}
+
+.mega-category {
+    padding: 16px 25px;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-left: 3px solid transparent;
+}
+
+.mega-category:hover {
+    background: rgba(201, 162, 77, 0.15);
+    color: #c9a24d;
+    border-left-color: #c9a24d;
+    padding-left: 30px;
+}
+
+.arrow-indicator {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.mega-category:hover .arrow-indicator {
+    transform: translateX(5px);
+}
+
+/* Middle Column: Services List */
+.mega-dropdown-services-full {
+    flex: 1;
+    min-width: 300px;
+    padding-left: 40px;
+}
+
+.service-list-full {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 10px;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(12, auto);
+}
+
+.service-list-full:not(#corporate-services-full) {
+    display: none;
+}
+
+.service-item {
+    padding: 14px 15px;
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s ease;
+    font-size: 1rem;
+    border-radius: 4px;
+    color: #fff !important;
+}
+
+.service-item:hover {
+    color: #c9a24d;
+    background: rgba(201, 162, 77, 0.05);
+    padding-left: 20px;
+}
+
+/* Mobile responsive for menu dropdown */
+@media (max-width: 992px) {
+    .mega-dropdown-menu {
+        top: 80px;
+        padding: 25px 4%;
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+    }
+    
+    .mega-dropdown-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .mega-dropdown-categories {
+        flex: none;
+        width: 100%;
+        padding: 15px 0;
+    }
+    
+    .mega-category {
+        padding: 15px 20px;
+        border-left: none;
+        justify-content: space-between;
+    }
+    
+    .service-list-full {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        grid-auto-flow: column;
+        grid-template-rows: repeat(12, auto);
+    }
+}
+
 /* Mobile Navigation */
 @media(max-width:768px){
     .header{
@@ -1232,8 +1386,69 @@ footer a:hover{
     <nav class="navbar" id="navbar">
         <a href="index.html">HOME</a>
         <a href="whoweare.html">WHO WE ARE</a>
-        
-        <a href="legalaid.html"><strong>LEGAL AID</strong></a>
+        <div class="desktop-mega-dropdown">
+            <a href="#" class="mega-dropdown-toggle">WHAT WE DO</a>
+            <div class="mega-dropdown-menu">
+                <div class="mega-dropdown-content">
+                    <!-- Left Column: Category List -->
+                    <div class="mega-dropdown-categories">
+                        <div class="mega-category" data-target="corporate">
+                            <span class="category-text">Corporate & Business Law</span>
+                            <span class="arrow-indicator">›</span>
+                        </div>
+                        <div class="mega-category" data-target="dispute">
+                            <span class="category-text">Dispute Resolution</span>
+                            <span class="arrow-indicator">›</span>
+                        </div>
+                        <div class="mega-category" data-target="people">
+                            <span class="category-text">People Law</span>
+                            <span class="arrow-indicator">›</span>
+                        </div>
+                        <div class="mega-category" data-target="media">
+                            <span class="category-text">Media & Entertainment Law </span>
+                            <span class="arrow-indicator">›</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Services Section: Shows services dynamically -->
+                    <div class="mega-dropdown-services-full">
+                        <div class="service-list-full" id="corporate-services-full">
+                            <a href="service1.html" class="service-item">Competition & Anti-Trust Laws </a>
+                            <a href="service2.html" class="service-item">Consumer Protec on & Consumer Care </a>
+                            <a href="service3.html" class="service-item">Corporate Governance & Compliance</a>
+                            <a href="service4.html" class="service-item">Intellectual Property Rights (IPR)</a>
+                            <a href="service5.html" class="service-item">Real Estate & Infrastructure Laws</a>
+                            <a href="service6.html" class="service-item">Taxation & Advisory Services</a>
+                            <a href="service7.html" class="service-item">Labour, Employment & Management Laws</a>
+                            <a href="service8.html" class="service-item">Insolvency & Bankruptcy</a>
+                            <a href="service9.html" class="service-item">Contract Drafting & Vetting</a>
+                             <a href="service10.html" class="service-item">Unclaimed Assets Recovery</a>
+                            <a href="service11.html" class="service-item">Banking & Finance</a>                                    
+                            <a href="service12.html" class="service-item">Regulatory & Licensing Advisory</a>
+                        </div>
+                        <div class="service-list-full" id="dispute-services-full">
+                            <a href="service13.html" class="service-item">Litigation Services</a>
+                            <a href="service15.html" class="service-item">Arbitration & Alternative Dispute Resolution (ADR) </a>
+                          </div>
+                        <div class="service-list-full" id="people-services-full">
+                            <a href="service14.html" class="service-item">Family & Matrimonial Disputes</a>
+                            <a href="service16.html" class="service-item">Recovery Suits & Debt Matters </a>
+                            <a href="service17.html" class="service-item">Court Marriage & Marriage Registration </a>
+                            <a href="service18.html" class="service-item">Property Disputes & Title Issues</a>
+                            <a href="service19.html" class="service-item">Employment & Salary Disputes </a>
+                            <a href="service20.html" class="service-item">Divorce & Maintenance Cases</a>
+                            <a href="service21.html" class="service-item">Civil Litigation  </a>
+                            <a href="service22.html" class="service-item">Criminal Law Services</a>
+                        </div>
+                        <div class="service-list-full" id="media-services-full">
+                            <a href="service23.html" class="service-item">Media & Entertainment Law</a>
+                            <a href="service24.html" class="service-item">Media & Telecommunications</a>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="legailaid.html"><strong>LEGAL AID</strong></a>
     </nav>
 </header>
 
@@ -1454,6 +1669,60 @@ document.addEventListener('DOMContentLoaded', function() {
                 navbar.classList.remove('active');
             }
         });
+    }
+});
+
+// Add mega dropdown toggle functionality
+document.querySelector('.mega-dropdown-toggle').addEventListener('click', function(e) {
+    e.preventDefault();
+    const dropdown = this.closest('.desktop-mega-dropdown');
+    dropdown.classList.toggle('active');
+});
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function(event) {
+    const megaDropdown = document.querySelector('.desktop-mega-dropdown');
+    const isClickOnDropdown = megaDropdown && megaDropdown.contains(event.target);
+    
+    if (megaDropdown && !isClickOnDropdown && megaDropdown.classList.contains('active')) {
+        megaDropdown.classList.remove('active');
+    }
+});
+
+// Add mega dropdown functionality
+document.querySelectorAll('.mega-category').forEach(category => {
+    category.addEventListener('click', function() {
+        const target = this.getAttribute('data-target');
+        // Hide all service lists
+        document.querySelectorAll('.service-list-full').forEach(list => {
+            list.style.display = 'none';
+        });
+        // Show the targeted service list
+        document.getElementById(`${target}-services-full`).style.display = 'block';
+        
+        // Update active state
+        document.querySelectorAll('.mega-category').forEach(cat => {
+            cat.classList.remove('active');
+        });
+        this.classList.add('active');
+    });
+});
+
+// Initialize first category as active
+document.addEventListener('DOMContentLoaded', function() {
+    if(document.querySelector('.mega-category')) {
+        document.querySelector('.mega-category').classList.add('active');
+        // Show first category services
+        const firstTarget = document.querySelector('.mega-category').getAttribute('data-target');
+        if(firstTarget) {
+            document.querySelectorAll('.service-list-full').forEach(list => {
+                list.style.display = 'none';
+            });
+            const firstList = document.getElementById(`${firstTarget}-services-full`);
+            if(firstList) {
+                firstList.style.display = 'block';
+            }
+        }
     }
 });
 
