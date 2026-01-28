@@ -131,7 +131,7 @@
     content:'';
     position:absolute;
     inset:0;
-    background:linear-gradient(135deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.4) 100%);
+    background:linear-gradient(135deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.2) 100%);
 }
 .highlight::before {
     content: '';
@@ -140,7 +140,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 100%);
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%);
     z-index: 1;
 }
 
@@ -303,22 +303,14 @@
         min-height: auto;
     }
     
-    .desktop-heading {
-        display: none !important;
-    }
-    
-    .mobile-heading {
-        display: block !important;
+    /* Combined heading styles for mobile */
+    .highlight h2 {
         font-size: 24px;
         margin-bottom: 15px;
     }
     
-    .desktop-text {
-        display: none !important;
-    }
-    
-    .mobile-text {
-        display: block !important;
+    /* Combined text styles for mobile */
+    .highlight p {
         font-size: 13px;
         line-height: 1.7;
         margin-bottom: 20px;
@@ -649,7 +641,7 @@
     background-repeat: no-repeat;
     position: relative;
     background-attachment: scroll;
-    box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.6);
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.4);
 }
 
 .highlight::before {
@@ -659,7 +651,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.5) 100%);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.3) 100%);
     z-index: 1;
 }
 
@@ -674,18 +666,12 @@
 }
 
 .highlight h2 {
-    font-size: 34px;
+    /* font-size: 34px; */
     margin-bottom: 20px;
     color: #fff;
 }
 
-.desktop-heading {
-    display: block;
-}
-
-.mobile-heading {
-    display: none;
-}
+/* Heading is now unified for all devices */
 
 .highlight p {
     font-size: 15px;
@@ -694,13 +680,7 @@
     color: #fff;
 }
 
-.desktop-text {
-    display: block;
-}
-
-.mobile-text {
-    display: none;
-}
+/* Text is now unified for all devices */
 
 /* Button styling */
 .highlight button {
@@ -1137,11 +1117,8 @@
 <!-- HIGHLIGHT -->
 <section class="highlight">
     <div class="highlight-content">
-        <h2 class="desktop-heading">What makes LawScent, LawScent?</h2>
-        <h2 class="mobile-heading">LawScent Difference</h2>
-        <p class="desktop-text">
-
-            <br>
+        <h2>What makes LawScent, LawScent?</h2>
+        <p>
             Wherever you are, whatever challenge you face, LawScent stands beside you.
             We help individuals and companies find clarity in complexity and resolve
             legal challenges with confidence.
@@ -1149,10 +1126,6 @@
             At the heart of everything we do is one purpose — <strong>#ProtectingWhatMatters</strong>.
             We deliver solutions built on integrity, trust, and impact that protect,
             empower, and last.
-        </p>
-        <p class="mobile-text">
-            LawScent stands beside you. We help find clarity in complexity and resolve
-            legal challenges with confidence. Our purpose is #ProtectingWhatMatters.
         </p>
         <a href="knowmore.html" class="btn-know-more">Know More</a>
     </div>
