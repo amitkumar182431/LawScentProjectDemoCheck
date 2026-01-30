@@ -577,6 +577,40 @@
     }
 }
 
+/* Mobile responsive for menu dropdown */
+@media (max-width: 992px) {
+    .mega-dropdown-menu {
+        top: 80px;
+        padding: 25px 4%;
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+    }
+    
+    .mega-dropdown-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .mega-dropdown-categories {
+        flex: none;
+        width: 100%;
+        padding: 15px 0;
+    }
+    
+    .mega-category {
+        padding: 15px 20px;
+        border-left: none;
+        justify-content: space-between;
+    }
+    
+    .service-list-full {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        grid-auto-flow: column;
+        grid-template-rows: repeat(12, auto);
+    }
+}
+
 @media (max-width: 768px) {
     .image-cards-section {
         padding: 60px 15px;
@@ -908,62 +942,76 @@
 }
 
 .mega-dropdown-menu {
+    position: fixed;
+    top: 100px;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    min-width: 100vw;
+    max-width: 100vw;
+    background: linear-gradient(to bottom, #1a1a1a, #0d0d0d);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    padding: 40px 5%;
     display: none;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: white;
-    min-width: 1200px;
-    max-width: 90vw;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     z-index: 1000;
-    border-radius: 12px;
-    overflow: hidden;
-    animation: slideDownFade 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid #e2e8f0;
-    background: white;
-    margin-top: 8px;
+    height: auto;
+    max-height: 70vh;
+    overflow-y: auto;
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeInSlideDown 0.3s ease forwards;
 }
 
-.desktop-mega-dropdown:hover .mega-dropdown-menu {
+@keyframes fadeInSlideDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.desktop-mega-dropdown:hover .mega-dropdown-menu,
+.desktop-mega-dropdown.active .mega-dropdown-menu {
     display: block;
 }
 
 .mega-dropdown-content {
-    display: grid;
-    grid-template-columns: 30% 70%;
-    gap: 1px;
-    background: #e2e8f0;
-    padding: 1px;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
+/* Left Column: Category List */
 .mega-dropdown-categories {
-    background: white;
-    padding: 35px 30px;
+    flex: 0 0 28%;
+    background: rgba(40, 40, 40, 0.8);
+    border-radius: 8px;
+    padding: 25px 0;
+    min-width: 250px;
 }
 
 .mega-category {
-    padding: 12px 0;
-    color: #4a5568;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 700;
-    position: relative;
-    display: block;
-    cursor: pointer;
+    padding: 16px 25px;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     transition: all 0.3s ease;
+    cursor: pointer;
+    border-left: 3px solid transparent;
 }
 
-.mega-category.active,
 .mega-category:hover {
-    color: #e2bc79;
-    padding-left: 15px;
+    background: rgba(201, 162, 77, 0.15);
+    color: #c9a24d;
+    border-left-color: #c9a24d;
+    padding-left: 30px;
 }
 
 .arrow-indicator {
-    float: right;
+    font-size: 1.2rem;
     transition: transform 0.3s ease;
 }
 
@@ -972,32 +1020,37 @@
 }
 
 .mega-dropdown-services-full {
-    background: white;
-    padding: 35px 30px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+    flex: 1;
+    min-width: 300px;
+    padding-left: 40px;
 }
 
 .service-list-full {
-    min-height: 400px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 10px;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(12, auto);
+}
+
+.service-list-full:not(#corporate-services-full) {
+    display: none;
 }
 
 .service-item {
-    display: block;
-    padding: 10px 0 10px 15px;
-    color: #4a5568;
+    padding: 14px 15px;
     text-decoration: none;
-    font-size: 0.9rem;
-    transition: all 0.2s ease;
-    border-radius: 6px;
-    margin: 2px 0;
-    position: relative;
+    display: block;
+    transition: color 0.3s ease;
+    font-size: 1rem;
+    border-radius: 4px;
+    color: #fff !important;
 }
 
 .service-item:hover {
-    color: #e2bc79;
-    background: rgba(226, 188, 121, 0.08);
+    color: #c9a24d;
+    background: rgba(201, 162, 77, 0.05);
     padding-left: 20px;
 }
 
@@ -1026,16 +1079,79 @@
             <nav class="navbar" id="navbar">
                 <!-- Desktop Menu -->
                 <div class="desktop-menu">
-                                        
-                    <a href="#our-purpose">Our Purpose</a>
+                   
+                    <div class="desktop-mega-dropdown">
+                        <a href="#" class="mega-dropdown-toggle">WHAT WE DO</a>
+                        <div class="mega-dropdown-menu">
+                            <div class="mega-dropdown-content">
+                                <!-- Left Column: Category List -->
+                                <div class="mega-dropdown-categories">
+                                    <div class="mega-category" data-target="corporate">
+                                        <span class="category-text">Corporate & Business Law</span>
+                                        <span class="arrow-indicator">›</span>
+                                    </div>
+                                    <div class="mega-category" data-target="dispute">
+                                        <span class="category-text">Dispute Resolution</span>
+                                        <span class="arrow-indicator">›</span>
+                                    </div>
+                                    <div class="mega-category" data-target="people">
+                                        <span class="category-text">People Law</span>
+                                        <span class="arrow-indicator">›</span>
+                                    </div>
+                                    <div class="mega-category" data-target="media">
+                                        <span class="category-text">Media & Entertainment Law </span>
+                                        <span class="arrow-indicator">›</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Services Section: Shows services dynamically -->
+                                <div class="mega-dropdown-services-full">
+                                    <div class="service-list-full" id="corporate-services-full">
+                                        <a href="service1.html" class="service-item">Competition & Anti-Trust Laws </a>
+                                        <a href="service2.html" class="service-item">Consumer Protec on & Consumer Care </a>
+                                        <a href="service3.html" class="service-item">Corporate Governance & Compliance</a>
+                                        <a href="service4.html" class="service-item">Intellectual Property Rights (IPR)</a>
+                                        <a href="service5.html" class="service-item">Real Estate & Infrastructure Laws</a>
+                                        <a href="service6.html" class="service-item">Taxation & Advisory Services</a>
+                                        <a href="service7.html" class="service-item">Labour, Employment & Management Laws</a>
+                                        <a href="service8.html" class="service-item">Insolvency & Bankruptcy</a>
+                                        <a href="service9.html" class="service-item">Contract Drafting & Vetting</a>
+                                         <a href="service10.html" class="service-item">Unclaimed Assets Recovery</a>
+                                        <a href="service11.html" class="service-item">Banking & Finance</a>                                    
+                                        <a href="service12.html" class="service-item">Regulatory & Licensing Advisory</a>
+                                    </div>
+                                    <div class="service-list-full" id="dispute-services-full">
+                                        <a href="service13.html" class="service-item">Litigation Services</a>
+                                        <a href="service15.html" class="service-item">Arbitration & Alternative Dispute Resolution (ADR) </a>
+                                      </div>
+                                    <div class="service-list-full" id="people-services-full">
+                                        <a href="service14.html" class="service-item">Family & Matrimonial Disputes</a>
+                                        <a href="service16.html" class="service-item">Recovery Suits & Debt Matters </a>
+                                        <a href="service17.html" class="service-item">Court Marriage & Marriage Registration </a>
+                                        <a href="service18.html" class="service-item">Property Disputes & Title Issues</a>
+                                        <a href="service19.html" class="service-item">Employment & Salary Disputes </a>
+                                        <a href="service20.html" class="service-item">Divorce & Maintenance Cases</a>
+                                        <a href="service21.html" class="service-item">Civil Litigation  </a>
+                                        <a href="service22.html" class="service-item">Criminal Law Services</a>
+                                    </div>
+                                    <div class="service-list-full" id="media-services-full">
+                                        <a href="service23.html" class="service-item">Media & Entertainment Law</a>
+                                        <a href="service24.html" class="service-item">Media & Telecommunications</a>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#services">Our Thinking</a>
                     <a href="career.html">Careers</a>
                     <a href="legailaid.html">Legal Aid</a>
                 </div>
                 
                 <!-- Mobile Menu -->
                 <div class="mobile-menu">
-                   
-                    <a href="#our-purpose">Our Purpose</a>
+                 
+                    <a href="services.html">WHAT WE DO</a>
+                    <a href="#services">Our Thinking</a>
                     <a href="career.html">Careers</a>
                     <a href="legailaid.html">Legal Aid</a>
                 </div>
@@ -1168,11 +1284,11 @@
        
        <div class="footer-bottom">
            <p>&copy; 2026 LawScent. All rights reserved.</p>
-           <!-- <div class="footer-links">
+           <div class="footer-links">
                <a href="privacypolicy.html">Privacy Policy</a>
                <a href="termsofuse.html">Terms of Service</a>
                <a href="refundpolicy.html">Refund Policy</a>
-           </div> -->
+           </div>
        </div>
    </footer>
    
@@ -1207,6 +1323,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+});
+
+// Add mega dropdown toggle functionality
+document.querySelector('.mega-dropdown-toggle').addEventListener('click', function(e) {
+    e.preventDefault();
+    const dropdown = this.closest('.desktop-mega-dropdown');
+    dropdown.classList.toggle('active');
+});
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function(event) {
+    const megaDropdown = document.querySelector('.desktop-mega-dropdown');
+    const isClickOnDropdown = megaDropdown.contains(event.target);
+    
+    if (!isClickOnDropdown && megaDropdown.classList.contains('active')) {
+        megaDropdown.classList.remove('active');
+    }
 });
 
 // Add mega dropdown functionality
@@ -1249,6 +1382,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </body>
 </html>
-
-
 
