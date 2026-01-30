@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is Divorce? Complete Guide to Divorce Procedure and Types in India - LawScent</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --gold: #D6AE6A;
+            --dark-gold: #c49a58;
+            --white: #ffffff;
+            --black: #202022;
+            --dark-gray: #333333;
+            --light-gray: #f8f9fa;
+            --border: #e0e0e0;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
+            color: var(--black);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            background-attachment: fixed;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
+            color: var(--black);
+            padding: 4rem 2rem 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 5px solid var(--white);
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+            transform: rotate(30deg);
+            z-index: 1;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .article-category {
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--black);
+            padding: 0.4rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            text-shadow: 0 3px 6px rgba(0,0,0,0.2);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            background: linear-gradient(to right, var(--black), var(--dark-gray));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+            font-size: 1.1rem;
+        }
+
+        .article-date {
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .article-author {
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .article-stats {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+            justify-content: center;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .content {
+            padding: 2.5rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--dark-gold);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--gold);
+            transform: translateX(-3px);
+        }
+
+        .article-image {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .article-image:hover {
+            transform: scale(1.02);
+        }
+
+        .article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .article-image img:hover {
+            transform: scale(1.05);
+        }
+
+        .article-body {
+            line-height: 1.8;
+            color: var(--dark-gray);
+            font-size: 1.1rem;
+            position: relative;
+        }
+
+        .article-body p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--dark-gray);
+        }
+
+        .article-body h2 {
+            color: var(--dark-gold);
+            margin: 2rem 0 1rem 0;
+            font-size: 1.8rem;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .article-body h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 3px;
+        }
+
+        .article-body h3 {
+            color: var(--dark-gold);
+            margin: 1.5rem 0 1rem 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .article-body ul, .article-body ol {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+
+        .article-body li {
+            margin-bottom: 0.8rem;
+            line-height: 1.7;
+        }
+
+        .article-body blockquote {
+            border-left: 4px solid var(--gold);
+            padding: 1rem 1.5rem;
+            margin: 2rem 0;
+            background: var(--light-gray);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: var(--dark-gray);
+        }
+
+        .table-of-contents {
+            background: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border-left: 4px solid var(--gold);
+        }
+
+        .table-of-contents h3 {
+            color: var(--dark-gold);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .table-of-contents ul {
+            margin: 0;
+            padding-left: 1rem;
+        }
+
+        .table-of-contents li {
+            margin-bottom: 0.5rem;
+        }
+
+        .table-of-contents a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .table-of-contents a:hover {
+            color: var(--dark-gold);
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 2rem 0;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .tag {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(214, 174, 106, 0.4);
+        }
+
+        .read-more-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .related-posts {
+            margin-top: 2rem;
+        }
+
+        .related-posts h3 {
+            color: var(--dark-gold);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .related-post {
+            background: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--gold);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .related-post:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .related-post h4 {
+            color: var(--dark-gold);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .related-post a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .related-post a:hover {
+            color: var(--dark-gold);
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
+            color: var(--black);
+            padding: 40px 20px 20px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding-bottom: 20px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            color: var(--black);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 2px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 2px;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            font-size: 0.9rem;
+            color: rgba(0, 0, 0, 0.8);
+            text-decoration: none;
+            line-height: 1.6;
+            display: block;
+            margin-bottom: 8px;
+            transition: color 0.2s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--black);
+            font-weight: 600;
+        }
+
+        .contact-item {
+            margin-bottom: 12px;
+        }
+
+        .contact-item strong {
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+            justify-content: center;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--black);
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: rgba(0, 0, 0, 0.2);
+            transform: translateY(-3px) scale(1.1);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(0, 0, 0, 0.2);
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-bottom-links a {
+            color: rgba(0, 0, 0, 0.8);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--black);
+            text-decoration: underline;
+        }
+
+        .copy {
+            font-size: 0.85rem;
+            color: rgba(0, 0, 0, 0.8);
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+
+            .container {
+                margin: 0.5rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .content {
+                padding: 1.5rem;
+            }
+
+            .article-image {
+                height: 250px;
+            }
+
+            .article-body {
+                font-size: 1rem;
+            }
+
+            .header {
+                padding: 2rem 1rem 1.5rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-bottom-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.7rem;
+            }
+
+            .article-body h2 {
+                font-size: 1.5rem;
+            }
+
+            .article-body h3 {
+                font-size: 1.3rem;
+            }
+
+            .article-image {
+                height: 280px;
+            }
+
+            .footer-bottom-content {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <div class="article-category">Legal Guide</div>
+                <h1>What is Divorce? Complete Guide to Divorce Procedure and Types in India</h1>
+                <div class="article-meta">
+                    <span class="article-date">March 28, 2024</span>
+                    <span class="article-author">by lawscent</span>
+                </div>
+                <div class="article-stats">
+                    <div class="stat-item">18 min read</div>
+                    <div class="stat-item">Family Law</div>
+                    <div class="stat-item">Divorce Guide</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <a href="our thinking.html" class="back-link">↖ Back to Our Thinking</a>
+            
+            <div class="article-image">
+                <img src="b12.png" alt="Divorce Legal Process">
+            </div>
+
+            <div class="article-body">
+                <p>Divorce is a dissolution of marriage through a legal process by filing a petition in a court of law. When a court passes a divorce decree, it brings an end to the matrimonial alliance of spouses and therefore terminates all the marriage. Along with the separation of husband and wife, it also involves the division of property, assets, and the issue of custody of the child. Divorce procedures and laws in India vary with each religion.</p>
+
+                <div class="table-of-contents">
+                    <h3>Table of Contents</h3>
+                    <ul>
+                        <li><a href="#types-hindu-law">What are the types of divorce under Hindu law?</a></li>
+                        <li><a href="#irretrievable-breakdown">What is the concept of 'irretrievable breakdown of marriage'?</a></li>
+                        <li><a href="#contested-grounds">What are the grounds for obtaining a contested divorce?</a></li>
+                        <li><a href="#petition-filing">Where is the petition of divorce to be filed?</a></li>
+                        <li><a href="#mutual-consent-procedure">What is the procedure for mutual consent divorce in India?</a></li>
+                        <li><a href="#mutual-consent-documents">What are the documents required for a mutual consent divorce in India?</a></li>
+                        <li><a href="#contested-procedure">What is the procedure for a Contested Divorce in India?</a></li>
+                        <li><a href="#contested-documents">What are the documents required for a Contested Divorce in India?</a></li>
+                        <li><a href="#muslim-law">What are the grounds and procedures for a divorce under the Muslim Law in India?</a></li>
+                        <li><a href="#triple-talaq">Is triple talaq a valid form of divorce?</a></li>
+                        <li><a href="#muslim-documents">What are the documents required for a divorce under the Muslim Law in India?</a></li>
+                        <li><a href="#christian-law">What are the grounds and procedures for a Christian Divorce in India?</a></li>
+                        <li><a href="#christian-documents">What are the documents required for a Christian Divorce in India?</a></li>
+                        <li><a href="#parsi-law">What are the grounds and procedures for divorce under the Parsi Law in India?</a></li>
+                        <li><a href="#parsi-documents">What are the documents required for a divorce under the Parsi Law in India?</a></li>
+                        <li><a href="#withdrawal">Can a filed Divorce Petition be withdrawn?</a></li>
+                        <li><a href="#important-aspects">What are some important aspects of divorce?</a></li>
+                    </ul>
+                </div>
+
+                <h2 id="types-hindu-law">What are the types of divorce under Hindu law?</h2>
+                <p>Divorce under Hindu law is classified into two types:</p>
+
+                <h3>Mutual Divorce</h3>
+                <p>Under the Hindu Marriage Act, Mutual divorce is governed by Section 13-B. As the name suggests, in mutual divorce, both the parties i.e. husband and wife mutually agree and express their consent for peaceful separation. The husband and wife have to predetermine the issues relating to alimony and child custody if any. There are only two requirements for filing a mutual divorce, one is mutual consent and the other is that they have to live separately for at least one year.</p>
+
+                <h3>Contested Divorce</h3>
+                <p>When divorce is initiated by either spouse it is termed as a Contested Divorce. Section 13 of the Hindu Marriage Act, 1955 provides the grounds for filing a contested divorce, some of which are, cruelty, conversion of religion, unsound mind, communicable disease or either spouse is unheard of more than seven-year.</p>
+
+                <h2 id="irretrievable-breakdown">What is the concept of 'irretrievable breakdown of marriage'?</h2>
+                <p>Irretrievable breakdown of marriage simply means that the spouses are unable to live happily and comfortably together. When the relationship reaches an extent from where it is impossible to repair the marriage, it is termed is irretrievable breakdown of the marriage. Certain situations like there is no affection between the husband and the wife, the couple are living separately, there are frequent quarrels or either one of the spouses is having an extramarital affair, leading to the breakdown of the marriage.</p>
+
+                <blockquote>
+                    "As of now, there is no codified law that provides for the irretrievable breakdown of marriage as a ground for divorce. It is different from mutual consent divorce, as it does not depend on the volition of parties but is examined by the court whether the marriage can be saved or not based on facts and evidence."
+                </blockquote>
+
+                <p>The Supreme Court has observed "Divorce cannot be granted just on the grounds of irretrievable breakdown of the marriage if the party seeking divorce on this ground is himself or herself at fault. It can be granted in those cases where both the parties have leveled such allegations against each other that the marriage appears to be practically dead and the parties cannot live together."</p>
+
+                <h2 id="contested-grounds">What are the grounds for obtaining a contested divorce?</h2>
+                <p>Section 13 of the Hindu Marriage Act, 1955 expounds grounds on which contested divorce can be obtained.</p>
+
+                <h3>Adultery</h3>
+                <p>It is a criminal offense where either of the spouses is involved in sexual relations with someone out of the marriage.</p>
+
+                <h3>Cruelty</h3>
+                <p>It is defined as a willful act that can cause danger to body, limb, life or to mental health. It can include causing pain, abusing, torturing mentally or physically.</p>
+
+                <h3>Desertion</h3>
+                <p>When a spouse willfully abandons another without any intention of coming back, it is known as Desertion. Desertion for more than two years could be a valid ground for divorce.</p>
+
+                <h3>Religion Conversion</h3>
+                <p>In a Hindu marriage, if either of the spouses ceases to be a Hindu then it can be considered as a ground for divorce.</p>
+
+                <h3>Mental Disorder</h3>
+                <p>Mental disorder includes unsoundness of mind, mental illness, or such mental disorder which makes the person abnormally aggressive.</p>
+
+                <h3>Communicable Diseases and Leprosy</h3>
+                <p>Leprosy is a contagious and chronic disease that causes lesions on skins and nerve damage.</p>
+
+                <h3>Spouse not heard of</h3>
+                <p>If either of a spouse is not heard of for more than seven years, then it can be considered as a ground for divorce.</p>
+
+                <h3>Renunciation of the world</h3>
+                <p>Under the Hindu Law, the "Renunciation of the world" is a ground for divorce, if either of the spouses has renounced the world and has entered a holy order.</p>
+
+                <h2 id="petition-filing">Where is the petition of divorce to be filed?</h2>
+                <p>The divorce petition should be filed in the family court or district court having jurisdiction over the area where:</p>
+
+                <ul>
+                    <li>Either of the spouses resides</li>
+                    <li>Either of the spouses last resided together</li>
+                    <li>The marriage was solemnized</li>
+                </ul>
+
+                <h2 id="mutual-consent-procedure">What is the procedure for mutual consent divorce in India?</h2>
+                <p>The procedure for mutual consent divorce involves the following steps:</p>
+
+                <ol>
+                    <li><strong>Filing of Joint Petition:</strong> Both parties file a joint petition before the family court</li>
+                    <li><strong>Appearance of Parties:</strong> Both parties appear before the court along with witnesses</li>
+                    <li><strong>First Motion:</strong> Court examines the petition and passes the first motion order</li>
+                    <li><strong>Waiting Period:</strong> Mandatory 6-month cooling period (can be waived in special circumstances)</li>
+                    <li><strong>Second Motion:</strong> Parties appear again for the second motion</li>
+                    <li><strong>Final Decree:</strong> Court passes the final decree of divorce</li>
+                </ol>
+
+                <h2 id="mutual-consent-documents">What are the documents required for a mutual consent divorce in India?</h2>
+                <p>Following documents are required for mutual consent divorce:</p>
+
+                <ul>
+                    <li>Marriage certificate</li>
+                    <li>Address proof of both parties</li>
+                    <li>Passport size photographs</li>
+                    <li>Identity proof (Aadhaar, passport, driving license)</li>
+                    <li>Income certificates</li>
+                    <li>Property documents (if any)</li>
+                    <li>Child custody agreement (if applicable)</li>
+                    <li>Alimony agreement</li>
+                </ul>
+
+                <h2 id="contested-procedure">What is the procedure for a Contested Divorce in India?</h2>
+                <p>The contested divorce procedure includes:</p>
+
+                <ol>
+                    <li><strong>Filing of Petition:</strong> One spouse files divorce petition with grounds</li>
+                    <li><strong>Service of Notice:</strong> Court serves notice to the other spouse</li>
+                    <li><strong>Response:</strong> Respondent files reply to the petition</li>
+                    <li><strong>Evidence:</strong> Both parties present evidence and witnesses</li>
+                    <li><strong>Arguments:</strong> Lawyers present arguments before the court</li>
+                    <li><strong>Judgment:</strong> Court delivers the final judgment</li>
+                </ol>
+
+                <h2 id="contested-documents">What are the documents required for a Contested Divorce in India?</h2>
+                <p>Documents required for contested divorce:</p>
+
+                <ul>
+                    <li>Marriage certificate</li>
+                    <li>Proof of residence</li>
+                    <li>Evidence supporting the grounds for divorce</li>
+                    <li>Photographs and witness statements</li>
+                    <li>Medical certificates (if applicable)</li>
+                    <li>Financial documents</li>
+                    <li>Communication records (if relevant)</li>
+                </ul>
+
+                <h2 id="muslim-law">What are the grounds and procedures for a divorce under the Muslim Law in India?</h2>
+                <p>Under Muslim law, divorce can be obtained through:</p>
+
+                <h3>Talaq (by husband)</h3>
+                <ul>
+                    <li>Talaq-e-Ahsan (most proper form)</li>
+                    <li>Talaq-e-Hasan (proper form)</li>
+                    <li>Talaq-e-Biddat (irregular form)</li>
+                </ul>
+
+                <h3>Other forms</h3>
+                <ul>
+                    <li>Mubarat (mutual consent)</li>
+                    <li>Khula (initiated by wife)</li>
+                    <li>Judicial divorce under Dissolution of Muslim Marriages Act</li>
+                </ul>
+
+                <h2 id="triple-talaq">Is triple talaq a valid form of divorce?</h2>
+                <p>No, the Supreme Court of India has declared instant triple talaq unconstitutional in 2017. The Muslim Women (Protection of Rights on Marriage) Act, 2019 criminalizes instant triple talaq, making it punishable with up to three years imprisonment.</p>
+
+                <h2 id="muslim-documents">What are the documents required for a divorce under the Muslim Law in India?</h2>
+                <p>Required documents include:</p>
+
+                <ul>
+                    <li>Nikah Nama (marriage certificate)</li>
+                    <li>Identity proofs</li>
+                    <li>Address proofs</li>
+                    <li>Evidence supporting grounds for divorce</li>
+                    <li>Witness statements</li>
+                    <li>Financial documents</li>
+                </ul>
+
+                <h2 id="christian-law">What are the grounds and procedures for a Christian Divorce in India?</h2>
+                <p>Christian divorce is governed by the Indian Divorce Act, 1869. Grounds include:</p>
+
+                <ul>
+                    <li>Adultery</li>
+                    <li>Conversion to another religion</li>
+                    <li>Unsound mind</li>
+                    <li>Leprosy or communicable disease</li>
+                    <li>Desertion for two years</li>
+                    <li>Renunciation of world</li>
+                    <li>Presumption of death</li>
+                </ul>
+
+                <h2 id="christian-documents">What are the documents required for a Christian Divorce in India?</h2>
+                <p>Documents required:</p>
+
+                <ul>
+                    <li>Marriage certificate</li>
+                    <li>Baptism certificates</li>
+                    <li>Identity and address proofs</li>
+                    <li>Evidence supporting grounds</li>
+                    <li>Financial documents</li>
+                    <li>Witness statements</li>
+                </ul>
+
+                <h2 id="parsi-law">What are the grounds and procedures for divorce under the Parsi Law in India?</h2>
+                <p>Parsi divorce is governed by the Parsi Marriage and Divorce Act, 1936. Grounds include:</p>
+
+                <ul>
+                    <li>Adultery</li>
+                    <li>Conversion of religion</li>
+                    <li>Unsound mind</li>
+                    <li>Leprosy or communicable disease</li>
+                    <li>Desertion for two years</li>
+                    <li>Renunciation of world</li>
+                    <li>Presumption of death</li>
+                </ul>
+
+                <h2 id="parsi-documents">What are the documents required for a divorce under the Parsi Law in India?</h2>
+                <p>Required documents:</p>
+
+                <ul>
+                    <li>Marriage certificate</li>
+                    <li>Identity and address proofs</li>
+                    <li>Evidence supporting grounds</li>
+                    <li>Financial documents</li>
+                    <li>Witness statements</li>
+                    <li>Religious certificates</li>
+                </ul>
+
+                <h2 id="withdrawal">Can a filed Divorce Petition be withdrawn?</h2>
+                <p>Yes, a divorce petition can be withdrawn:</p>
+
+                <ul>
+                    <li>By filing an application for withdrawal before final decree</li>
+                    <li>By mutual consent of both parties</li>
+                    <li>By the court's permission in special circumstances</li>
+                    <li>Withdrawal is possible in both mutual and contested divorces</li>
+                </ul>
+
+                <h2 id="important-aspects">What are some important aspects of divorce?</h2>
+                <p>Key considerations in divorce proceedings:</p>
+
+                <h3>Child Custody</h3>
+                <ul>
+                    <li>Welfare of the child is paramount consideration</li>
+                    <li>Custody can be joint or sole</li>
+                    <li>Visitation rights for non-custodial parent</li>
+                    <li>Child support obligations</li>
+                </ul>
+
+                <h3>Alimony and Maintenance</h3>
+                <ul>
+                    <li>Interim maintenance during proceedings</li>
+                    <li>Permanent alimony after divorce</li>
+                    <li>Factors considered: income, living standards, needs</li>
+                    <li>Can be modified based on changed circumstances</li>
+                </ul>
+
+                <h3>Property Division</h3>
+                <ul>
+                    <li>Separate property vs. marital property</li>
+                    <li>Equitable distribution principles</li>
+                    <li>Documentation of assets and liabilities</li>
+                    <li>Valuation of properties</li>
+                </ul>
+
+                <h3>Legal Representation</h3>
+                <ul>
+                    <li>Importance of experienced family lawyer</li>
+                    <li>Understanding legal rights and obligations</li>
+                    <li>Proper documentation and evidence</li>
+                    <li>Negotiation and settlement strategies</li>
+                </ul>
+
+                <div class="tags">
+                    <span class="tag">Divorce</span>
+                    <span class="tag">Family Law</span>
+                    <span class="tag">Hindu Marriage Act</span>
+                    <span class="tag">Mutual Consent Divorce</span>
+                    <span class="tag">Contested Divorce</span>
+                    <span class="tag">Muslim Law</span>
+                    <span class="tag">Christian Divorce</span>
+                    <span class="tag">Parsi Law</span>
+                    <span class="tag">Legal Procedure</span>
+                    <span class="tag">Child Custody</span>
+                    <span class="tag">Alimony</span>
+                    <span class="tag">Property Division</span>
+                </div>
+
+                <div class="read-more-section">
+                    <h3>Related Legal Insights</h3>
+                    <div class="related-posts">
+                        <div class="related-post">
+                            <h4><a href="blog1.html">Chhattisgarh Lawyer Arrested in Shah Rukh Khan Death Threat Case</a></h4>
+                            <p>Exploring the implications of threats made by legal practitioners against public figures.</p>
+                        </div>
+                        <div class="related-post">
+                            <h4><a href="blog10.html">What is Court Marriage? Complete Guide</a></h4>
+                            <p>Comprehensive information about court marriage procedures in India.</p>
+                        </div>
+                        <div class="related-post">
+                            <h4><a href="blog4.html">Consumer Forum Orders Zomato to Pay ₹60,000</a></h4>
+                            <p>Consumer protection case highlighting digital commerce disputes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo-container">
+                    <img src="logcirc.png" alt="LawScent Logo" style="width: 80px; height: 80px; border-radius: 50%; margin-bottom: 1rem;">
+                </div>
+                <p>Your trusted legal partner for comprehensive corporate legal solutions.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/law.scent/" aria-label="Facebook" title="Facebook">f</a>
+                    <a href="https://x.com/lawscent" aria-label="Twitter" title="Twitter">𝕏</a>
+                    <a href="https://www.linkedin.com/company/lawscent/" aria-label="LinkedIn" title="LinkedIn">in</a>
+                    <a href="https://www.instagram.com/law.scent/" aria-label="Instagram" title="Instagram">📷</a>
+                    <a href="https://www.youtube.com/@LawScent" aria-label="YouTube" title="YouTube">▶</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="aboutus.html">About Us</a>
+                <a href="whyus.html">Why Us</a>
+                <a href="our thinking.html">Our Thinking</a>
+                <a href="career.html">Careers</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <div class="contact-item">
+                    <strong>Address:</strong><br>
+                    B-431, Sushant Lok Road<br>
+                    Gurugram, Haryana 122009
+                </div>
+                <div class="contact-item">
+                    <strong>Email:</strong><br>
+                    contact@lawscent.com
+                </div>
+                <div class="contact-item">
+                    <strong>Phone:</strong><br>
+                    (+91) 7618151701
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p class="copy">&copy; 2026 LawScent. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacypolicy.html">Privacy Policy</a>
+                    <a href="termsofuse.html">Terms of Use</a>
+                    <a href="refundpolicy.html">Refund Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supreme Court Upholds Order to Demolish Illegal Shiva Temple on Yamuna Floodplains - LawScent</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --gold: #D6AE6A;
+            --dark-gold: #c49a58;
+            --white: #ffffff;
+            --black: #202022;
+            --dark-gray: #333333;
+            --light-gray: #f8f9fa;
+            --border: #e0e0e0;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
+            color: var(--black);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            background-attachment: fixed;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
+            color: var(--black);
+            padding: 4rem 2rem 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 5px solid var(--white);
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+            transform: rotate(30deg);
+            z-index: 1;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .article-category {
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--black);
+            padding: 0.4rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            text-shadow: 0 3px 6px rgba(0,0,0,0.2);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            background: linear-gradient(to right, var(--black), var(--dark-gray));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+            font-size: 1.1rem;
+        }
+
+        .article-date {
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .article-author {
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .article-stats {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+            justify-content: center;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .content {
+            padding: 2.5rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--dark-gold);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--gold);
+            transform: translateX(-3px);
+        }
+
+        .article-image {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .article-image:hover {
+            transform: scale(1.02);
+        }
+
+        .article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .article-image img:hover {
+            transform: scale(1.05);
+        }
+
+        .article-body {
+            line-height: 1.8;
+            color: var(--dark-gray);
+            font-size: 1.1rem;
+            position: relative;
+        }
+
+        .article-body p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--dark-gray);
+        }
+
+        .article-body h2 {
+            color: var(--dark-gold);
+            margin: 2rem 0 1rem 0;
+            font-size: 1.8rem;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .article-body h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 3px;
+        }
+
+        .article-body h3 {
+            color: var(--dark-gold);
+            margin: 1.5rem 0 1rem 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .article-body ul, .article-body ol {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+
+        .article-body li {
+            margin-bottom: 0.8rem;
+            line-height: 1.7;
+        }
+
+        .article-body blockquote {
+            border-left: 4px solid var(--gold);
+            padding: 1rem 1.5rem;
+            margin: 2rem 0;
+            background: var(--light-gray);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: var(--dark-gray);
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 2rem 0;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .tag {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(214, 174, 106, 0.4);
+        }
+
+        .read-more-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .related-posts {
+            margin-top: 2rem;
+        }
+
+        .related-posts h3 {
+            color: var(--dark-gold);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .related-post {
+            background: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--gold);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .related-post:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .related-post h4 {
+            color: var(--dark-gold);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .related-post a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .related-post a:hover {
+            color: var(--dark-gold);
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
+            color: var(--black);
+            padding: 40px 20px 20px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding-bottom: 20px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            color: var(--black);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 2px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 2px;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            font-size: 0.9rem;
+            color: rgba(0, 0, 0, 0.8);
+            text-decoration: none;
+            line-height: 1.6;
+            display: block;
+            margin-bottom: 8px;
+            transition: color 0.2s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--black);
+            font-weight: 600;
+        }
+
+        .contact-item {
+            margin-bottom: 12px;
+        }
+
+        .contact-item strong {
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+            justify-content: center;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--black);
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: rgba(0, 0, 0, 0.2);
+            transform: translateY(-3px) scale(1.1);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(0, 0, 0, 0.2);
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-bottom-links a {
+            color: rgba(0, 0, 0, 0.8);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--black);
+            text-decoration: underline;
+        }
+
+        .copy {
+            font-size: 0.85rem;
+            color: rgba(0, 0, 0, 0.8);
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+
+            .container {
+                margin: 0.5rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .content {
+                padding: 1.5rem;
+            }
+
+            .article-image {
+                height: 280px;
+            }
+
+            .article-body {
+                font-size: 1rem;
+            }
+
+            .header {
+                padding: 2rem 1rem 1.5rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-bottom-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.7rem;
+            }
+
+            .article-body h2 {
+                font-size: 1.5rem;
+            }
+
+            .article-body h3 {
+                font-size: 1.3rem;
+            }
+
+            .article-image {
+                height: 200px;
+            }
+
+            .footer-bottom-content {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <div class="article-category">News</div>
+                <h1>Supreme Court Upholds Order to Demolish Illegal Shiva Temple on Yamuna Floodplains</h1>
+                <div class="article-meta">
+                    <span class="article-date">June 16, 2024</span>
+                    <span class="article-author">by lawscent</span>
+                </div>
+                <div class="article-stats">
+                    <div class="stat-item">7 min read</div>
+                    <div class="stat-item">Environmental Law</div>
+                    <div class="stat-item">Supreme Court</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <a href="our thinking.html" class="back-link">↖ Back to Our Thinking</a>
+            
+            <div class="article-image">
+                <img src="b7.png" alt="Yamuna River">
+            </div>
+
+            <div class="article-body">
+                <p>The Supreme Court has approved the demolition of an illegal Shiva Temple situated on the Yamuna floodplains. This decision upholds the May 29 ruling by the Delhi High Court, which had ordered the temple's demolition. The High Court had argued that the Yamuna riverbed and floodplain should be free from encroachments and illegal constructions, suggesting that Lord Shiva would be happier with a cleaner environment.</p>
+
+                <h2>Supreme Court Hearing Details</h2>
+                <p>A vacation bench of Justices PV Sanjay Kumar and Augustine George Masih addressed the case, confirming that the High Court's decision was sound and questioning the legitimacy of the petition filed by the Akhada Samiti.</p>
+
+                <blockquote>
+                    "Justice Kumar pointed out that having an akhada (a traditional place of wrestling) on floodplains is inappropriate and noted that akhadas are typically associated with Lord Hanuman, not Lord Shiva."
+                </blockquote>
+
+                <h2>Delhi High Court's Reasoning</h2>
+                <p>The Delhi High Court had emphasized that Lord Shiva does not need the court's protection, but rather, it is people who seek his protection and blessings. The court dismissed the petitioner's attempt to involve Lord Shiva directly in the legal matter, labeling it as a tactic to shift the focus of the dispute.</p>
+
+                <p>The court stated that the real concern is the encroachment on the Yamuna floodplains, and clearing these areas would be more respectful to Lord Shiva. Justice Dharmesh Sharma of the Delhi High Court further noted that just because daily prayers and special events are held at the temple, this does not make it a place of public significance.</p>
+
+                <h2>Legal and Environmental Grounds</h2>
+                <p>There was no evidence to prove that the temple was a public entity rather than a private one managed by the petitioner society. Based on these findings, the High Court had granted the Delhi Development Authority (DDA) the right to demolish the unauthorized structure.</p>
+
+                <p>The petitioner society and its members were instructed not to interfere with the demolition process. The court's decision was based on:</p>
+
+                <ul>
+                    <li>Environmental protection of Yamuna floodplains</li>
+                    <li>Legal precedents on encroachment violations</li>
+                    <li>Public interest in maintaining natural waterways</li>
+                    <li>Urban planning and development regulations</li>
+                    <li>Religious freedom within constitutional boundaries</li>
+                </ul>
+
+                <h2>Supreme Court's Final Decision</h2>
+                <p>Unhappy with the High Court's ruling, the Akhada Samiti appealed to the Supreme Court, but their appeal was dismissed. The Supreme Court's decision reinforces the High Court's stance that removing illegal structures from the Yamuna floodplains is necessary for environmental and legal reasons.</p>
+
+                <h2>Key Legal Principles Established</h2>
+                <p>This ruling establishes several important legal principles:</p>
+
+                <ol>
+                    <li><strong>Environmental precedence over religious structures:</strong> Natural conservation takes priority over unauthorized constructions</li>
+                    <li><strong>Public vs. private religious spaces:</strong> Daily worship does not automatically confer public status</li>
+                    <li><strong>Legal boundaries of religious practice:</strong> Religious activities cannot violate environmental and urban laws</li>
+                    <li><strong>State authority in urban planning:</strong> Government agencies can enforce demolition orders for illegal constructions</li>
+                    <li><strong>Court's role in religious matters:</strong> Judicial review extends to religious structures that violate legal norms</li>
+                </ol>
+
+                <h2>Broader Environmental Implications</h2>
+                <p>The decision has significant implications for environmental law and urban planning:</p>
+
+                <ul>
+                    <li><strong>Yamuna river protection:</strong> Reinforces efforts to maintain the ecological integrity of the river</li>
+                    <li><strong>Floodplain management:</strong> Establishes precedent for protecting flood-prone areas</li>
+                    <li><strong>Urban development regulation:</strong> Strengthens enforcement of building codes and zoning laws</li>
+                    <li><strong>Environmental jurisprudence:</strong> Advances the "polluter pays" principle in religious contexts</li>
+                    <li><strong>Public interest litigation:</strong> Encourages legal action for environmental protection</li>
+                </ul>
+
+                <h2>Religious and Cultural Considerations</h2>
+                <p>The court's approach balanced religious sentiments with legal obligations:</p>
+
+                <ul>
+                    <li>Acknowledged the spiritual significance of the temple to devotees</li>
+                    <li>Emphasized that Lord Shiva represents protection of natural elements</li>
+                    <li>Recognized that environmental protection aligns with religious values</li>
+                    <li>Maintained that religious practice cannot override constitutional duties</li>
+                    <li>Preserved the right to worship while requiring compliance with laws</li>
+                </ul>
+
+                <h2>Implementation and Enforcement</h2>
+                <p>The ruling provides clear directives for implementation:</p>
+
+                <ul>
+                    <li>DDA authorized to proceed with demolition</li>
+                    <li>Petitioner prohibited from interfering with the process</li>
+                    <li>Timeline for compliance to be established</li>
+                    <li>Provision for alternative worship arrangements</li>
+                    <li>Monitoring mechanism for future compliance</li>
+                </ul>
+
+                <h2>Precedent for Future Cases</h2>
+                <p>This decision sets important precedents for similar cases involving:</p>
+
+                <ul>
+                    <li>Religious structures in environmentally sensitive areas</li>
+                    <li>Encroachment on public land and water bodies</li>
+                    <li>Balancing religious freedom with environmental protection</li>
+                    <li>Urban planning in metropolitan areas</li>
+                    <li>Public interest litigation for environmental causes</li>
+                </ul>
+
+                <h2>Public and Legal Response</h2>
+                <p>The ruling has generated various responses:</p>
+
+                <ul>
+                    <li><strong>Environmental groups:</strong> Welcomed as victory for river conservation</li>
+                    <li><strong>Legal community:</strong> Praised for clear legal reasoning</li>
+                    <li><strong>Religious organizations:</strong> Mixed reactions on balancing faith and law</li>
+                    <li><strong>Urban planners:</strong> Supported for strengthening development regulations</li>
+                    <li><strong>Public interest advocates:</strong> Viewed as model for environmental jurisprudence</li>
+                </ul>
+
+                <div class="tags">
+                    <span class="tag">Delhi Development Authority</span>
+                    <span class="tag">delhi high court</span>
+                    <span class="tag">Hindu Temple</span>
+                    <span class="tag">Supreme court of India</span>
+                    <span class="tag">Temple Demolition</span>
+                    <span class="tag">Yamuna River</span>
+                    <span class="tag">Environmental Law</span>
+                    <span class="tag">Urban Planning</span>
+                    <span class="tag">Religious Freedom</span>
+                    <span class="tag">Public Interest</span>
+                </div>
+
+                <div class="read-more-section">
+                    <h3>Related Legal Insights</h3>
+                    <div class="related-posts">
+                        <div class="related-post">
+                            <h4><a href="blog1.html">Chhattisgarh Lawyer Arrested in Shah Rukh Khan Death Threat Case</a></h4>
+                            <p>Exploring the implications of threats made by legal practitioners against public figures.</p>
+                        </div>
+                        <div class="related-post">
+                            <h4><a href="blog2.html">Supreme Court Questions Lawyer's Side Job as Journalist Violates Bar Rules</a></h4>
+                            <p>Understanding professional conduct rules for legal practitioners in India.</p>
+                        </div>
+                        <div class="related-post">
+                            <h4><a href="blog3.html">Delhi High Court Tells Lawyers to Avoid Delays in Bail Cases</a></h4>
+                            <p>New guidelines for legal practitioners and court proceedings efficiency.</p>
+                        </div>
+                        <div class="related-post">
+                            <h4><a href="blog4.html">Consumer Forum Orders Zomato to Pay ₹60,000 for Failed Order</a></h4>
+                            <p>Consumer protection case highlighting digital commerce disputes.</p>
+                        </div>
+                        <div class="related-post">
+                            <h4><a href="blog5.html">Legal Profession is a Service, Not a Business: Madras High Court Ruling</a></h4>
+                            <p>Court decision on lawyer advertising and professional ethics.</p>
+                        </div>
+                        <div class="related-post">
+                            <h4><a href="blog6.html">India to Open Legal Market to UK Lawyers</a></h4>
+                            <p>BCI announces amended rules for foreign legal practitioners by end of July.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo-container">
+                    <img src="logcirc.png" alt="LawScent Logo" style="width: 80px; height: 80px; border-radius: 50%; margin-bottom: 1rem;">
+                </div>
+                <p>Your trusted legal partner for comprehensive corporate legal solutions.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/law.scent/" aria-label="Facebook" title="Facebook">f</a>
+                    <a href="https://x.com/lawscent" aria-label="Twitter" title="Twitter">𝕏</a>
+                    <a href="https://www.linkedin.com/company/lawscent/" aria-label="LinkedIn" title="LinkedIn">in</a>
+                    <a href="https://www.instagram.com/law.scent/" aria-label="Instagram" title="Instagram">📷</a>
+                    <a href="https://www.youtube.com/@LawScent" aria-label="YouTube" title="YouTube">▶</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="aboutus.html">About Us</a>
+                <a href="whyus.html">Why Us</a>
+                <a href="our thinking.html">Our Thinking</a>
+                <a href="career.html">Careers</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <div class="contact-item">
+                    <strong>Address:</strong><br>
+                    B-431, Sushant Lok Road<br>
+                    Gurugram, Haryana 122009
+                </div>
+                <div class="contact-item">
+                    <strong>Email:</strong><br>
+                    contact@lawscent.com
+                </div>
+                <div class="contact-item">
+                    <strong>Phone:</strong><br>
+                    (+91) 7618151701
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p class="copy">&copy; 2026 LawScent. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacypolicy.html">Privacy Policy</a>
+                    <a href="termsofuse.html">Terms of Use</a>
+                    <a href="refundpolicy.html">Refund Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

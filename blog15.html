@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tariffs, Trade Wars, and Talks: Shift from Multilateralism to Bilateralism - LawScent</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --gold: #D6AE6A;
+            --dark-gold: #c49a58;
+            --white: #ffffff;
+            --black: #202022;
+            --dark-gray: #333333;
+            --light-gray: #f8f9fa;
+            --border: #e0e0e0;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
+            color: var(--black);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            background-attachment: fixed;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
+            color: var(--black);
+            padding: 4rem 2rem 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 5px solid var(--white);
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+            transform: rotate(30deg);
+            z-index: 1;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .article-category {
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--black);
+            padding: 0.4rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            text-shadow: 0 3px 6px rgba(0,0,0,0.2);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            background: linear-gradient(to right, var(--black), var(--dark-gray));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+            font-size: 1.1rem;
+        }
+
+        .article-date {
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .article-author {
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .article-stats {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+            justify-content: center;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .content {
+            padding: 2.5rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--dark-gold);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--gold);
+            transform: translateX(-3px);
+        }
+
+        .article-image {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .article-image:hover {
+            transform: scale(1.02);
+        }
+
+        .article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .article-image img:hover {
+            transform: scale(1.05);
+        }
+
+        .article-body {
+            line-height: 1.8;
+            color: var(--dark-gray);
+            font-size: 1.1rem;
+            position: relative;
+        }
+
+        .article-body p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--dark-gray);
+        }
+
+        .article-body h2 {
+            color: var(--dark-gold);
+            margin: 2rem 0 1rem 0;
+            font-size: 1.8rem;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .article-body h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 3px;
+        }
+
+        .article-body h3 {
+            color: var(--dark-gold);
+            margin: 1.5rem 0 1rem 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .article-body ul, .article-body ol {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+
+        .article-body li {
+            margin-bottom: 0.8rem;
+            line-height: 1.7;
+        }
+
+        .article-body blockquote {
+            border-left: 4px solid var(--gold);
+            padding: 1rem 1.5rem;
+            margin: 2rem 0;
+            background: var(--light-gray);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: var(--dark-gray);
+        }
+
+        .table-of-contents {
+            background: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border-left: 4px solid var(--gold);
+        }
+
+        .table-of-contents h3 {
+            color: var(--dark-gold);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .table-of-contents ul {
+            margin: 0;
+            padding-left: 1rem;
+        }
+
+        .table-of-contents li {
+            margin-bottom: 0.5rem;
+        }
+
+        .table-of-contents a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .table-of-contents a:hover {
+            color: var(--dark-gold);
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 2rem 0;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .tag {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(214, 174, 106, 0.4);
+        }
+
+        .read-more-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .related-posts {
+            margin-top: 2rem;
+        }
+
+        .related-posts h3 {
+            color: var(--dark-gold);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .related-post {
+            background: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--gold);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .related-post:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .related-post h4 {
+            color: var(--dark-gold);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .related-post a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .related-post a:hover {
+            color: var(--dark-gold);
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
+            color: var(--black);
+            padding: 40px 20px 20px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding-bottom: 20px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            color: var(--black);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 2px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 2px;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            font-size: 0.9rem;
+            color: rgba(0, 0, 0, 0.8);
+            text-decoration: none;
+            line-height: 1.6;
+            display: block;
+            margin-bottom: 8px;
+            transition: color 0.2s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--black);
+            font-weight: 600;
+        }
+
+        .contact-item {
+            margin-bottom: 12px;
+        }
+
+        .contact-item strong {
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+            justify-content: center;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--black);
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: rgba(0, 0, 0, 0.2);
+            transform: translateY(-3px) scale(1.1);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(0, 0, 0, 0.2);
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-bottom-links a {
+            color: rgba(0, 0, 0, 0.8);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--black);
+            text-decoration: underline;
+        }
+
+        .copy {
+            font-size: 0.85rem;
+            color: rgba(0, 0, 0, 0.8);
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+
+            .container {
+                margin: 0.5rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .content {
+                padding: 1.5rem;
+            }
+
+            .article-image {
+                height: 250px;
+            }
+
+            .article-body {
+                font-size: 1rem;
+            }
+
+            .header {
+                padding: 2rem 1rem 1.5rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-bottom-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.7rem;
+            }
+
+            .article-body h2 {
+                font-size: 1.5rem;
+            }
+
+            .article-body h3 {
+                font-size: 1.3rem;
+            }
+
+            .article-image {
+                height: 280px;
+            }
+
+            .footer-bottom-content {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <div class="article-category">International Trade Law</div>
+                <h1>Tariffs, Trade Wars, and Talks: Shift from Multilateralism to Bilateralism</h1>
+                <div class="article-meta">
+                    <span class="article-date">March 8, 2024</span>
+                    <span class="article-author">by lawscent</span>
+                </div>
+                <div class="article-stats">
+                    <div class="stat-item">25 min read</div>
+                    <div class="stat-item">Trade Law</div>
+                    <div class="stat-item">WTO</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <a href="our thinking.html" class="back-link">↖ Back to Our Thinking</a>
+            
+            <div class="article-image">
+                <img src="b15.png" alt="International Trade">
+            </div>
+
+            <div class="article-body">
+                <p>The Trump 2.0 administration's 'reciprocal' tariffs wreaked havoc on the global economy. The move not only challenged the already fragile rules-based multilateral trading system but also caused market fluctuations and fear of supply chain disruptions, triggering uncertainty across businesses. While much has been written about these tariffs, this piece focuses on the bigger problem caused by such unilateral governmental actions, which represent a shift from multilateralism to bilateralism in international trade.</p>
+
+                <p>This piece first discusses the international trade law implications of such tariff increases and the responses to them from other countries, while capturing the latest developments. It then examines how similar tariff increases by the Trump 1.0 administration played out in the past and highlights how the US uses tariffs to bring countries to the negotiating table, further eroding the relevance of the World Trade Organization (WTO).</p>
+
+                <div class="table-of-contents">
+                    <h3>Table of Contents</h3>
+                    <ul>
+                        <li><a href="#reciprocal-tariffs">Reciprocal Tariffs and Responses</a></li>
+                        <li><a href="#wto-implications">WTO Law Implications</a></li>
+                        <li><a href="#bound-rates">Bound Rates and GATT Provisions</a></li>
+                        <li><a href="#mfn-principle">Most Favoured Nation Principle</a></li>
+                        <li><a href="#historical-context">Historical Context: Trump 1.0 Era</a></li>
+                        <li><a href="#negotiation-strategy">US Negotiation Strategy</a></li>
+                        <li><a href="#wto-relevance">Erosion of WTO Relevance</a></li>
+                        <li><a href="#global-impact">Global Economic Impact</a></li>
+                        <li><a href="#future-outlook">Future Outlook</a></li>
+                    </ul>
+                </div>
+
+                <h2 id="reciprocal-tariffs">Reciprocal Tariffs and Responses</h2>
+                <p>The announcement on 2 April 2025, dubbed 'Liberation Day' by President Donald Trump, was not the first time tariffs the US government increased tariffs citing 'national security'. This time, however, they were supposed to be 'reciprocal'. But the tariffs allotted to the countries had nothing to do with the rates applied by them on the US and were instead calculated on the basis of the goods trade deficit the countries had with it.</p>
+
+                <p>Economists questioned the methodology adopted for the tariffs and found flaws in the calculation. In addition to the 'reciprocal' tariffs, a base-level tariff of 10% was also applicable on all countries.</p>
+
+                <h2 id="wto-implications">WTO Law Implications</h2>
+                <p>Under WTO law, the maximum level of tariff that a country may apply on a good is referred to as the 'bound rate'. Countries agree on these bound rates after years of negotiations, and this is reflected in their Schedule of Concessions.</p>
+
+                <blockquote>
+                    "Undoubtedly, Trump's reciprocal tariffs—which envisage their unilateral increase beyond the bound rates and differential application of tariffs on the same product originating from different countries—is inconsistent with WTO rules."
+                </blockquote>
+
+                <h2 id="bound-rates">Bound Rates and GATT Provisions</h2>
+                <p>Specifically, Article II of the General Agreement on Tariffs and Trade (GATT) 1994 mandates that a WTO member cannot raise its tariffs for a product beyond the bound rate. A country may modify it but only through a process of renegotiation under GATT Article XXVIII, which requires:</p>
+
+                <ul>
+                    <li>Notification to the WTO</li>
+                    <li>Compensation to the countries most affected</li>
+                    <li>Alternate tariffs or other mutually agreed upon concessions</li>
+                </ul>
+
+                <h2 id="mfn-principle">Most Favoured Nation Principle</h2>
+                <p>Additionally, Article I of the GATT mandates that the tariff rate applied for a product be the same across all countries, known as the most favoured nation (MFN) principle. WTO members usually apply tariffs below their bound rates.</p>
+
+                <p>The Trump administration's approach of applying different tariff rates to the same products based on trade deficits with different countries directly violates this fundamental MFN principle, creating a discriminatory trading system.</p>
+
+                <h2 id="historical-context">Historical Context: Trump 1.0 Era</h2>
+                <p>The Trump 1.0 administration similarly implemented sweeping tariff policies that disrupted global trade patterns:</p>
+
+                <ul>
+                    <li>Steel and aluminum tariffs under Section 232 of the Trade Expansion Act</li>
+                    <li>China-specific tariffs under Section 301 investigations</li>
+                    <li>Automotive sector tariffs threatening global supply chains</li>
+                    <li>Agricultural product tariffs affecting farming communities worldwide</li>
+                </ul>
+
+                <p>These measures led to retaliatory tariffs from trading partners, creating a cycle of trade conflicts that affected global economic stability.</p>
+
+                <h2 id="negotiation-strategy">US Negotiation Strategy</h2>
+                <p>The United States has increasingly used tariffs as a negotiating tool to:</p>
+
+                <ul>
+                    <li>Force trading partners to renegotiate bilateral agreements</li>
+                    <li>Extract concessions on market access and regulatory issues</li>
+                    <li>Address perceived trade imbalances through unilateral pressure</li>
+                    <li>Bypass multilateral frameworks in favor of bilateral arrangements</li>
+                </ul>
+
+                <p>This approach treats international trade law as a tactical instrument rather than a binding legal framework, undermining the predictability that global commerce requires.</p>
+
+                <h2 id="wto-relevance">Erosion of WTO Relevance</h2>
+                <p>The shift toward bilateralism has significantly weakened the WTO's role in several ways:</p>
+
+                <h3>Institutional Challenges</h3>
+                <ul>
+                    <li>Paralysis of the Appellate Body due to US blocking appointments</li>
+                    <li>Reduced confidence in multilateral dispute resolution mechanisms</li>
+                    <li>Increased reliance on bilateral and regional trade agreements</li>
+                    <li>Weakening of the rules-based trading system</li>
+                </ul>
+
+                <h3>Legal Precedent Concerns</h3>
+                <ul>
+                    <li>Normalization of unilateral trade actions</li>
+                    <li>Precedent-setting for other nations to follow suit</li>
+                    <li>Erosion of legal certainty in international trade</li>
+                    <li>Fragmentation of global trading rules</li>
+                </ul>
+
+                <h2 id="global-impact">Global Economic Impact</h2>
+                <p>The tariff wars have created widespread economic disruption:</p>
+
+                <h3>Market Uncertainty</h3>
+                <ul>
+                    <li>Volatility in global stock markets</li>
+                    <li>Disrupted supply chain planning</li>
+                    <li>Reduced business investment due to policy uncertainty</li>
+                    <li>Currency fluctuations affecting international transactions</li>
+                </ul>
+
+                <h3>Supply Chain Disruptions</h3>
+                <ul>
+                    <li>Rerouting of manufacturing to avoid tariff costs</li>
+                    <li>Increased logistics and compliance costs</li>
+                    <li>Just-in-time inventory system vulnerabilities</li>
+                    <li>Regionalization of supply chains at higher costs</li>
+                </ul>
+
+                <h3>Developing Country Impact</h3>
+                <ul>
+                    <li>Reduced export opportunities for emerging economies</li>
+                    <li>Loss of preferential trade arrangement benefits</li>
+                    <li>Increased difficulty in attracting foreign investment</li>
+                    <li>Compromised development goals due to trade barriers</li>
+                </ul>
+
+                <h2 id="future-outlook">Future Outlook</h2>
+                <p>The trajectory of international trade law faces several critical challenges:</p>
+
+                <h3>Potential Scenarios</h3>
+                <ul>
+                    <li><strong>Continued Bilateralism:</strong> More countries adopting unilateral trade measures</li>
+                    <li><strong>WTO Reform:</strong> Potential restructuring of multilateral trade governance</li>
+                    <li><strong>Regional Integration:</strong> Increased focus on regional trade blocs</li>
+                    <li><strong>Hybrid Approach:</strong> Combination of multilateral and bilateral frameworks</li>
+                </ul>
+
+                <h3>Legal Adaptation Needs</h3>
+                <ul>
+                    <li>Modernization of WTO rules for digital economy</li>
+                    <li>Enhanced enforcement mechanisms</li>
+                    <li>Better dispute resolution processes</li>
+                    <li>Improved flexibility for developing nations</li>
+                </ul>
+
+                <h3>Business Strategy Implications</h3>
+                <ul>
+                    <li>Need for diversified supply chain strategies</li>
+                    <li>Enhanced risk management for trade policy changes</li>
+                    <li>Greater emphasis on regulatory compliance</li>
+                    <li>Investment in alternative market development</li>
+                </ul>
+
+                <blockquote>
+                    "The fundamental challenge lies not merely in the tariffs themselves, but in what they represent: a systematic departure from the post-war consensus that international cooperation and rules-based systems serve global prosperity better than competitive nationalism and unilateral action."
+                </blockquote>
+
+                <h3>Key Recommendations</h3>
+                <p>For policymakers and businesses navigating this evolving landscape:</p>
+
+                <ul>
+                    <li><strong>Strengthen Multilateral Institutions:</strong> Reform rather than abandon existing frameworks</li>
+                    <li><strong>Enhance Transparency:</strong> Clear communication of trade policy intentions</li>
+                    <li><strong>Develop Contingency Plans:</strong> Prepare for various trade scenario outcomes</li>
+                    <li><strong>Promote Dialogue:</strong> Encourage diplomatic solutions over economic coercion</li>
+                    <li><strong>Balance Interests:</strong> Consider both domestic and international stakeholder impacts</li>
+                </ul>
+
+                <div class="tags">
+                    <span class="tag">International Trade Law</span>
+                    <span class="tag">WTO</span>
+                    <span class="tag">Tariffs</span>
+                    <span class="tag">Trade Wars</span>
+                    <span class="tag">Multilateralism</span>
+                    <span class="tag">Bilateralism</span>
+                    <span class="tag">GATT</span>
+                    <span class="tag">Trade Policy</span>
+                    <span class="tag">Economic Diplomacy</span>
+                    <span class="tag">US Trade Policy</span>
+                    <span class="tag">Global Economy</span>
+                    <span class="tag">Trade Disputes</span>
+                </div>
+
+                <div class="read-more-section">
+                    <h3>Related Legal Insights</h3>
+                    <div class="related-posts">
+                        <div class="related-post">
+                            <h4><a href="blog1.html">Chhattisgarh Lawyer Arrested in Shah Rukh Khan Death Threat Case</a></h4>
+                            <p>Exploring the implications of threats made by legal practitioners against public figures.</p>
+                        </div>
+                        <div class="related-post">
+                            <h4><a href="blog9.html">Tax Carve Outs Under Bilateral Investment Protection Agreements</a></h4>
+                            <p>Comprehensive legal analysis of international investment treaties.</p>
+                        </div>
+                        <div class="related-post">
+                            <h4><a href="blog14.html">Industrial Disputes Act (1947)</a></h4>
+                            <p>Lay-off, retrenchment, and closure provisions under Indian labor law.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo-container">
+                    <img src="logcirc.png" alt="LawScent Logo" style="width: 80px; height: 80px; border-radius: 50%; margin-bottom: 1rem;">
+                </div>
+                <p>Your trusted legal partner for comprehensive corporate legal solutions.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/law.scent/" aria-label="Facebook" title="Facebook">f</a>
+                    <a href="https://x.com/lawscent" aria-label="Twitter" title="Twitter">𝕏</a>
+                    <a href="https://www.linkedin.com/company/lawscent/" aria-label="LinkedIn" title="LinkedIn">in</a>
+                    <a href="https://www.instagram.com/law.scent/" aria-label="Instagram" title="Instagram">📷</a>
+                    <a href="https://www.youtube.com/@LawScent" aria-label="YouTube" title="YouTube">▶</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="aboutus.html">About Us</a>
+                <a href="whyus.html">Why Us</a>
+                <a href="our thinking.html">Our Thinking</a>
+                <a href="career.html">Careers</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <div class="contact-item">
+                    <strong>Address:</strong><br>
+                    B-431, Sushant Lok Road<br>
+                    Gurugram, Haryana 122009
+                </div>
+                <div class="contact-item">
+                    <strong>Email:</strong><br>
+                    contact@lawscent.com
+                </div>
+                <div class="contact-item">
+                    <strong>Phone:</strong><br>
+                    (+91) 7618151701
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p class="copy">&copy; 2026 LawScent. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacypolicy.html">Privacy Policy</a>
+                    <a href="termsofuse.html">Terms of Use</a>
+                    <a href="refundpolicy.html">Refund Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is Court Marriage? - Complete Guide to Court Marriages in India - LawScent</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --gold: #D6AE6A;
+            --dark-gold: #c49a58;
+            --white: #ffffff;
+            --black: #202022;
+            --dark-gray: #333333;
+            --light-gray: #f8f9fa;
+            --border: #e0e0e0;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
+            color: var(--black);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            background-attachment: fixed;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
+            color: var(--black);
+            padding: 4rem 2rem 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 5px solid var(--white);
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+            transform: rotate(30deg);
+            z-index: 1;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .article-category {
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--black);
+            padding: 0.4rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            text-shadow: 0 3px 6px rgba(0,0,0,0.2);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            background: linear-gradient(to right, var(--black), var(--dark-gray));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+            font-size: 1.1rem;
+        }
+
+        .article-date {
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .article-author {
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .article-stats {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+            justify-content: center;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .content {
+            padding: 2.5rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--dark-gold);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--gold);
+            transform: translateX(-3px);
+        }
+
+        .article-image {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .article-image:hover {
+            transform: scale(1.02);
+        }
+
+        .article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .article-image img:hover {
+            transform: scale(1.05);
+        }
+
+        .article-body {
+            line-height: 1.8;
+            color: var(--dark-gray);
+            font-size: 1.1rem;
+            position: relative;
+        }
+
+        .article-body p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--dark-gray);
+        }
+
+        .article-body h2 {
+            color: var(--dark-gold);
+            margin: 2rem 0 1rem 0;
+            font-size: 1.8rem;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .article-body h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 3px;
+        }
+
+        .article-body h3 {
+            color: var(--dark-gold);
+            margin: 1.5rem 0 1rem 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .article-body ul, .article-body ol {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+
+        .article-body li {
+            margin-bottom: 0.8rem;
+            line-height: 1.7;
+        }
+
+        .article-body blockquote {
+            border-left: 4px solid var(--gold);
+            padding: 1rem 1.5rem;
+            margin: 2rem 0;
+            background: var(--light-gray);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: var(--dark-gray);
+        }
+
+        .table-of-contents {
+            background: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border-left: 4px solid var(--gold);
+        }
+
+        .table-of-contents h3 {
+            color: var(--dark-gold);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .table-of-contents ul {
+            margin: 0;
+            padding-left: 1rem;
+        }
+
+        .table-of-contents li {
+            margin-bottom: 0.5rem;
+        }
+
+        .table-of-contents a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .table-of-contents a:hover {
+            color: var(--dark-gold);
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 2rem 0;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .tag {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(214, 174, 106, 0.4);
+        }
+
+        .read-more-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .related-posts {
+            margin-top: 2rem;
+        }
+
+        .related-posts h3 {
+            color: var(--dark-gold);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .related-post {
+            background: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--gold);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .related-post:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .related-post h4 {
+            color: var(--dark-gold);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .related-post a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .related-post a:hover {
+            color: var(--dark-gold);
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
+            color: var(--black);
+            padding: 40px 20px 20px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding-bottom: 20px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            color: var(--black);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 2px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 2px;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            font-size: 0.9rem;
+            color: rgba(0, 0, 0, 0.8);
+            text-decoration: none;
+            line-height: 1.6;
+            display: block;
+            margin-bottom: 8px;
+            transition: color 0.2s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--black);
+            font-weight: 600;
+        }
+
+        .contact-item {
+            margin-bottom: 12px;
+        }
+
+        .contact-item strong {
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+            justify-content: center;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--black);
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: rgba(0, 0, 0, 0.2);
+            transform: translateY(-3px) scale(1.1);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(0, 0, 0, 0.2);
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-bottom-links a {
+            color: rgba(0, 0, 0, 0.8);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--black);
+            text-decoration: underline;
+        }
+
+        .copy {
+            font-size: 0.85rem;
+            color: rgba(0, 0, 0, 0.8);
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+
+            .container {
+                margin: 0.5rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .content {
+                padding: 1.5rem;
+            }
+
+            .article-image {
+                height: 250px;
+            }
+
+            .article-body {
+                font-size: 1rem;
+            }
+
+            .header {
+                padding: 2rem 1rem 1.5rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-bottom-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.7rem;
+            }
+
+            .article-body h2 {
+                font-size: 1.5rem;
+            }
+
+            .article-body h3 {
+                font-size: 1.3rem;
+            }
+
+            .article-image {
+                height: 280px;
+            }
+
+            .footer-bottom-content {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <div class="article-category">Legal Guide</div>
+                <h1>What is Court Marriage? Complete Guide to Court Marriages in India</h1>
+                <div class="article-meta">
+                    <span class="article-date">April 8, 2024</span>
+                    <span class="article-author">by lawscent</span>
+                </div>
+                <div class="article-stats">
+                    <div class="stat-item">15 min read</div>
+                    <div class="stat-item">Family Law</div>
+                    <div class="stat-item">Marriage Guide</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <a href="our thinking.html" class="back-link">↖ Back to Our Thinking</a>
+            
+            <div class="article-image">
+                <img src="b10.png" alt="Court Marriage">
+            </div>
+
+            <div class="article-body">
+                <p>Court Marriages in India are different than the traditional marriages as they take place in court in the presence of a marriage officer without following the traditions in a customary marriage. Court Marriage is the solemnization of marriage between a male and a female who are eligible to marry without any bar to their caste, religion, or creed in front of a court, a marriage officer and in the presence of three witnesses. You don't need a customary celebration to solemnize your wedding in case of Court Marriage in India.</p>
+
+                <div class="table-of-contents">
+                    <h3>Table of Contents</h3>
+                    <ul>
+                        <li><a href="#what-is-court-marriage">What is Court Marriage?</a></li>
+                        <li><a href="#pre-requisites">Pre-requisites of a Court Marriage</a></li>
+                        <li><a href="#conditions">Conditions for Court Marriage</a></li>
+                        <li><a href="#documents">Documents required for a Court Marriage</a></li>
+                        <li><a href="#witnesses">Who can be a witness to the Court Marriage?</a></li>
+                        <li><a href="#witness-documents">Documents of the witnesses required for Court Marriage</a></li>
+                        <li><a href="#procedure">Procedure for Court Marriage</a></li>
+                        <li><a href="#fees">Fees involved in Court Marriage</a></li>
+                        <li><a href="#timeline">Total time taken for the entire Court Marriage procedure</a></li>
+                        <li><a href="#india-procedure">What is the procedure of Court Marriage in India?</a></li>
+                        <li><a href="#marriage-certificate">Do I need to apply for a marriage certificate after the conclusion of the Court Marriage?</a></li>
+                        <li><a href="#exceptions">Exceptions and other Conditions in the Procedure for Court Marriage</a></li>
+                        <li><a href="#uniformity">Uniformity of Court Marriage Process in India</a></li>
+                        <li><a href="#issues">Issues pertaining to Court Marriage</a></li>
+                    </ul>
+                </div>
+
+                <h2 id="what-is-court-marriage">What is Court Marriage?</h2>
+                <p>In India, court marriage, as defined under the Special Marriage Act of 1954, offers a streamlined and legally binding avenue for couples seeking to formalize their union. This form of marriage transcends caste, creed, or religious barriers and is solemnized under the supervision of a designated marriage officer, typically a Sub-Registrar empowered by the Act.</p>
+
+                <p>The only condition is, it should satisfy the essentials of the Special Marriage Act, 1954. It is not necessary for Court Marriage that both parties be of Indian nationality. Court Marriage can be done by an Indian national with a foreign national. Persons of two different gender either belonging to the same or different religion can marry each other through Court Marriage.</p>
+
+                <p>Court Marriage is in accordance with the provisions of the Special Marriage Act, 1954 which provides for:</p>
+                
+                <ul>
+                    <li>The Court Marriage age</li>
+                    <li>The prerequisite condition of Court Marriage</li>
+                    <li>Documents required for a Court Marriage</li>
+                    <li>Court Marriage fees and the entire Court Marriage process</li>
+                </ul>
+
+                <h2 id="pre-requisites">Pre-requisites of a Court Marriage</h2>
+                <p>Before proceeding with a court marriage, couples must ensure they meet the following basic requirements:</p>
+
+                <ul>
+                    <li>Both parties must be at least 21 years old (18 for women in some cases)</li>
+                    <li>Neither party should have a subsisting marriage</li>
+                    <li>Parties should be mentally capable of giving valid consent</li>
+                    <li>Parties should not be within prohibited degrees of relationship</li>
+                    <li>Parties should not be sapindas of each other</li>
+                </ul>
+
+                <h2 id="conditions">Conditions for Court Marriage</h2>
+                <p>The Special Marriage Act, 1954 specifies the following conditions:</p>
+
+                <ol>
+                    <li><strong>Age Requirements:</strong> Male - 21 years, Female - 18 years</li>
+                    <li><strong>Marital Status:</strong> Neither party should have a spouse living at the time of marriage</li>
+                    <li><strong>Mental Capacity:</strong> Both parties should be capable of giving valid consent</li>
+                    <li><strong>Prohibited Relationships:</strong> Parties should not be within prohibited degrees of relationship</li>
+                    <li><strong>Sapinda Relationship:</strong> Parties should not be sapindas of each other</li>
+                </ol>
+
+                <h2 id="documents">Documents required for a Court Marriage</h2>
+                <p>The following documents are typically required for court marriage:</p>
+
+                <ul>
+                    <li><strong>Proof of Age:</strong> Birth certificate, school certificate, or passport</li>
+                    <li><strong>Proof of Residence:</strong> Passport, ration card, electricity bill, or rental agreement</li>
+                    <li><strong>Passport Size Photographs:</strong> Recent photographs of both parties</li>
+                    <li><strong>Proof of Marital Status:</strong> Divorce decree or death certificate of previous spouse (if applicable)</li>
+                    <li><strong>Identity Proof:</strong> Aadhaar card, passport, or driving license</li>
+                    <li><strong>Passport (for foreign nationals):</strong> Valid passport and visa</li>
+                </ul>
+
+                <h2 id="witnesses">Who can be a witness to the Court Marriage?</h2>
+                <p>Three witnesses are required for a court marriage. These witnesses should be:</p>
+
+                <ul>
+                    <li>Adults (18 years or above)</li>
+                    <li>Residents of India</li>
+                    <li>Known to both the bride and groom</li>
+                    <li>Carrying valid identification documents</li>
+                </ul>
+
+                <h2 id="witness-documents">Documents of the witnesses required for Court Marriage</h2>
+                <p>Each witness must provide:</p>
+
+                <ul>
+                    <li>Passport size photographs</li>
+                    <li>Identity proof (Aadhaar card, passport, or driving license)</li>
+                    <li>Address proof</li>
+                    <li>Age proof</li>
+                </ul>
+
+                <h2 id="procedure">Procedure for Court Marriage</h2>
+                <p>The court marriage procedure involves the following steps:</p>
+
+                <h3>Step 1: Notice Filing</h3>
+                <p>File a notice of intended marriage with the Marriage Registrar having jurisdiction over the area where at least one party has resided for more than 30 days.</p>
+
+                <h3>Step 2: Notice Publication</h3>
+                <p>The notice is published at the office of the Marriage Registrar for 30 days to allow for any objections.</p>
+
+                <h3>Step 3: Objection Period</h3>
+                <p>During the 30-day period, any person can file an objection to the marriage.</p>
+
+                <h3>Step 4: Marriage Ceremony</h3>
+                <p>If no objections are received, or if objections are resolved, the marriage ceremony is conducted in the presence of the Marriage Registrar and three witnesses.</p>
+
+                <h2 id="fees">Fees involved in Court Marriage</h2>
+                <p>The fees for court marriage typically include:</p>
+
+                <ul>
+                    <li>Notice filing fee: ₹100-₹500 (varies by state)</li>
+                    <li>Marriage certificate fee: ₹50-₹100</li>
+                    <li>Additional charges for photocopies and other documents</li>
+                </ul>
+
+                <h2 id="timeline">Total time taken for the entire Court Marriage procedure</h2>
+                <p>The complete court marriage process typically takes:</p>
+
+                <ul>
+                    <li>Notice filing and publication: 30 days</li>
+                    <li>Marriage ceremony after notice period: 1-2 days</li>
+                    <li>Total time: Approximately 30-35 days</li>
+                </ul>
+
+                <h2 id="india-procedure">What is the procedure of Court Marriage in India?</h2>
+                <p>The detailed procedure includes:</p>
+
+                <ol>
+                    <li>Both parties visit the Sub-Registrar office</li>
+                    <li>Submit application form with required documents</li>
+                    <li>Pay the prescribed fees</li>
+                    <li>Wait for 30-day notice period</li>
+                    <li>Attend the marriage ceremony with witnesses</li>
+                    <li>Sign the marriage register</li>
+                    <li>Receive the marriage certificate</li>
+                </ol>
+
+                <h2 id="marriage-certificate">Do I need to apply for a marriage certificate after the conclusion of the Court Marriage?</h2>
+                <p>No, the marriage certificate is issued immediately after the completion of the court marriage ceremony by the Marriage Registrar. This certificate serves as legal proof of marriage.</p>
+
+                <h2 id="exceptions">Exceptions and other Conditions in the Procedure for Court Marriage</h2>
+                <p>Certain exceptions to the standard procedure include:</p>
+
+                <ul>
+                    <li>Exemption from 30-day notice period in urgent cases</li>
+                    <li>Special provisions for inter-religious marriages</li>
+                    <li>Provisions for marriages involving foreign nationals</li>
+                    <li>Exemptions for certain categories of persons</li>
+                </ul>
+
+                <h2 id="uniformity">Uniformity of Court Marriage Process in India</h2>
+                <p>While the basic framework remains consistent across India under the Special Marriage Act, 1954, there may be slight variations in:</p>
+
+                <ul>
+                    <li>Fee structures across different states</li>
+                    <li>Processing times</li>
+                    <li>Additional documentation requirements</li>
+                    <li>Local procedural variations</li>
+                </ul>
+
+                <h2 id="issues">Issues pertaining to Court Marriage</h2>
+                <p>Common challenges and issues include:</p>
+
+                <h3>Legal Challenges</h3>
+                <ul>
+                    <li>Objections from family members</li>
+                    <li>Documentation complications</li>
+                    <li>Jurisdictional issues</li>
+                    <li>Religious conversion controversies</li>
+                </ul>
+
+                <h3>Practical Considerations</h3>
+                <ul>
+                    <li>Language barriers in documentation</li>
+                    <li>Availability of appointment slots</li>
+                    <li>Coordination of witness availability</li>
+                    <li>Understanding of legal procedures</li>
+                </ul>
+
+                <h3>Benefits of Court Marriage</h3>
+                <ul>
+                    <li>Legal recognition without religious ceremonies</li>
+                    <li>Freedom from caste and religious restrictions</li>
+                    <li>Simplified documentation process</li>
+                    <li>Quick legal formalization</li>
+                    <li>Recognition for inter-religious couples</li>
+                </ul>
+
+                <div class="tags">
+                    <span class="tag">Court Marriage</span>
+                    <span class="tag">Special Marriage Act 1954</span>
+                    <span class="tag">Marriage Law</span>
+                    <span class="tag">Family Law</span>
+                    <span class="tag">Legal Procedure</span>
+                    <span class="tag">Marriage Certificate</span>
+                    <span class="tag">Indian Marriage</span>
+                    <span class="tag">Legal Guide</span>
+                    <span class="tag">Marriage Documentation</span>
+                    <span class="tag">Inter-religious Marriage</span>
+                </div>
+
+                <div class="read-more-section">
+                    <h3>Related Legal Insights</h3>
+                    <div class="related-posts">
+                        <div class="related-post">
+                            <h4><a href="blog1.html">Chhattisgarh Lawyer Arrested in Shah Rukh Khan Death Threat Case</a></h4>
+                            <p>Exploring the implications of threats made by legal practitioners against public figures.</p>
+                        </div>
+                        <div class="related-post">
+                            <h4><a href="blog4.html">Consumer Forum Orders Zomato to Pay ₹60,000 for Failed Order</a></h4>
+                            <p>Consumer protection case highlighting digital commerce disputes.</p>
+                        </div>
+                        <div class="related-post">
+                            <h4><a href="blog9.html">Tax Carve Outs Under Bilateral Investment Protection Agreements</a></h4>
+                            <p>Comprehensive legal analysis of international investment treaties.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo-container">
+                    <img src="logcirc.png" alt="LawScent Logo" style="width: 80px; height: 80px; border-radius: 50%; margin-bottom: 1rem;">
+                </div>
+                <p>Your trusted legal partner for comprehensive corporate legal solutions.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/law.scent/" aria-label="Facebook" title="Facebook">f</a>
+                    <a href="https://x.com/lawscent" aria-label="Twitter" title="Twitter">𝕏</a>
+                    <a href="https://www.linkedin.com/company/lawscent/" aria-label="LinkedIn" title="LinkedIn">in</a>
+                    <a href="https://www.instagram.com/law.scent/" aria-label="Instagram" title="Instagram">📷</a>
+                    <a href="https://www.youtube.com/@LawScent" aria-label="YouTube" title="YouTube">▶</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="aboutus.html">About Us</a>
+                <a href="whyus.html">Why Us</a>
+                <a href="our thinking.html">Our Thinking</a>
+                <a href="career.html">Careers</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <div class="contact-item">
+                    <strong>Address:</strong><br>
+                    B-431, Sushant Lok Road<br>
+                    Gurugram, Haryana 122009
+                </div>
+                <div class="contact-item">
+                    <strong>Email:</strong><br>
+                    contact@lawscent.com
+                </div>
+                <div class="contact-item">
+                    <strong>Phone:</strong><br>
+                    (+91) 7618151701
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p class="copy">&copy; 2026 LawScent. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacypolicy.html">Privacy Policy</a>
+                    <a href="termsofuse.html">Terms of Use</a>
+                    <a href="refundpolicy.html">Refund Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

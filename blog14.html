@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrial Disputes Act (1947): Lay-off, Retrenchment, and Closure - LawScent</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --gold: #D6AE6A;
+            --dark-gold: #c49a58;
+            --white: #ffffff;
+            --black: #202022;
+            --dark-gray: #333333;
+            --light-gray: #f8f9fa;
+            --border: #e0e0e0;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
+            color: var(--black);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            background-attachment: fixed;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
+            color: var(--black);
+            padding: 4rem 2rem 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 5px solid var(--white);
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+            transform: rotate(30deg);
+            z-index: 1;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .article-category {
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--black);
+            padding: 0.4rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            text-shadow: 0 3px 6px rgba(0,0,0,0.2);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            background: linear-gradient(to right, var(--black), var(--dark-gray));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+            font-size: 1.1rem;
+        }
+
+        .article-date {
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .article-author {
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .article-stats {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+            justify-content: center;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .content {
+            padding: 2.5rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--dark-gold);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--gold);
+            transform: translateX(-3px);
+        }
+
+        .article-image {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .article-image:hover {
+            transform: scale(1.02);
+        }
+
+        .article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .article-image img:hover {
+            transform: scale(1.05);
+        }
+
+        .article-body {
+            line-height: 1.8;
+            color: var(--dark-gray);
+            font-size: 1.1rem;
+            position: relative;
+        }
+
+        .article-body p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--dark-gray);
+        }
+
+        .article-body h2 {
+            color: var(--dark-gold);
+            margin: 2rem 0 1rem 0;
+            font-size: 1.8rem;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .article-body h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 3px;
+        }
+
+        .article-body h3 {
+            color: var(--dark-gold);
+            margin: 1.5rem 0 1rem 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .article-body ul, .article-body ol {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+
+        .article-body li {
+            margin-bottom: 0.8rem;
+            line-height: 1.7;
+        }
+
+        .article-body blockquote {
+            border-left: 4px solid var(--gold);
+            padding: 1rem 1.5rem;
+            margin: 2rem 0;
+            background: var(--light-gray);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: var(--dark-gray);
+        }
+
+        .table-of-contents {
+            background: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border-left: 4px solid var(--gold);
+        }
+
+        .table-of-contents h3 {
+            color: var(--dark-gold);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .table-of-contents ul {
+            margin: 0;
+            padding-left: 1rem;
+        }
+
+        .table-of-contents li {
+            margin-bottom: 0.5rem;
+        }
+
+        .table-of-contents a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .table-of-contents a:hover {
+            color: var(--dark-gold);
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 2rem 0;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .tag {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(214, 174, 106, 0.4);
+        }
+
+        .read-more-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .related-posts {
+            margin-top: 2rem;
+        }
+
+        .related-posts h3 {
+            color: var(--dark-gold);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .related-post {
+            background: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--gold);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .related-post:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .related-post h4 {
+            color: var(--dark-gold);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .related-post a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .related-post a:hover {
+            color: var(--dark-gold);
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
+            color: var(--black);
+            padding: 40px 20px 20px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding-bottom: 20px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            color: var(--black);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 2px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 2px;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            font-size: 0.9rem;
+            color: rgba(0, 0, 0, 0.8);
+            text-decoration: none;
+            line-height: 1.6;
+            display: block;
+            margin-bottom: 8px;
+            transition: color 0.2s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--black);
+            font-weight: 600;
+        }
+
+        .contact-item {
+            margin-bottom: 12px;
+        }
+
+        .contact-item strong {
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+            justify-content: center;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--black);
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: rgba(0, 0, 0, 0.2);
+            transform: translateY(-3px) scale(1.1);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(0, 0, 0, 0.2);
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-bottom-links a {
+            color: rgba(0, 0, 0, 0.8);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--black);
+            text-decoration: underline;
+        }
+
+        .copy {
+            font-size: 0.85rem;
+            color: rgba(0, 0, 0, 0.8);
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+
+            .container {
+                margin: 0.5rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .content {
+                padding: 1.5rem;
+            }
+
+            .article-image {
+                height: 250px;
+            }
+
+            .article-body {
+                font-size: 1rem;
+            }
+
+            .header {
+                padding: 2rem 1rem 1.5rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-bottom-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.7rem;
+            }
+
+            .article-body h2 {
+                font-size: 1.5rem;
+            }
+
+            .article-body h3 {
+                font-size: 1.3rem;
+            }
+
+            .article-image {
+                height: 280px;
+            }
+
+            .footer-bottom-content {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <div class="article-category">Labor Law</div>
+                <h1>Industrial Disputes Act (1947): Lay-off, Retrenchment, and Closure</h1>
+                <div class="article-meta">
+                    <span class="article-date">March 15, 2024</span>
+                    <span class="article-author">by lawscent</span>
+                </div>
+                <div class="article-stats">
+                    <div class="stat-item">22 min read</div>
+                    <div class="stat-item">Labor Law</div>
+                    <div class="stat-item">Employment Law</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <a href="our thinking.html" class="back-link">↖ Back to Our Thinking</a>
+            
+            <div class="article-image">
+                <img src="b14.png" alt="Industrial Disputes Act">
+            </div>
+
+            <div class="article-body">
+                <p>This is an Act which came into force in the year 1947. The objective of the act was to promote industrial peace by facilitating the investigation and settlement of industrial disputes through negotiation. It is labor legislation to protect the workmen against victimization by employers and to ensure social justice to both employers and employees. The unique object of the Act is to promote collective bargaining and to maintain a peaceful atmosphere in industries by avoiding illegal strikes and lockouts. It also has provisions for regulation of retrenchment and lay-off.</p>
+
+                <div class="table-of-contents">
+                    <h3>Table of Contents</h3>
+                    <ul>
+                        <li><a href="#lay-off">Lay-Off</a></li>
+                        <li><a href="#lay-off-essentials">Essentials for Lay-Off</a></li>
+                        <li><a href="#lay-off-provisions">Special Provisions for Lay-Off</a></li>
+                        <li><a href="#lay-off-compensation">Compensation for Laid-Off Period</a></li>
+                        <li><a href="#retrenchment">Retrenchment</a></li>
+                        <li><a href="#retrenchment-provisions">Special Provisions for Retrenchment</a></li>
+                        <li><a href="#closure">Closure</a></li>
+                        <li><a href="#closure-provisions">Special Provisions for Closure</a></li>
+                        <li><a href="#continuous-service">Continuous Service</a></li>
+                        <li><a href="#bottom-line">Bottom Line</a></li>
+                    </ul>
+                </div>
+
+                <h2 id="lay-off">Lay-Off</h2>
+                <p>To start off, let us look at how the act defines the concept of Lay-off. The term 'lay-off' has been defined as the failure, refusal or inability of an employer on account of the shortage of coal, power or raw materials or the accumulation of stocks or the breakdown of machinery or natural calamity or for any other unconnected reason to give employment to a workman whose name is borne on the muster rolls of his industrial establishment and who has not been retrenched.</p>
+
+                <p>Essentially, a lay-off is a condition where the employers are constrained to deny work to their workforce owing to conditions that bring forth a temporary inability to keep their business going. The said case scenario can happen only in a continuing establishment.</p>
+
+                <h2 id="lay-off-essentials">Essentials for Lay-Off</h2>
+                <p>The conditions where Lay-off could be brought into play are:</p>
+
+                <ul>
+                    <li>There has to be a failure, refusal or inability of an employer</li>
+                    <li>This failure, refusal or inability should be an offshoot of the shortage of coal, power or raw materials or the accumulation of stocks or the breakdown of machinery or natural calamity or for any other unconnected reason</li>
+                    <li>The names of the laid-off workers should necessarily feature on the muster rolls of the establishment</li>
+                    <li>The said workers should not have been retrenched</li>
+                </ul>
+
+                <h2 id="lay-off-provisions">Special Provisions for Lay-Off</h2>
+                <p>The employer cannot, without prior permission from the appropriate government, lay-off an employee featuring on the muster rolls of the establishment. A copy of the said application has to be given to the concerned workmen as well.</p>
+
+                <p>If the lay-off happened where the workmen (other than badli workmen or casual workmen) of an industrial establishment, being a mine, owing to reasons of fire, flood or excess of inflammable gas or explosion, the employer, in relation to such establishment, shall, within a period of thirty days from the date of commencement of such lay-off, apply in the prescribed manner, to the appropriate Government or the specified authority for permission to continue the lay-off.</p>
+
+                <p>The said application will be considered and a reasonable opportunity to be heard shall be given to the employer as well as the workmen. After considering the same, the appropriate government may or may not grant the employer to close down. Even here, if the government does not respond within sixty days from application, the permission will be deemed to have been granted. There are provisions for review of the said decision by the authority suo-moto or in response to an application.</p>
+
+                <h2 id="lay-off-compensation">Compensation for Laid-Off Period</h2>
+                <p>A workman who is laid-off is entitled to compensation equivalent to 50 percent of the total basic wages and dearness allowance for the period of lay-off. The said compensation can be availed only if the employee has done a continuous service of at least one year; this will be detailed in an upcoming section of this article. Along with this, the muster rolls of the establishment should bear the worker's name to avail of the compensation.</p>
+
+                <p>A badli or casual worker cannot avail of such compensation. Refusal to accept alternative employment, absence from the establishment, strike or deliberate slowing down of production could be grounds that would entail disentitlement to such compensation.</p>
+
+                <p>If such Lay-off exceeds 45 days, the employer can either keep paying such lay-off compensation or retrench the workers. Nonetheless, retrenchment should necessarily be applied abiding by the procedure set out by the statute; this will be described in detail in the upcoming section which deals with retrenchment.</p>
+
+                <h2 id="retrenchment">Retrenchment</h2>
+                <p>The Act defines "Retrenchment" as the termination by the employer of the services of a workman for any reason whatsoever, otherwise than as a punishment inflicted by way of disciplinary action, but doesn't include-</p>
+
+                <ul>
+                    <li><strong>(a)</strong> Voluntary retirement of the workman; or</li>
+                    <li><strong>(b)</strong> Retirement of the workman on reaching the age of superannuation if the contract of employment between the employer and the workman concerned contains a stipulation in that behalf; or</li>
+                    <li>Termination of the service of the workman as a result of the non-renewal of the contract of employment between the employer and the workman concerned on its expiry or of such contract being terminated under a stipulation in that behalf contained therein; or</li>
+                    <li><strong>(c)</strong> Termination of the service of a workman on the ground of continued ill-health;</li>
+                </ul>
+
+                <p>Here, the key ingredient is the termination of a workman from service, by the employer. This does not mean the employer can retrench a worker as a punishment by way of disciplinary action. Further, this scenario strictly does not include the above-mentioned conditions contemplated under the subsection.</p>
+
+                <h2 id="retrenchment-provisions">Special Provisions for Retrenchment</h2>
+                <p>It is pertinent to note that a worker who has served for at least a year of continuous service cannot be retrenched unless served a notice three months in advance and prior permission from the appropriate government.</p>
+
+                <p>The said application has to be submitted by the employer along with the reasons for such retrenchment. The said application will be taken into consideration and scrutinized through an inquiry. They shall provide an opportunity to be heard for both sides and may decide on the outcome of the application for reasons recorded in writing.</p>
+
+                <p>If there's no reply from the appropriate government for a period of sixty days from the date of application, the permission shall be deemed to have been granted. Further, it is to be noted that the said decision could be reviewed by the said appropriate government suo-moto or on application from any of the sides.</p>
+
+                <h2 id="closure">Closure</h2>
+                <p>The Act defines "Closure" as the permanent closing down of a place of employment or part thereof. Here, the employer is constrained to close the establishment permanently. Nonetheless, the due procedure has to be complied with when it comes to rolling out a plan of closure; the said procedure, as set out by the Act, has been detailed below.</p>
+
+                <p>These procedures, nonetheless, do not apply to an undertaking set up for the construction of buildings, bridges, roads, canals, dams or for other construction work.</p>
+
+                <h2 id="closure-provisions">Special Provisions for Closure</h2>
+                <p>The employer intending to do a closure of his establishment has to necessarily apply at least ninety days in advance to the appropriate government. A copy of the said application has to be given to the representatives of the workmen as well.</p>
+
+                <p>The said application will be considered and a reasonable opportunity to be heard shall be given to the employer as well as the workmen. After considering the same, the appropriate government may or may not grant the employer to close down. Even here, if the government does not respond within sixty days from application, the permission will be deemed to have been granted. A similar provision for review of the decision exists even here.</p>
+
+                <h2 id="continuous-service">Continuous Service</h2>
+                <p>One year of continuous service entails an entitlement for compensation under the Industrial Disputes Act. A workman is said to be in continuous service if he is for that period in uninterrupted service. Interruption owing to sickness, authorised leave, an accident, a strike which is not illegal, a lock-out and a cessation of work which is not due to the fault of the workman will not be taken into consideration for calculating the period of continuous service.</p>
+
+                <p>A workman could be deemed to have had one year of continuous service even if the worker hasn't had a year of continuous service if the worker was in employment for twelve calendar months preceding the date with reference to which calculation is to be made, and in the course of these twelve months, he actually worked for not less than one hundred and ninety days in the case of employment in a mine and two hundred and forty days in any other case.</p>
+
+                <p>The said continuous service shall also include the days laid off, days on earned leave and days taken off owing to temporary disablement owing to accident arising out of or in the course of employment. Maternity leave taken, not exceeding twelve weeks shall also be counted in continuous service in case of female workers.</p>
+
+                <h2 id="bottom-line">Bottom Line</h2>
+                <p>Although employers may be forced to deprive their employees, invoking the case scenarios as explained above, the Industrial Dispute Act has been successful in setting out standards of mutual respect and requirement for solid reasons as preconditions to bringing these into play. These provisions aim at protecting the worker's rights while respecting the employer's point of view as well.</p>
+
+                <blockquote>
+                    "The Industrial Disputes Act, 1947 serves as a crucial framework for maintaining industrial harmony while protecting the interests of both employers and employees. The Act ensures that employment termination is not arbitrary but follows due process and just cause."
+                </blockquote>
+
+                <h3>Key Takeaways for Employers</h3>
+                <ul>
+                    <li>Proper documentation and notice periods are mandatory</li>
+                    <li>Government permissions must be obtained before implementing lay-offs, retrenchment, or closure</li>
+                    <li>Compensation obligations must be fulfilled as per statutory requirements</li>
+                    <li>Workers with continuous service have enhanced protection</li>
+                    <li>Legal consultation is recommended for complex employment decisions</li>
+                </ul>
+
+                <h3>Key Takeaways for Employees</h3>
+                <ul>
+                    <li>Right to compensation during lay-off periods (for eligible workers)</li>
+                    <li>Protection against arbitrary retrenchment</li>
+                    <li>Entitlement to notice and government approval processes</li>
+                    <li>Continuous service recognition for various employment scenarios</li>
+                    <li>Legal recourse available for unfair employment practices</li>
+                </ul>
+
+                <div class="tags">
+                    <span class="tag">Industrial Disputes Act 1947</span>
+                    <span class="tag">Labor Law</span>
+                    <span class="tag">Employment Law</span>
+                    <span class="tag">Lay-off</span>
+                    <span class="tag">Retrenchment</span>
+                    <span class="tag">Closure</span>
+                    <span class="tag">Workmen Rights</span>
+                    <span class="tag">Employer Obligations</span>
+                    <span class="tag">Continuous Service</span>
+                    <span class="tag">Compensation</span>
+                    <span class="tag">Industrial Relations</span>
+                    <span class="tag">Legal Compliance</span>
+                </div>
+
+                <div class="read-more-section">
+                    <h3>Related Legal Insights</h3>
+                    <div class="related-posts">
+                        <div class="related-post">
+                            <h4><a href="blog1.html">Chhattisgarh Lawyer Arrested in Shah Rukh Khan Death Threat Case</a></h4>
+                            <p>Exploring the implications of threats made by legal practitioners against public figures.</p>
+                        </div>
+                        <div class="related-post">
+                            <h4><a href="blog13.html">Copyright Infringement in India</a></h4>
+                            <p>Complete guide to intellectual property rights and copyright law.</p>
+                        </div>
+                        <div class="related-post">
+                            <h4><a href="blog12.html">What is Divorce? Complete Guide</a></h4>
+                            <p>Comprehensive information about divorce procedures and types in India.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo-container">
+                    <img src="logcirc.png" alt="LawScent Logo" style="width: 80px; height: 80px; border-radius: 50%; margin-bottom: 1rem;">
+                </div>
+                <p>Your trusted legal partner for comprehensive corporate legal solutions.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/law.scent/" aria-label="Facebook" title="Facebook">f</a>
+                    <a href="https://x.com/lawscent" aria-label="Twitter" title="Twitter">𝕏</a>
+                    <a href="https://www.linkedin.com/company/lawscent/" aria-label="LinkedIn" title="LinkedIn">in</a>
+                    <a href="https://www.instagram.com/law.scent/" aria-label="Instagram" title="Instagram">📷</a>
+                    <a href="https://www.youtube.com/@LawScent" aria-label="YouTube" title="YouTube">▶</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="aboutus.html">About Us</a>
+                <a href="whyus.html">Why Us</a>
+                <a href="our thinking.html">Our Thinking</a>
+                <a href="career.html">Careers</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <div class="contact-item">
+                    <strong>Address:</strong><br>
+                    B-431, Sushant Lok Road<br>
+                    Gurugram, Haryana 122009
+                </div>
+                <div class="contact-item">
+                    <strong>Email:</strong><br>
+                    contact@lawscent.com
+                </div>
+                <div class="contact-item">
+                    <strong>Phone:</strong><br>
+                    (+91) 7618151701
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p class="copy">&copy; 2026 LawScent. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacypolicy.html">Privacy Policy</a>
+                    <a href="termsofuse.html">Terms of Use</a>
+                    <a href="refundpolicy.html">Refund Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

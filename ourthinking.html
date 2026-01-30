@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Thinking - LawScent</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --gold: #D6AE6A;
+            --dark-gold: #c49a58;
+            --white: #ffffff;
+            --black: #202022;
+            --dark-gray: #333333;
+            --light-gray: #f8f9fa;
+            --border: #e0e0e0;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
+            color: var(--black);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            background-attachment: fixed;
+        }
+
+        /* Back to Home Icon */
+        .back-home {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: var(--gold);
+            color: var(--black);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(214, 174, 106, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .back-home:hover {
+            background: var(--dark-gold);
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 6px 20px rgba(214, 174, 106, 0.5);
+        }
+
+        .back-home:active {
+            transform: translateY(-1px) scale(1.05);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
+            color: var(--black);
+            padding: 4rem 2rem 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 5px solid var(--white);
+            margin-bottom: 2rem;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+            transform: rotate(30deg);
+            z-index: 1;
+            animation: rotate 15s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.2);
+            background: linear-gradient(to right, var(--black), #444444);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            display: inline-block;
+        }
+
+        .header h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--black);
+            border-radius: 2px;
+        }
+
+        .header p {
+            font-size: 1.3rem;
+            font-weight: 500;
+            max-width: 600px;
+            margin: 0 auto;
+            color: rgba(0, 0, 0, 0.9);
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+        }
+
+        .content {
+            padding: 2.5rem;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--border);
+            position: relative;
+        }
+
+        .blog-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold), var(--dark-gold));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+            z-index: 2;
+        }
+
+        .blog-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+            border-color: var(--gold);
+        }
+
+        .blog-image {
+            height: 350px;
+            overflow: hidden;
+            position: relative;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+            filter: brightness(0.95) contrast(1.05);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .blog-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.3) 0%, transparent 50%);
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .blog-card:hover .blog-image::before {
+            opacity: 1;
+        }
+
+        .blog-card:hover .blog-image img {
+            transform: scale(1.1);
+            filter: brightness(1.05) contrast(1.1);
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .blog-date {
+            font-weight: 600;
+            color: var(--dark-gold);
+        }
+
+        .blog-category {
+            background: var(--gold);
+            color: var(--black);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .blog-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark-gray);
+            line-height: 1.4;
+        }
+
+        .blog-excerpt {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-author {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .author-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .read-more {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
+            color: var(--black);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .read-more:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(214, 174, 106, 0.4);
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .page-btn {
+            padding: 0.8rem 1.2rem;
+            background: var(--light-gray);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--dark-gray);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .page-btn:hover {
+            background: var(--gold);
+            color: var(--black);
+            border-color: var(--gold);
+        }
+
+        .page-btn.active {
+            background: var(--gold);
+            color: var(--black);
+            border-color: var(--gold);
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: var(--gold);
+            color: var(--black);
+            padding: 40px 20px 20px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            padding-bottom: 20px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            font-size: 0.9rem;
+            color: rgba(0, 0, 0, 0.8);
+            text-decoration: none;
+            line-height: 1.6;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer-section a:hover {
+            color: var(--black);
+            font-weight: 600;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+            justify-content: center;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--black);
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: rgba(0, 0, 0, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(0, 0, 0, 0.2);
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+
+        .copy {
+            font-size: 0.85rem;
+            color: rgba(0, 0, 0, 0.8);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+
+            .container {
+                margin: 0.5rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .content {
+                padding: 1.5rem;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .header {
+                padding: 2rem 1rem;
+            }
+
+            .blog-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .blog-image {
+                height: 280px;
+            }
+
+            .blog-card:hover .blog-image img {
+                transform: scale(1.05);
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-home" title="Back to Home">↖</a>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <h1>Our Blogs</h1>
+                <p>Insights, Updates & Legal Perspectives from LawScent</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="blog-grid">
+                <!-- Blog Post 1 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="www.png" alt="Legal News">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">November 16, 2024</span>
+                            <span class="blog-category">News</span>
+                        </div>
+                        <h3 class="blog-title">Chhattisgarh Lawyer Arrested in Shah Rukh Khan Death Threat Case</h3>
+                        <p class="blog-excerpt">A lawyer from Chhattisgarh, Faizan Khan, was taken into police custody on Thursday for allegedly making a death threat to Bollywood star Shah Rukh Khan. The incident has raised serious concerns about threats against public figures...</p>
+                        <div class="blog-author">
+                            <div class="author-avatar"><img src="logcirc.png" alt="LawScent Logo"></div>
+                            <span>by lawscent</span>
+                        </div>
+                        <a href="blog1.html" class="read-more">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Blog Post 2 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="b2.png" alt="Supreme Court">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">July 30, 2024</span>
+                            <span class="blog-category">News</span>
+                        </div>
+                        <h3 class="blog-title">Supreme Court Questions Lawyer's Side Job as Journalist</h3>
+                        <p class="blog-excerpt">Supreme Court recently raised concerns about a practicing lawyer who was also working as a journalist, pointing out that Bar Council rules prohibit such dual roles that could create conflicts of interest...</p>
+                        <div class="blog-author">
+                            <div class="author-avatar"><img src="logcirc.png" alt="LawScent Logo"></div>
+                            <span>by lawscent</span>
+                        </div>
+                        <a href="blog2.html" class="read-more">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Blog Post 3 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="b3.png" alt="High Court">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">July 25, 2024</span>
+                            <span class="blog-category">News</span>
+                        </div>
+                        <h3 class="blog-title">Delhi High Court Tells Lawyers to Avoid Delays in Bail Cases</h3>
+                        <p class="blog-excerpt">The Delhi High Court has issued a circular urging lawyers to avoid unnecessary delays and to file status reports promptly in bail, interim bail, furlough, and parole cases to ensure timely justice...</p>
+                        <div class="blog-author">
+                            <div class="author-avatar"><img src="logcirc.png" alt="LawScent Logo"></div>
+                            <span>by lawscent</span>
+                        </div>
+                        <a href="blog3.html" class="read-more">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Blog Post 4 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="b4.png" alt="Consumer Rights">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">July 15, 2024</span>
+                            <span class="blog-category">News</span>
+                        </div>
+                        <h3 class="blog-title">Consumer Forum Orders Zomato to Pay ₹60,000 for Failed Order</h3>
+                        <p class="blog-excerpt">A consumer forum in Karnataka has ordered food delivery company Zomato to pay ₹60,000 to a woman for not delivering her momos order worth ₹133.25. The decision highlights consumer rights in digital transactions...</p>
+                        <div class="blog-author">
+                            <div class="author-avatar"><img src="logcirc.png" alt="LawScent Logo"></div>
+                            <span>by lawscent</span>
+                        </div>
+                        <a href="blog4.html" class="read-more">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Blog Post 5 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="b5.png" alt="Legal Profession">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">July 3, 2024</span>
+                            <span class="blog-category">News</span>
+                        </div>
+                        <h3 class="blog-title">Legal Profession is a Service, Not a Business - Madras High Court</h3>
+                        <p class="blog-excerpt">The Madras High Court recently addressed the issue of lawyers advertising their services online, emphasizing that the legal profession should not be treated as a commercial business venture...</p>
+                        <div class="blog-author">
+                            <div class="author-avatar"><img src="logcirc.png" alt="LawScent Logo"></div>
+                            <span>by lawscent</span>
+                        </div>
+                        <a href="blog5.html" class="read-more">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Blog Post 6 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="b6.png" alt="International Law">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">July 1, 2024</span>
+                            <span class="blog-category">News</span>
+                        </div>
+                        <h3 class="blog-title">India to Open Legal Market to UK Lawyers</h3>
+                        <p class="blog-excerpt">India is set to open its legal market to lawyers and law firms from the United Kingdom (UK) with the Bar Council of India (BCI) expected to notify and implement new rules by the end of July...</p>
+                        <div class="blog-author">
+                            <div class="author-avatar"><img src="logcirc.png" alt="LawScent Logo"></div>
+                            <span>by lawscent</span>
+                        </div>
+                        <a href="blog6.html" class="read-more">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Blog Post 7 - Page 2 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="b7.png" alt="Yamuna River">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">June 16, 2024</span>
+                            <span class="blog-category">News</span>
+                        </div>
+                        <h3 class="blog-title">Supreme Court Upholds Order to Demolish Illegal Shiva Temple on Yamuna Floodplains</h3>
+                        <p class="blog-excerpt">The Supreme Court has approved the demolition of an illegal Shiva Temple situated on the Yamuna floodplains. This decision upholds the May 29 ruling by the Delhi High Court...</p>
+                        <div class="blog-author">
+                            <div class="author-avatar"><img src="logcirc.png" alt="LawScent Logo"></div>
+                            <span>by lawscent</span>
+                        </div>
+                        <a href="blog7.html" class="read-more">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Blog Post 8 - Page 2 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="b8.png" alt="Dal Lake">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">Nov 14, 2025</span>
+                            <span class="blog-category">News</span>
+                        </div>
+                        <h3 class="blog-title">J&K High Court Orders LCMA Not to Harass Tea Sellers at Dal Lake Floating Market</h3>
+                        <p class="blog-excerpt">The Jammu and Kashmir High Court recently directed the Jammu and Kashmir Land Conservation and Management Authority (LCMA) in Srinagar not to harass tea sellers...</p>
+                        <div class="blog-author">
+                            <div class="author-avatar"><img src="logcirc.png" alt="LawScent Logo"></div>
+                            <span>by lawscent</span>
+                        </div>
+                        <a href="blog8.html" class="read-more">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Blog Post 9 - Page 2 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="b9.png" alt="Legal News">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">May 10, 2025</span>
+                            <span class="blog-category">News</span>
+                        </div>
+                        <h3 class="blog-title">Tax Carve Outs Under Bilateral Investment Protection Agreements</h3>
+                        <p class="blog-excerpt">Before the Second World War, the only protection available to foreign investments was under customary international law. Due to the absence of a framework that offered protection to foreign investments coupled with the lack of an effective dispute resolution mechanism between foreign investors and States, host states resorted to espousal indiscriminately against foreign investment. </p>
+                        <div class="blog-author">
+                            <div class="author-avatar"><img src="logcirc.png" alt="LawScent Logo"></div>
+                            <span>by lawscent</span>
+                        </div>
+                        <a href="blog9.html" class="read-more">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Blog Post 10 - Page 2 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="b10.png" alt="Supreme Court">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">June 5, 2025</span>
+                            <span class="blog-category">News</span>
+                        </div>
+                        <h3 class="blog-title">Court Marriage Procedure in India</h3>
+                        <p class="blog-excerpt">The Court Marriage procedure in India is relatively simple. In this blog, we talk about how to do a court marriage in India in 6 Easy Steps with all the legal formalities required for a court marriage, required documents & witnesses, the process for marrying a foreign national in India, the process of an Indian getting married outside India, issue pertaining to a court marriage, advantage of a court marriage and a lot more.
+
+</p>
+                        <div class="blog-author">
+                            <div class="author-avatar"><img src="logcirc.png" alt="LawScent Logo"></div>
+                            <span>by lawscent</span>
+                        </div>
+                        <a href="blog10.html" class="read-more">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Blog Post 11 - Page 2 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="b11.png" alt="High Court">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">May 28, 2016</span>
+                            <span class="blog-category">News</span>
+                        </div>
+                        <h3 class="blog-title">Overriding effect of IBC, 2016</h3>
+                        <p class="blog-excerpt">The previous bankruptcy regime in India was highly fragmented, lacking coherence and regularity and there was no clear legal system to recognise the priority of claims. </p>
+                        <div class="blog-author">
+                            <div class="author-avatar"><img src="logcirc.png" alt="LawScent Logo"></div>
+                            <span>by lawscent</span>
+                        </div>
+                        <a href="blog11.html" class="read-more">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Blog Post 12 - Page 2 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="b12.png       " alt="Consumer Rights">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">May 22, 2025</span>
+                            <span class="blog-category">News</span>
+                        </div>
+                        <h3 class="blog-title">What is the Divorce Procedure and Divorce Types in India?</h3>
+                        <p class="blog-excerpt">The divorce procedure in India starts from the filing of the divorce petition and ends with the pronouncement of the final order of the divorce. The procedure of divorce is divided into six stages which are - filing of the petition, service of summons, response, trial, interim orders, and final order.</p>
+                        <div class="blog-author">
+                            <div class="author-avatar"><img src="logcirc.png" alt="LawScent Logo"></div>
+                            <span>by lawscent</span>
+                        </div>
+                        <a href="blog12.html        " class="read-more">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Blog Post 13 - Page 3 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="b13.png" alt="Legal Profession">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">May 18, 2025</span>
+                            <span class="blog-category">News</span>
+                        </div>
+                        <h3 class="blog-title">Copyright Infringement in India</h3>
+                        <p class="blog-excerpt">Intellectual Property Rights are legal rights granted to a person for his work that includes his invention of creative designs, literary works, symbols, or phrases for a fixed duration of time. Copyright is one of the Intellectual Property Rights. It protects original works of authorship such as literary, musical, and artistic works.</p>
+                        <div class="blog-author">
+                            <div class="author-avatar"><img src="logcirc.png" alt="LawScent Logo"></div>
+                            <span>by lawscent</span>
+                        </div>
+                        <a href="blog13.html" class="read-more">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Blog Post 14 - Page 3 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="b14.png   " alt="International Law">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">May 12, 2025</span>
+                            <span class="blog-category">News</span>
+                        </div>
+                        <h3 class="blog-title">Industrial Disputes Act (1947): Lay-off, Retrenchment, and Closure</h3>
+                        <p class="blog-excerpt">Lay-Off, Retrenchment and Closure are three case scenarios contemplated in the Industrial Disputes Act, 1947, which essentially results in employees losing their jobs. Nonetheless, this is not a pressure tactic from the part of the employer. These are rather scenarios where situations compel an employer to resort to denying employment to their employees. The Industrial Disputes Act has come up with formal definitions and has set out laws which govern these case scenarios.</p>
+                        <div class="blog-author">
+                            <div class="author-avatar"><img src="logcirc.png" alt="LawScent Logo"></div>
+                            <span>by lawscent</span>
+                        </div>
+                        <a href="blog14.html" class="read-more">Read More</a>
+                    </div>
+                </div>
+ <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="b15.png   " alt="International Law">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">May 21, 2016</span>
+                            <span class="blog-category">News</span>
+                        </div>
+                        <h3 class="blog-title">Tariffs, Trade Wars, and Talks: Shift from Multilateralism to Bilateralism</h3>
+                        <p class="blog-excerpt">The Trump 2.0 administration's 'reciprocal' tariffs wreaked havoc on the global economy. The move not only challenged the already fragile rules-based multilateral trading system but also caused market fluctuations and fear of supply chain disruptions, triggering uncertainty across businesses. While much has been written about these tariffs, this piece focuses on the bigger problem caused by such unilateral governmental actions, which represent a shift from multilateralism to bilateralism in international trade.</p>
+                        <div class="blog-author">
+                            <div class="author-avatar"><img src="logcirc.png" alt="LawScent Logo"></div>
+                            <span>by lawscent</span>
+                        </div>
+                        <a href="blog15.html" class="read-more">Read More</a>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="pagination">
+                <a href="#" class="page-btn active" onclick="showPage(1); return false;">1</a>
+                <a href="#" class="page-btn" onclick="showPage(2); return false;">2</a>
+                <a href="#" class="page-btn" onclick="showPage(3); return false;">3</a>
+                <a href="#" class="page-btn" onclick="showPage(2); return false;">Next →</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo-container">
+                    <img src="logcirc.png" alt="LawScent Logo" style="width: 60px; height: 60px; border-radius: 50%;">
+                </div>
+                <p>Your trusted legal partner for comprehensive corporate legal solutions.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/law.scent/" aria-label="Facebook" title="Facebook">f</a>
+                    <a href="https://x.com/lawscent" aria-label="Twitter" title="Twitter">𝕏</a>
+                    <a href="https://www.linkedin.com/company/lawscent/" aria-label="LinkedIn" title="LinkedIn">in</a>
+                    <a href="https://www.instagram.com/law.scent/" aria-label="Instagram" title="Instagram">📷</a>
+                    <a href="https://www.youtube.com/@LawScent" aria-label="YouTube" title="YouTube">▶</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="whyus.html">Why Us</a>
+                <a href="career.html">Careers</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>B-431, Sushant Lok Road<br>Gurugram, Haryana 122009</p>
+                <p>Email: contact@lawscent.com</p>
+                <p>Phone: (+91) 7618151701</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="copy">&copy; 2026 LawScent. All rights reserved</p>
+        </div>
+    </footer>
+    <script>
+        function showPage(pageNumber) {
+            // Hide all blog cards
+            const blogCards = document.querySelectorAll('.blog-card');
+            blogCards.forEach(card => {
+                card.style.display = 'none';
+            });
+            
+            // Show blogs for the selected page
+            const startIndex = (pageNumber - 1) * 6;
+            const endIndex = startIndex + 6;
+            
+            for (let i = startIndex; i < endIndex && i < blogCards.length; i++) {
+                blogCards[i].style.display = 'block';
+            }
+            
+            // Update pagination buttons
+            const pageButtons = document.querySelectorAll('.page-btn');
+            pageButtons.forEach((btn, index) => {
+                if (index < 3) { // Only for page number buttons
+                    btn.classList.remove('active');
+                    if (index === pageNumber - 1) {
+                        btn.classList.add('active');
+                    }
+                }
+            });
+            
+            // Update next button
+            const nextButton = pageButtons[3];
+            if (pageNumber < 3) {
+                nextButton.onclick = () => { showPage(pageNumber + 1); return false; };
+                nextButton.textContent = 'Next →';
+            } else {
+                nextButton.onclick = () => { showPage(1); return false; };
+                nextButton.textContent = '← First';
+            }
+        }
+        
+        // Initialize first page
+        document.addEventListener('DOMContentLoaded', function() {
+            showPage(1);
+        });
+    </script>
+</body>
+</html>
