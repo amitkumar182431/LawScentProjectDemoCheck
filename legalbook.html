@@ -223,6 +223,17 @@
             line-height: 1.5;
         }
 
+        .confidentiality-note {
+            background: #e8f4f8;
+            border-left: 4px solid var(--gold);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
         .submit-btn {
             background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
             color: var(--black);
@@ -434,6 +445,10 @@
                     <div class="checkbox-group">
                         <input type="checkbox" id="consent" name="consent" required>
                         <label for="consent">I understand that legal aid is a free advisory initiative. I consent to be contacted by the legal aid team for assistance.</label>
+                    </div>
+
+                    <div class="confidentiality-note">
+                        All information shared through this form is kept strictly confidential and used only for the purpose of providing legal assistance.
                     </div>
 
                     <button type="submit" class="submit-btn" id="submitBtn">
