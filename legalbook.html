@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Legal Consultation - LawScent</title>
+    <title>Legal Aid Form - LawScent</title>
+    <!-- EmailJS Script -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("CW-7vRohuxLjTk4my"); // LawScent EmailJS public key
+        })();
+    </script>
     <style>
         * {
             margin: 0;
@@ -17,126 +24,313 @@
             --dark-gold: #c49a58;
             --white: #ffffff;
             --black: #202022;
+            --dark-gray: #333333;
             --light-gray: #f8f9fa;
             --border: #e0e0e0;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
         }
 
         body {
-            background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
             color: var(--black);
             min-height: 100vh;
             padding: 2rem 1rem;
+            background-attachment: fixed;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             background: var(--white);
             border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
             overflow: hidden;
+            position: relative;
         }
 
         .header {
             background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
             color: var(--black);
-            padding: 2rem;
+            padding: 3rem 2rem;
             text-align: center;
-        }
-
-        .header h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .header p {
-            font-size: 1rem;
-            opacity: 0.9;
-        }
-
-        .content {
-            padding: 2rem;
-        }
-
-        .pricing-card {
-            background: var(--light-gray);
-            border: 3px solid var(--gold);
-            border-radius: 15px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .pricing-card h2 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--black);
-        }
-
-        .price {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--gold);
-            margin: 1rem 0;
-        }
-
-        .price-note {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 1rem;
-        }
-
-        .form-section {
-            margin-bottom: 2rem;
-        }
-
-        .section-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--black);
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--gold);
-        }
-
-        .google-form-container {
-            width: 100%;
-            height: 600px;
-            border: none;
-            border-radius: 10px;
+            position: relative;
             overflow: hidden;
         }
 
-        .terms {
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: rotate(30deg);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            position: relative;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+        }
+
+        .subtitle {
             text-align: center;
-            margin-top: 1.5rem;
-            font-size: 0.85rem;
+            padding: 1.5rem;
+            background: var(--light-gray);
+            border-bottom: 2px solid var(--gold);
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+        }
+
+        .content {
+            padding: 2.5rem;
+        }
+
+        .legal-aid-form {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+            color: var(--dark-gray);
+            font-size: 1.1rem;
+            position: relative;
+        }
+
+        .form-group label.required::after {
+            content: ' *';
+            color: #e74c3c;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: var(--light-gray);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(214, 174, 106, 0.2);
+            background: var(--white);
+        }
+
+        .form-group input:hover,
+        .form-group select:hover,
+        .form-group textarea:hover {
+            border-color: var(--dark-gold);
+        }
+
+        .file-upload {
+            position: relative;
+            cursor: pointer;
+            background: var(--light-gray);
+            border: 2px dashed var(--border);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .file-upload:hover {
+            border-color: var(--gold);
+            background: rgba(214, 174, 106, 0.05);
+        }
+
+        .file-upload.drag-over {
+            border-color: var(--gold);
+            background: rgba(214, 174, 106, 0.1);
+        }
+
+        .file-upload i {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .file-info {
+            margin-top: 1rem;
+            font-size: 0.9rem;
             color: #666;
         }
 
-        .btn-return {
-            display: block;
-            width: 100%;
-            padding: 1.25rem;
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: var(--light-gray);
+            border-radius: 10px;
+            border: 2px solid var(--border);
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-top: 0.25rem;
+            accent-color: var(--gold);
+        }
+
+        .checkbox-group label {
+            margin-bottom: 0;
+            font-weight: 500;
+            color: var(--dark-gray);
+            line-height: 1.5;
+        }
+
+        .submit-btn {
             background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
             color: var(--black);
             border: none;
-            border-radius: 12px;
+            padding: 1.25rem 3rem;
             font-size: 1.2rem;
             font-weight: 700;
+            border-radius: 15px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            width: 100%;
+            transition: var(--transition);
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-top: 2rem;
-            text-decoration: none;
-            text-align: center;
+            box-shadow: 0 5px 20px rgba(214, 174, 106, 0.3);
+            position: relative;
+            overflow: hidden;
         }
 
-        .btn-return:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(236, 159, 104, 0.4);
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s;
+        }
+
+        .submit-btn:hover::before {
+            left: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(214, 174, 106, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .success-message, .error-message {
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            text-align: center;
+            font-weight: 500;
+            display: none;
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .legal-issues {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: var(--light-gray);
+            border-radius: 10px;
+            border-left: 4px solid var(--gold);
+        }
+
+        .legal-issues h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--dark-gray);
+            font-weight: 600;
+        }
+
+        .legal-issues ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+        }
+
+        .legal-issues li {
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+            color: var(--dark-gray);
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: var(--black);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
 
         @media (max-width: 768px) {
@@ -144,16 +338,28 @@
                 padding: 1rem 0.5rem;
             }
 
+            .container {
+                margin: 0.5rem;
+            }
+
             .header h1 {
-                font-size: 1.5rem;
+                font-size: 2rem;
             }
 
-            .price {
-                font-size: 2.5rem;
+            .content {
+                padding: 1.5rem;
             }
 
-            .google-form-container {
-                height: 800px;
+            .legal-aid-form {
+                padding: 1.5rem;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                padding: 2rem 1rem;
             }
         }
     </style>
@@ -161,34 +367,195 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>Book Your Legal Consultation</h1>
-            <p>Professional Legal Services - LawScent Associates</p>
+            <h1>Legal Aid Form</h1>
+            <p>Free Legal Assistance Initiative - LawScent</p>
+        </div>
+
+        <div class="subtitle">
+            Get free legal assistance from our expert team
         </div>
 
         <div class="content">
-            <div class="pricing-card">
-                <h2>Legal Consultation </h2>
-                <p class="price-note">Professional legal consultation with senior advocates</p>
+            <div class="legal-aid-form">
+                <form id="legalAidForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="fullName" class="required">Full Name</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="emailID" class="required">Email ID</label>
+                            <input type="email" id="emailID" name="emailID" placeholder="Enter your email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactNumber" class="required">Contact Number</label>
+                            <input type="tel" id="contactNumber" name="contactNumber" placeholder="Enter your contact number" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="location" class="required">Location / City</label>
+                            <input type="text" id="location" name="location" placeholder="Enter your location or city" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="legalIssue" class="required">Legal Issue</label>
+                            <select id="legalIssue" name="legalIssue" required>
+                                <option value="">Select a legal issue</option>
+                                <option value="Child Abuse / Child Pornography">Child Abuse / Child Pornography</option>
+                                <option value="Acid Attack Victim Assistance">Acid Attack Victim Assistance</option>
+                                <option value="Domestic Violence or Matrimonial Issues">Domestic Violence or Matrimonial Issues</option>
+                                <option value="Sexual Assault / Harassment">Sexual Assault / Harassment</option>
+                                <option value="Human Trafficking">Human Trafficking</option>
+                                <option value="Property Dispute">Property Dispute</option>
+                                <option value="Employment & Labour Issues">Employment & Labour Issues</option>
+                                <option value="Legal Aid for Senior Citizens">Legal Aid for Senior Citizens</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="preferredCommunication" class="required">Preferred Mode of Communication</label>
+                            <select id="preferredCommunication" name="preferredCommunication" required>
+                                <option value="">Select preferred mode</option>
+                                <option value="Phone Call">Phone Call</option>
+                                <option value="Email">Email</option>
+                                <option value="WhatsApp Message">WhatsApp Message</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="caseDescription">Describe Your Case (Short)</label>
+                            <textarea id="caseDescription" name="caseDescription" rows="5" placeholder="Please describe your case briefly"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="consent" name="consent" required>
+                        <label for="consent">I understand that legal aid is a free advisory initiative. I consent to be contacted by the legal aid team for assistance.</label>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        Submit Legal Aid Request
+                    </button>
+
+                    <div class="success-message" id="successMessage">
+                        🎉 Success! Your legal aid request has been submitted successfully. We'll contact you shortly.
+                    </div>
+
+                    <div class="error-message" id="errorMessage">
+                        ❌ Error: Please check your information and try again.
+                    </div>
+                </form>
+
+                <!-- <div class="legal-issues">
+                    <h3>Legal Issue Options:</h3>
+                    <ul>
+                        <li>Child Abuse / Child Pornography</li>
+                        <li>Acid Attack Victim Assistance</li>
+                        <li>Domestic Violence or Matrimonial Issues</li>
+                        <li>Sexual Assault / Harassment</li>
+                        <li>Human Trafficking</li>
+                        <li>Property Dispute</li>
+                        <li>Employment & Labour Issues</li>
+                        <li>Legal Aid for Senior Citizens</li>
+                        <li>Other</li>
+                    </ul>
+                </div> -->
             </div>
-
-            <div class="form-section">
-                <h3 class="section-title">Complete Your Booking</h3>
-                <p style="margin-bottom: 1.5rem; text-align: center; color: #666;">
-                    Please fill out the form below to book your legal consultation.
-
-                </p>
-                
-                <!-- Embedded Google Form - Replace with your actual form URL -->
-                <iframe class="google-form-container" src="https://forms.gle/F294ifLpLq5MpbvU9" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-            </div>
-
-            <p style="text-align: center; color: #666; margin: 1.5rem 0;">
-                <strong>Important:</strong> After submitting the form, you will receive an email
-
-            <a href="legailaid.html" class="btn-return">Return to Home</a>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('legalAidForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const fullName = document.getElementById('fullName').value;
+                const emailID = document.getElementById('emailID').value;
+                const contactNumber = document.getElementById('contactNumber').value;
+                const location = document.getElementById('location').value;
+                const legalIssue = document.getElementById('legalIssue').value;
+                const caseDescription = document.getElementById('caseDescription').value;
+                const preferredCommunication = document.getElementById('preferredCommunication').value;
+                const consent = document.getElementById('consent').checked;
+                
+                // Basic validation
+                if (!fullName || !emailID || !contactNumber || !location || !legalIssue || !preferredCommunication || !consent) {
+                    showError('Please fill in all required fields.');
+                    return;
+                }
+                
+                // Email validation
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(emailID)) {
+                    showError('Please enter a valid email address.');
+                    return;
+                }
+                
+                // Show loading state
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<span class="loading"></span> Submitting...';
+                submitBtn.disabled = true;
+                
+                // Prepare email template parameters
+                const templateParams = {
+                    fullName: fullName,
+                    emailID: emailID,
+                    contactNumber: contactNumber,
+                    location: location,
+                    legalIssue: legalIssue,
+                    caseDescription: caseDescription || 'Not provided',
+                    preferredCommunication: preferredCommunication,
+                    consent: consent ? 'Yes' : 'No',
+                    documentName: 'No document uploaded',
+                    documentSize: 'N/A'
+                };
+                
+                // Send email using EmailJS
+                emailjs.send('service_znqmcvv', 'template_2ooorkc', templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    showSuccess();
+                    // Reset form
+                    form.reset();
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    showError('Failed to submit legal aid request: ' + error.text || 'Unknown error');
+                })
+                .finally(() => {
+                    // Reset button
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                });
+            });
+            
+            function showSuccess() {
+                successMessage.style.display = 'block';
+                errorMessage.style.display = 'none';
+                
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 5000);
+            }
+            
+            function showError(message) {
+                errorMessage.textContent = `❌ Error: ${message}`;
+                errorMessage.style.display = 'block';
+                successMessage.style.display = 'none';
+                
+                setTimeout(() => {
+                    errorMessage.style.display = 'none';
+                }, 5000);
+            }
+        });
+    </script>
 </body>
 </html>
-
-
