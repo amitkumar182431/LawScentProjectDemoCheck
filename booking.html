@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Legal Consultation - LawScent</title>
+    <!-- EmailJS Script -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("CW-7vRohuxLjTk4my"); // LawScent EmailJS public key
+        })();
+    </script>
     <style>
         * {
             margin: 0;
@@ -29,114 +36,208 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             background: var(--white);
             border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
             overflow: hidden;
+            position: relative;
         }
 
         .header {
             background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
             color: var(--black);
-            padding: 2rem;
+            padding: 3rem 2rem;
             text-align: center;
-        }
-
-        .header h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .header p {
-            font-size: 1rem;
-            opacity: 0.9;
-        }
-
-        .content {
-            padding: 2rem;
-        }
-
-        .pricing-card {
-            background: var(--light-gray);
-            border: 3px solid var(--gold);
-            border-radius: 15px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .pricing-card h2 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--black);
-        }
-
-        .price {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--gold);
-            margin: 1rem 0;
-        }
-
-        .price-note {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 1rem;
-        }
-
-        .form-section {
-            margin-bottom: 2rem;
-        }
-
-        .section-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--black);
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--gold);
-        }
-
-        .google-form-container {
-            width: 100%;
-            height: 600px;
-            border: none;
-            border-radius: 10px;
+            position: relative;
             overflow: hidden;
         }
 
-        .terms {
-            text-align: center;
-            margin-top: 1.5rem;
-            font-size: 0.85rem;
-            color: #666;
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: rotate(30deg);
         }
 
-        .btn-return {
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            position: relative;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+        }
+
+        .subtitle {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--light-gray);
+            border-bottom: 2px solid var(--gold);
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+        }
+
+        .content {
+            padding: 2.5rem;
+        }
+
+        .booking-form {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
             display: block;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+            color: var(--dark-gray);
+            font-size: 1.1rem;
+            position: relative;
+        }
+
+        .form-group label.required::after {
+            content: ' *';
+            color: #e74c3c;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
             width: 100%;
-            padding: 1.25rem;
+            padding: 1rem 1.25rem;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: var(--light-gray);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(214, 174, 106, 0.2);
+            background: var(--white);
+        }
+
+        .form-group input:hover,
+        .form-group select:hover,
+        .form-group textarea:hover {
+            border-color: var(--dark-gold);
+        }
+
+        .submit-btn {
             background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
             color: var(--black);
             border: none;
-            border-radius: 12px;
+            padding: 1.25rem 3rem;
             font-size: 1.2rem;
             font-weight: 700;
+            border-radius: 15px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            width: 100%;
+            transition: var(--transition);
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-top: 2rem;
-            text-decoration: none;
-            text-align: center;
+            box-shadow: 0 5px 20px rgba(214, 174, 106, 0.3);
+            position: relative;
+            overflow: hidden;
         }
 
-        .btn-return:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(236, 159, 104, 0.4);
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s;
+        }
+
+        .submit-btn:hover::before {
+            left: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(214, 174, 106, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .success-message, .error-message {
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            text-align: center;
+            font-weight: 500;
+            display: none;
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: var(--black);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
 
         @media (max-width: 768px) {
@@ -144,16 +245,28 @@
                 padding: 1rem 0.5rem;
             }
 
+            .container {
+                margin: 0.5rem;
+            }
+
             .header h1 {
-                font-size: 1.5rem;
+                font-size: 2rem;
             }
 
-            .price {
-                font-size: 2.5rem;
+            .content {
+                padding: 1.5rem;
             }
 
-            .google-form-container {
-                height: 800px;
+            .booking-form {
+                padding: 1.5rem;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                padding: 2rem 1rem;
             }
         }
     </style>
@@ -165,30 +278,170 @@
             <p>Professional Legal Services - LawScent Associates</p>
         </div>
 
-        <div class="content">
-            <div class="pricing-card">
-                <h2>Legal Consultation Package</h2>
-                <div class="price">₹<span id="displayPrice">499</span></div>
-                <p class="price-note">Minimum booking amount - Professional legal consultation with senior advocates</p>
-            </div>
-
-            <div class="form-section">
-                <h3 class="section-title">Complete Your Booking</h3>
-                <p style="margin-bottom: 1.5rem; text-align: center; color: #666;">
-                    Please fill out the form below to book your legal consultation.
-                    After submission, you will receive instructions for payment of ₹499.
-                </p>
-                
-                <!-- Embedded Google Form - Replace with your actual form URL -->
-                <iframe class="google-form-container" src="https://forms.gle/srUZn8UG9XFu48Tq8" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-            </div>
-
-            <p style="text-align: center; color: #666; margin: 1.5rem 0;">
-                <strong>Important:</strong> After submitting the form, you will receive an email with payment instructions for the ₹499 consultation fee.
-            </p>
-
-            <a href="index.html" class="btn-return">Return to Home</a>
+        <div class="subtitle">
+            Book your legal consultation with our expert team
         </div>
-    </div>
+
+        <div class="content">
+            <div class="booking-form">
+                <form id="bookingForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="firstName" class="required">First Name</label>
+                            <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastName" class="required">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="required">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company" class="required">Company</label>
+                            <input type="text" id="company" name="company" placeholder="Enter your company name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="jobTitle" class="required">Job Title</label>
+                            <input type="text" id="jobTitle" name="jobTitle" placeholder="Enter your job title" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service" class="required">Service Required</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service</option>
+                                <option value="Contract Drafting">Contract Drafting</option>
+                                <option value="Contract Vetting">Contract Vetting</option>
+                                <option value="Legal Consultation">Legal Consultation</option>
+                                <option value="Corporate Advisory">Corporate Advisory</option>
+                                <option value="Compliance Review">Compliance Review</option>
+                                <option value="Dispute Resolution">Dispute Resolution</option>
+                                <option value="Intellectual Property">Intellectual Property</option>
+                                <option value="Employment Law">Employment Law</option>
+                                <option value="Real Estate Law">Real Estate Law</option>
+                                <option value="Tax Advisory">Tax Advisory</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="required">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="message" class="required">Your Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Please describe your legal requirements in detail" required></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        Book Consultation
+                    </button>
+
+                    <div class="success-message" id="successMessage">
+                        🎉 Success! Your booking request has been submitted successfully. We'll contact you shortly.
+                    </div>
+
+                    <div class="error-message" id="errorMessage">
+                        ❌ Error: Please check your information and try again.
+                    </div>
+                </form>
+            </div>
+            </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('bookingForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const firstName = document.getElementById('firstName').value;
+                const lastName = document.getElementById('lastName').value;
+                const email = document.getElementById('email').value;
+                const company = document.getElementById('company').value;
+                const jobTitle = document.getElementById('jobTitle').value;
+                const service = document.getElementById('service').value;
+                const phone = document.getElementById('phone').value;
+                const message = document.getElementById('message').value;
+                
+                // Basic validation
+                if (!firstName || !lastName || !email || !company || !jobTitle || !service || !phone || !message) {
+                    showError('Please fill in all required fields.');
+                    return;
+                }
+                
+                // Email validation
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    showError('Please enter a valid email address.');
+                    return;
+                }
+                
+                // Show loading state
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<span class="loading"></span> Sending...';
+                submitBtn.disabled = true;
+                
+                // Prepare email template parameters
+                const templateParams = {
+                    from_name: firstName + ' ' + lastName,
+                    first_name: firstName,
+                    last_name: lastName,
+                    from_email: email,
+                    company: company,
+                    job_title: jobTitle,
+                    service_required: service,
+                    phone: phone,
+                    message: message
+                };
+                
+                // Send email using EmailJS
+                emailjs.send('service_1li6lfo', 'template_1oaw2vr', templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    showSuccess();
+                    // Reset form
+                    form.reset();
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    showError('Failed to send booking request: ' + error.text || 'Unknown error');
+                })
+                .finally(() => {
+                    // Reset button
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                });
+            });
+            
+            function showSuccess() {
+                successMessage.style.display = 'block';
+                errorMessage.style.display = 'none';
+                
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 5000);
+            }
+            
+            function showError(message) {
+                errorMessage.textContent = `❌ Error: ${message}`;
+                errorMessage.style.display = 'block';
+                successMessage.style.display = 'none';
+                
+                setTimeout(() => {
+                    errorMessage.style.display = 'none';
+                }, 5000);
+            }
+        });
+    </script>
 </body>
 </html>
