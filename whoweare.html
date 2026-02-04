@@ -468,7 +468,11 @@
     }
     
     .card {
-        min-width: 350px;
+        height: 400px;
+    }
+    
+    .card img {
+        height: 100%;
     }
 }
 
@@ -484,10 +488,6 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 25px;
     }
-    
-    .card-content {
-        padding: 20px;
-    }
 }
 
 .card {
@@ -498,6 +498,11 @@
     transition: all 0.3s ease;
     position: relative;
     border: 1px solid #eee;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .card:hover {
@@ -508,20 +513,29 @@
 
 .card img {
     width: 100%;
-    height: 200px;
+    height: 100%;
     object-fit: cover;
+    object-position: center;
     transition: transform 0.3s ease;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .card:hover img {
     transform: scale(1.05);
 }
 
+/* Hide all content except the image */
 .card-content {
-    padding: 25px 15px;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.9);
-    position: relative;
+    display: none;
+}
+
+.card h3,
+.card .card-desc,
+.card p {
+    display: none;
 }
 
 .card-content h3 {
@@ -560,8 +574,7 @@
 
 @media (max-width: 768px) {
     .card-desc {
-        display: block;
-        margin-top: 10px;
+        display: none;
     }
 }
 
@@ -573,12 +586,24 @@
         padding: 0 15px;
     }
     
-    .card-content {
-        padding: 20px;
+    .card {
+        height: 350px;
     }
     
-    .card-content h3 {
-        font-size: 1.3rem;
+    .card img {
+        height: 100%;
+    }
+    
+    .card-content {
+        display: none;
+    }
+    
+    .card h3 {
+        display: none;
+    }
+    
+    .card p {
+        display: none;
     }
 }
 
@@ -630,22 +655,23 @@
     .card {
         max-width: 400px;
         margin: 0 auto;
+        height: 300px;
     }
     
     .card img {
-        height: 180px;
+        height: 100%;
     }
     
     .card-content {
-        padding: 20px 15px;
+        display: none;
     }
     
-    .card-content h3 {
-        font-size: 1.2rem;
+    .card h3 {
+        display: none;
     }
     
-    .card-content p {
-        font-size: 0.95rem;
+    .card p {
+        display: none;
     }
 }
 
@@ -654,16 +680,24 @@
         padding: 50px 10px;
     }
     
+    .card {
+        height: 250px;
+    }
+    
     .card img {
-        height: 160px;
+        height: 100%;
     }
     
     .card-content {
-        padding: 15px;
+        display: none;
     }
     
-    .card-content h3 {
-        font-size: 1.1rem;
+    .card h3 {
+        display: none;
+    }
+    
+    .card p {
+        display: none;
     }
 }
 
@@ -1113,7 +1147,7 @@
                                 <div class="mega-dropdown-services-full">
                                     <div class="service-list-full" id="corporate-services-full">
                                         <a href="service1.html" class="service-item">Competition & Anti-Trust Laws </a>
-                                        <a href="service2.html" class="service-item">Consumer Protec on & Consumer Care </a>
+                                        <a href="service2.html" class="service-item">Consumer Protection & Consumer Care </a>
                                         <a href="service3.html" class="service-item">Corporate Governance & Compliance</a>
                                         <a href="service4.html" class="service-item">Intellectual Property Rights (IPR)</a>
                                         <a href="service5.html" class="service-item">Real Estate & Infrastructure Laws</a>
@@ -1260,7 +1294,7 @@
            </div>
                <p>Your trusted legal partner. Providing comprehensive legal solutions for businesses and individuals.</p>
                <div class="social-links">
-                                     <a href="https://www.facebook.com/law.scent/" aria-label="Facebook" title="Facebook">f</a>
+                                     <a href="https://www.facebook.com/people/LawScent/61555685231330/" aria-label="Facebook" title="Facebook">f</a>
                    <a href="https://x.com/lawscent" aria-label="Twitter" title="Twitter">𝕏</a>
                    <a href="https://www.linkedin.com/company/lawscent/" aria-label="LinkedIn" title="LinkedIn">in</a>
                    <a href="https://www.instagram.com/law.scent/" aria-label="Instagram" title="Instagram">📷</a>
@@ -1273,8 +1307,8 @@
                <h4>Quick Links</h4>
                <ul>
                    <li><a href="#home">Home</a></li>
+                   <li><a href="whoweare.html">Who We Are</a></li>
                    <li><a href="services.html">Services</a></li>
-                   <li><a href="whyus.html">Why Us</a></li>
                    
                </ul>
            </div>
@@ -1289,11 +1323,11 @@
        
        <div class="footer-bottom">
            <p>&copy; 2026 LawScent. All rights reserved.</p>
-           <div class="footer-links">
+           <!-- <div class="footer-links">
                <a href="privacypolicy.html">Privacy Policy</a>
                <a href="termsofuse.html">Terms of Service</a>
                <a href="refundpolicy.html">Refund Policy</a>
-           </div>
+           </div> -->
        </div>
    </footer>
    
