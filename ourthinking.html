@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Thinking - LawScent</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         * {
             margin: 0;
@@ -28,76 +29,127 @@
             background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
             color: var(--black);
             min-height: 100vh;
-            padding: 2rem 1rem;
+            margin: 0;
+            padding: 0;
             background-attachment: fixed;
+            padding-top: 80px; /* Add space for fixed header */
         }
 
-        /* Header styles */
+        /* Override header styles to match index.html */
         header {
-            background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
-            /* padding: 1rem 5%; */
-            position: sticky;
+            position: fixed;
             top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .navbar {
+            left: 0;
+            width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 15px 5%;
+            z-index: 1000;
+            background-color: white;
+            color: black;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-
-        .logo {
+        
+        /* Logo container styling */
+        .logo-container {
             display: flex;
             align-items: center;
             gap: 10px;
         }
-
-        .logo img {
-            height: 60px;
-            width: 60px;
-            border-radius: 50%;
+        
+        .logo-rectangle {
+            height: 40px;
+            display: flex; 
+            align-items: center;
+            overflow: hidden;
         }
-
-        .logo h1 {
-            color: var(--black);
-            font-size: 1.5rem;
-            font-weight: 700;
+        
+        .logo-rectangle img {
+            height: 80%;
+            width: auto;
+            object-fit: contain;
         }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        nav ul li a {
-            color: var(--black);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: var(--transition);
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-        }
-
-        nav ul li a:hover {
-            background: rgba(0,0,0,0.1);
-            color: var(--white);
-        }
-
-        .mobile-menu-btn {
+        
+        /* Hamburger menu styling */
+        .hamburger {
             display: none;
+            flex-direction: column;
             background: none;
             border: none;
-            font-size: 1.5rem;
             cursor: pointer;
-            color: var(--black);
             padding: 5px;
+            z-index: 1100;
         }
+        
+        .line {
+            width: 25px;
+            height: 3px;
+            background: #000;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
+        /* Navigation styling */
+        .navbar {
+            display: flex;
+            gap: 35px;
+        }
+        
+        .navbar a {
+            color: #000000;
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 500;
+            transition: 0.3s;
+            position: relative;
+        }
+        
+        .navbar a:hover { 
+            color: #e2bc79; 
+        }
+        
+        /* Mobile menu styling */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            
+            .navbar {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 80px 20px 20px;
+                transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: -5px 0 25px rgba(0,0,0,0.15);
+                z-index: 1000;
+            }
+            
+            .navbar.active {
+                right: 0;
+            }
+            
+            .navbar a {
+                padding: 18px 0;
+                width: 100%;
+                border-bottom: 1px solid #f0f0f0;
+                font-size: 1.1rem;
+                font-weight: 500;
+                color: #000;
+                text-decoration: none;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+        }
+
+
 
         /* Mobile styles */
         @media (max-width: 768px) {
@@ -460,74 +512,180 @@
         }
 
         /* Footer Styles */
-        .footer {
-            background: var(--gold);
-            color: var(--black);
-            padding: 40px 20px 20px;
-            margin-top: 60px;
-            text-align: center;
+        .new-footer {
+            background: linear-gradient(135deg, #e2bc79, #e2bc79);
+            color: #fffefe;
+            padding: 0;
+            margin: 0;
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            display: block;
+            overflow: hidden;
+            box-sizing: border-box;
+            margin-bottom: 0;
         }
-
+        
         .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            padding-bottom: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto 40px;
+            box-sizing: border-box;
+            padding: 60px 5% 30px;
         }
-
+        
         .footer-section h3 {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
+            color: #ffd059;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
             font-weight: 700;
         }
-
-        .footer-section p,
-        .footer-section a {
-            font-size: 0.9rem;
+        
+        .footer-section h4 {
+            color: #000000;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .footer-section p {
+            color: rgba(0, 0, 0, 0.8);
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        
+        .footer-section p strong {
+            color: #000000;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
             color: rgba(0, 0, 0, 0.8);
             text-decoration: none;
-            line-height: 1.6;
-            display: block;
-            margin-bottom: 8px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            font-size: 0.95rem;
         }
-
-        .footer-section a:hover {
-            color: var(--black);
+        
+        .footer-links a:hover {
+            color: #000000;
+            transform: translateX(5px);
             font-weight: 600;
         }
-
+        
         .social-links {
             display: flex;
-            gap: 12px;
-            margin-top: 15px;
-            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
         }
-
+        
         .social-links a {
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             background: rgba(0, 0, 0, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--black);
+            color: #000000;
             text-decoration: none;
-            font-weight: bold;
             transition: all 0.3s ease;
+            font-weight: bold;
+            font-size: 1.2rem;
         }
-
+        
         .social-links a:hover {
             background: rgba(0, 0, 0, 0.2);
             transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
-
+        
         .footer-bottom {
             border-top: 1px solid rgba(0, 0, 0, 0.2);
-            padding-top: 20px;
+            padding: 30px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+        
+        .footer-bottom-links {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-bottom-links a {
+            color: rgba(0, 0, 0, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+        
+        .footer-bottom-links a:hover {
+            color: #000000;
+            font-weight: 600;
+        }
+        
+        .copy {
+            color: rgba(0, 0, 0, 0.8);
+            font-size: 0.95rem;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .footer-cta {
+            background: rgba(0, 0, 0, 0.1);
+            border: 2px solid #000000;
+            padding: 15px 30px;
+            border-radius: 8px;
             margin-top: 20px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-cta a {
+            color: #000000;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-cta:hover {
+            background: rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .footer-cta:hover a {
+            color: #000000;
         }
 
         .copy {
@@ -579,22 +737,25 @@
 </head>
 <body>
     <header>
-        <div class="navbar">
-            <div class="logo">
-                <img src="logcirc.png" alt="LawScent Logo" style="height: 60px; width: 60px;">
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="whoweare.html">Who We Are</a></li>
-                    <li><a href="services.html">What We Do</a></li>
-                    <li><a href="#">Our Thinking</a></li>
-                    <li><a href="career.html">Careers</a></li>
-                    <li><a href="legailaid.html">Legal Aid</a></li>
-                </ul>
-            </nav>
-            <button class="mobile-menu-btn">☰</button>
+        <div class="logo-container">
+            <a href="index.html" class="logo-rectangle">
+                <img src="log.png" alt="LawScent Logo">
+            </a>
         </div>
+
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
+
+        <nav class="navbar" id="navbar">
+            <a href="whoweare.html">Who we are</a>
+            <a href="services.html" class="active">What We Do</a>
+            
+            <a href="career.html">Careers</a>
+            <a href="legailaid.html">Legal Aid</a>
+        </nav>
     </header>
 
     <div class="container">
@@ -918,43 +1079,171 @@
         </div>
     </div>
 
-    <footer class="footer">
+    <footer class="new-footer">
         <div class="footer-content">
             <div class="footer-section">
                 <div class="logo-container">
                     <img src="logcirc.png" alt="LawScent Logo" style="width: 60px; height: 60px; border-radius: 50%;">
                 </div>
-                <p>Your trusted legal partner for comprehensive corporate legal solutions.</p>
+                <p>Your trusted legal partner. Providing comprehensive legal solutions for businesses and individuals.</p>
                 <div class="social-links">
-                    <a href="https://www.facebook.com/law.scent/" aria-label="Facebook" title="Facebook">f</a>
+                    <a href="https://www.facebook.com/people/LawScent/61555685231330/" aria-label="Facebook" title="Facebook">f</a>
                     <a href="https://x.com/lawscent" aria-label="Twitter" title="Twitter">𝕏</a>
                     <a href="https://www.linkedin.com/company/lawscent/" aria-label="LinkedIn" title="LinkedIn">in</a>
                     <a href="https://www.instagram.com/law.scent/" aria-label="Instagram" title="Instagram">📷</a>
                     <a href="https://www.youtube.com/@LawScent" aria-label="YouTube" title="YouTube">▶</a>
                 </div>
             </div>
-
+            
             <div class="footer-section">
-                <h3>Quick Links</h3>
-                <a href="index.html">Home</a>
-                <a href="services.html">Services</a>
-                <a href="whyus.html">Why Us</a>
-                <a href="career.html">Careers</a>
+                <h4>Quick Links</h4>
+                <ul>
+                   <li><a href="index.html">Home</a></li>
+                   <li><a href="whoweare.html">Who We Are</a></li>
+                   <li><a href="services.html">Services</a></li>
+                
             </div>
-
+            
             <div class="footer-section">
-                <h3>Contact</h3>
-                <p>B-431, Sushant Lok Road<br>Gurugram, Haryana 122009</p>
+                <h4>Contact</h4>
                 <p>Email: contact@lawscent.com</p>
                 <p>Phone: (+91) 7618151701</p>
+                <p>Address: Gurugram, Haryana 122009</p>
             </div>
         </div>
-
+        
         <div class="footer-bottom">
-            <p class="copy">&copy; 2026 LawScent. All rights reserved</p>
+            <p>&copy; 2026 LawScent. All rights reserved.</p>
         </div>
     </footer>
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburgerBtn');
+            const navbar = document.getElementById('navbar');
+            
+            // Mobile Navigation Toggle
+            if (hamburger && navbar) {
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('active');
+                    navbar.classList.toggle('active');
+                    const isExpanded = hamburger.classList.contains('active');
+                    hamburger.setAttribute('aria-expanded', isExpanded);
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    const isClickInsideNav = navbar.contains(event.target);
+                    const isClickOnHamburger = hamburger.contains(event.target);
+
+                    if (!isClickOnHamburger && !isClickInsideNav && navbar.classList.contains('active')) {
+                        hamburger.classList.remove('active');
+                        navbar.classList.remove('active');
+                        hamburger.setAttribute('aria-expanded', 'false');
+                    }
+                });
+
+                // Close menu when a link is clicked (for single-page navigation)
+                navbar.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', function() {
+                        if (window.innerWidth <= 768) { // Only close on mobile
+                            hamburger.classList.remove('active');
+                            navbar.classList.remove('active');
+                            hamburger.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                });
+            }
+            
+            // Handle desktop mega dropdown click interactions
+            const desktopMegaDropdown = document.querySelector('.desktop-mega-dropdown');
+            const megaDropdownMenu = document.querySelector('.mega-dropdown-menu');
+            const megaDropdownToggle = document.querySelector('.mega-dropdown-toggle');
+            const megaCategories = document.querySelectorAll('.mega-category');
+            
+            // Track dropdown state
+            let isMegaDropdownOpen = false;
+            
+            // Add click functionality to show/hide dropdown on desktop
+            megaDropdownToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // Only activate on desktop (larger screens)
+                if (window.innerWidth > 768) {
+                    isMegaDropdownOpen = !isMegaDropdownOpen;
+                    
+                    if (isMegaDropdownOpen) {
+                        megaDropdownMenu.style.display = 'block';
+                        // Trigger animation
+                        megaDropdownMenu.style.opacity = '0';
+                        megaDropdownMenu.style.transform = 'translateY(-10px)';
+                        setTimeout(() => {
+                            megaDropdownMenu.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                            megaDropdownMenu.style.opacity = '1';
+                            megaDropdownMenu.style.transform = 'translateY(0)';
+                        }, 10);
+                    } else {
+                        megaDropdownMenu.style.opacity = '0';
+                        megaDropdownMenu.style.transform = 'translateY(-10px)';
+                        setTimeout(() => {
+                            megaDropdownMenu.style.display = 'none';
+                        }, 300);
+                    }
+                }
+            });
+
+            // Handle category interactions - only for desktop
+            megaCategories.forEach(category => {
+                if (window.innerWidth > 768) {
+                    // Desktop: Hover to show corresponding services
+                    category.addEventListener('mouseenter', function() {
+                        const target = this.getAttribute('data-target');
+
+                        // Hide all service lists
+                        document.querySelectorAll('.service-list-full').forEach(list => {
+                            list.style.display = 'none';
+                        });
+
+                        // Show the targeted service list
+                        const targetList = document.getElementById(target + '-services-full');
+                        if (targetList) {
+                            targetList.style.display = 'grid';
+                        }
+                    });
+                }
+            });
+            
+            // Close dropdown when clicking outside - only for desktop
+            document.addEventListener('click', function(event) {
+                if (window.innerWidth > 768 && desktopMegaDropdown && !desktopMegaDropdown.contains(event.target)) {
+                    if (isMegaDropdownOpen) {
+                        megaDropdownMenu.style.opacity = '0';
+                        megaDropdownMenu.style.transform = 'translateY(-10px)';
+                        setTimeout(() => {
+                            megaDropdownMenu.style.display = 'none';
+                        }, 300);
+                        isMegaDropdownOpen = false;
+                    }
+                }
+            });
+            
+            // Initialize first category as active
+            if(document.querySelector('.mega-category')) {
+                document.querySelector('.mega-category').classList.add('active');
+                // Show first category services
+                const firstTarget = document.querySelector('.mega-category').getAttribute('data-target');
+                if(firstTarget) {
+                    document.querySelectorAll('.service-list-full').forEach(list => {
+                        list.style.display = 'none';
+                    });
+                    const firstList = document.getElementById(`${firstTarget}-services-full`);
+                    if(firstList) {
+                        firstList.style.display = 'block';
+                    }
+                }
+            }
+        });
+        
         function showPage(pageNumber) {
             // Hide all blog cards
             const blogCards = document.querySelectorAll('.blog-card');
